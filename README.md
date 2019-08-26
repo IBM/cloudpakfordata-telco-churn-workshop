@@ -1,7 +1,7 @@
 # Cloud Pak for Data Workshop
 
 <p align="center">
-  <img src="docs/sources/images/cp4d.png" title="cp4d">
+  <img src="docs/sources/images/cp4data.png" title="cp4data">
 </p>
 
 ## Background Info
