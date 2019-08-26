@@ -1,25 +1,10 @@
-# Kitura SOS Workshop
-
-<p align="center">
-<img src="https://www.ibm.com/cloud-computing/bluemix/sites/default/files/assets/page/catalog-swift.svg" width="120" alt="Kitura Bird">
-</p>
-
-<p align="center">
-<a href= "http://swift-at-ibm-slack.mybluemix.net/">
-    <img src="http://swift-at-ibm-slack.mybluemix.net/badge.svg"  alt="Slack">
-</a>
-</p>
+# Cloud Pak for Data Workshop
 
 ## Workshop Table of Contents:
 
 1. **[Getting Started](./01-GettingStarted.md)**
 2. [Setting up the Server](./02-ServerSetUp.md)
 3. [Setting up the Dashboard](./03-DashboardSetUp.md)
-4. [Setting up the iOS Client](./04-iOSSetUp.md)
-5. [Handling Status Reports and Disasters](./05-StatusReportsAndDisasters.md)
-6. [Setting up OpenAPI and REST API functionality](./06-OpenAndRESTAPI.md)
-7. [Build your app into a Docker image and deploy it on Kubernetes](./07-DockerAndKubernetes.md)
-8. [Enable monitoring through Prometheus/Grafana](./08-PrometheusAndGrafana.md)
 
 # Getting Started
 
