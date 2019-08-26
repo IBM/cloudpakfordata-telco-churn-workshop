@@ -1,79 +1,44 @@
 # Cloud Pak for Data Workshop
 
-## Workshop Table of Contents:
+## Workshop Table of Contents
 
-1. **[Getting Started](./01-GettingStarted.md)**
-2. [Setting up the Server](./02-ServerSetUp.md)
-3. [Setting up the Dashboard](./03-DashboardSetUp.md)
+1. [Environments](01-environments.md)
+2. **[Data](02-data.md)**
+3. [Machine Learning](03-ml.md)
+4. [Monitoring Models](04-openscale.md)
 
-# Getting Started
+## Project set up
 
-## Requirements
+Instructions go here
 
-- [Cocoapods](https://cocoapods.org)
-- Swift 5.0+
-- Terminal
-- Xcode
+## Data Source connections
 
-### Optional
+Instructions go here
 
-- [ngrok](https://ngrok.com/)
-- An iOS device that can run apps from Xcode
+## Data virtualization
 
-## Initial Set up
+Instructions go here
 
-### Clone repository
+## Data visualization
 
-First, clone the starter branch of the repository by running this terminal command:
+Instructions go here
 
-```bash
-git clone -b starter https://github.com/IBM/Kitura-SOS-Workshop.git
-```
+## Business glossary
 
-**Note:** The `master` branch is the completed workshop, whereas the `starter` branch is the branch we will be using.
+Instructions go here
 
-### Setting up the server
+## Data Refinery
 
-1. Open Terminal.
-2. Navigate to the `kitura-sos-server` directory located in the projects root folder.
-3. In your terminal run,  `export KITURA_NIO=1`
-4. Run `swift package generate-xcodeproj` in the Terminal, then `xed .`. When the command is done. ***`swift package generate-xcodeproj` generates all the necessary packages that our project uses and `xed .` opens our project in Xcode***
-5. In Xcode, run the server on My Mac.
-![Run on my mac](docs/sources/images/run-mac.png)
-6. Open a web browser, and navigate to `localhost:8080`. If you see the Kitura home page, you are ready to go! Don't quit the server!
+Instructions go here
 
-### Setting up the macOS client (dashboard)
+## Dashboards
 
-1. Open Terminal.
-2. Navigate to the `kitura-sos-dashboard` directory located in the projects root folder.
-3. Run `pod install` and  `xed .` in the terminal.
+Instructions go here
 
-> Note: if you don't have cocoapods, please install or upgrade from  [Cocoapds](https://cocoapods.org/)
+## Optional: Knowledge Catalog
 
-4. Run the main application on My Mac.
-![Run on my mac](docs/sources/images/run-dashboard.png)
+Instructions go here
 
-5. Accept location tracking for the application.
+## Next Steps
 
-You also may need to turn off code signing on your Xcode. To do this:
-
-- go to `Build Settings` in your Xcode project
-- search "identity"
-- make sure you have an empty text box for identities
-
-### Setting up the iOS client
-
-1. Open Terminal.
-2. Navigate to the `kitura-safe-ios-client` directory.
-3. Type `ls` - if you see `Podfile` in the resulting output, then you are in the right place.
-4. Enter `pod install` into Terminal.
-5. Enter `xed .` into Terminal.
-6. Run the main application on an iOS simulator of your choice.
-7. Tap `Always Allow` when prompted for location tracking on the iOS app.
-8. With the iOS simulator open, click the `Debug` menu in the top toolbar, then Location -> Custom Location. Enter your coordinates here to simulate where you are. The San Jose Marriott is at `(37.330171, -121.888368)`.
-
-If you want to test this with real devices, either deploy this server and use the address, or use [ngrok](https://ngrok.com) to tunnel connections through to localhost, and then update the addresses in both the macOS and iOS clients. This can handle *many* concurrent connections, and the pins should drop when the responses are received.
-
-# Next Steps
-
-Continue to the [next page](./02-ServerSetUp.md) to set up the Server.
+Continue to the [next page](03-ml.md) to create and deploy a machine lerning model.
