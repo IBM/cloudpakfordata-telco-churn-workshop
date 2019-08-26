@@ -1,5 +1,9 @@
 # Cloud Pak for Data Workshop
 
+<p align="center">
+  <img src="docs/sources/images/cp4d.png" title="cp4d">
+</p>
+
 ## Background Info
 
 This is a workshop for Cloud Pak for Data where the following sections are covered:
