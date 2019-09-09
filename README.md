@@ -1,8 +1,6 @@
 # Cloud Pak for Data Workshop
 
-<p align="center">
-  <img src="workshop/.gitbook/assets/images/cp4data.png" title="cp4data">
-</p>
+!["cp4data"](workshop/.gitbook/assets/images/cp4data.png)
 
 ## Background Info
 
