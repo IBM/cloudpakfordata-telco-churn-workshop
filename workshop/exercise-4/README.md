@@ -2,15 +2,20 @@
 
 ## Configure OpenScale in the Jupyter Notebook
 
+We'll continue with the `customer-churn-prediction.ipynb` Juyptyer notebook that we started with for exercise-3.
+
 ###  Use free internal DB or Create a Databases for PostgreSQL DB
 
+For this lab, we'll use the free internal DB. Note that this is not GDPR compliant, and this DB is not accessible to the user. For productions purposes, you may wish to use a separate DB , i.e Postgres.
 
-#### If you wish, you can use the free internal Database with Watson OpenScale. To do this, make sure that the cell for `KEEP_MY_INTERNAL_POSTGRES = True` remains unchanged.
+#### Make sure that the cell for `KEEP_MY_INTERNAL_POSTGRES = True` remains unchanged.
 
 #### If you have or wish to use a paid `Databases for Postgres` instance, follow these instructions:
 
-> Note: Services created must be in the same region, and space, as your Watson Studio service.
+> Note: Services created must be in the same region, and space, as your Watson Studio service or on the same ICP4D cluster
 
+* Either provision the database in your ICP4D cluster
+ **or**
 * Using the [IBM Cloud Dashboard](https://cloud.ibm.com/catalog) catalog, search for PostgreSQL and choose the `Databases for Postgres` [service](https://console.bluemix.net/catalog/services/databases-for-postgresql).                                      
 * Wait a couple of minutes for the database to be provisioned.
 * Click on the `Service Credentials` tab on the left and then click `New credential +` to create the service credentials. Copy them or leave the tab open to use later in the notebook.
