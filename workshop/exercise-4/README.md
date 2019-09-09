@@ -2,7 +2,31 @@
 
 ## Configure OpenScale in the Jupyter Notebook
 
-We'll continue with the `customer-churn-prediction.ipynb` Juyptyer notebook that we started with for exercise-3.
+We'll use a Jupyter notebook to configure OpenScale.
+
+### 1. Download the notebook and add the notebook to the project 
+
+*   Either clone this repository:
+
+```bash
+git clone https://github.com/IBM/cloudpakfordata101
+```
+
+or download the notebook directly:
+
+```bash
+wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/ConfigureOpenScale.ipynb
+```
+
+* Under the `Assets` tab in your project, from the menu on the left, choose `Notebooks` and click `+Add Notebook`.
+
+* Choose the `From file` tab and navigate to where you downloaded the `ConfigureOpenScale.ipynb` notebook, either in `~/Downloads/` or the location where you cloned the repository, in the `cloudpakfordata101/workshop` directory.
+
+### 2. Configure and run the notebook
+
+#### Run the notebook
+
+* Run all the cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. While the cell is running, an asterisck will show up in the brackets to the left of the cell `[*]` and when it is done, a sequential number will show up, i.e. `[17]`. Do this for the next steps, with some additional instructions:
 
 ###  Use free internal DB or Create a Databases for PostgreSQL DB
 
