@@ -167,7 +167,7 @@ Test the model in the API interface.
 * Click the enabled deployment. Under the `API` tab, we can test the model.
 * There may be some inputs with `INSERT_VALUE`. Simply change them into values that makes sense.
 
-   ![deployment_test.png](doc/source/images/deployment_test.png)
+   ![deployment_test.png](../../doc/source/images/deployment_test.png)
 * Click `Submit`. The result is shown on right with inputs and prediction results.
 * You can click the `Generate Code` button to get the code for [deployment testing using curl](#deployment-testing-with-curl).
 * Under `Overview`, you can copy the POST API and deployment token. Save it for [using the model in an app](#10-use-the-model-in-an-app).
