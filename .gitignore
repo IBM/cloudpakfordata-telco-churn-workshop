@@ -5,6 +5,9 @@
 ## Build generated
 build/
 DerivedData/
+.DS_Store
+node_modules
+_book
 
 ## Various settings
 *.pbxuser
