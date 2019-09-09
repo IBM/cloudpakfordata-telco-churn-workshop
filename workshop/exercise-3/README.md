@@ -102,11 +102,11 @@ Next, we'll create a project release and tag the model under version control. We
 
 * Go back to the project homepage. You can see a "**Changes made**" message. Click on `commit and push`.
 
-   ![changes_made.png](doc/source/images/changes_made.png)
+   ![changes_made.png](../../doc/source/images/changes_made.png)
 
 * You will see there is a list of the assets that are created in this project. Provide a `Commit message` to identify and make note of changes being pushed. Provide a version tag under `Create version tag for release`. Please note that the tag and commit message are both very important to identify and deploy the changes.
 
-   ![commit_and_push.png](doc/source/images/commit_and_push.png)
+   ![commit_and_push.png](../../doc/source/images/commit_and_push.png)
 
 * Click the `Commit and push` button.
 
@@ -116,13 +116,13 @@ Now that we have a committed and tagged version of the project, we can create a 
 
 * Use the left menu's `Analyze` drop-down list and click on `Model management & deployment`.
 
-   ![mmd.png](doc/source/images/mmd.png)
+   ![mmd.png](../../doc/source/images/mmd.png)
 
 * Click on `Project release` to create the deployment.
    
 * Give it a name that you can easily track. `Route` will be a part of the url. It should be lowercase. Choose the target source project and tag that you created above. Click the `Create` button.
  
-   ![release.png](doc/source/images/release.png)
+   ![release.png](../../doc/source/images/release.png)
 
 This project release is created.
 
@@ -130,17 +130,17 @@ This project release is created.
 
 * Under the `Assets` tab, select the model you just created and then click the upper-right `+ web service` button. This will add an online deployment service for this model.
 
-   ![add_web_service.png](doc/source/images/add_web_service.png)
+   ![add_web_service.png](../../doc/source/images/add_web_service.png)
 
 * Choose whether you want to reserve resources and how many replicas you want for this job.
 
 * Click the `Create` button.
 
-   ![create_web_service.png](doc/source/images/create_web_service.png)
+   ![create_web_service.png](../../doc/source/images/create_web_service.png)
 
    > Note: At this time, the online deployment is created. You can also find the REST API URL and deployment token under the `Overview` tab.
 
-   ![deployment_token.png](doc/source/images/deployment_token.png)
+   ![deployment_token.png](../../doc/source/images/deployment_token.png)
 
 The deployment is still not active. We need to launch and enable it before it can be used.
 
@@ -152,11 +152,11 @@ The deployment is still not active. We need to launch and enable it before it ca
 
 * The onlinescore job is still disabled because there are extra steps to enable it. Click on the action menu (vertical 3 dots) and select `Enable`. This may take a little longer. Wait until `AVAILABILITY` shows `Enabled`.
 
-   ![launch.png](doc/source/images/launch.png)
+   ![launch.png](../../doc/source/images/launch.png)
 
    > Note: For any additional changes made to the project, just update the MMD environment with the new tag, and the new version of assets are ready to be deployed.
 
-   ![update.png](doc/source/images/update.png)
+   ![update.png](../../doc/source/images/update.png)
 
 ## Test a model
 
