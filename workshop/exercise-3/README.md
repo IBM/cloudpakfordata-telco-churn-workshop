@@ -37,7 +37,7 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 * From the menu on the left, choose `Notebooks` and click `+Add Notebook`.
 
-* Choose the `From file` tab and navigate to where you downloaded the `customer-churn-prediction.ipynb` notebook, either in `~/Downloads/` or the location where you cloned the repository, in the `customer-churn-prediction/notebooks/` directory.
+* Choose the `From file` tab and navigate to where you downloaded the `TelcoChurnICP4D.ipynb` notebook, either in `~/Downloads/` or the location where you cloned this repository, in the `cloudpakfordata101/workshop` directory.
 
 ### 3. Configure and run the notebook
 
