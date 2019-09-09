@@ -1,5 +1,3 @@
-notifications:
-  email: false
 language: node_js
 node_js:
   - 10
@@ -8,12 +6,3 @@ script:
   - gitbook install
   - gitbook build
   - npm test
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  local_dir: _book
-  keep_history: true
-  on:
-    branch: master
-
