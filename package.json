@@ -1,7 +1,7 @@
 {
-  "name": "OpenShift101",
+  "name": "CloudPakforData101",
   "version": "1.0.0",
-  "description": "Hands on workshop featuring OpenShift on the IBM Cloud",
+  "description": "Hands on workshop featuring Cloud Pak for Data",
   "main": "index.js",
   "dependencies": {
     "gitbook-cli": "^2.3.2",
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IBM/openshift101.git"
+    "url": "git+https://github.com/IBM/cloudpakfordata101.git"
   },
   "author": "",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/IBM/openshift101/issues"
+    "url": "https://github.com/IBM/cloudpakfordata101/issues"
   },
-  "homepage": "https://github.com/IBM/openshift101#readme"
+  "homepage": "https://github.com/IBM/cloudpakfordata101#readme"
 }
