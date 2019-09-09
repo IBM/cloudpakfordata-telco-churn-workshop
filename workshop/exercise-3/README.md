@@ -41,7 +41,7 @@ wget https://raw.githubusercontent.com/IBM/customer-churn-prediction/master/note
 
 ### 3. Configure and run the notebook
 
-#### Add the dataset to your project
+#### Add the dataset to your project and notebook
 
 * Under the `Assets` tab in your project, choose `Data sets`.
 
@@ -56,9 +56,15 @@ wget https://raw.githubusercontent.com/IBM/customer-churn-prediction/master/note
 wget  https://raw.githubusercontent.com/IBM/customer-churn-prediction/master/data/WA_Fn-UseC_-Telco-Customer-Churn.csv
 ```
 
+* In the notebook, highlight the cell `Insert data`.
+
+* Click on the `10/01` tab at the top which has the tooltip `Find data`. Your previously loaded data set shoulud show up.
+
+* Click `Insert to code` and choose `Insert pandas DataFrame`.
+
 #### Run the notebook
 
-* Run all the cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. Do this for the next steps, with some additional instructions:
+* Run all the cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. While the cell is running, an asterisck will show up in the brackets to the left of the cell `[*]` and when it is done, a sequential number will show up, i.e. `[17]`. Do this for the next steps, with some additional instructions:
 
 * In the notebook, run the first 3 cells to `!pip install` the various packages needed.
 
