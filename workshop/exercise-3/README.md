@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/IBM/customer-churn-prediction/master/note
 
 * From the Main Menu, Choose `Project`
 
-![Choose Project](ChooseProject.png)
+![Choose Project](doc/source/images/MenuChooseProject.png   )
 
 * Under the `Assets` tab in your project, Click `+ New Project`, give it a name of your choosing (preferably using a tag for you to easily identify it from other users), and click `OK`.
 
