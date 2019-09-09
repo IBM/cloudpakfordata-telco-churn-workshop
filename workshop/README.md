@@ -1,4 +1,4 @@
-# Learn the Basics of Cloud Pak for Data
+# Workshop
 
 Cloud Pak for Data represents a ... It is built to run natively on Red Hat OpenShift. This allows you to build on premises, on IBM Cloud, or on any other leading cloud platform.
 
