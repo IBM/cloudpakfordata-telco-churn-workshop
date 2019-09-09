@@ -56,6 +56,20 @@ wget https://raw.githubusercontent.com/IBM/customer-churn-prediction/master/note
 wget  https://raw.githubusercontent.com/IBM/customer-churn-prediction/master/data/WA_Fn-UseC_-Telco-Customer-Churn.csv
 ```
 
+#### Run the notebook
+
+* Run all the cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. Do this for the next steps, with some additional instructions:
+
+* In the notebook, run the first 3 cells to `!pip install` the various packages needed.
+
+* Re-start the Jupyter notebook kernel anytime after installing new packages. At the top menu, choose `kernel` -> `restart`.
+
+* Follow the instructions to create a `CLOUD_API_KEY` and an `AIOS_GUID` and enter them in the appropriate cells as instructed.
+
+#### Create the model
+
+* Under `Create a model`, change the `MODEL_NAME` to something unique and easisly identifiable i.e. `<your name>-TelcoChurn`.
+
 ## Deploy a model
 
 Instructions go here
