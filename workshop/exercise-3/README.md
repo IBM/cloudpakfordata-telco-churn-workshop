@@ -29,8 +29,6 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 * From the Main Menu, Choose `Project`
 
-![Choose Project](../../doc/source/images/MenuChooseProject.png)
-
 * Under the `Assets` tab in your project, Click `+ New Project`, give it a name of your choosing (preferably using a tag for you to easily identify it from other users), and click `OK`.
 
 * Choose the `New` tab. Enter an optional description, and click `Create`.
