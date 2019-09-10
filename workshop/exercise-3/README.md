@@ -144,15 +144,17 @@ The deployment is still not active. We need to launch and enable it before it ca
 
 ### Launch deployment                                                               
 
-* Under the `Deployments` tab, there are jobs that we just created. You will find that they are currently disabled.
+* Back in `Project releases` Click the tile for your release. Under the `Deployments` tab, there are jobs that we just created. You will find that they are currently disabled.
 
-* Click `Launch` on the top right to activate those deployments. This may take few seconds.
+* Click `Launch` on the top right and then choose `Launch` from the popup window, to activate those deployments. This may take few seconds.
+
+![Launch Deployment](../../doc/source/images/ICP4DLaunchDeployment.png)
 
 * The onlinescore job is still disabled because there are extra steps to enable it. Click on the action menu (vertical 3 dots) and select `Enable`. This may take a little longer. Wait until `AVAILABILITY` shows `Enabled`.
 
-   ![launch.png](../../doc/source/images/launch.png)
+![Enable job](../../doc/source/images/ICP4DenableJob.png)
 
-   > Note: For any additional changes made to the project, just update the MMD environment with the new tag, and the new version of assets are ready to be deployed.
+> Note: For any additional changes made to the project, just update the MMD environment with the new tag, and the new version of assets are ready to be deployed.
 
    ![update.png](../../doc/source/images/update.png)
 
