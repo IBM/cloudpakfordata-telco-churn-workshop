@@ -109,17 +109,16 @@ Next, we'll create a project release and tag the model under version control. We
 
 Now that we have a committed and tagged version of the project, we can create a project release and deploy it as a web service. 
 
-* Use the left menu's `Analyze` drop-down list and click on `Model management & deployment`.
+* Click the upper left hamburger menu and choose the left menu's `Adminster` drop-down list and click on `Manage deployments`.
 
-   ![mmd.png](../../doc/source/images/mmd.png)
 
-* Click on `Project release` to create the deployment.
+* Click on `+ Add Project release` to create the deployment.
    
+* This will bring up the `Create project release` page. Choose the `From IBM Cloud Private for Data` tab.
+
 * Give it a name that you can easily track. `Route` will be a part of the url. It should be lowercase. Choose the target source project and tag that you created above. Click the `Create` button.
  
-   ![release.png](../../doc/source/images/release.png)
-
-This project release is created.
+![Create Project Release](../../doc/source/images/ICP4DcreateProjectRelease.png)
 
 ### Create an online and batch deployment for the deployed model                    
 
