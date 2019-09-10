@@ -126,15 +126,19 @@ Now that we have a committed and tagged version of the project, we can create a 
 
    ![add_web_service.png](../../doc/source/images/add_web_service.png)
 
+* Give the web service a name, which will be appended to the URL.
+
+* Pick the model version (i.e. Use lates version) and Web Service environment
+
 * Choose whether you want to reserve resources and how many replicas you want for this job.
 
 * Click the `Create` button.
 
-   ![create_web_service.png](../../doc/source/images/create_web_service.png)
+![create_web_service](../../doc/source/images/ICP4DcreateWebService.pngg)
 
    > Note: At this time, the online deployment is created. You can also find the REST API URL and deployment token under the `Overview` tab.
 
-   ![deployment_token.png](../../doc/source/images/deployment_token.png)
+![Web App Overview](../../doc/source/images/ICP4DwebAppOverview.png)
 
 The deployment is still not active. We need to launch and enable it before it can be used.
 
