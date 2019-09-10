@@ -41,6 +41,16 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 ### 3. Configure and run the notebook
 
+* Spend an minute looking through the sections of the notebook to get an overview
+
+* You will run cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. While the cell is running, an asterisck will show up in the brackets to the left of the cell `[*]` and when it is done, a sequential number will show up, i.e. `[17]`.
+
+* Run the cell in the section `1.0 Install required packages` and wait for it to complete.
+
+* For Cell `1.1 Restart the Kernel Now` choose the `kernel` tab at the top of the notebook, and click `Restart`. Wait for the kernel to restart and show as connected.
+
+
+
 #### Add the dataset to your project and notebook
 
 * Under the `Assets` tab in your project, choose `Data sets`.
