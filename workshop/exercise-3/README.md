@@ -67,7 +67,7 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 * Choose your virtualized data (i.e. User<xyz>.billingProductCustomers), click `Insert to code` and choose `Insert Pandas DataFrame`
    
- ![JupyterInsertPandasDF.png](../../doc/source/images/JupyterInsertPandasDF.png)
+ ![Jupyter Insert Pandas DF.](../../doc/source/images/JupyterInsertPandasDF.png)
  
 * The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
 
