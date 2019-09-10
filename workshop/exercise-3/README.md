@@ -55,36 +55,35 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 #### Add the dataset to your project and notebook
 
-* Under the `Assets` tab in your project, choose `Data sets`.
-
-* Click `+Add data set`.
-
-* If you cloned the github repository, you can add the dataset `WA_Fn-UseC_-Telco-Customer-Churn.csv` to your project from the
-`cloudpakfordata101/workshop/` directory.
-
-* If you directly downloaded the notebook with `wget`, use:
-
-```bash
-wget  https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/WA_Fn-UseC_-Telco-Customer-Churn.csv
-```
-
-* In the notebook, highlight the cell `Insert data`.
+* In section `2.0 Load and Clean Data` highlite the cell with `# Place cursor below and insert....` by clicking on it.
 
 * Click on the `10/01` tab at the top which has the tooltip `Find data`. Your previously loaded data set shoulud show up.
 
 * Click `Insert to code` and choose `Insert pandas DataFrame`.
 
-#### Run the notebook
+* Click the `10/01` "Find data" icon in the upper right of the notebook.
 
-* Run all the cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. While the cell is running, an asterisck will show up in the brackets to the left of the cell `[*]` and when it is done, a sequential number will show up, i.e. `[17]`. Do this for the next steps, with some additional instructions:
+* To load the virtualized data created in Exercise-1, choose the `Remote` tab.
 
-* In the notebook, run the first 3 cells to `!pip install` the various packages needed.
+* Choose your virtualized data (i.e. User<xyz>.billingProductCustomers), click `Insert to code` and choose `Insert Pandas DataFrame`
+   
+ ![JupyterInsertPandasDF.png](../../doc/source/images/JupyterInsertPandasDF.png)
+ 
+* The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
 
-* Re-start the Jupyter notebook kernel anytime after installing new packages. At the top menu, choose `kernel` -> `restart`.
+* Run the cell to load the data
+
+* Continue with the cells in sections `2.x` to clean the data.
 
 #### Create the model
 
-* Under `Create a model`, you may change the `MODEL_NAME` to something unique and easisly identifiable i.e. `<your name>-TelcoChurn`.
+* Under `3.0 Create a model`, you may change the `MODEL_NAME` to something unique and easisly identifiable i.e. `<your name>-TelcoChurn`. Add a version number if you are creating multiple versions of the machine learning model that differ.
+
+* Run all the cells in sections `3.x` to create the ML model.
+
+#### Save the model
+
+* Run the cells under `4.0 Save the model` to save the model into your project.
 
 ## Deploy a model
 
