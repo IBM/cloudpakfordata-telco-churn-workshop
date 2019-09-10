@@ -89,15 +89,21 @@ Next, we'll create a project release and tag the model under version control. We
 
 ### Commit the project changes
 
-* Go back to the project homepage. You can see a "**Changes made**" message. Click on `commit and push`.
+* Go back to the project homepage. You may see a "**Changes made**" message. If so, you can Click on `commit and push`. If not, follow the instructions below.
 
-   ![changes_made.png](../../doc/source/images/changes_made.png)
+![changes_made.png](../../doc/source/images/changes_made.png)
 
 * You will see there is a list of the assets that are created in this project. Provide a `Commit message` to identify and make note of changes being pushed. Provide a version tag under `Create version tag for release`. Please note that the tag and commit message are both very important to identify and deploy the changes.
 
-   ![commit_and_push.png](../../doc/source/images/commit_and_push.png)
+![commit_and_push.png](../../doc/source/images/commit_and_push.png)
 
 * Click the `Commit and push` button.
+
+* If the "**Changes made**" message is not visible, click the icon for git merge in the upper left, and choose `Commit`. Add a commit message, and click 'Commit'.
+
+![git commit](../../doc/source/images/ICP4DgitCommit.png)
+
+* Use the same git icon, and choose 'Push'. Add a tag, i.e. `v1`, `v2`, etc and click `Push`
 
 ### Create a project release                                                        
 
