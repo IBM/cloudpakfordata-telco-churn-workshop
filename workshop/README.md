@@ -1,8 +1,8 @@
-# Workshop
+# Telco Churn Workshop
 
 Cloud Pak for Data represents a ... It is built to run natively on Red Hat OpenShift. This allows you to build on premises, on IBM Cloud, or on any other leading cloud platform.
 
-!["cp4data"](workshop/.gitbook/assets/images/cp4data.png)
+!["cp4data"](workshop/.gitbook/assets/images/generic/cp4data.png)
 
 In this lab we'll cover using the Cloud Pak for Data platform on OpenShift and typical data scientist tasks including:
 
