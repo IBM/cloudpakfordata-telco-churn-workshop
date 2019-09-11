@@ -1,0 +1,136 @@
+<!--
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may
+ * not use this file except in compliance with the License. You may obtain
+ * a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations
+ * under the License.
+ * -->
+
+{% extends "layout.html" %}
+{% block body %}
+
+  <head>
+    <br>
+    <h2>Customer churn risk prediction and suggested offer</h2>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script> var result_json = {{ result|tojson }}; </script>
+    <script type="text/javascript">
+
+      var predictions = [['Class', 'Probability']];
+      var result = result_json.result;
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        for(var i=0 ; i < result.classes.length ; i++) {
+          predictions[i+1] = [result.classes[i], result.probabilities[0][i] * 100];
+        }
+        var data = google.visualization.arrayToDataTable(predictions);
+
+        var options = {
+          title: 'Probability of Risk Class',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <br/>
+      {% if churn_risk == 'low' %}
+      This customer has <strong>low</strong> churn risk. The recommended offer is <strong>3 free trades</strong>.
+      {% elif churn_risk == 'medium' %}
+      This customer has <strong>medium</strong> churn risk. The recommended offer is <strong>5 free trades</strong>.
+      {% elif churn_risk == 'high' %}
+      This customer has <strong>high</strong> churn risk. The recommended offer is <strong>5 free trades plus a free consult from a wealth management advisor</strong>.
+      {% endif %}
+    </div>
+    <div id="donutchart" style="width: 100%; height: 500px;"></div>
+  </body>
+
+<h2>Characteristics Analyzed</h2>
+<br>
+<table>
+  <tr>
+    <th>Attribute</th>
+    <th>Value</th>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{request.form['Age']}}</td>
+  </tr>
+  <tr>
+    <td>Gender</td>
+    <td>{{request.form['Gender']}}</td>
+  </tr>
+  <tr>
+    <td>Status</td>
+    <td>{{request.form['Status']}}</td>
+  </tr>
+  <tr>
+    <td>Children</td>
+    <td>{{request.form['Children']}}</td>
+  </tr>
+  <tr>
+    <td>Home Owner</td>
+    <td>{{request.form['Homeowner']}}</td>
+  </tr>
+  <tr>
+    <td>Estimated Income</td>
+    <td>{{request.form['Income']}}</td>
+  </tr>
+  <tr>
+    <td>Net Realized Gains YTD</td>
+    <td>{{request.form['Netrealizedgainsytd']}}</td>
+  </tr>
+  <tr>
+    <td>Net Realized Losses YTD</td>
+    <td>{{request.form['Netrealizedlossesytd']}}</td>
+  </tr>
+  <tr>
+    <td>Smallest Single Transaction</td>
+    <td>{{request.form['Smallestsingletransaction']}}</td>
+  </tr>
+  <tr>
+    <td>Largest Single Transaction</td>
+    <td>{{request.form['Largestsingletransaction']}}</td>
+  </tr>
+  <tr>
+    <td>Total Dollar Value Traded</td>
+    <td>{{request.form['Totaldollarvaluetraded']}}</td>
+  </tr>
+  <tr>
+    <td>Total Units Traded</td>
+    <td>{{request.form['Totalunitstraded']}}</td>
+  </tr>
+  <tr>
+    <td>Days Since Last Login</td>
+    <td>{{request.form['Dayssincelastlogin']}}</td>
+  </tr>
+  <tr>
+    <td>Days Since Last Trade</td>
+    <td>{{request.form['Dayssincelasttrade']}}</td>
+  </tr>
+  <tr>
+    <td>Percentage Change Calculation</td>
+    <td>{{request.form['Percentagechangecalculation']}}</td>
+  </tr>
+</table>
+
+<!-- Uncomment to debug:
+{{ response_scoring.json()["result"] }}
+-->
+
+<br>
+<p>Click the reset link to make another prediction.</p>
+
+
+{% endblock %}
