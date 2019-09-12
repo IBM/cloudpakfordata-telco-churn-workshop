@@ -6,11 +6,19 @@
 
 Log into Cloud Pak for Data.
 
-![](../.gitbook/assets/project/cpd-login.png)
+![](../.gitbook/assets/manage/cpd-login.png)
 
 Go the hamburger menu and click *Projects*
 
+![](../.gitbook/assets/manage/cpd-projects-menu.png)
+
+Click on *New project*
+
+![](../.gitbook/assets/manage/cpd-new-project.png)
+
 Create a new project, give it a unique name.
+
+![](../.gitbook/assets/manage/cpd-new-project-name.png)
 
 ## About the data set
 
