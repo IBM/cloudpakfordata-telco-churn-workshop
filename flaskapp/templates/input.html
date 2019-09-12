@@ -19,7 +19,7 @@
 
 <form action="#" method="post" class="add-entry">
     <dl>
-        <dt>Age:</dt>
+        <!-- <dt>Age:</dt>
         <dd>
             <input type="number" min="18" max="100" step="" name="Age" id="Age" value="30" required onchange="show_value_Age(this.value)">
         </dd>
@@ -84,7 +84,110 @@
             0 <input type="range" min="0" max="100" step="1" name="Percentagechangecalculation" id="Percentagechangecalculation" value="5" onchange="show_value_NumberOfCards(this.value)"> 100
             <span id="slider_value_NumberOfCards" style="color:blue;font-weight:bold;"></span><br>
         </dd><br>
-        <br>
+        <br> -->
+        
+        <dt>CheckingStatus</dt>
+        <dd>
+            <label><input type="radio" name="CheckingStatus" value="0_to_200" checked> 0-200 </label>
+        </dd>
+        
+        <dt>LoanDuration</dt>
+        <dd>
+            <input type="number" min="0" max="30" step="" name="LoanDuration" id="LoanDuration" value="2" required onchange="show_value_LoanDuration(this.value)">
+        </dd>
+        
+        <dt>CreditHistory</dt>
+        <dd>
+            <label><input type="radio" name="CreditHistory" value="all_credits_paid_back" checked> All paid back </label>
+        </dd>
+
+        <dt>LoanPurpose</dt>
+        <dd>
+            <label><input type="radio" name="LoanPurpose" value="appliances" checked> appliances </label>
+        </dd>
+        
+        <dt>LoanAmount</dt>
+        <dd>
+            <input type="number" min="0" max="4000" step="" name="LoanAmount" id="LoanAmount" value="999" required onchange="show_value_LoanAmount(this.value)">
+        </dd>
+
+        <dt>ExistingSavings</dt>
+        <dd>
+            <label><input type="radio" name="ExistingSavings" value="less_100" checked> less_100 </label>
+        </dd>
+
+        <dt>EmploymentDuration</dt>
+        <dd>
+            <label><input type="radio" name="EmploymentDuration" value="1_to_4" checked> 1_to_4 </label>
+        </dd>
+        
+        <dt>InstallmentPercent</dt>
+        <dd>
+            <input type="number" min="0" max="30" step="" name="InstallmentPercent" id="InstallmentPercent" value="2" required onchange="InstallmentPercent(this.value)">
+        </dd>
+        
+        <dt>Gender:</dt>
+        <dd><label><input type="radio" name="Sex" value="female" checked> Female</label>
+            <label><input type="radio" name="Sex" value="male"> Male</label>
+        </dd>
+        
+        <dt>OthersOnLoan</dt>
+        <dd>
+            <label><input type="radio" name="OthersOnLoan" value="none" checked> none </label>
+        </dd>
+        
+        <dt>CurrentResidenceDuration</dt>
+        <dd>
+            <input type="number" min="0" max="30" step="" name="CurrentResidenceDuration" id="CurrentResidenceDuration" value="1" required onchange="CurrentResidenceDuration(this.value)">
+        </dd>
+        
+        <dt>OwnsProperty</dt>
+        <dd>
+            <label><input type="radio" name="OwnsProperty" value="savings_insurance" checked> savings_insurance </label>
+        </dd>
+        
+        <dt>Age</dt>
+        <dd>
+            <input type="number" min="0" max="120" step="" name="Age" id="Age" value="54" required onchange="Age(this.value)">
+        </dd>
+        
+        <dt>InstallmentPlans</dt>
+        <dd>
+            <label><input type="radio" name="InstallmentPlans" value="none" checked> none </label>
+        </dd>
+        
+        <dt>Housing</dt>
+        <dd>
+            <label><input type="radio" name="Housing" value="own" checked> own </label>
+        </dd>
+        
+        <dt>ExistingCreditsCount</dt>
+        <dd>
+            <input type="number" min="0" max="50" step="" name="ExistingCreditsCount" id="ExistingCreditsCount" value="1" required onchange="ExistingCreditsCount(this.value)">
+        </dd>
+        
+        <dt>Job</dt>
+        <dd>
+            <label><input type="radio" name="Job" value="skilled" checked> skilled </label>
+        </dd>
+        
+        <dt>Dependents</dt>
+        <dd>
+            <input type="number" min="0" max="30" step="" name="Dependents" id="Dependents" value="1" required onchange="Dependents(this.value)">
+        </dd>
+        
+        <dt>Telephone</dt>
+        <dd>
+            <label><input type="radio" name="Telephone" value="none" checked> none </label>
+        </dd>
+
+        <dt>ForeignWorker</dt>
+        <dd>
+            <label><input type="radio" name="ForeignWorker" value="yes" checked> yes </label>
+            <label><input type="radio" name="ForeignWorker" value="no" checked> no </label>
+        </dd>
+        
+        <br><br>
         <dt><input type="submit" value="Submit"></dt>
     </dl>
 </form>
