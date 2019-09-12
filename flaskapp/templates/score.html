@@ -45,6 +45,14 @@
   <body>
     <div>
       <br/>
+      
+      {% if churn_risk == 'no risk' %}
+      This customer has <strong>Low</strong> risk. The recommended offer is <strong>Approve Request</strong>.
+      {% elif churn_risk == 'risk' %}
+      This customer has <strong>High</strong> risk. The recommended offer is <strong>Reject Request</strong>.
+      {% endif %}
+      
+      
       {% if churn_risk == 'low' %}
       This customer has <strong>low</strong> churn risk. The recommended offer is <strong>3 free trades</strong>.
       {% elif churn_risk == 'medium' %}
@@ -58,72 +66,23 @@
 
 <h2>Characteristics Analyzed</h2>
 <br>
+
 <table>
   <tr>
     <th>Attribute</th>
     <th>Value</th>
   </tr>
-  <tr>
-    <td>Age</td>
-    <td>{{request.form['Age']}}</td>
-  </tr>
-  <tr>
-    <td>Gender</td>
-    <td>{{request.form['Gender']}}</td>
-  </tr>
-  <tr>
-    <td>Status</td>
-    <td>{{request.form['Status']}}</td>
-  </tr>
-  <tr>
-    <td>Children</td>
-    <td>{{request.form['Children']}}</td>
-  </tr>
-  <tr>
-    <td>Home Owner</td>
-    <td>{{request.form['Homeowner']}}</td>
-  </tr>
-  <tr>
-    <td>Estimated Income</td>
-    <td>{{request.form['Income']}}</td>
-  </tr>
-  <tr>
-    <td>Net Realized Gains YTD</td>
-    <td>{{request.form['Netrealizedgainsytd']}}</td>
-  </tr>
-  <tr>
-    <td>Net Realized Losses YTD</td>
-    <td>{{request.form['Netrealizedlossesytd']}}</td>
-  </tr>
-  <tr>
-    <td>Smallest Single Transaction</td>
-    <td>{{request.form['Smallestsingletransaction']}}</td>
-  </tr>
-  <tr>
-    <td>Largest Single Transaction</td>
-    <td>{{request.form['Largestsingletransaction']}}</td>
-  </tr>
-  <tr>
-    <td>Total Dollar Value Traded</td>
-    <td>{{request.form['Totaldollarvaluetraded']}}</td>
-  </tr>
-  <tr>
-    <td>Total Units Traded</td>
-    <td>{{request.form['Totalunitstraded']}}</td>
-  </tr>
-  <tr>
-    <td>Days Since Last Login</td>
-    <td>{{request.form['Dayssincelastlogin']}}</td>
-  </tr>
-  <tr>
-    <td>Days Since Last Trade</td>
-    <td>{{request.form['Dayssincelasttrade']}}</td>
-  </tr>
-  <tr>
-    <td>Percentage Change Calculation</td>
-    <td>{{request.form['Percentagechangecalculation']}}</td>
-  </tr>
+
+  {% for k in request.form.keys() %}
+    <tr>
+      <td>{{k}}</td>
+      <td>{{request.form[k]}}</td>
+    </tr>
+  {% endfor %}
+
 </table>
+<br>
+
 
 <!-- Uncomment to debug:
 {{ response_scoring.json()["result"] }}

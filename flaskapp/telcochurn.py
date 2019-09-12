@@ -32,65 +32,22 @@ class mortgagedefault():
 
         if request.method == 'POST':
             ID = 999
-            Age = request.form['Age']
-            Gender = request.form['Gender']
-            Status = request.form['Status']
-            Children = request.form['Children']
-            HomeOwner = request.form['Homeowner']
-            EstIncome = request.form['Income']
-            NetRealizedGainsYTD = request.form['Netrealizedgainsytd']
-            NetRealizedLossesYTD = request.form['Netrealizedlossesytd']
-            SmallestSingleTransaction = request.form[
-              'Smallestsingletransaction']
-            LargestSingleTransaction = request.form['Largestsingletransaction']
-            TotalDollarValueTraded = request.form['Totaldollarvaluetraded']
-            TotalUnitsTraded = request.form['Totalunitstraded']
-            DaysSinceLastLogin = request.form['Dayssincelastlogin']
-            DaysSinceLastTrade = request.form['Dayssincelasttrade']
-            PercentageChangeCalculation = request.form[
-              'Percentagechangecalculation']
+
+
+            data  = {}
+
+            for k, v in request.form.items():
+              data[k] = v
 
             session['ID'] = ID
-            session['Age'] = Age
-            session['Gender'] = Gender
-            session['Status'] = Status
-            session['Children'] = Children
-            session['HomeOwner'] = HomeOwner
-            session['EstIncome'] = EstIncome
-            session['NetRealizedGainsYTD'] = NetRealizedGainsYTD
-            session['NetRealizedLossesYTD'] = NetRealizedLossesYTD
-            session['SmallestSingleTransaction'] = SmallestSingleTransaction
-            session['LargestSingleTransaction'] = LargestSingleTransaction
-            session['TotalDollarValueTraded'] = TotalDollarValueTraded
-            session['TotalUnitsTraded'] = TotalUnitsTraded
-            session['DaysSinceLastLogin'] = DaysSinceLastLogin
-            session['DaysSinceLastTrade'] = DaysSinceLastTrade
-            session[
-              'PercentageChangeCalculation'] = PercentageChangeCalculation
+            for k, v in data.items():
+              session[k] = v
 
             scoring_href = os.environ.get('URL')
             mltoken = os.environ.get('TOKEN')
 
             if not (scoring_href and mltoken):
                 raise EnvironmentError('Env vars URL and TOKEN are required.')
-
-            data = {
-                "ID": ID,
-                "GENDER": Gender,
-                "STATUS": Status,
-                "CHILDREN": Children,
-                "ESTINCOME": EstIncome,
-                "HOMEOWNER": HomeOwner,
-                "AGE": Age,
-                "TOTALDOLLARVALUETRADED": TotalDollarValueTraded,
-                "TOTALUNITSTRADED": TotalUnitsTraded,
-                "LARGESTSINGLETRANSACTION": LargestSingleTransaction,
-                "SMALLESTSINGLETRANSACTION": SmallestSingleTransaction,
-                "PERCENTCHANGECALCULATION": PercentageChangeCalculation,
-                "DAYSSINCELASTLOGIN": DaysSinceLastLogin,
-                "DAYSSINCELASTTRADE": DaysSinceLastTrade,
-                "NETREALIZEDGAINS_YTD": NetRealizedGainsYTD,
-                "NETREALIZEDLOSSES_YTD": NetRealizedLossesYTD}
 
             payload_scoring = {"args": {"input_json": [data]}}
             print("Payload is ")
@@ -107,6 +64,7 @@ class mortgagedefault():
             result = response_scoring.text
             print("Result is ", result)
             result_json = json.loads(result)
+            churn_risk = result_json["result"]["predictions"][0].lower()
             churn_risk = result_json["result"]["predictions"][0].lower()
             flash(
               'The risk of this customer churning is %s ' % churn_risk)
