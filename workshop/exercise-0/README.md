@@ -4,13 +4,13 @@
 
 > **IMPORTANT** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
 
-1. Log into Cloud Pak for Data.
+Log into Cloud Pak for Data.
 
-   ![cpd-login](../.gitbook/assets/project/cpd-login.png)
+![](../.gitbook/assets/project/cpd-login.png)
 
-1. Go the hamburger menu and click *Projects*
+Go the hamburger menu and click *Projects*
 
-1. Create a new project, give it a unique name.
+Create a new project, give it a unique name.
 
 ## About the data set
 
@@ -37,40 +37,44 @@ This file has the following attributes:
 
 > **NOTE** If you do not wish to perform this step, your instructor will provide you credentials for a Db2 Warehouse instance.
 
-1. Log into (or sign up for) [IBM Cloud](https://cloud.ibm.com).
+Log into (or sign up for) [IBM Cloud](https://cloud.ibm.com).
 
-1. Create a [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) service on IBM Cloud. Choose the `Entry` plan as it is compatible with a `Lite` account.
+![](../.gitbook/assets/images/generic/ibm-cloud-dashboard.png)
 
-1. Once created click on *Open Console*.
+Create a [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) service on IBM Cloud. Choose the `Entry` plan as it is compatible with a `Lite` account.
 
-   ![db2-1-cloud-launch](../.gitbook/assets/images/db2/db2-1-cloud-launch.png)
+![](../.gitbook/assets/images/db2/db2-1-provision.png)
 
-1. overview
+Once created click on *Open Console*.
 
-   ![db2-2-console-overview](../.gitbook/assets/images/db2/db2-2-console-overview.png)
+![](../.gitbook/assets/images/db2/db2-1-cloud-launch.png)
 
-1. Load csv
+overview
 
-   ![db2-3-csv-find](../.gitbook/assets/images/db2/db2-3-csv-find.png)
+![](../.gitbook/assets/images/db2/db2-2-console-overview.png)
 
-1. config?
+Load csv
 
-   ![db2-4-csv-config](../.gitbook/assets/images/db2/db2-4-csv-config.png)
+![](../.gitbook/assets/images/db2/db2-3-csv-find.png)
 
-1. start loading
+config?
 
-   ![db2-5-csv-preload](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
+![](../.gitbook/assets/images/db2/db2-4-csv-config.png)
 
-1. loaded
+start loading
 
-   ![db2-6-csv-loaded](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
+![](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
 
-1. extra options with customers and products
+loaded
+
+![](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
+
+extra options with customers and products
 
   |   |   |
   | - | - |
-  | ![db2-7-csv-config-customers](../.gitbook/assets/images/db2/db2-7-csv-config-customers.png) | ![db2-8-csv-config-products](../.gitbook/assets/images/db2/db2-8-csv-config-products.png) |
+  | ![](../.gitbook/assets/images/db2/db2-8-csv-config-products.png) |
 
-1. Back on IBM Cloud, check credentials
+Back on IBM Cloud, check credentials
 
-  ![db2-cloud-credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
+  ![](../.gitbook/assets/images/db2/db2-cloud-credentials.png)

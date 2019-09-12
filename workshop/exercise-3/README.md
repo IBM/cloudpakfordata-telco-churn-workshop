@@ -4,7 +4,7 @@
 
 We'll use a Jupyter notebook to configure OpenScale.
 
-### 1. Download the notebook and add the notebook to the project
+### Download the notebook and add the notebook to the project
 
 * Either clone this repository:
 
