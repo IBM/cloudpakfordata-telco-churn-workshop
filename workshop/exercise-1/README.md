@@ -80,14 +80,6 @@
 
 Instructions go here
 
-## (Optional) Business glossary
-
-Instructions go here
-
 ## (Optional) Data Refinery
-
-Instructions go here
-
-## (Optional) Knowledge Catalog
 
 Instructions go here

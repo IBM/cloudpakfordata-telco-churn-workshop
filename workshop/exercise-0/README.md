@@ -35,6 +35,8 @@ This file has the following attributes:
 
 ## (Optional) Seeding our Db2 database
 
+> **NOTE** If you do not wish to perform this step, your instructor will provide you credentials for a Db2 Warehouse instance.
+
 1. Log into (or sign up for) [IBM Cloud](https://cloud.ibm.com).
 
 1. Create a [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) service on IBM Cloud. Choose the `Entry` plan as it is compatible with a `Lite` account.
