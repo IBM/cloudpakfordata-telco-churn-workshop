@@ -2,11 +2,11 @@
 
 ## Add a new Data Source connection
 
-1. Go the hamburger menu and click *Connections*
+Go the hamburger menu and click *Connections*
 
    ![cpd-conn-menu](../.gitbook/assets/images/connections/cpd-conn-menu.png)
 
-1. The overview will appear
+The overview will appear
 
    ![conn-1-overview-empty](../.gitbook/assets/images/connections/conn-1-overview-empty.png)
 
