@@ -6,7 +6,7 @@
 
 1. Log into Cloud Pak for Data.
 
-   ![](../.gitbook/assets/project/login.png)
+   ![cpd-login](../.gitbook/assets/project/cpd-login.png)
 
 1. Go the hamburger menu and click *Projects*
 
@@ -41,34 +41,34 @@ This file has the following attributes:
 
 1. Once created click on *Open Console*.
 
-   ![db2-1-cloud-launch](../.gitbook/assets/db2/db2-1-cloud-launch.png)
+   ![db2-1-cloud-launch](../.gitbook/assets/images/db2/db2-1-cloud-launch.png)
 
 1. overview
 
-  ![db2-2-console-overview](../.gitbook/assets/db2/db2-2-console-overview.png)
+   ![db2-2-console-overview](../.gitbook/assets/images/db2/db2-2-console-overview.png)
 
 1. Load csv
 
-  ![db2-3-csv-find](../.gitbook/assets/db2/db2-3-csv-find.png)
+   ![db2-3-csv-find](../.gitbook/assets/images/db2/db2-3-csv-find.png)
 
 1. config?
 
-  ![db2-4-csv-config](../.gitbook/assets/db2/db2-4-csv-config.png)
+   ![db2-4-csv-config](../.gitbook/assets/images/db2/db2-4-csv-config.png)
 
 1. start loading
 
-  ![db2-5-csv-preload](../.gitbook/assets/db2/db2-5-csv-preload.png)
+   ![db2-5-csv-preload](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
 
 1. loaded
 
-  ![db2-6-csv-loaded](../.gitbook/assets/db2/db2-6-csv-loaded.png)
+   ![db2-6-csv-loaded](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
 
 1. extra options with customers and products
 
   |   |   |
   | - | - |
-  | ![db2-7-csv-config-customers](../.gitbook/assets/db2/db2-7-csv-config-customers.png) | ![db2-8-csv-config-products](../.gitbook/assets/db2/db2-8-csv-config-products.png) |
+  | ![db2-7-csv-config-customers](../.gitbook/assets/images/db2/db2-7-csv-config-customers.png) | ![db2-8-csv-config-products](../.gitbook/assets/images/db2/db2-8-csv-config-products.png) |
 
 1. Back on IBM Cloud, check credentials
 
-  ![db2-cloud-credentials](../.gitbook/assets/db2/db2-cloud-credentials.png)
+  ![db2-cloud-credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
