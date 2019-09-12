@@ -40,7 +40,7 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 * For Cell `1.1 Restart the Kernel Now` choose the `kernel` tab at the top of the notebook, and click `Restart`. Wait for the kernel to restart and show as connected.
 
-  ![Jupyter Restart Kernel](../../doc/source/images/JupyterRestartKernel.png)
+  ![Jupyter Restart Kernel](.gitbook/assets/images/wml/JupyterRestartKernel.png)
 
 #### Add the dataset to your project and notebook
 
@@ -56,7 +56,7 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 * Choose your virtualized data (i.e. `User<123>.billingProductCustomers`), click `Insert to code` and choose `Insert Pandas DataFrame`
 
-  ![Jupyter Insert Pandas DF.](../../doc/source/images/JupyterInsertPandasDF.png)
+  ![Jupyter Insert Pandas DF.](.gitbook/assets/images/wml/JupyterInsertPandasDF.png)
 
 * The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
 
@@ -82,17 +82,17 @@ Next, we'll create a project release and tag the model under version control. We
 
 * Go back to the project homepage. You may see a "**Changes made**" message. If so, you can Click on `commit and push`. If not, follow the instructions below.
 
-  ![changes_made.png](../../doc/source/images/changes_made.png)
+  ![changes_made.png](.gitbook/assets/images/wml/changes_made.png)
 
 * You will see there is a list of the assets that are created in this project. Provide a `Commit message` to identify and make note of changes being pushed. Provide a version tag under `Create version tag for release`. Please note that the tag and commit message are both very important to identify and deploy the changes.
 
-  ![commit_and_push.png](../../doc/source/images/commit_and_push.png)
+  ![commit_and_push.png](.gitbook/assets/images/wml/commit_and_push.png)
 
 * Click the `Commit and push` button.
 
 * If the "**Changes made**" message is not visible, click the icon for git merge in the upper left, and choose `Commit`. Add a commit message, and click 'Commit'.
 
-  ![git commit](../../doc/source/images/ICP4DgitCommit.png)
+  ![git commit](.gitbook/assets/images/wml/ICP4DgitCommit.png)
 
 * Use the same git icon, and choose 'Push'. Add a tag, i.e. `v1`, `v2`, etc and click `Push`
 
@@ -108,13 +108,13 @@ Now that we have a committed and tagged version of the project, we can create a 
 
 * Give it a name that you can easily track. `Route` will be a part of the url. It should be lowercase. Choose the target source project and tag that you created above. Click the `Create` button.
 
-  ![Create Project Release](../../doc/source/images/ICP4DcreateProjectRelease.png)
+  ![Create Project Release](.gitbook/assets/images/wml/ICP4DcreateProjectRelease.png)
 
 ### Create an online and batch deployment for the deployed model
 
 * Under the `Assets` tab, select the model you just created and then click the upper-right `+ web service` button. This will add an online deployment service for this model.
 
-  ![add_web_service.png](../../doc/source/images/add_web_service.png)
+  ![add_web_service.png](.gitbook/assets/images/wml/add_web_service.png)
 
 * Give the web service a name, which will be appended to the URL.
 
@@ -124,11 +124,11 @@ Now that we have a committed and tagged version of the project, we can create a 
 
 * Click the `Create` button.
 
-  ![create_web_service](../../doc/source/images/ICP4DcreateWebService.pngg)
+  ![create_web_service](.gitbook/assets/images/wml/ICP4DcreateWebService.pngg)
 
   > Note: At this time, the online deployment is created. You can also find the REST API URL and deployment token under the `Overview` tab.
 
-  ![Web App Overview](../../doc/source/images/ICP4DwebAppOverview.png)
+  ![Web App Overview](.gitbook/assets/images/wml/ICP4DwebAppOverview.png)
 
 The deployment is still not active. We need to launch and enable it before it can be used.
 
@@ -138,15 +138,15 @@ The deployment is still not active. We need to launch and enable it before it ca
 
 * Click `Launch` on the top right and then choose `Launch` from the popup window, to activate those deployments. This may take few seconds.
 
-  ![Launch Deployment](../../doc/source/images/ICP4DLaunchDeployment.png)
+  ![Launch Deployment](.gitbook/assets/images/wml/ICP4DLaunchDeployment.png)
 
 * The onlinescore job is still disabled because there are extra steps to enable it. Click on the action menu (vertical 3 dots) and select `Enable`. This may take a little longer. Wait until `AVAILABILITY` shows `Enabled`.
 
-  ![Enable job](../../doc/source/images/ICP4DenableJob.png)
+  ![Enable job](.gitbook/assets/images/wml/ICP4DenableJob.png)
 
   > Note: For any additional changes made to the project, just update the MMD environment with the new tag, and the new version of assets are ready to be deployed.
 
-   ![update.png](../../doc/source/images/update.png)
+   ![update.png](.gitbook/assets/images/wml/update.png)
 
 ## Testing the model with built-in UI
 
@@ -157,7 +157,7 @@ Test the model in the API interface.
 * Click the enabled deployment. Under the `API` tab, we can test the model.
 * There may be some inputs with `INSERT_VALUE`. Simply change them into values that makes sense.
 
-  ![deployment_test.png](../../doc/source/images/deployment_test.png)
+  ![deployment_test.png](.gitbook/assets/images/wml/deployment_test.png)
 
 * Click `Submit`. The result is shown on right with inputs and prediction results.
 * You can click the `Generate Code` button to get the code for [deployment testing using curl](#deployment-testing-with-curl).
