@@ -18,4 +18,4 @@ Cloud Pak for Data...:
 
 Here's a quick overview video of Cloud Pak for Data:
 
-[![video](https://i.ytimg.com/vi/oPN_FhGZSCg/0.jpg)](https://youtu.be/oPN_FhGZSCg)
+<iframe width="800" height="400" src="https://www.youtube.com/embed/oPN_FhGZSCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
