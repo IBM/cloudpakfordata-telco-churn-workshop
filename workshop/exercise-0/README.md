@@ -72,7 +72,7 @@ Log into (or sign up for) [IBM Cloud](https://cloud.ibm.com).
 
 ![](../.gitbook/assets/images/generic/ibm-cloud-sign-up.png)
 
-From the dashboard click on the catalog button.
+From the dashboard click on the *Create resource* button to go to the *Catalog*.
 
 ![](../.gitbook/assets/images/generic/ibm-cloud-dashboard.png)
 
@@ -84,36 +84,34 @@ Choose the `Entry` plan as it is compatible with a `Lite` account.
 
 ![](../.gitbook/assets/images/db2/db2-0-pricing.png)
 
-Once created click on *Open Console*.
+Once the Db2 Warehouse service is created click on *Open Console*.
 
 ![](../.gitbook/assets/images/db2/db2-1-cloud-launch.png)
 
-overview
+You'll be directed to a Db2 web console dashboard where you can load data by clicking the *Load* button.
 
 ![](../.gitbook/assets/images/db2/db2-2-console-overview.png)
 
-Load csv
+Select the `billing.csv` file in the [data](../data) folder.
 
 ![](../.gitbook/assets/images/db2/db2-3-csv-find.png)
 
-config?
+On the next panel we configure where the data will go in the database. We'll use the *DASH100239* schema, and opt to create a new table. Call it `BILLING`, and click *Next*.
 
 ![](../.gitbook/assets/images/db2/db2-4-csv-config.png)
 
-start loading
+On the next panel click *Begin Load* to start loading the data.
 
 ![](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
 
-loaded
+Verify all the rows were loaded.
 
 ![](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
 
-extra options with customers and products
+Repeat the process for `products.csv` and `customer-service.csv`, call these tables `PRODUCTS` and `CUSTOMERS`. Note that there will be an additional panel to configure data, the defaults are accetable.
 
-|   |   |
-| - | - |
-| ![](../.gitbook/assets/images/db2/db2-8-csv-config-products.png) | ![](../.gitbook/assets/images/db2/db2-8-csv-config-customers.png) |
+![](../.gitbook/assets/images/db2/db2-8-csv-config-products.png)
 
-Back on IBM Cloud, check credentials
+Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Warehouse by going back to our service, clicking on the *Service credentials* button, and creating a new credential. Copy these down somewhere as we'll need them in the next section.
 
 ![](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
