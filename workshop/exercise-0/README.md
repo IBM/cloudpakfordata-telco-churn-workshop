@@ -29,17 +29,34 @@ The data set used for this workshop is derived from [Kaggle](https://www.kaggle.
 This file has the following attributes:
 
 * Customer ID
-* Amount $
+* Contract *(Month-to-month, one year, two year)*
+* Paperless Billing *(Yes, No)*
+* Payment Method *(Bank transfer, Credit card, Electronic check, Mailed check)*
+* Monthly Charges *($)*
+* Total Charges *($)*
+* Churn *(Yes, No)*
 
 **[customer-service.csv](customer-service.csv)**
 
 * Customer ID
-* Senior, Y/N
+* Gender *(Male, Female)*
+* Senior Citizen *(1, 0)*
+* Partner *(Yes, No)*
+* Dependents *(Yes, No)*
+* Tenure *(1-100)*
 
 **[products.csv](products.csv)**
 
 * Customer ID
-* Has cable, Y/N
+* Phone Service *(Yes, No)*
+* Multiple Lines *(Yes, No, No phone service)*
+* Internet Service *(DSL, Fiber optic, No)*
+* Online Security *(Yes, No, No internet service)*
+* Online Backup *(Yes, No, No internet service)*
+* Device Protection *(Yes, No, No internet service)*
+* Tech Support *(Yes, No, No internet service)*
+* Streaming TV *(Yes, No, No internet service)*
+* Streaming Movies *(Yes, No, No internet service)*
 
 ## (Optional) Seeding our Db2 database
 
@@ -47,11 +64,19 @@ This file has the following attributes:
 
 Log into (or sign up for) [IBM Cloud](https://cloud.ibm.com).
 
+![](../.gitbook/assets/images/generic/ibm-cloud-sign-up.png)
+
+From the dashboard click on the catalog button.
+
 ![](../.gitbook/assets/images/generic/ibm-cloud-dashboard.png)
 
-Create a [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) service on IBM Cloud. Choose the `Entry` plan as it is compatible with a `Lite` account.
+Find the [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) tile from the *Database* section.
 
-![](../.gitbook/assets/images/db2/db2-1-provision.png)
+![](../.gitbook/assets/images/db2/db2-0-catalog.png)
+
+Choose the `Entry` plan as it is compatible with a `Lite` account.
+
+![](../.gitbook/assets/images/db2/db2-0-pricing.png)
 
 Once created click on *Open Console*.
 
@@ -79,10 +104,10 @@ loaded
 
 extra options with customers and products
 
-  |   |   |
-  | - | - |
-  | ![](../.gitbook/assets/images/db2/db2-8-csv-config-products.png) |
+|   |   |
+| - | - |
+| ![](../.gitbook/assets/images/db2/db2-8-csv-config-products.png) | ![](../.gitbook/assets/images/db2/db2-8-csv-config-customers.png) |
 
 Back on IBM Cloud, check credentials
 
-  ![](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
+![](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
