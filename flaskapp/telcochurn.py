@@ -59,13 +59,10 @@ def generate_input_lines():
     result = ""
     for k in floats.keys():
         minn, maxx, vall = floats[k]
-        
+
         result +=f'<dt>{k}</dt>'
         result +=f'<dd>'
-    #    result +=f'<input type="button" value="-" onClick="subtract_one_{k}()">'
         result +=f'$<input type="number" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
-    #    result +=f'<input type="button" value="+" onClick="add_one_{k}()">'
-    #    result +=f'{{#<span id="slider_value_{k}" style="color:blue;font-weight:bold;"></span><br><br>#}}'
         result +=f'</dd>'
 
     for k in ints.keys():
@@ -74,7 +71,7 @@ def generate_input_lines():
         result +=f'<dd>'
         result +=f'<input type="number" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
         result +=f'</dd>'
-        
+
     for k in strings.keys():
         result +=f'<dt>{k}</dt>'
         result +=f'<dd>'
@@ -87,9 +84,9 @@ def generate_input_lines():
             for value in strings[k]:
                 result +=f'<option value="{value}" selected>{value}</option>'
             result +=f'</select>'
-            
+
         result +=f'</dd>'
-    
+
     return result
 
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
@@ -102,7 +99,6 @@ class mortgagedefault():
 
         if request.method == 'POST':
             ID = 999
-
 
             session['ID'] = ID
             data  = {}

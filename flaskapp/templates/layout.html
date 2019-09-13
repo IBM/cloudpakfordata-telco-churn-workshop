@@ -20,27 +20,22 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <title>Stock Trader Churn</title>
+  <title>Customer Churn Predictor</title>
   <script type="text/javascript" src="static/range.js"></script>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 </head>
 
-
 <div class="page">
   <img height="60" src="{{ url_for('static', filename='Watson.png') }}" />
-  <h1>&nbsp;&nbsp; Stock Trader Churn Predictor</h1>
+  <h1>&nbsp;&nbsp; Customer Churn Predictor</h1>
   <div class="metanav">
     <a class="" href="/">Reset</a>
   </div>
-  {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-  {% endfor %}
-  {% block body %}{% endblock %}
-      <div class="metanav">
-        <a class="" href="/">Reset</a>
-      </div>
-    </div>
-
-<footer>
-</footer>
+  <div>
+    {% for message in get_flashed_messages() %}
+      <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block body %}{% endblock %}
+  </div>
+</div>

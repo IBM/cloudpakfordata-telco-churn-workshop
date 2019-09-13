@@ -17,7 +17,7 @@
 
   <head>
     <br>
-    <h2>Customer churn risk prediction and suggested offer</h2>
+    <h2>Customer churn risk prediction</h2>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script> var result_json = {{ result|tojson }}; </script>
     <script type="text/javascript">
@@ -42,23 +42,23 @@
       }
     </script>
   </head>
+
   <body>
     <div>
       <br/>
-      
+
       {% if churn_risk == 'no risk' %}
       This customer has <strong>Low</strong> risk. The recommended offer is <strong>Approve Request</strong>.
       {% elif churn_risk == 'risk' %}
       This customer has <strong>High</strong> risk. The recommended offer is <strong>Reject Request</strong>.
       {% endif %}
-      
-      
+
       {% if churn_risk == 'low' %}
-      This customer has <strong>low</strong> churn risk. The recommended offer is <strong>3 free trades</strong>.
+      This customer has <strong>low</strong> churn risk. The recommended offer is <strong>lower fees for 1 month</strong>.
       {% elif churn_risk == 'medium' %}
-      This customer has <strong>medium</strong> churn risk. The recommended offer is <strong>5 free trades</strong>.
+      This customer has <strong>medium</strong> churn risk. The recommended offer is <strong>lower fees for 6 months</strong>.
       {% elif churn_risk == 'high' %}
-      This customer has <strong>high</strong> churn risk. The recommended offer is <strong>5 free trades plus a free consult from a wealth management advisor</strong>.
+      This customer has <strong>high</strong> churn risk. The recommended offer is <strong>lower fees for 12 months</strong>.
       {% endif %}
     </div>
     <div id="donutchart" style="width: 100%; height: 500px;"></div>

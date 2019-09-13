@@ -6,6 +6,8 @@
 build/
 DerivedData/
 .DS_Store
+.env
+.venv
 node_modules
 _book
 
@@ -69,6 +71,3 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
-
-.DS_Store
-
