@@ -6,19 +6,20 @@ Cloud Pak for Data represents a ... It is built to run natively on Red Hat OpenS
 
 In this lab we'll cover using the Cloud Pak for Data platform on OpenShift and typical data scientist tasks including:
 
-* Environment recap: What is Cloud Pak for Data?
-* Pre-work
+* **Environment recap**
+  * What is Cloud Pak for Data?
+* **Pre-work**
   * Setting up a project
   * About the data set
   * (Optional) Seeding our Db2 database
-* Data Analysis
+* **Data Analysis**
   * Add a new Data Source connection
   * Virtualize Db2 data with Data Virtualization
   * Visualize data with Cognos Dashboards
-* Machine Learning
+* **Machine Learning**
   * Build a model with Spark
   * Deploying a model with Watson Machine Learning
   * Testing the model with built-in UI
   * (Optional) Create a Python Flask app that uses the model
-* Monitoring models
+* **Monitoring models**
   * Monitor model with Watson OpenScale
