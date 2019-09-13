@@ -3,83 +3,88 @@
 This section is broken up into the following steps:
 
 1. [Build a model with Spark](#build-a-model-with-spark)
-1. [Deploy a model with Watson Machine Learning](#deploy-a-model-with-watson-machine-learning)
+1. [Create a project release](#create-a-project-release)
 1. [Testing the model with Cloud Pak for Data](#testing-the-model-with-cloud-pak-for-data)
 1. [(Optional) Create a Python Flask app that uses the model](#optional-create-a-python-flask-app-that-uses-the-model)
 
 ## Build a model with Spark
 
-* Either clone this repository:
+### Import the notebook
+
+At the project overview click the *New Asset* button, and choose *Add notebook*.
+
+![Add a new asset](../.gitbook/assets/images/wml/wml-1-add-asset.png)
+
+On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
 ```bash
-git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
+https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/TelcoChurnICP4D.ipynb
 ```
 
-or download the notebook directly:
+> The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
+>
+> * **Notebook**: [TelcoChurnICP4D.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/TelcoChurnICP4D.ipynb)
+> * **Notebook with output**: [with-output/TelcoChurnICP4D.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/TelcoChurnICP4D.ipynb)
 
-```bash
-wget https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/TelcoChurnICP4D.ipynb
-```
+![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
 
-### 2. Create a new project and load the notebook
+When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-* From the Main Menu, Choose `Project`
+![Notebook loaded](../.gitbook/assets/images/wml/wml-3-notebook-loaded.png)
 
-* Under the `Assets` tab in your project, Click `+ New Project`, give it a name of your choosing (preferably using a tag for you to easily identify it from other users), and click `OK`.
+### Run the notebook
 
-* Choose the `New` tab. Enter an optional description, and click `Create`.
+Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
-* From the menu on the left, choose `Notebooks` and click `+Add Notebook`.
+#### Install Python packages
 
-* Choose the `From file` tab and navigate to where you downloaded the `TelcoChurnICP4D.ipynb` notebook, either in `~/Downloads/` or the location where you cloned this repository, in the `cloudpakfordata101/workshop` directory.
+Section `1.0 Install required packages` will install libraries used to create the model, such as: [`pyspark`](https://spark.apache.org/docs/latest/api/python/index.html), and [`sklearn`](https://scikit-learn.org/stable/).
 
-### 3. Configure and run the notebook
+#### Add the data set to the notebook
 
-* Spend an minute looking through the sections of the notebook to get an overview
+Section `2.0 Load and Clean data` will load the virtualized data from the previous exercise. Highlight the cell labelled `# Place cursor ...` by clicking on it. Click on the *10/01* button to select a specific data set. Choose The *Remote* tab, and pick the virtualized data set that has all three joined tables (i.e. `User999.billing+products+customers`), and opt to insert the data as a *Pandas DataFrame*.
 
-* You will run cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. While the cell is running, an asterisck will show up in the brackets to the left of the cell `[*]` and when it is done, a sequential number will show up, i.e. `[17]`.
+![Add the data as a Pandas DataFrame](../.gitbook/assets/images/wml/wml-4-add-dataframe.png)
 
-#### Install packages and restart the kernel
+By adding data a block of code will be added to the notebook. The code will automatically load that data set and create a Pandas DataFrame.
 
-* Run the cell in the section `1.0 Install required packages` and wait for it to complete.
+![Generated code to handle Pandas DataFrame](../.gitbook/assets/images/wml/wml-5-generated-code-dataframe.png)
 
-* For Cell `1.1 Restart the Kernel Now` choose the `kernel` tab at the top of the notebook, and click `Restart`. Wait for the kernel to restart and show as connected.
+> **IMPORTANT**: Don't forget to update the next cell `df = df1` with the variable from the generated code.
 
-![x](../.gitbook/assets/images/wml/JupyterRestartKernel.png)
-
-#### Add the dataset to your project and notebook
-
-* In section `2.0 Load and Clean Data` highlite the cell with `# Place cursor below and insert....` by clicking on it.
-
-* Click on the `10/01` tab at the top which has the tooltip `Find data`. Your previously loaded data set shoulud show up.
-
-* Click `Insert to code` and choose `Insert pandas DataFrame`.
-
-* Click the `10/01` "Find data" icon in the upper right of the notebook.
-
-* To load the virtualized data created in Exercise-1, choose the `Remote` tab.
-
-* Choose your virtualized data (i.e. `User<123>.billingProductCustomers`), click `Insert to code` and choose `Insert Pandas DataFrame`
-
-![x](../.gitbook/assets/images/wml/JupyterInsertPandasDF.png)
-
-* The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
-
-* Run the cell to load the data
-
-* Continue with the cells in sections `2.x` to clean the data.
+Continue to run the remaining cells in the section to clean the data.
 
 #### Create the model
 
-* Under `3.0 Create a model`, you may change the `MODEL_NAME` to something unique and easisly identifiable i.e. `<your name>-TelcoChurn`. Add a version number if you are creating multiple versions of the machine learning model that differ.
+Section `3.0 Create a model` will split the data into training and test data, and create a model using the Random Forest Classifier algorithm.
 
-* Run all the cells in sections `3.x` to create the ML model.
+![Building the pipeline and model](../.gitbook/assets/images/wml/wml-6-buid-pipeline-and-model.png)
+
+Continue to run the remaining cells in the section to build the model.
 
 #### Save the model
 
-* Run the cells under `4.0 Save the model` to save the model into your project.
+Section `4.0 Save the model` will save the model to your project. Update the `MODEL_NAME` variable to something unique and easisly identifiable.
 
-## Deploying a model with Watson Machine Learning
+```python
+MODEL_NAME = "user123 customer churn model"
+```
+
+Continue to run the remaining cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
+
+#### Deploy to Watson Machine Learning
+
+Section `5.0 Deploy the model to Watson Machine Learning` will deploy your model to the Watson Machine Learning service with the Watson Machine Learning client. Update the credentials in the cell seen below. Your instructor will provide the URL, the username and password are the same used to log into Cloud Pak for Data.
+
+![Update credentials](../.gitbook/assets/images/wml/wml-7-update-credentials.png)
+
+Once deployed the model and deployment will be viewed.
+
+![Building the pipeline and model](../.gitbook/assets/images/wml/wml-8-deploy-to-wml.png)
+
+We've successfully built and deployed a machine learning model. Congratulations!
+
+## Create a project release
 
 Next, we'll create a project release and tag the model under version control. We'll use model management and deployment to make the released model available as a web service (REST API).
 
@@ -101,7 +106,7 @@ Next, we'll create a project release and tag the model under version control. We
 
 * Use the same git icon, and choose 'Push'. Add a tag, i.e. `v1`, `v2`, etc and click `Push`
 
-### Create a project release
+### Release a new version
 
 Now that we have a committed and tagged version of the project, we can create a project release and deploy it as a web service.
 
