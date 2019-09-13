@@ -1,24 +1,30 @@
 # Pre-work
 
+This section is broken up into the following steps:
+
+1. [Setting up a project](#setting-up-a-project)
+1. [About the data set](#about-the-data-set)
+1. [(Optional) Seeding our Db2 database](#optional-seeding-our-db2-database)
+
 ## Setting up a project
 
-> **IMPORTANT** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
+> **NOTE** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
 
 Log into Cloud Pak for Data.
 
-![](../.gitbook/assets/manage/cpd-login.png)
+![](../.gitbook/assets/images/manage/cpd-login.png)
 
 Go the hamburger menu and click *Projects*
 
-![](../.gitbook/assets/manage/cpd-projects-menu.png)
+![](../.gitbook/assets/images/manage/cpd-projects-menu.png)
 
 Click on *New project*
 
-![](../.gitbook/assets/manage/cpd-new-project.png)
+![](../.gitbook/assets/images/manage/cpd-new-project.png)
 
 Create a new project, give it a unique name.
 
-![](../.gitbook/assets/manage/cpd-new-project-name.png)
+![](../.gitbook/assets/images/manage/cpd-new-project-name.png)
 
 ## About the data set
 
