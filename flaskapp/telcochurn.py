@@ -43,11 +43,13 @@ strings = {
     "Churn": ['No', 'Yes'],
 }
 
+# min, max, default value
 floats = {
     "MonthlyCharges": [0, 5000, 18.75],
     "TotalCharges": [0, 1000, 53.15]
 }
 
+# min, max, default value
 ints = {
     "SeniorCitizen" : [0, 1, 0],
     "tenure": [0, 100, 2]
