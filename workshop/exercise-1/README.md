@@ -1,38 +1,44 @@
 # Exercise 1: Data Analysis
 
+This section is broken up into the following steps:
+
+1. [Add a new Data Source connection](#add-a-new-data-source-connection)
+1. [Virtualize Db2 data with Data Virtualization](#virtualize-db2-data-with-data-virtualization)
+1. [Visualize data with Cognos Dashboards](#visualize-data-with-cognos-dashboards)
+
 ## Add a new Data Source connection
 
-Go the (☰) menu and click *Connections*
+To add a new data source, go the (☰) menu and click on the *Connections* option.
 
-![](../.gitbook/assets/images/connections/cpd-conn-menu.png)
+![(☰) Menu -> Collections](../.gitbook/assets/images/connections/cpd-conn-menu.png)
 
-The overview will appear
+At the empty overview, click *Add connection*.
 
-![](../.gitbook/assets/images/connections/conn-1-overview-empty.png)
+![No connections, yet.](../.gitbook/assets/images/connections/conn-1-overview-empty.png)
 
-Add in details about your Db2 Warehouse connection from the pre-work
+Start by giving your new *Connection* a name and select *Db2 Warehouse on Cloud* as your connection type. More fields should apper. Fill the new fields with the same credentials for your own Db2 Warehouse connection from the previous section (or ask your instructor for shared credentials).
 
-![](../.gitbook/assets/images/connections/conn-2-details.png)
+![Add a Db2 Warehouse on Cloud connection](../.gitbook/assets/images/connections/conn-2-details.png)
 
-The new connection will be listed
+The new connection will be listed in the overview.
 
-![](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
+![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
 
 ## Virtualize Db2 data with Data Virtualization
 
-Go the (☰) menu and click *Collect -> Virtualized data*.
+To launch the data virtualization tool, go the (☰) menu and click *Collect* and then *Virtualized data*.
 
-![](../.gitbook/assets/images/dv/cpd-dv-menu.png)
+![(☰) Menu -> Collect -> Virtualized data](../.gitbook/assets/images/dv/cpd-dv-menu.png)
 
-See the overview, there are no data sources.
+At the empty overview, click *Add* and choose *Add remote connector*.
 
-![](../.gitbook/assets/images/dv/dv-data-sources-1-empty.png)
+![No data sources, yet](../.gitbook/assets/images/dv/dv-data-sources-1-empty.png)
 
-Add a data source, the one we made in the previous step.
+Select the data source we made in the previous step, and click *Next*.
 
-![](../.gitbook/assets/images/dv/dv-data-sources-2-add.png)
+![Add the Db2 Warehouse connection](../.gitbook/assets/images/dv/dv-data-sources-2-add.png)
 
-Ta-da, now it appears
+The new connection will be listed as a data virtualization option.
 
 ![](../.gitbook/assets/images/dv/dv-data-sources-3-shown.png)
 
@@ -78,8 +84,4 @@ Repeat this again for the third table. Going back to your project you should see
 
 ## Visualize data with Cognos Dashboards
 
-Instructions go here
-
-## (Optional) Data Refinery
-
-Instructions go here
+TBD
