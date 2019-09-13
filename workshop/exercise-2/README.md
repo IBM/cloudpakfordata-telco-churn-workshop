@@ -100,7 +100,7 @@ Next, we'll create a project release and tag the model under version control. We
 
 Now that we have a committed and tagged version of the project, we can create a project release and deploy it as a web service.
 
-* Click the upper left hamburger menu and choose the left menu's `Adminster` drop-down list and click on `Manage deployments`.
+* Click the upper left (☰) menu and choose the left menu's `Adminster` drop-down list and click on `Manage deployments`.
 
 * Click on `+ Add Project release` to create the deployment.
 

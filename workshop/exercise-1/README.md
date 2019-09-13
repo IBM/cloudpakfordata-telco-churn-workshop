@@ -2,7 +2,7 @@
 
 ## Add a new Data Source connection
 
-Go the hamburger menu and click *Connections*
+Go the (☰) menu and click *Connections*
 
 ![](../.gitbook/assets/images/connections/cpd-conn-menu.png)
 
@@ -20,7 +20,7 @@ The new connection will be listed
 
 ## Virtualize Db2 data with Data Virtualization
 
-Go the hamburger menu and click *Collect -> Virtualized data*.
+Go the (☰) menu and click *Collect -> Virtualized data*.
 
 ![](../.gitbook/assets/images/dv/cpd-dv-menu.png)
 

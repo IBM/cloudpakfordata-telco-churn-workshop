@@ -14,7 +14,7 @@ Log into Cloud Pak for Data.
 
 ![](../.gitbook/assets/images/manage/cpd-login.png)
 
-Go the hamburger menu and click *Projects*
+Go the (☰) menu and click *Projects*
 
 ![](../.gitbook/assets/images/manage/cpd-projects-menu.png)
 
