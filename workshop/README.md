@@ -26,7 +26,7 @@ Cloud Pak for Data represents an all-in-one platform for all your data needs. Cl
 
 ![Cloud Pak for Data pipeline](.gitbook/assets/images/generic/cp4data.png)
 
-### A few other noteworthy mentions:
+### A few other noteworthy mentions
 
 Cloud Pak for Data:
 

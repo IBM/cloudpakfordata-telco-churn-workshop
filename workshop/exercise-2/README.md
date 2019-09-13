@@ -1,19 +1,24 @@
 # Exercise 2: Machine Learning
 
-## Build a model with Spark
+This section is broken up into the following steps:
 
-### Download the notebook
+1. [Build a model with Spark](#build-a-model-with-spark)
+1. [Deploy a model with Watson Machine Learning](#deploy-a-model-with-watson-machine-learning)
+1. [Testing the model with Cloud Pak for Data](#testing-the-model-with-cloud-pak-for-data)
+1. [(Optional) Create a Python Flask app that uses the model](#optional-create-a-python-flask-app-that-uses-the-model)
+
+## Build a model with Spark
 
 * Either clone this repository:
 
 ```bash
-git clone https://github.com/IBM/cloudpakfordata101
+git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
 ```
 
 or download the notebook directly:
 
 ```bash
-wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/TelcoChurnICP4D.ipynb
+wget https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/TelcoChurnICP4D.ipynb
 ```
 
 ### 2. Create a new project and load the notebook
@@ -40,7 +45,7 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 * For Cell `1.1 Restart the Kernel Now` choose the `kernel` tab at the top of the notebook, and click `Restart`. Wait for the kernel to restart and show as connected.
 
-  ![](.gitbook/assets/images/wml/JupyterRestartKernel.png)
+![x](../.gitbook/assets/images/wml/JupyterRestartKernel.png)
 
 #### Add the dataset to your project and notebook
 
@@ -56,7 +61,7 @@ wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/Te
 
 * Choose your virtualized data (i.e. `User<123>.billingProductCustomers`), click `Insert to code` and choose `Insert Pandas DataFrame`
 
-  ![](.gitbook/assets/images/wml/JupyterInsertPandasDF.png)
+![x](../.gitbook/assets/images/wml/JupyterInsertPandasDF.png)
 
 * The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
 
@@ -82,17 +87,17 @@ Next, we'll create a project release and tag the model under version control. We
 
 * Go back to the project homepage. You may see a "**Changes made**" message. If so, you can Click on `commit and push`. If not, follow the instructions below.
 
-  ![](.gitbook/assets/images/wml/changes_made.png)
+![x](../.gitbook/assets/images/wml/changes_made.png)
 
 * You will see there is a list of the assets that are created in this project. Provide a `Commit message` to identify and make note of changes being pushed. Provide a version tag under `Create version tag for release`. Please note that the tag and commit message are both very important to identify and deploy the changes.
 
-  ![](.gitbook/assets/images/wml/commit_and_push.png)
+![x](../.gitbook/assets/images/wml/commit_and_push.png)
 
 * Click the `Commit and push` button.
 
 * If the "**Changes made**" message is not visible, click the icon for git merge in the upper left, and choose `Commit`. Add a commit message, and click 'Commit'.
 
-  ![](.gitbook/assets/images/wml/ICP4DgitCommit.png)
+![x](../.gitbook/assets/images/wml/ICP4DgitCommit.png)
 
 * Use the same git icon, and choose 'Push'. Add a tag, i.e. `v1`, `v2`, etc and click `Push`
 
@@ -108,13 +113,13 @@ Now that we have a committed and tagged version of the project, we can create a 
 
 * Give it a name that you can easily track. `Route` will be a part of the url. It should be lowercase. Choose the target source project and tag that you created above. Click the `Create` button.
 
-  ![](.gitbook/assets/images/wml/ICP4DcreateProjectRelease.png)
+![x](../.gitbook/assets/images/wml/ICP4DcreateProjectRelease.png)
 
 ### Create an online and batch deployment for the deployed model
 
 * Under the `Assets` tab, select the model you just created and then click the upper-right `+ web service` button. This will add an online deployment service for this model.
 
-  ![](.gitbook/assets/images/wml/add_web_service.png)
+![x](../.gitbook/assets/images/wml/add_web_service.png)
 
 * Give the web service a name, which will be appended to the URL.
 
@@ -124,11 +129,11 @@ Now that we have a committed and tagged version of the project, we can create a 
 
 * Click the `Create` button.
 
-  ![](.gitbook/assets/images/wml/ICP4DcreateWebService.pngg)
+![x](../.gitbook/assets/images/wml/ICP4DcreateWebService.pngg)
 
   > Note: At this time, the online deployment is created. You can also find the REST API URL and deployment token under the `Overview` tab.
 
-  ![](.gitbook/assets/images/wml/ICP4DwebAppOverview.png)
+![x](../.gitbook/assets/images/wml/ICP4DwebAppOverview.png)
 
 The deployment is still not active. We need to launch and enable it before it can be used.
 
@@ -138,17 +143,17 @@ The deployment is still not active. We need to launch and enable it before it ca
 
 * Click `Launch` on the top right and then choose `Launch` from the popup window, to activate those deployments. This may take few seconds.
 
-  ![](.gitbook/assets/images/wml/ICP4DLaunchDeployment.png)
+![x](../.gitbook/assets/images/wml/ICP4DLaunchDeployment.png)
 
 * The onlinescore job is still disabled because there are extra steps to enable it. Click on the action menu (vertical 3 dots) and select `Enable`. This may take a little longer. Wait until `AVAILABILITY` shows `Enabled`.
 
-  ![](.gitbook/assets/images/wml/ICP4DenableJob.png)
+![x](../.gitbook/assets/images/wml/ICP4DenableJob.png)
 
   > Note: For any additional changes made to the project, just update the MMD environment with the new tag, and the new version of assets are ready to be deployed.
 
-![](.gitbook/assets/images/wml/update.png)
+![x](../.gitbook/assets/images/wml/update.png)
 
-## Testing the model with built-in UI
+## Testing the model with Cloud Pak for Data
 
 ### Deployment testing in the UI
 
@@ -157,7 +162,7 @@ Test the model in the API interface.
 * Click the enabled deployment. Under the `API` tab, we can test the model.
 * There may be some inputs with `INSERT_VALUE`. Simply change them into values that makes sense.
 
-  ![](.gitbook/assets/images/wml/deployment_test.png)
+![x](../.gitbook/assets/images/wml/deployment_test.png)
 
 * Click `Submit`. The result is shown on right with inputs and prediction results.
 * You can click the `Generate Code` button to get the code for [deployment testing using curl](#deployment-testing-with-curl).

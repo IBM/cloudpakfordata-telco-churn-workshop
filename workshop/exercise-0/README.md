@@ -50,51 +50,51 @@ This file has the following attributes:
 
 Log into (or sign up for) [IBM Cloud](https://cloud.ibm.com).
 
-![](../.gitbook/assets/images/generic/ibm-cloud-sign-up.png)
+![IBM Cloud login](../.gitbook/assets/images/generic/ibm-cloud-sign-up.png)
 
 From the dashboard click on the *Create resource* button to go to the *Catalog*.
 
-![](../.gitbook/assets/images/generic/ibm-cloud-dashboard.png)
+![IBM Cloud Dashboard](../.gitbook/assets/images/generic/ibm-cloud-dashboard.png)
 
 Find the [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) tile from the *Database* section.
 
-![](../.gitbook/assets/images/db2/db2-0-catalog.png)
+![Db2 Warehouse in the Catalog](../.gitbook/assets/images/db2/db2-0-catalog.png)
 
 Choose the `Entry` plan as it is compatible with a `Lite` account.
 
-![](../.gitbook/assets/images/db2/db2-0-pricing.png)
+![Entry level plan](../.gitbook/assets/images/db2/db2-0-pricing.png)
 
 Once the Db2 Warehouse service is created click on *Open Console*.
 
-![](../.gitbook/assets/images/db2/db2-1-cloud-launch.png)
+![A Db2 Warehouse instance has been provisioned](../.gitbook/assets/images/db2/db2-1-cloud-launch.png)
 
 You'll be directed to a Db2 web console dashboard where you can load data by clicking the *Load* button.
 
-![](../.gitbook/assets/images/db2/db2-2-console-overview.png)
+![The Db2 Warehouse console](../.gitbook/assets/images/db2/db2-2-console-overview.png)
 
-Select the [`billing.csv`]((../../data/split/billing.csv) file in the [data](../../data) folder.
+Select the [`billing.csv`](../../data/split/billing.csv) file in the [data](../../data) folder.
 
-![](../.gitbook/assets/images/db2/db2-3-csv-find.png)
+![Find data to load](../.gitbook/assets/images/db2/db2-3-csv-find.png)
 
 On the next panel we configure where the data will go in the database. We'll use the *DASH100239* schema, and opt to create a new table. Call it `BILLING`, and click *Next*.
 
-![](../.gitbook/assets/images/db2/db2-4-csv-config.png)
+![Select a table name](../.gitbook/assets/images/db2/db2-4-csv-config.png)
 
 On the next panel click *Begin Load* to start loading the data.
 
-![](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
+![Begin loading the data](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
 
 Verify all the rows were loaded.
 
-![](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
+![Data has been loaded!](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
 
 Repeat the process for [`products.csv`](../../data/split/products.csv) and [`customer-service.csv`](../../data/split/customer-service.csv), call these tables `PRODUCTS` and `CUSTOMERS`. Note that there will be an additional panel to configure data, the defaults are accetable.
 
-![](../.gitbook/assets/images/db2/db2-8-csv-config-products.png)
+![Repeat the process for the other data sets](../.gitbook/assets/images/db2/db2-8-csv-config-products.png)
 
 Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Warehouse by going back to our service, clicking on the *Service credentials* button, and creating a new credential. Copy these down somewhere as we'll need them in the next section.
 
-![](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
+![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
 
 ## Setting up a project
 
@@ -102,16 +102,16 @@ Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Wa
 
 Log into Cloud Pak for Data.
 
-![](../.gitbook/assets/images/manage/cpd-login.png)
+![Cloud Pak for Data login](../.gitbook/assets/images/manage/cpd-login.png)
 
 Go the (☰) menu and click *Projects*
 
-![](../.gitbook/assets/images/manage/cpd-projects-menu.png)
+![(☰) Menu -> Projects](../.gitbook/assets/images/manage/cpd-projects-menu.png)
 
 Click on *New project*
 
-![](../.gitbook/assets/images/manage/cpd-new-project.png)
+![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-Create a new project, give it a unique name.
+Create a new project, give it a unique name and click *OK.
 
-![](../.gitbook/assets/images/manage/cpd-new-project-name.png)
+![Pick a name](../.gitbook/assets/images/manage/cpd-new-project-name.png)
