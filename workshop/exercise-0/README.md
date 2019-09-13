@@ -30,7 +30,7 @@ Create a new project, give it a unique name.
 
 The data set used for this workshop is derived from [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn). It is originally from Watson Analytics, and looks at customer churn for a Telecommunication company. The data is split into three CSV files and are located in the [data](../../data) directory of this repository.
 
-**[billing.csv](billing.csv)**
+**[billing.csv](../../data/split/billing.csv)**
 
 This file has the following attributes:
 
@@ -42,7 +42,7 @@ This file has the following attributes:
 * Total Charges *($)*
 * Churn *(Yes, No)*
 
-**[customer-service.csv](customer-service.csv)**
+**[customer-service.csv](../../data/split/customer-service.csv)**
 
 * Customer ID
 * Gender *(Male, Female)*
@@ -51,7 +51,7 @@ This file has the following attributes:
 * Dependents *(Yes, No)*
 * Tenure *(1-100)*
 
-**[products.csv](products.csv)**
+**[products.csv](../../data/split/products.csv)**
 
 * Customer ID
 * Phone Service *(Yes, No)*
@@ -92,7 +92,7 @@ You'll be directed to a Db2 web console dashboard where you can load data by cli
 
 ![](../.gitbook/assets/images/db2/db2-2-console-overview.png)
 
-Select the `billing.csv` file in the [data](../data) folder.
+Select the [`billing.csv`]((../../data/split/billing.csv) file in the [data](../../data) folder.
 
 ![](../.gitbook/assets/images/db2/db2-3-csv-find.png)
 
@@ -108,7 +108,7 @@ Verify all the rows were loaded.
 
 ![](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
 
-Repeat the process for `products.csv` and `customer-service.csv`, call these tables `PRODUCTS` and `CUSTOMERS`. Note that there will be an additional panel to configure data, the defaults are accetable.
+Repeat the process for [`products.csv`](../../data/split/products.csv) and [`customer-service.csv`](../../data/split/customer-service.csv), call these tables `PRODUCTS` and `CUSTOMERS`. Note that there will be an additional panel to configure data, the defaults are accetable.
 
 ![](../.gitbook/assets/images/db2/db2-8-csv-config-products.png)
 
