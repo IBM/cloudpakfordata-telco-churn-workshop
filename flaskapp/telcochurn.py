@@ -24,6 +24,74 @@ app.config.update(dict(
     SECRET_KEY=os.environ.get('SECRET_KEY', 'development key')
 ))
 
+strings = {
+    "gender": ['Female', 'Male'],
+    "Partner": ['Yes', 'No'],
+    "Dependents": ['No', 'Yes'],
+    "PhoneService": ['No', 'Yes'],
+    "MultipleLines": ['No phone service', 'No', 'Yes'],
+    "InternetService": ['DSL', 'Fiber optic', 'No'],
+    "OnlineSecurity": ['No', 'Yes', 'No internet service'],
+    "OnlineBackup": ['Yes', 'No', 'No internet service'],
+    "DeviceProtection": ['No', 'Yes', 'No internet service'],
+    "TechSupport": ['No', 'Yes', 'No internet service'],
+    "StreamingTV": ['No', 'Yes', 'No internet service'],
+    "StreamingMovies": ['No', 'Yes', 'No internet service'],
+    "Contract": ['Month-to-month', 'One year', 'Two year'],
+    "PaperlessBilling": ['Yes', 'No'],
+    "PaymentMethod": ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'],
+    "Churn": ['No', 'Yes'],
+}
+
+floats = {
+    "MonthlyCharges": [0, 5000, 18.75],
+    "TotalCharges": [0, 1000, 53.15]
+}
+
+ints = {
+    "SeniorCitizen" : [0, 1, 0],
+    "tenure": [0, 100, 2]
+}
+
+def generate_input_lines():
+    result = ""
+    for k in floats.keys():
+        minn, maxx, vall = floats[k]
+        
+        result +=f'<dt>{k}</dt>'
+        result +=f'<dd>'
+    #    result +=f'<input type="button" value="-" onClick="subtract_one_{k}()">'
+        result +=f'$<input type="number" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
+    #    result +=f'<input type="button" value="+" onClick="add_one_{k}()">'
+    #    result +=f'{{#<span id="slider_value_{k}" style="color:blue;font-weight:bold;"></span><br><br>#}}'
+        result +=f'</dd>'
+
+    for k in ints.keys():
+        minn, maxx, vall = ints[k]
+        result +=f'<dt>{k}</dt>'
+        result +=f'<dd>'
+        result +=f'<input type="number" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
+        result +=f'</dd>'
+        
+    for k in strings.keys():
+        result +=f'<dt>{k}</dt>'
+        result +=f'<dd>'
+
+        if len("".join(strings[k])) < 10:
+            for value in strings[k]:
+                result +=f'<label><input type="radio" name="{k}" value="{value}" checked> {value} </label>'
+        else:
+            result +=f'<select name="{k}">'
+            for value in strings[k]:
+                result +=f'<option value="{value}" selected>{value}</option>'
+            result +=f'</select>'
+            
+        result +=f'</dd>'
+    
+    return result
+
+app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
+
 
 class mortgagedefault():
 
@@ -34,13 +102,11 @@ class mortgagedefault():
             ID = 999
 
 
+            session['ID'] = ID
             data  = {}
 
             for k, v in request.form.items():
               data[k] = v
-
-            session['ID'] = ID
-            for k, v in data.items():
               session[k] = v
 
             scoring_href = os.environ.get('URL')
