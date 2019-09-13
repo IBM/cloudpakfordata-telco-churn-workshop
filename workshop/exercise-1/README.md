@@ -6,7 +6,7 @@ This section is broken up into the following steps:
 1. [Virtualize Db2 data with Data Virtualization](#virtualize-db2-data-with-data-virtualization)
 1. [Visualize data with Cognos Dashboards](#visualize-data-with-cognos-dashboards)
 
-## Add a new Data Source connection
+## Add a new Data Source connection (Admin only)
 
 To add a new data source, go the (☰) menu and click on the *Connections* option.
 
@@ -23,6 +23,10 @@ Start by giving your new *Connection* a name and select *Db2 Warehouse on Cloud*
 The new connection will be listed in the overview.
 
 ![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
+
+> **IMPORTANT**: A note to the instructors of this workshop. At this point go to the *Virtualized Data* option and grant at least *Engineer* access to all users participating in the workshop.
+
+![Grant access to the data virtualization tool](../.gitbook/assets/images/dv/dv-0-grant-access.png)
 
 ## Virtualize Db2 data with Data Virtualization
 
