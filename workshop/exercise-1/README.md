@@ -38,50 +38,50 @@ Select the data source we made in the previous step, and click *Next*.
 
 ![Add the Db2 Warehouse connection](../.gitbook/assets/images/dv/dv-data-sources-2-add.png)
 
-The new connection will be listed as a data virtualization option.
+The new connection will be listed as a data source for data virtualization.
 
-![](../.gitbook/assets/images/dv/dv-data-sources-3-shown.png)
+![Db2 Warehouse connection is now associated with Data Virtualization](../.gitbook/assets/images/dv/dv-data-sources-3-shown.png)
 
-Click on the *Virtualize* menu
+From here, click on the *Menu* button and choose *Virtualize*.
 
-![](../.gitbook/assets/images/dv/dv-virtualize-1-menu.png)
+![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-1-menu.png)
 
-Find the `CUSTOMER`, `PRODUCT` and `BILLING` tables. Add them to your cart and click *View Cart*.
+Several tables will appear (many are created as sample data when a Db2 Warehouse instance is provisioned) in the table. Find the tables you created earlier, the instructions suggested naming them: `CUSTOMER`, `PRODUCT` and `BILLING`. Once selected click on *Add to cart* and then on *View Cart*.
 
-![](../.gitbook/assets/images/dv/dv-virtualize-2-tables.png)
+![Choose the tables to virtualize](../.gitbook/assets/images/dv/dv-virtualize-2-tables.png)
 
-Assign these to your project.
+The next panel prompts the user to choose which project to assign the data to, choose the project you created in the previous exercise. Click *Virtualize* to start the process.
 
-![](../.gitbook/assets/images/dv/dv-virtualize-3-assign.png)
+![Add virtualized data to your project](../.gitbook/assets/images/dv/dv-virtualize-3-assign.png)
 
-Virtual tables have been created!
+You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking *View my data*.
 
-![](../.gitbook/assets/images/dv/dv-virtualize-4-complete.png)
+![Ta da! We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-4-complete.png)
 
-Before we add that data to our project let's join all the tables so we have a complete picture.
+Before going to the next let's **join** the tables we created so we have a merged set of data. It will be easier to do it here rather than in a notebook where we'd have to write code to handle three different data sets. Click on any two tables (`PRODUCTS` and `BILLING` for instance) and click the *Join view* button.
 
-![](../.gitbook/assets/images/dv/dv-data-join-1-overview.png)
+![Choose to join two tables](../.gitbook/assets/images/dv/dv-data-join-1-overview.png)
 
-Map `customerID` on one table to `customerID` on the other.
+To join the tables we need to pick a key that is common to both data sets. Here we choose to map `customerID` from the first table to `customerID` on the second table. Do this by clicking on one and dragging it to another. When the line is drawn click on *Join*.
 
-![](../.gitbook/assets/images/dv/dv-data-join-2-columns.png)
+![Map the two customerID keys](../.gitbook/assets/images/dv/dv-data-join-2-columns.png)
 
-Review the joined table
+In the next panel we'll give our joined data a name, I chose `billing+products`, then review the joined table to ensure all columns are present and only one `customerID` column exists. Click *Next* to continue.
 
-![](../.gitbook/assets/images/dv/dv-data-join-3-review.png)
+![Review the proposed joined table](../.gitbook/assets/images/dv/dv-data-join-3-review.png)
 
-Assign it to your project
+Next we choose which project to assign the joined view to, choose the project you created in the previous exercise. Click *Create view* to start the process.
 
-![](../.gitbook/assets/images/dv/dv-data-join-4-assign.png)
+![Add joined data tables to your project](../.gitbook/assets/images/dv/dv-data-join-4-assign.png)
 
-Ta-da it is done!
+You'll be notified that the join has succeeded! Click on *View my data*. to repeat this again so we have all three tables.
 
-![](../.gitbook/assets/images/dv/dv-data-join-5-created.png)
+![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-5-created.png)
 
-Repeat this again for the third table. Going back to your project you should see a data set that has all three tables.
+**IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`billing+products`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `billing+products+customers`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
 
-![](../.gitbook/assets/images/dv/dv-project-data-all.png)
+![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
 ## Visualize data with Cognos Dashboards
 
-TBD
+To be completed
