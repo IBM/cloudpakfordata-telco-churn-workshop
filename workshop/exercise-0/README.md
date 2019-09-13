@@ -2,29 +2,9 @@
 
 This section is broken up into the following steps:
 
-1. [Setting up a project](#setting-up-a-project)
 1. [About the data set](#about-the-data-set)
 1. [(Optional) Seeding our Db2 database](#optional-seeding-our-db2-database)
-
-## Setting up a project
-
-> **NOTE** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
-
-Log into Cloud Pak for Data.
-
-![](../.gitbook/assets/images/manage/cpd-login.png)
-
-Go the (☰) menu and click *Projects*
-
-![](../.gitbook/assets/images/manage/cpd-projects-menu.png)
-
-Click on *New project*
-
-![](../.gitbook/assets/images/manage/cpd-new-project.png)
-
-Create a new project, give it a unique name.
-
-![](../.gitbook/assets/images/manage/cpd-new-project-name.png)
+1. [Setting up a project](#setting-up-a-project)
 
 ## About the data set
 
@@ -115,3 +95,23 @@ Repeat the process for [`products.csv`](../../data/split/products.csv) and [`cus
 Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Warehouse by going back to our service, clicking on the *Service credentials* button, and creating a new credential. Copy these down somewhere as we'll need them in the next section.
 
 ![](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
+
+## Setting up a project
+
+> **NOTE** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
+
+Log into Cloud Pak for Data.
+
+![](../.gitbook/assets/images/manage/cpd-login.png)
+
+Go the (☰) menu and click *Projects*
+
+![](../.gitbook/assets/images/manage/cpd-projects-menu.png)
+
+Click on *New project*
+
+![](../.gitbook/assets/images/manage/cpd-new-project.png)
+
+Create a new project, give it a unique name.
+
+![](../.gitbook/assets/images/manage/cpd-new-project-name.png)
