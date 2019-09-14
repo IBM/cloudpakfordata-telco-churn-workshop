@@ -122,7 +122,7 @@ Now that we have a committed and tagged version of the project, we can create a 
 
 ![x](../.gitbook/assets/images/wml/ICP4DcreateProjectRelease.png)
 
-### Create an online and batch deployment for the deployed model
+### Configure project deployment
 
 * Under the `Assets` tab, select the model you just created and then click the upper-right `+ web service` button. This will add an online deployment service for this model.
 
@@ -160,9 +160,9 @@ The deployment is still not active. We need to launch and enable it before it ca
 
 ![x](../.gitbook/assets/images/wml/update.png)
 
-## 3. Testing the model with Cloud Pak for Data
+## 3. Testing the model
 
-### Deployment testing in the UI
+### Test the saved model with built-in tooling
 
 Test the model in the API interface.
 
@@ -175,9 +175,9 @@ Test the model in the API interface.
 * You can click the `Generate Code` button to get the code for [deployment testing using curl](#deployment-testing-with-curl).
 * Under `Overview`, you can copy the POST API and deployment token. Save it for [using the model in an app](#10-use-the-model-in-an-app).
 
-#### Deployment testing with curl
+### Test the deployed model with cURL
 
-Using curl on the command line is a good way to test the REST APIs before integrating them with more complicated code. To access the model, use the generated code obtained during [deployment testing in the UI](#deployment-testing-in-the-ui).
+Using cURL on the command line is a good way to test the REST APIs before integrating them with more complicated code. To access the model, use the generated code obtained during [deployment testing in the UI](#deployment-testing-in-the-ui).
 
 For example, in a terminal run a `curl` command like the following:
 
@@ -265,7 +265,7 @@ Use your browser to go to [http://0.0.0.0:5000](http://0.0.0.0:5000) and try it 
 
 > **TIP** :bulb: Use `ctrl`+`c` to stop the Flask server when you are done.
 
-### Sample Output
+### Sample output
 
 The prediction screen:
 
