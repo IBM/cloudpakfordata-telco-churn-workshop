@@ -116,6 +116,3 @@ function subtract_one_SalePrice()
  document.getElementById('SalePrice').value=parseInt(document.getElementById('SalePrice').value)-10000;
   show_value_SalePrice(document.getElementById('SalePrice').value);
 }
-
-
-

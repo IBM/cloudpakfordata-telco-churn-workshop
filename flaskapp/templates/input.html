@@ -18,11 +18,16 @@
 <p>Input the following information and click submit to make a prediction.</p>
 
 <form action="#" method="post" class="add-entry">
-    <dl>
-        {{ generate_input_lines() | safe }}
-        <br><br>
-        <dt><input type="submit" value="Submit"></dt>
-    </dl>
+    <div class="section">
+        <dl>
+            <div class="form-group">
+                <br>{{ generate_input_lines() | safe }}
+                <dt>
+                    <br><input type="submit" class="btn btn-success" value="Submit">
+                </dt>
+            </div>
+        </dl>
+    </div>
 </form>
 
 {% endblock %}

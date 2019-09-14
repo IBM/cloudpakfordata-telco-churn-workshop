@@ -45,8 +45,8 @@ strings = {
 
 # min, max, default value
 floats = {
-    "MonthlyCharges": [0, 5000, 18.75],
-    "TotalCharges": [0, 1000, 53.15]
+    "MonthlyCharges": [0, 1000, 18.75],
+    "TotalCharges": [0, 5000, 53.15]
 }
 
 # min, max, default value
@@ -62,29 +62,23 @@ def generate_input_lines():
 
         result +=f'<dt>{k}</dt>'
         result +=f'<dd>'
-        result +=f'$<input type="number" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
+        result +=f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
         result +=f'</dd>'
 
     for k in ints.keys():
         minn, maxx, vall = ints[k]
         result +=f'<dt>{k}</dt>'
         result +=f'<dd>'
-        result +=f'<input type="number" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
+        result +=f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
         result +=f'</dd>'
 
     for k in strings.keys():
         result +=f'<dt>{k}</dt>'
         result +=f'<dd>'
-
-        if len("".join(strings[k])) < 10:
-            for value in strings[k]:
-                result +=f'<label><input type="radio" name="{k}" value="{value}" checked> {value} </label>'
-        else:
-            result +=f'<select name="{k}">'
-            for value in strings[k]:
-                result +=f'<option value="{value}" selected>{value}</option>'
-            result +=f'</select>'
-
+        result +=f'<select class="form-control" name="{k}">'
+        for value in strings[k]:
+            result +=f'<option value="{value}" selected>{value}</option>'
+        result +=f'</select>'
         result +=f'</dd>'
 
     return result
@@ -92,7 +86,7 @@ def generate_input_lines():
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
 
 
-class mortgagedefault():
+class churnForm():
 
     @app.route('/', methods=['GET', 'POST'])
     def index():
@@ -114,7 +108,7 @@ class mortgagedefault():
                 raise EnvironmentError('Env vars URL and TOKEN are required.')
 
             payload_scoring = {"args": {"input_json": [data]}}
-            print("Payload is ")
+            print("Payload is: ")
             print(payload_scoring)
             header_online = {
                 'Cache-Control': 'no-cache',
