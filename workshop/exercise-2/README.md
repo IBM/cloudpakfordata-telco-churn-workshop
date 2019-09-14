@@ -92,99 +92,84 @@ Next, we'll create a project release and tag the model under version control. We
 
 ### Commit the project changes
 
-* Go back to the project homepage. You may see a "**Changes made**" message. If so, you can Click on `commit and push`. If not, follow the instructions below.
+On the project home click on the *Git* button on the top row and choose *Commit*
 
-![x](../.gitbook/assets/images/wml/changes_made.png)
+![Commit the project changes](../.gitbook/assets/images/wml/project-1-git-commit.png)
 
-* You will see there is a list of the assets that are created in this project. Provide a `Commit message` to identify and make note of changes being pushed. Provide a version tag under `Create version tag for release`. Please note that the tag and commit message are both very important to identify and deploy the changes.
+A list of the assets will appear that were created in this project. Provide a commit message to identify the changes being pushed.
 
-![x](../.gitbook/assets/images/wml/commit_and_push.png)
+![Provide a commit message](../.gitbook/assets/images/wml/project-2-git-commit-message.png)
 
-* Click the `Commit and push` button.
+Again, click the same *Git* button and this time choose *Push*.
 
-* If the "**Changes made**" message is not visible, click the icon for git merge in the upper left, and choose `Commit`. Add a commit message, and click 'Commit'.
+![Push a new version](../.gitbook/assets/images/wml/project-3-git-push.png)
 
-![x](../.gitbook/assets/images/wml/ICP4DgitCommit.png)
+Provide a version tag under *Create version tag for release*. Add a tag, i.e. `v1` or `v2` and click *Push*.
 
-* Use the same git icon, and choose 'Push'. Add a tag, i.e. `v1`, `v2`, etc and click `Push`
+![Provide a commit message](../.gitbook/assets/images/wml/project-4-git-push-version.png)
 
 ### Release a new version
 
 Now that we have a committed and tagged version of the project, we can create a project release and deploy it as a web service.
 
-* Click the upper left (☰) menu and choose the left menu's `Adminster` drop-down list and click on `Manage deployments`.
+To start creating a new project release, go the (☰) menu and click on the *Manage deployments* option.
 
-* Click on `+ Add Project release` to create the deployment.
+![(☰) Menu -> Manage deployments](../.gitbook/assets/images/wml/project-5-manage-deployments.png)
 
-* This will bring up the `Create project release` page. Choose the `From IBM Cloud Private for Data` tab.
+Click on `+ Add Project Release` to start creating a new project release.
 
-* Give it a name that you can easily track. `Route` will be a part of the url. It should be lowercase. Choose the target source project and tag that you created above. Click the `Create` button.
+![There are currently no releases for this project](../.gitbook/assets/images/wml/project-6-new-project-release.png)
 
-![x](../.gitbook/assets/images/wml/ICP4DcreateProjectRelease.png)
+On the next panel ensure the *From IBM Cloud Pak for Data* tab is selected, and give your project release a name and route. Select the project and version from the drop down menus, and click on *Create*.
 
-### Configure project deployment
+![Fill in the project release details](../.gitbook/assets/images/wml/project-7-new-project-release-details.png)
 
-* Under the `Assets` tab, select the model you just created and then click the upper-right `+ web service` button. This will add an online deployment service for this model.
+### Configure project release
 
-![x](../.gitbook/assets/images/wml/add_web_service.png)
+It's now time to configure the project release. Here we will choose what assets will be deployed and how they will be deployed.
 
-* Give the web service a name, which will be appended to the URL.
+We start by deploying the model we built as a web service. Click on the model on the list of *Assets* and choose to add a *Web Service*.
 
-* Pick the model version (i.e. Use lates version) and Web Service environment
+![Deploy the model as a web service](../.gitbook/assets/images/wml/project-8-deployment-overview.png)
 
-* Choose whether you want to reserve resources and how many replicas you want for this job.
+Give the web service a *Name*, select a *Model version*, and *Web Service environment*. Click the *Create* button.
 
-* Click the `Create` button.
+![Deploy the model as a web service](../.gitbook/assets/images/wml/project-9-add-web-service.png)
 
-![x](../.gitbook/assets/images/wml/ICP4DcreateWebService.pngg)
+Once created the model details will appear, take note of the *Endpoint* and *Deployment token* that have been generated.
 
-  > Note: At this time, the online deployment is created. You can also find the REST API URL and deployment token under the `Overview` tab.
+![Endpoint and token for the deployed model](../.gitbook/assets/images/wml/project-10-model-endpoint.png)
 
-![x](../.gitbook/assets/images/wml/ICP4DwebAppOverview.png)
+> **NOTE**: The deployment is not yet active. We need to launch and enable it before it can be used.
 
-The deployment is still not active. We need to launch and enable it before it can be used.
+### Deploy the project
 
-### Launch deployment
+* You will be brough back to the project release page where you will see your model is *Disabled*. Click the *Launch* button to deploy your project.
 
-* Back in `Project releases` Click the tile for your release. Under the `Deployments` tab, there are jobs that we just created. You will find that they are currently disabled.
+![Deploy your project](../.gitbook/assets/images/wml/project-11-model-disabled.png)
 
-* Click `Launch` on the top right and then choose `Launch` from the popup window, to activate those deployments. This may take few seconds.
+Once the deployment is complete click on the action action menu (vertical 3 dots) of the model and select *Enable*.
 
-![x](../.gitbook/assets/images/wml/ICP4DLaunchDeployment.png)
-
-* The onlinescore job is still disabled because there are extra steps to enable it. Click on the action menu (vertical 3 dots) and select `Enable`. This may take a little longer. Wait until `AVAILABILITY` shows `Enabled`.
-
-![x](../.gitbook/assets/images/wml/ICP4DenableJob.png)
-
-  > Note: For any additional changes made to the project, just update the MMD environment with the new tag, and the new version of assets are ready to be deployed.
-
-![x](../.gitbook/assets/images/wml/update.png)
+![Endpoint and token for the deployed model](../.gitbook/assets/images/wml/project-12-model-enabled.png)
 
 ## 3. Testing the model
 
+Cloud Pak for Data offers tools to quickly test out Watson Machine Learning models. We begin with the built-in tooling.
+
 ### Test the saved model with built-in tooling
 
-Test the model in the API interface.
+Once the model is enabled we can test the API interface from Cloud Pak for Data. Click the enabled model deployment. From the *API* tab, default values are given and we can simply click the *Submit* button. The results are shown on the right.
 
-* Click the enabled deployment. Under the `API` tab, we can test the model.
-* There may be some inputs with `INSERT_VALUE`. Simply change them into values that makes sense.
-
-![x](../.gitbook/assets/images/wml/deployment_test.png)
-
-* Click `Submit`. The result is shown on right with inputs and prediction results.
-* You can click the `Generate Code` button to get the code for [deployment testing using curl](#deployment-testing-with-curl).
-* Under `Overview`, you can copy the POST API and deployment token. Save it for [using the model in an app](#10-use-the-model-in-an-app).
+![Testing the deployed model](../.gitbook/assets/images/wml/testing-1-api.png)
 
 ### Test the deployed model with cURL
 
-Using cURL on the command line is a good way to test the REST APIs before integrating them with more complicated code. To access the model, use the generated code obtained during [deployment testing in the UI](#deployment-testing-in-the-ui).
-
-For example, in a terminal run a `curl` command like the following:
+Clicking the *Generate Code* button will pop open a window with some copy for you to copy. The code will use the cURL command line utility to test the REST APIs. Here's an example of the generated code that can be run from a terminal window with the `curl` command.
 
 ```bash
 curl -k -X POST \
   https://9.10.111.122:31843/dmodel/v1/churn1/pyscript/churn/score \
-  -H 'Authorization: Bearer yeJhbGaaaiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyAAA2VybmFtZSI6InN0dXJkZXZhbnQiLCJwYWNrYWdlTmFtZSI6InJlbGVhc2UxIIIicGFja2FnZVJvdXRlIjoiY2h1cm4xIiwiaWF0IjoxNTQ5Njg0NTg0fQ.BBBBXw48b0MN-TslNNN8e8ZASEW1xWPSen8-1o696i54U4v75wJjiQmGMs-xMe44444yq62qE8zNvXEsHM8TnnAEfaFPvokEgWtKpduWSQo1SAKch-bQhfhMJUK2wetYsUpOw5Gffuamd_jkqqQlqi4asbL_DSGBbHhNx-nnnnnsnMKm7giBa8IgtFrf6JITVIwS2xbob2t1xE_ztG0p43KK1UrddPBpztqifQybH_zbdEPOoF6Xf-ZRBcDkRMHbhC-FFF7saWLkX3AYmCboLzatB0_ufLOy2S2TosSie_UPKOS0aLcXjJDMbgsGqy9C_AsK5n28HysmH2NeXzEN9A' \
+  -H 'Authorization: Bearer yeJhbGaaaiJSUzI1NiIsInR5cCI6IkpXVCJ9...jJDMbgsGqy9C_AsK5n28HysmH2NeXzEN9A' \
   -H 'Cache-Control: no-cache' \
   -H 'Content-Type: application/json' \
   -d '{"args":{"input_json":[{"ID":4,"GENDER":"F","STATUS":"M","CHILDREN":2,"ESTINCOME":52004,"HOMEOWNER":"N","AGE":25,"TOTALDOLLARVALUETRADED":5030,"TOTALUNITSTRADED":23,"LARGESTSINGLETRANSACTION":1257,"SMALLESTSINGLETRANSACTION":125,"PERCENTCHANGECALCULATION":3,"DAYSSINCELASTLOGIN":2,"DAYSSINCELASTTRADE":19,"NETREALIZEDGAINS_YTD":0,"NETREALIZEDLOSSES_YTD":251}]}}'
