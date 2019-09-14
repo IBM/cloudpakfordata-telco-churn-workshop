@@ -1,101 +1,53 @@
 # Exercise 3: Monitoring models
 
-## Configure OpenScale in the Jupyter Notebook
+This section is broken up into the following steps:
+
+1. [Configure OpenScale in a Jupyter Notebook](#1-configure-openscale-in-a-jupyter-notebook)
+1. [Setup OpenScale to utilize the dashboard](#1-setup-openscale-to-utilize-the-dashboard)
+
+## 1. Configure OpenScale in a Jupyter Notebook
 
 We'll use a Jupyter notebook to configure OpenScale.
 
-### Download the notebook and add the notebook to the project
+For this part of the exercise we're going to build a model with a Jupyter notebook, by importing our data, and creating a machine learning model by using a Random Forest Classifier.
 
-* Either clone this repository:
+### Import the notebook
+
+At the project overview click the *New Asset* button, and choose *Add notebook*.
+
+![Add a new asset](../.gitbook/assets/images/wml/wml-1-add-asset.png)
+
+On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
 ```bash
-git clone https://github.com/IBM/cloudpakfordata101
+https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/ConfigureOpenScale.ipynb
 ```
 
-or download the notebook directly:
+> The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
+>
+> * **Notebook**: [ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/ConfigureOpenScale.ipynb)
+> * **Notebook with output**: [with-output/ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/ConfigureOpenScale.ipynb)
 
-```bash
-wget https://raw.githubusercontent.com/IBM/cloudpakfordata101/master/workshop/ConfigureOpenScale.ipynb
-```
+<!-- TODO update -->
+![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
 
-* Under the `Assets` tab in your project, from the menu on the left, choose `Notebooks` and click `+Add Notebook`.
+When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-* Choose the `From file` tab and navigate to where you downloaded the `ConfigureOpenScale.ipynb` notebook, either in `~/Downloads/` or the location where you cloned the repository, in the `cloudpakfordata101/workshop` directory.
+<!-- TODO update -->
+![Notebook loaded](../.gitbook/assets/images/wml/wml-3-notebook-loaded.png)
 
-### 2. Configure and run the notebook
+<!-- TODO after this line -->
 
 ### Run the notebook
 
-* Run all the cells individually by highlighting each cell by clicking it, then either click the `Run` button at the top of the notebook or `control` + `return` at the same time. While the cell is running, an asterisck will show up in the brackets to the left of the cell `[*]` and when it is done, a sequential number will show up, i.e. `[17]`. Do this for the next steps, with some additional instructions:
+Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
-### Use free internal DB or Create a Databases for PostgreSQL DB
-
-For this lab, we'll use the free internal DB. Note that this is not GDPR compliant, and this DB is not accessible to the user. For productions purposes, you may wish to use a separate DB , i.e Postgres.
-
-#### Make sure that the cell for `KEEP_MY_INTERNAL_POSTGRES = True` remains unchanged
-
-#### If you have or wish to use a paid `Databases for Postgres` instance, follow these instructions
-
-> Note: Services created must be in the same region, and space, as your Watson Studio service or on the same ICP4D cluster
-
-* Either provision the database in your ICP4D cluster
- **or**
-* Using the [IBM Cloud Dashboard](https://cloud.ibm.com/catalog) catalog, search for PostgreSQL and choose the `Databases for Postgres` [service](https://console.bluemix.net/catalog/services/databases-for-postgresql).
-* Wait a couple of minutes for the database to be provisioned.
-* Click on the `Service Credentials` tab on the left and then click `New credential +` to create the service credentials. Copy them or leave the tab open to use later in the notebook.
-* Make sure that the cell in the notebook that has:
-
-```python
-KEEP_MY_INTERNAL_POSTGRES = True
-```
-
-is changed to:
-
-```python
-KEEP_MY_INTERNAL_POSTGRES = False
-```
-
-### 4. Create a Watson Machine Learning instance
-
-* Under the `Settings` tab, scroll down to `Associated services`, click `+ Add service` and choose `Watson`:
-
-  ![add_service](https://github.com/IBM/pattern-images/blob/master/watson-studio/add_service.png)
-
-* Search for `Machine Learning`, Verify this service is being created in the same space as the app in Step 1, and click `Create`.
-
-  ![create-machine-learning](https://raw.githubusercontent.com/IBM/pattern-images/master/machine-learning/create-machine-learning.png)
-
-* Alternately, you can choose an existing Machine Learning instance and click on `Select`.
-
-  ![watson-studio-add-existing-ML](https://raw.githubusercontent.com/IBM/pattern-images/master/watson-studio/watson-studio-add-existing-ML.png)
-
-* The Watson Machine Learning service is now listed as one of your `Associated Services`.
-
-* In a different browser tab go to [https://cloud.ibm.com/](https://cloud.ibm.com/) and log in to the Dashboard.
-
-* Click on your Watson Machine Learning instance under `Services`, click on `Service credentials` and then on `View credentials` to see the credentials.
-
-  ![ML-service-credentials](https://raw.githubusercontent.com/IBM/pattern-images/master/machine-learning/ML-service-credentials.png)
-
-* Save the credentials in a file. You will use them inside the notebook.
-
-### Title
-
-> NOTE: At this time (3/27/19) you must use an instance of Watson OpenScale deployed in the `Dallas` region. This is currently the only region that sends events about scoring requests to the message hub, which is read by OpenScale to populate the payload logging table.
-
-* Using the [IBM Cloud Dashboard](http://cloud.ibm.com) create a [Watson OpenScale](https://cloud.ibm.com/catalog/services/ai-openscale) service.
-* You will get the Watson OpenScale instance GUID when you run the notebook using the [IBM Cloud CLI](https://cloud.ibm.com/catalog/services/ai-openscale)
+### Update credentials
 
 * Enter the `AIOS_GUID` and `CLOUD_API_KEY` in the next cell for the `AIOS_CREDENTIALS`.
 * Add the [Watson Machine Learning](https://cloud.ibm.com/catalog/services/machine-learning) credentials for the service that you created in the next cell as `WML_CREDENTIALS`.
-* Either use the internal Database, which requires *No Changes* or Add your `DB_CREDENTIALS` after reading the instructions preceeding that cell and change the cell `KEEP_MY_INTERNAL_POSTGRES = True` to become `KEEP_MY_INTERNAL_POSTGRES = False`.
 
-* Move your cursor to each code cell and run the code in it. Read the comments for each cell to understand what the code is doing. **Important** when the code in a cell is still running, the label to the left changes to **In [\*]**:.
-  Do **not** continue to the next cell until the code is finished running.
-
-## 7. Setup OpenScale to utilize the dashboard
+## 2. Setup OpenScale to utilize the dashboard
 
 Now that you have created a machine learning model, you can utilize the OpenScale dashboard to gather insights.
 [Follow the steps to configure the OpenScale dashboard](https://cloud.ibm.com/docs/services/ai-openscale?topic=ai-openscale-gs-obj#gs-confaios)
-
-Congratulations! You have completed the workshop!

@@ -2,12 +2,14 @@
 
 This section is broken up into the following steps:
 
-1. [Build a model with Spark](#build-a-model-with-spark)
-1. [Create a project release](#create-a-project-release)
-1. [Testing the model with Cloud Pak for Data](#testing-the-model-with-cloud-pak-for-data)
-1. [(Optional) Create a Python Flask app that uses the model](#optional-create-a-python-flask-app-that-uses-the-model)
+1. [Build a model with Spark](#1-build-a-model-with-spark)
+1. [Create a project release](#2-create-a-project-release)
+1. [Testing the model with Cloud Pak for Data](#3-testing-the-model-with-cloud-pak-for-data)
+1. [(Optional) Create a Python Flask app that uses the model](#4-optional-create-a-python-flask-app-that-uses-the-model)
 
-## Build a model with Spark
+## 1. Build a model with Spark
+
+For this part of the exercise we're going to build a model with a Jupyter notebook, by importing our data, and creating a machine learning model by using a Random Forest Classifier.
 
 ### Import the notebook
 
@@ -84,7 +86,7 @@ Once deployed the model and deployment will be viewed.
 
 We've successfully built and deployed a machine learning model. Congratulations!
 
-## Create a project release
+## 2. Create a project release
 
 Next, we'll create a project release and tag the model under version control. We'll use model management and deployment to make the released model available as a web service (REST API).
 
@@ -158,7 +160,7 @@ The deployment is still not active. We need to launch and enable it before it ca
 
 ![x](../.gitbook/assets/images/wml/update.png)
 
-## Testing the model with Cloud Pak for Data
+## 3. Testing the model with Cloud Pak for Data
 
 ### Deployment testing in the UI
 
@@ -188,6 +190,87 @@ curl -k -X POST \
   -d '{"args":{"input_json":[{"ID":4,"GENDER":"F","STATUS":"M","CHILDREN":2,"ESTINCOME":52004,"HOMEOWNER":"N","AGE":25,"TOTALDOLLARVALUETRADED":5030,"TOTALUNITSTRADED":23,"LARGESTSINGLETRANSACTION":1257,"SMALLESTSINGLETRANSACTION":125,"PERCENTCHANGECALCULATION":3,"DAYSSINCELASTLOGIN":2,"DAYSSINCELASTTRADE":19,"NETREALIZEDGAINS_YTD":0,"NETREALIZEDLOSSES_YTD":251}]}}'
 ```
 
-## (Optional) Create a Python Flask app that uses the model
+## 4. (Optional) Create a Python Flask app that uses the model
 
-Instructions go here
+You can also access the web service directly through the REST API. This allows you to use your model for inference in any of your apps. For this workshop we'll be using a Python Flask application to collect information, score it against the model, and show the results.
+
+### Install dependencies
+
+The general recommendation for Python development is to use a virtual environment ([`venv`](https://docs.python.org/3/tutorial/venv.html)). To install and initialize a virtual environment, use the `venv` module on Python 3 (you install the virtualenv library for Python 2.7):
+
+In a terminal go to the cloned repo directory.
+
+```bash
+git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
+cd cloudpakfordata-telco-churn-workshop
+```
+
+Initialize a virtual environment with [`venv`](https://docs.python.org/3/tutorial/venv.html).
+
+```bash
+# Create the virtual environment using Python. Use one of the two commands depending on your Python version.
+# Note, it may be named python3 on your system.
+python -m venv venv       # Python 3.X
+virtualenv venv           # Python 2.X
+
+# Source the virtual environment. Use one of the two commands depending on your OS.
+source venv/bin/activate  # Mac or Linux
+./venv/Scripts/activate   # Windows PowerShell
+```
+
+> **TIP** :bulb: To terminate the virtual environment use the `deactivate` command.
+
+Finally, install the Python requirements.
+
+```bash
+cd flaskapp
+pip install -r requirements.txt
+```
+
+### Update environment variables
+
+It's best practice to store configurable information as environment variables, instead of hard-coding any important information. To reference our model and supply an API key, we'll pass these values in via a file that is read, the key-value pairs in this files are stored as environment variables.
+
+Copy the `env.sample` file to `.env`.
+
+```bash
+cp env.sample .env
+```
+
+Edit `.env` to reference the `URL` and `TOKEN`.
+
+* `URL` is your web service URL for scoring.
+* `TOKEN` is your deployment access token.
+
+```bash
+# Required: Provide your web service URL for scoring.
+# E.g., URL=https://9.10.222.3:31843/dmodel/v1/project/pyscript/tag/score
+URL=
+
+# Required: Provide your web service deployment access token.
+#           This TOKEN should start with "Bearer ".
+# E.g., TOKEN=Bearer abCdwFg.fgH1r2... (and so on, tokens are long).
+TOKEN=
+```
+
+### Start the application
+
+Start the flask server by running the following command:
+
+```bash
+python telcochurn.py
+```
+
+Use your browser to go to [http://0.0.0.0:5000](http://0.0.0.0:5000) and try it out.
+
+> **TIP** :bulb: Use `ctrl`+`c` to stop the Flask server when you are done.
+
+### Sample Output
+
+The prediction screen:
+
+> Need to add an image
+
+Pressing `Reset` allows you to enter new values:
+
+> Need to add an image

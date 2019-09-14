@@ -2,11 +2,11 @@
 
 This section is broken up into the following steps:
 
-1. [Add a new Data Source connection](#add-a-new-data-source-connection)
-1. [Virtualize Db2 data with Data Virtualization](#virtualize-db2-data-with-data-virtualization)
-1. [Visualize data with Cognos Dashboards](#visualize-data-with-cognos-dashboards)
+1. [Add a new Data Source connection](#1-add-a-new-data-source-connection)
+1. [Virtualize Db2 data with Data Virtualization](#2-virtualize-db2-data-with-data-virtualization)
+1. [Visualize data with Cognos Dashboards](#3-visualize-data-with-cognos-dashboards)
 
-## Add a new Data Source connection (Admin only)
+## 1. Add a new Data Source connection (Admin only)
 
 To add a new data source, go the (☰) menu and click on the *Connections* option.
 
@@ -28,7 +28,11 @@ The new connection will be listed in the overview.
 
 ![Grant access to the data virtualization tool](../.gitbook/assets/images/dv/dv-0-grant-access.png)
 
-## Virtualize Db2 data with Data Virtualization
+## 2. Virtualize Db2 data with Data Virtualization
+
+For this section we'll now use the Data Virtualization tool to import the data from Db2 Warehouse, which is now exposed as an Connection in Cloud Pak for Data.
+
+### Add a Data Source to Data Virtualization
 
 To launch the data virtualization tool, go the (☰) menu and click *Collect* and then *Virtualized data*.
 
@@ -46,7 +50,9 @@ The new connection will be listed as a data source for data virtualization.
 
 ![Db2 Warehouse connection is now associated with Data Virtualization](../.gitbook/assets/images/dv/dv-data-sources-3-shown.png)
 
-From here, click on the *Menu* button and choose *Virtualize*.
+### Start virtualizing data
+
+In this section, since we now have access to the Db2 Warehouse data, we can virtualize the data to our Cloud Pak for Data project. Click on the *Menu* button and choose *Virtualize*.
 
 ![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-1-menu.png)
 
@@ -62,7 +68,9 @@ You'll be notified that the virtual tables have been created! Let's see the new 
 
 ![Ta da! We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-4-complete.png)
 
-Before going to the next let's **join** the tables we created so we have a merged set of data. It will be easier to do it here rather than in a notebook where we'd have to write code to handle three different data sets. Click on any two tables (`PRODUCTS` and `BILLING` for instance) and click the *Join view* button.
+### Join the virtualized data
+
+Now we're going to **join** the tables we created so we have a merged set of data. It will be easier to do it here rather than in a notebook where we'd have to write code to handle three different data sets. Click on any two tables (`PRODUCTS` and `BILLING` for instance) and click the *Join view* button.
 
 ![Choose to join two tables](../.gitbook/assets/images/dv/dv-data-join-1-overview.png)
 
@@ -86,6 +94,6 @@ You'll be notified that the join has succeeded! Click on *View my data*. to repe
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
-## Visualize data with Cognos Dashboards
+## 3. Visualize data with Cognos Dashboards
 
 To be completed
