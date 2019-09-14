@@ -46,6 +46,8 @@ This file has the following attributes:
 
 ## 2. (Optional) Seeding our Db2 Warehouse database
 
+We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on IBM Cloud for a few reasons: it simulates a realistic enterprise database, a free tier is provided by IBM Cloud, and we can easily load our data set.
+
 > **NOTE** If you do not wish to perform this step, your instructor will provide you credentials for a Db2 Warehouse instance.
 
 ### Log in and provision a Db2 Warehouse database
@@ -102,13 +104,19 @@ Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Wa
 
 ![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
 
-## 3. Setting up a project
+## 3. Setting up Cloud Pak for Data
+
+At this point of the workshop we will be using Cloud Pak for Data for the remaining steps.
+
+### Log into Cloud Pak for Data
+
+Launch a browser and naviate to your Cloud Pak for Data deployment
 
 > **NOTE** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
 
-Log into Cloud Pak for Data.
-
 ![Cloud Pak for Data login](../.gitbook/assets/images/manage/cpd-login.png)
+
+### Create a new project
 
 Go the (☰) menu and click *Projects*
 

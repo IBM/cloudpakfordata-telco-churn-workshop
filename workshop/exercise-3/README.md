@@ -7,9 +7,7 @@ This section is broken up into the following steps:
 
 ## 1. Configure OpenScale in a Jupyter Notebook
 
-We'll use a Jupyter notebook to configure OpenScale.
-
-For this part of the exercise we're going to build a model with a Jupyter notebook, by importing our data, and creating a machine learning model by using a Random Forest Classifier.
+For this part of the exercise we're going to configure our Watson OpenScale service by running a Jupyter Notebook.
 
 ### Import the notebook
 

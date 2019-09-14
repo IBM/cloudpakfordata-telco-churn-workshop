@@ -8,6 +8,8 @@ This section is broken up into the following steps:
 
 ## 1. Add a new Data Source connection (Admin only)
 
+For Cloud Pak for Data to read our Db2 Warehouse data we need to add a new *Data Source* to Cloud Pak for Data. This requires inputting the usual JDBC details.
+
 To add a new data source, go the (☰) menu and click on the *Connections* option.
 
 ![(☰) Menu -> Collections](../.gitbook/assets/images/connections/cpd-conn-menu.png)
@@ -96,4 +98,4 @@ You'll be notified that the join has succeeded! Click on *View my data*. to repe
 
 ## 3. Visualize data with Cognos Dashboards
 
-To be completed
+The Cognos Dashboards tool provides intuitive options to building visualization quickly. In this part of the workshop we'll use Cognos Dashboards to create a few graphs and charts that help us summarize our data.
