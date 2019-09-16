@@ -24,6 +24,26 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <!-- <script type="text/javascript" src="static/range.js"></script> -->
   <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"> -->
+  <style type="text/css" media="screen">
+    table {
+      border-collapse: collapse;
+      width: 100%
+    }
+    tr {
+      border-bottom: 1px solid #ccc;
+    }
+    th, td {
+      text-align: left;
+      padding: 4px;
+    }
+    .flash {
+      border: gray;
+      font-size: 24px;
+      text-align: center;
+      background: burlywood;
+    }
+  </style>
+  {% block headextension %}{% endblock %}
 </head>
 
 <div class="container">

@@ -13,83 +13,71 @@
  * -->
 
 {% extends "layout.html" %}
+
+{% block headextension %}
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script> var result_json = {{ result|tojson }}; </script>
+  <script type="text/javascript">
+
+    var predictions = [['Class', 'Probability']];
+    var result = result_json.result;
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      for(var i=0 ; i < result.classes.length ; i++) {
+        predictions[i+1] = [result.classes[i], result.probabilities[0][i] * 100];
+      }
+      var data = google.visualization.arrayToDataTable(predictions);
+
+      var options = {
+        title: 'Probability of churning',
+        pieHole: 0.4,
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+      chart.draw(data, options);
+    }
+  </script>
+{% endblock %}
+
 {% block body %}
 
-  <head>
-    <br>
-    <h2>Customer churn risk prediction</h2>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script> var result_json = {{ result|tojson }}; </script>
-    <script type="text/javascript">
+<h2>Customer churn risk prediction and suggested offer</h2>
+<div>
+  {% if no_percent < 30 %}
+  This customer has <strong>Low</strong> risk. The recommended offer is <strong>lower fees for 1 month</strong>.
+  {% elif yes_percent > 30 %}
+  This customer has <strong>High</strong> risk. The recommended offer is <strong>lower fees for 6 months</strong>.
+  {% else %}
+  This customer has <strong>Some</strong> risk. The recommended offer is <strong>lower fees for 3 months</strong>.
+  {% endif %}
+</div>
 
-      var predictions = [['Class', 'Probability']];
-      var result = result_json.result;
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        for(var i=0 ; i < result.classes.length ; i++) {
-          predictions[i+1] = [result.classes[i], result.probabilities[0][i] * 100];
-        }
-        var data = google.visualization.arrayToDataTable(predictions);
+<div id="donutchart" style="width: 100%; height: 500px;"></div>
 
-        var options = {
-          title: 'Probability of Risk Class',
-          pieHole: 0.4,
-        };
+<h2>Characteristics analyzed</h2>
+<div class="container">
+  <div>
+    <table>
+      <tr>
+        <th>Attribute</th>
+        <th>Value</th>
+      </tr>
 
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
+      {% for k in request.form.keys() %}
+        <tr>
+          <td>{{k}}</td>
+          <td>{{request.form[k]}}</td>
+        </tr>
+      {% endfor %}
 
-  <body>
-    <div>
-      <br/>
-
-      {% if churn_risk == 'no risk' %}
-      This customer has <strong>Low</strong> risk. The recommended offer is <strong>Approve Request</strong>.
-      {% elif churn_risk == 'risk' %}
-      This customer has <strong>High</strong> risk. The recommended offer is <strong>Reject Request</strong>.
-      {% endif %}
-
-      {% if churn_risk == 'low' %}
-      This customer has <strong>low</strong> churn risk. The recommended offer is <strong>lower fees for 1 month</strong>.
-      {% elif churn_risk == 'medium' %}
-      This customer has <strong>medium</strong> churn risk. The recommended offer is <strong>lower fees for 6 months</strong>.
-      {% elif churn_risk == 'high' %}
-      This customer has <strong>high</strong> churn risk. The recommended offer is <strong>lower fees for 12 months</strong>.
-      {% endif %}
-    </div>
-    <div id="donutchart" style="width: 100%; height: 500px;"></div>
-  </body>
-
-<h2>Characteristics Analyzed</h2>
-<br>
-
-<table>
-  <tr>
-    <th>Attribute</th>
-    <th>Value</th>
-  </tr>
-
-  {% for k in request.form.keys() %}
-    <tr>
-      <td>{{k}}</td>
-      <td>{{request.form[k]}}</td>
-    </tr>
-  {% endfor %}
-
-</table>
-<br>
-
-
-<!-- Uncomment to debug:
-{{ response_scoring.json()["result"] }}
--->
-
-<br>
-<p>Click the reset link to make another prediction.</p>
-
+    </table>
+  </div>
+</div>
 
 {% endblock %}
+
+<!-- Uncomment to debug: -->
+
+  {{ response_scoring.json()["result"] }}
+

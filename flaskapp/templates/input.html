@@ -11,7 +11,9 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  * -->
+
 {% extends "layout.html" %}
+
 {% block body %}
 
 <h2>Will a customer stay or leave?</h2>
@@ -19,14 +21,10 @@
 
 <form action="#" method="post" class="add-entry">
     <div class="section">
-        <dl>
-            <div class="form-group">
-                <br>{{ generate_input_lines() | safe }}
-                <dt>
-                    <br><input type="submit" class="btn btn-success" value="Submit">
-                </dt>
-            </div>
-        </dl>
+        <div class="form-group">
+            <br>{{ generate_input_lines() | safe }}
+            <br><input type="submit" class="btn btn-success" value="Submit">
+        </div>
     </div>
 </form>
 
