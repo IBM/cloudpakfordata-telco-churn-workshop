@@ -39,8 +39,7 @@ strings = {
     "StreamingMovies": ['No', 'Yes', 'No internet service'],
     "Contract": ['Month-to-month', 'One year', 'Two year'],
     "PaperlessBilling": ['Yes', 'No'],
-    "PaymentMethod": ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'],
-    "Churn": ['No', 'Yes'],
+    "PaymentMethod": ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)']
 }
 
 # min, max, default value
@@ -143,7 +142,7 @@ class churnForm():
             no_percent = result_json["result"]["probabilities"][0][0] * 100
             yes_percent = result_json["result"]["probabilities"][0][1] * 100
             flash(
-              'Will this customer leave? %s' % churn_risk)
+              'Percentage of this customer leaving is %.0f%%' % yes_percent )
             return render_template(
                 'score.html',
                 result=result_json,

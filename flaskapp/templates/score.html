@@ -44,12 +44,12 @@
 
 <h2>Customer churn risk prediction and suggested offer</h2>
 <div>
-  {% if no_percent < 30 %}
-  This customer has <strong>Low</strong> risk. The recommended offer is <strong>lower fees for 1 month</strong>.
-  {% elif yes_percent > 30 %}
+  {% if yes_percent > 25 %}
   This customer has <strong>High</strong> risk. The recommended offer is <strong>lower fees for 6 months</strong>.
+  {% elif yes_percent > 15 %}
+  This customer has <strong>Some</strong> risk. The recommended offer is <strong>lower fees for 3 month</strong>.
   {% else %}
-  This customer has <strong>Some</strong> risk. The recommended offer is <strong>lower fees for 3 months</strong>.
+  This customer has <strong>Low</strong> risk. The recommended offer is <strong>lower fees for 1 months</strong>.
   {% endif %}
 </div>
 

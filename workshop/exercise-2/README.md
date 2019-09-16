@@ -252,10 +252,10 @@ Use your browser to go to [http://0.0.0.0:5000](http://0.0.0.0:5000) and try it 
 
 ### Sample output
 
-The prediction screen:
+The user inputs various values
 
-> Need to add an image
+![Input a bunch of data...](../.gitbook/assets/images/generic/input.png)
 
-Pressing `Reset` allows you to enter new values:
+The churn percentage is returned:
 
-> Need to add an image
+![Get the churn percentage as a result](../.gitbook/assets/images/generic/score.png)
