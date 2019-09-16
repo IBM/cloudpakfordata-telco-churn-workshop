@@ -40,7 +40,7 @@ Spend an minute looking through the sections of the notebook to get an overview.
 
 #### Install Python packages
 
-Section `1.0 Install required packages` will install libraries used to create the model, such as: [`pyspark`](https://spark.apache.org/docs/latest/api/python/index.html), and [`sklearn`](https://scikit-learn.org/stable/).
+Section `1.0 Install required packages` will show the libraries that come pre-installed on Cloud Pak for Data. Note that we'll have to upgrade the installed version of Watson Machine Learning Python Client. This workshop uses [`pyspark`](https://spark.apache.org/docs/latest/api/python/index.html), and [`sklearn`](https://scikit-learn.org/stable/) to build our model.
 
 #### Add the data set to the notebook
 
