@@ -6,7 +6,7 @@ This section is broken up into the following steps:
 1. [Virtualize Db2 data with Data Virtualization](#2-virtualize-db2-data-with-data-virtualization)
 1. [Visualize data with Cognos Dashboards](#3-visualize-data-with-cognos-dashboards)
 
-## 1. Add a new Data Source connection (Admin only)
+## 1. Add a new Data Source connection
 
 For Cloud Pak for Data to read our Db2 Warehouse data we need to add a new *Data Source* to Cloud Pak for Data. This requires inputting the usual JDBC details.
 
