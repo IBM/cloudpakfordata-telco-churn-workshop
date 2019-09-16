@@ -10,7 +10,7 @@ This section is broken up into the following steps:
 
 For Cloud Pak for Data to read our Db2 Warehouse data we need to add a new *Data Source* to Cloud Pak for Data. This requires inputting the usual JDBC details.
 
-To add a new data source, go the (☰) menu and click on the *Connections* option.
+To add a new data source, go to the (☰) menu and click on the *Connections* option.
 
 ![(☰) Menu -> Collections](../.gitbook/assets/images/connections/cpd-conn-menu.png)
 
