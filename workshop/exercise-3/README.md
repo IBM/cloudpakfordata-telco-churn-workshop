@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/maste
 > The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
 >
 > * **Notebook**: [ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/ConfigureOpenScale.ipynb)
-> * **Notebook with output**: [with-output/ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/ConfigureOpenScale.ipynb)
+> * **Notebook with output**: [with-output/ConfigureOpenScaleOutput.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/ConfigureOpenScaleOutput.ipynb)
 
 <!-- TODO update -->
 ![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
@@ -36,16 +36,43 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 <!-- TODO after this line -->
 
+### Update credentials
+
+* In the notebook section 1.2 you will add your ICP platform credentials.
+* For the `url` field, change `https://w.x.y.z:31843` to use the IP address of your ICP cluster, i.e something like `https://169.26.13.7:31843`
+* For the `username`, use your login username.
+* For the `password`, user your login password.
+
 ### Run the notebook
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
-### Update credentials
+### Get transactions for Explainability
 
-* Enter the `AIOS_GUID` and `CLOUD_API_KEY` in the next cell for the `AIOS_CREDENTIALS`.
-* Add the [Watson Machine Learning](https://cloud.ibm.com/catalog/services/machine-learning) credentials for the service that you created in the next cell as `WML_CREDENTIALS`.
+Under `8.9 Identify transactions for Explainability` run the cell. It will produce a series of UIDs for indidvidual ML scoring transactions. Copy one of them to examine in the next section.
 
-## 2. Setup OpenScale to utilize the dashboard
+## 2.Utilize the dashboard for Openscale
 
-Now that you have created a machine learning model, you can utilize the OpenScale dashboard to gather insights.
-[Follow the steps to configure the OpenScale dashboard](https://cloud.ibm.com/docs/services/ai-openscale?topic=ai-openscale-gs-obj#gs-confaios)
+Now that you have created a machine learning model and configured Openscale, you can utilize the OpenScale dashboard to gather insights.
+
+### Examine an individual transaction
+
+Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar. 
+
+![Explain a transaction](../.gitbook/assets/images/aios/OpenScaleExplainTransaction.png)
+
+From the info icon next to `Details`:
+"Explanations show the most significant factors when determining an outcome. Classification models also include advanced explanations. Advanced explanations are not available for regression, image, and unstructured text models."
+
+Click on the info icon next to `Minimum changes for No Risk outcome` and look at the feature values:
+"Pertinent Negative
+If the feature values were set to these values, the prediction would change. This is the minimum set of changes in feature values to generate a different prediction. Each feature value is changed so that it moves towards its median value in the training data."
+
+Click on the info icon next to `Maximum changes allowed for the same outcome` and look at the feature values:
+"Pertinent Positive
+The prediction will not change even if the feature values are set to these values. This is the maximum change allowed while maintaining the existing prediction. Each feature value is changed so that it moves towards its median value in the training data."
+
+You can see under `Most important factors influencing prediction` the Feature, Value, and Weight of the most important factors for this score.
+
+A full breakdown of the factors contributing to either "Risk" or "No Risk" are at the bottom.
+

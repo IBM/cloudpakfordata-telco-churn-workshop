@@ -40,6 +40,7 @@ strings = {
     "Contract": ['Month-to-month', 'One year', 'Two year'],
     "PaperlessBilling": ['Yes', 'No'],
     "PaymentMethod": ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)']
+
 }
 
 # min, max, default value
@@ -50,9 +51,10 @@ floats = {
 
 # min, max, default value
 ints = {
-    "SeniorCitizen" : [0, 1, 0],
+    "SeniorCitizen": [0, 1, 0],
     "tenure": [0, 100, 2]
 }
+
 
 def generate_input_lines():
     result = f'<table>'
@@ -97,7 +99,9 @@ def generate_input_lines():
 
     result +=f'</table>'
 
+
     return result
+
 
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
 
@@ -111,11 +115,11 @@ class churnForm():
             ID = 999
 
             session['ID'] = ID
-            data  = {}
+            data = {}
 
             for k, v in request.form.items():
-              data[k] = v
-              session[k] = v
+                data[k] = v
+                session[k] = v
 
             scoring_href = os.environ.get('URL')
             mltoken = os.environ.get('TOKEN')
@@ -143,6 +147,7 @@ class churnForm():
             yes_percent = result_json["result"]["probabilities"][0][1] * 100
             flash(
               'Percentage of this customer leaving is %.0f%%' % yes_percent )
+
             return render_template(
                 'score.html',
                 result=result_json,
