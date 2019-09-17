@@ -59,7 +59,7 @@ Now that you have created a machine learning model and configured Openscale, you
 
 Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar. 
 
-![Explain a transaction](.gitbook/assets/images/OpenScaleExplainTransaction.png)
+![Explain a transaction](.gitbook/assets/images/aios/OpenScaleExplainTransaction.png)
 
 From the info icon next to `Details`:
 "Explanations show the most significant factors when determining an outcome. Classification models also include advanced explanations. Advanced explanations are not available for regression, image, and unstructured text models."
