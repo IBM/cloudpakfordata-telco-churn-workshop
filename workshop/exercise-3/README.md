@@ -3,7 +3,7 @@
 This section is broken up into the following steps:
 
 1. [Configure OpenScale in a Jupyter Notebook](#1-configure-openscale-in-a-jupyter-notebook)
-1. [Setup OpenScale to utilize the dashboard](#1-setup-openscale-to-utilize-the-dashboard)
+1. [Utilize the dashboard for OpenScale](#2-utilize-the-dashboard-for-openscale)
 
 ## 1. Configure OpenScale in a Jupyter Notebook
 
@@ -51,7 +51,7 @@ Spend an minute looking through the sections of the notebook to get an overview.
 
 Under `8.9 Identify transactions for Explainability` run the cell. It will produce a series of UIDs for indidvidual ML scoring transactions. Copy one of them to examine in the next section.
 
-## 2.Utilize the dashboard for Openscale
+## 2. Utilize the dashboard for Openscale
 
 Now that you have created a machine learning model and configured Openscale, you can utilize the OpenScale dashboard to gather insights.
 
