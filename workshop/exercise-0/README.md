@@ -5,7 +5,7 @@ This section is broken up into the following steps:
 1. [Clone the repo](#1-clone-the-repo)
 1. [About the data set](#2-about-the-data-set)
 1. [(Optional) Seeding our Db2 Warehouse database](#3-optional-seeding-our-db2-warehouse-database)
-1. [Setting up a project](#4-setting-up-a-project)
+1. [Creating a new Cloud Pak for Data project](#4-creating-a-new-cloud-pak-for-data-project)
 
 ## 1. Clone the repo
 
@@ -114,7 +114,7 @@ Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Wa
 
 ![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
 
-## 4. Setting up Cloud Pak for Data
+## 4. Creating a new Cloud Pak for Data project
 
 At this point of the workshop we will be using Cloud Pak for Data for the remaining steps.
 
