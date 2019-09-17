@@ -2,11 +2,21 @@
 
 This section is broken up into the following steps:
 
-1. [About the data set](#1-about-the-data-set)
-1. [(Optional) Seeding our Db2 database](#2-optional-seeding-our-db2-database)
-1. [Setting up a project](#3-setting-up-a-project)
+1. [Clone the repo](#1-clone-the-repo)
+1. [About the data set](#2-about-the-data-set)
+1. [(Optional) Seeding our Db2 database](#3-optional-seeding-our-db2-database)
+1. [Setting up a project](#4-setting-up-a-project)
 
-## 1. About the data set
+## 1. Clone the repo
+
+Various parts of this workshop will require the attendee to upload files or run scripts that we've stored in the repository. So let's get that done early on, you'll need to [`git`](https://git-scm.com) and access to [GitHub.com](https://github.com/).
+
+```bash
+git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
+cd cloudpakfordata-telco-churn-workshop
+```
+
+## 2. About the data set
 
 The data set used for this workshop is originally from Watson Analytics and was used on a [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn) project, it contains information about customer churn for a Telecommunications company. The data is split into three CSV files and are located in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data) directory of this repository.
 
@@ -44,7 +54,7 @@ This file has the following attributes:
 * Streaming TV *(Yes, No, No internet service)*
 * Streaming Movies *(Yes, No, No internet service)*
 
-## 2. (Optional) Seeding our Db2 Warehouse database
+## 3. (Optional) Seeding our Db2 Warehouse database
 
 We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on IBM Cloud for a few reasons: it simulates a realistic enterprise database, a free tier is provided by IBM Cloud, and we can easily load our data set.
 
@@ -104,7 +114,7 @@ Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Wa
 
 ![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
 
-## 3. Setting up Cloud Pak for Data
+## 4. Setting up Cloud Pak for Data
 
 At this point of the workshop we will be using Cloud Pak for Data for the remaining steps.
 
