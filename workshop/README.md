@@ -42,6 +42,11 @@ Cloud Pak for Data:
 
 ![Cloud Pak for Data stack](.gitbook/assets/images/generic/cpd-stack.png)
 
-Here's a quick overview video about Cloud Pak for Data:
+### Our Cloud Pak for Data environment
 
-<iframe width="800" height="400" src="https://www.youtube.com/embed/oPN_FhGZSCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+For this workshop we'll be using Cloud Pak for Data with the following add-ons:
+
+* Watson Machine Learning
+* Watson OpenScale
+* Data Virtualization
+* Data Refinery
