@@ -39,17 +39,14 @@ strings = {
     "StreamingMovies": ['No', 'Yes', 'No internet service'],
     "Contract": ['Month-to-month', 'One year', 'Two year'],
     "PaperlessBilling": ['Yes', 'No'],
-    "PaymentMethod": ['Electronic check',
-                      'Mailed check',
-                      'Bank transfer (automatic)',
-                      'Credit card (automatic)'],
-    "Churn": ['No', 'Yes'],
+    "PaymentMethod": ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)']
+
 }
 
 # min, max, default value
 floats = {
-    "MonthlyCharges": [0, 5000, 18.75],
-    "TotalCharges": [0, 1000, 53.15]
+    "MonthlyCharges": [0, 1000, 100],
+    "TotalCharges": [0, 50000, 1000]
 }
 
 # min, max, default value
@@ -60,37 +57,48 @@ ints = {
 
 
 def generate_input_lines():
-    result = ""
+    result = f'<table>'
+
+    counter = 0
     for k in floats.keys():
         minn, maxx, vall = floats[k]
+        if (counter % 2 == 0):
+            result +=f'<tr>'
+        result +=f'<td>{k}'
+        result +=f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required (this.value)">'
+        result +=f'</td>'
+        if (counter % 2 == 1):
+            result +=f'</tr>'
+        counter = counter + 1
 
-        result += f'<dt>{k}</dt>'
-        result += f'<dd>'
-        result += f'$<input type="number" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
-        result += f'</dd>'
-
+    counter = 0
     for k in ints.keys():
         minn, maxx, vall = ints[k]
+        if (counter % 2 == 0):
+            result +=f'<tr>'
+        result +=f'<td>{k}'
+        result +=f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
+        result +=f'</td>'
+        if (counter % 2 == 1):
+            result +=f'</tr>'
+        counter = counter + 1
 
-        result += f'<dt>{k}</dt>'
-        result += f'<dd>'
-        result += f'<input type="number" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
-        result += f'</dd>'
-
+    counter = 0
     for k in strings.keys():
-        result += f'<dt>{k}</dt>'
-        result += f'<dd>'
+        if (counter % 2 == 0):
+            result +=f'<tr>'
+        result +=f'<td>{k}'
+        result +=f'<select class="form-control" name="{k}">'
+        for value in strings[k]:
+            result +=f'<option value="{value}" selected>{value}</option>'
+        result +=f'</select>'
+        result +=f'</td>'
+        if (counter % 2 == 1):
+            result +=f'</tr>'
+        counter = counter + 1
 
-        if len("".join(strings[k])) < 10:
-            for value in strings[k]:
-                result += f'<label><input type="radio" name="{k}" value="{value}" checked> {value} </label>'
-        else:
-            result += f'<select name="{k}">'
-            for value in strings[k]:
-                result += f'<option value="{value}" selected>{value}</option>'
-            result += f'</select>'
+    result +=f'</table>'
 
-        result += f'</dd>'
 
     return result
 
@@ -98,7 +106,7 @@ def generate_input_lines():
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
 
 
-class mortgagedefault():
+class churnForm():
 
     @app.route('/', methods=['GET', 'POST'])
     def index():
@@ -120,7 +128,7 @@ class mortgagedefault():
                 raise EnvironmentError('Env vars URL and TOKEN are required.')
 
             payload_scoring = {"args": {"input_json": [data]}}
-            print("Payload is ")
+            print("Payload is: ")
             print(payload_scoring)
             header_online = {
                 'Cache-Control': 'no-cache',
@@ -135,12 +143,17 @@ class mortgagedefault():
             print("Result is ", result)
             result_json = json.loads(result)
             churn_risk = result_json["result"]["predictions"][0].lower()
-            churn_risk = result_json["result"]["predictions"][0].lower()
-            flash('The risk of this customer churning is %s ' % churn_risk)
+            no_percent = result_json["result"]["probabilities"][0][0] * 100
+            yes_percent = result_json["result"]["probabilities"][0][1] * 100
+            flash(
+              'Percentage of this customer leaving is %.0f%%' % yes_percent )
+
             return render_template(
                 'score.html',
                 result=result_json,
                 churn_risk=churn_risk,
+                yes_percent=yes_percent,
+                no_percent=no_percent,
                 response_scoring=response_scoring)
 
         else:

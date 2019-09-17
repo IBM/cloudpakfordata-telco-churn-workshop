@@ -11,18 +11,21 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  * -->
+
 {% extends "layout.html" %}
+
 {% block body %}
 
 <h2>Will a customer stay or leave?</h2>
 <p>Input the following information and click submit to make a prediction.</p>
 
 <form action="#" method="post" class="add-entry">
-    <dl>
-        {{ generate_input_lines() | safe }}
-        <br><br>
-        <dt><input type="submit" value="Submit"></dt>
-    </dl>
+    <div class="section">
+        <div class="form-group">
+            <br>{{ generate_input_lines() | safe }}
+            <br><input type="submit" class="btn btn-success" value="Submit">
+        </div>
+    </div>
 </form>
 
 {% endblock %}
