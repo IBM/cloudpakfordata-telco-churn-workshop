@@ -55,6 +55,25 @@ Under `8.9 Identify transactions for Explainability` run the cell. It will produ
 
 Now that you have created a machine learning model and configured Openscale, you can utilize the OpenScale dashboard to gather insights.
 
+### Use the insights dashboard
+
+Click on the left-hand menu icon for `Insights`, then choose the tile for your configured model (or the 3-dot menu on the tile and then `View Details`:
+
+![OpenScale Insight Dashboard Tile Open](../.gitbook/assets/images/aios/OpenScaleInsightDashTileOpen.png)
+
+You can see the top monitor highlighted, for the feature `Sex`.
+
+By moving your mouse pointer over the graph, you can see the values change, and which contains bias. Click one spot to veiw the details:
+
+![OpenScale Fairness Monitor](../.gitbook/assets/images/aios/OpenScaleFairnessMonitor.png)
+
+Once you open the details page, you can see more information:
+
+![OpenScale Fairness Detail](../.gitbook/assets/images/aios/OpenScaleFairnessDetail.png)
+
+Click on `View Transactions` to drill deeper:
+![OpenScale View Transactions](../.gitbook/assets/images/aios/OpenScaleFairnessViewTransactions.png)
+
 ### Examine an individual transaction
 
 Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar.
