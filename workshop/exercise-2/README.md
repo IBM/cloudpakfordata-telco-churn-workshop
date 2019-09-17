@@ -26,7 +26,7 @@ https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/maste
 > The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
 >
 > * **Notebook**: [TelcoChurnICP4D.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/TelcoChurnICP4D.ipynb)
-> * **Notebook with output**: [with-output/TelcoChurnICP4D.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/TelcoChurnICP4D.ipynb)
+> * **Notebook with output**: [with-output/TelcoChurnICP4DOutput.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/TelcoChurnICP4D.ipynb)
 
 ![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
 
