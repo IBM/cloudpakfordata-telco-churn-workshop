@@ -76,6 +76,8 @@ Find the [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) t
 
 Choose the `Entry` plan as it is compatible with a `Lite` account.
 
+> **NOTE**: There may be a message indicating the service will be charged, please disregard that message as there is no charge for staying under 1 GB of data.
+
 ![Entry level plan](../.gitbook/assets/images/db2/db2-0-pricing.png)
 
 Once the Db2 Warehouse service is created click on *Open Console*.
