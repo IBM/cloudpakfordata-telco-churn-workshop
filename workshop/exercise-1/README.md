@@ -4,7 +4,7 @@ This section is broken up into the following steps:
 
 1. [Add a new Data Source connection](#1-add-a-new-data-source-connection)
 1. [Virtualize Db2 data with Data Virtualization](#2-virtualize-db2-data-with-data-virtualization)
-1. [Visualize data with Cognos Dashboards](#3-visualize-data-with-cognos-dashboards)
+1. [Use Data Refinery to visualize and clean data](#3-use-data-refinery-to-visualize-and-clean-data)
 
 ## 1. Add a new Data Source connection
 
@@ -96,6 +96,32 @@ You'll be notified that the join has succeeded! Click on *View my data*. to repe
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
-## 3. Visualize data with Cognos Dashboards
+## 3. Use Data Refinery to visualize and clean data
 
-The Cognos Dashboards tool provides intuitive options to building visualization quickly. In this part of the workshop we'll use Cognos Dashboards to create a few graphs and charts that help us summarize our data.
+Before we build our model we're going to take a quick detour to the *Data Refinery* tool. Data Refinery can quickly filter and mutate data, create quick visualizations, and do other data cleansing tasks from an easy to use user interface.
+
+### Load the *BILLING* data table into data refinery
+
+From the *Project* home, click on *Data sets*, *TABLE*, and choose the *USER123.BILLING* table.
+
+![Launch the BILLING table](../.gitbook/assets/images/dr/dr-1-launch-billing.png)
+
+Data Refinery should launch and open the data like the image below:
+
+![Data Refinery view of the BILLING table](../.gitbook/assets/images/dr/dr-2-view-billing.png)
+
+The *Operation* button can perform many tasks related to data cleansing such as: substituting values, removing and renaming columns, converting column types, etc.
+
+![Data Refinery operations](../.gitbook/assets/images/dr/dr-3-operations.png)
+
+Clicking on the *Profile* tab will bring up a quick view of several histograms about the data.
+
+![Data Refinery Profile tab](../.gitbook/assets/images/dr/dr-4-profile.png)
+
+Clicking on the *Visualizations* tab will bring up an option to choose which columns to visualize. In this case, we'll pick *TotalCharges*. Click on *Visualize data* when ready.
+
+![Use Data Refinery to visualize data](../.gitbook/assets/images/dr/dr-5-visualize.png)
+
+We can quickly see the data in a histogram by default, switching between different chart types in seconds.
+
+![See the visualization in seconds](../.gitbook/assets/images/dr/dr-6-chart.png)

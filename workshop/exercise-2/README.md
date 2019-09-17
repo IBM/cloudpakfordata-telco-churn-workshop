@@ -203,7 +203,7 @@ source venv/bin/activate  # Mac or Linux
 ./venv/Scripts/activate   # Windows PowerShell
 ```
 
-> **TIP** :bulb: To terminate the virtual environment use the `deactivate` command.
+> **TIP** To terminate the virtual environment use the `deactivate` command.
 
 Finally, install the Python requirements.
 
