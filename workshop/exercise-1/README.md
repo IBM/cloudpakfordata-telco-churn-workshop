@@ -4,8 +4,7 @@ This section is broken up into the following steps:
 
 1. [Add a new Data Source connection](#1-add-a-new-data-source-connection)
 1. [Virtualize Db2 data with Data Virtualization](#2-virtualize-db2-data-with-data-virtualization)
-1. [Clean data with Data Refinery](#3-clean-data-with-data-refinery)
-1. [Join virtual data tables with Data Virtualization](#4-join-virtual-data-with-data-virtualization)
+1. [Use Data Refinery to visualize and clean data](#3-use-data-refinery-to-visualize-and-clean-data)
 
 ## 1. Add a new Data Source connection
 
@@ -71,16 +70,6 @@ You'll be notified that the virtual tables have been created! Let's see the new 
 
 ![Ta da! We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-4-complete.png)
 
-## 3. Clean data with Data Refinery
-
-Data Refinery can... In this part of the workshop we'll use Data Refinery to clean ...
-
-TODO
-
-## 4. Join virtual data tables with Data Virtualization
-
-Now that we've virtualized and cleaned our data we can go back to the Data Virtualization tool and join the data.
-
 ### Join the virtualized data
 
 Now we're going to **join** the tables we created so we have a merged set of data. It will be easier to do it here rather than in a notebook where we'd have to write code to handle three different data sets. Click on any two tables (`PRODUCTS` and `BILLING` for instance) and click the *Join view* button.
@@ -106,3 +95,33 @@ You'll be notified that the join has succeeded! Click on *View my data*. to repe
 **IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`billing+products`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `billing+products+customers`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
+
+## 3. Use Data Refinery to visualize and clean data
+
+Before we build our model we're going to take a quick detour to the *Data Refinery* tool. Data Refinery can quickly filter and mutate data, create quick visualizations, and do other data cleansing tasks from an easy to use user interface.
+
+### Load the *BILLING* data table into data refinery
+
+From the *Project* home, click on *Data sets*, *TABLE*, and choose the *USER123.BILLING* table.
+
+![Launch the BILLING table](../.gitbook/assets/images/dr/dr-1-launch-billing.png)
+
+Data Refinery should launch and open the data like the image below:
+
+![Data Refinery view of the BILLING table](../.gitbook/assets/images/dr/dr-2-view-billing.png)
+
+The *Operation* button can perform many tasks related to data cleansing such as: substituting values, removing and renaming columns, converting column types, etc.
+
+![Data Refinery operations](../.gitbook/assets/images/dr/dr-3-operations.png)
+
+Clicking on the *Profile* tab will bring up a quick view of several histograms about the data.
+
+![Data Refinery Profile tab](../.gitbook/assets/images/dr/dr-4-profile.png)
+
+Clicking on the *Visualizations* tab will bring up an option to choose which columns to visualize. In this case, we'll pick *TotalCharges*. Click on *Visualize data* when ready.
+
+![Use Data Refinery to visualize data](../.gitbook/assets/images/dr/dr-5-visualize.png)
+
+We can quickly see the data in a histogram by default, switching between different chart types in seconds.
+
+![See the visualization in seconds](../.gitbook/assets/images/dr/dr-6-chart.png)
