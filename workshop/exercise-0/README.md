@@ -4,7 +4,7 @@ This section is broken up into the following steps:
 
 1. [Clone the repo](#1-clone-the-repo)
 1. [About the data set](#2-about-the-data-set)
-1. [(Optional) Seeding our Db2 database](#3-optional-seeding-our-db2-database)
+1. [(Optional) Seeding our Db2 Warehouse database](#3-optional-seeding-our-db2-warehouse-database)
 1. [Setting up a project](#4-setting-up-a-project)
 
 ## 1. Clone the repo
