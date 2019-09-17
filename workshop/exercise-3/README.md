@@ -47,6 +47,30 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
+### Get transactions for Explainability
+
+Under `8.9 Identify transactions for Explainability` run the cell. It will produce a series of UIDs for indidvidual ML scoring transactions. Copy one of them to examine in the next section.
+
 ## 2.Utilize the dashboard for Openscale
 
 Now that you have created a machine learning model and configured Openscale, you can utilize the OpenScale dashboard to gather insights.
+
+### Examine an individual transaction
+
+Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar. 
+
+![Explain a transaction](.gitbook/assets/images/OpenScaleExplainTransaction.png)
+
+From the info icon next to `Details`:
+"Explanations show the most significant factors when determining an outcome. Classification models also include advanced explanations. Advanced explanations are not available for regression, image, and unstructured text models."
+
+Click on the info icon next to `Minimum changes for No Risk outcome`:
+"Pertinent Negative
+If the feature values were set to these values, the prediction would change. This is the minimum set of changes in feature values to generate a different prediction. Each feature value is changed so that it moves towards its median value in the training data."
+
+Click on the info icon next to `Maximum changes allowed for the same outcome`:
+"Pertinent Positive
+The prediction will not change even if the feature values are set to these values. This is the maximum change allowed while maintaining the existing prediction. Each feature value is changed so that it moves towards its median value in the training data."
+
+
+
