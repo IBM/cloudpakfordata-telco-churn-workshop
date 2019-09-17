@@ -63,7 +63,7 @@ Click on the left-hand menu icon for `Insights`, then choose the tile for your c
 
 You can see the top monitor highlighted, for the feature `Sex`.
 
-By moving your mouse pointer over the graph, you can see the values change, and which contains bias. Click one spot to veiw the details:
+By moving your mouse pointer over the graph, you can see the values change, and which contains bias. Click one spot to veiw the details. Later, we'll click `Configure Monitors` to get a Fairness endpoint:
 
 ![OpenScale Fairness Monitor](../.gitbook/assets/images/aios/OpenScaleFairnessMonitor.png)
 
@@ -72,7 +72,16 @@ Once you open the details page, you can see more information:
 ![OpenScale Fairness Detail](../.gitbook/assets/images/aios/OpenScaleFairnessDetail.png)
 
 Click on `View Transactions` to drill deeper:
+
 ![OpenScale View Transactions](../.gitbook/assets/images/aios/OpenScaleFairnessViewTransactions.png)
+
+Now, go back to the top-level page when you click the Monitor Deployment tile and click `Configure Monitors`. Click the `Fairness` menu, then the `Debias Endpoint` tab:
+
+![OpenScale Monitors Fairness](../.gitbook/assets/images/aios/OpenScaleMonitorFairness.png)
+
+Then scroll down for code examples on how to use the Fairness Debiased endpoint:
+
+![OpenScale Debiased endpoint](../.gitbook/assets/images/aios/OpenScaleDebiasedEndpoint.png)
 
 ### Examine an individual transaction
 
