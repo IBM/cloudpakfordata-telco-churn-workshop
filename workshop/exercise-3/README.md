@@ -83,6 +83,8 @@ Then scroll down for code examples on how to use the Fairness Debiased endpoint:
 
 ![OpenScale Debiased endpoint](../.gitbook/assets/images/aios/OpenScaleDebiasedEndpoint.png)
 
+Similarly, you can choose the `Quality` menu and choose the `Feedback` tab to get code for Feedback Logging.
+
 ### Examine an individual transaction
 
 Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar.
