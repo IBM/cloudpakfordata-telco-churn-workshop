@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/maste
 > The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
 >
 > * **Notebook**: [ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/ConfigureOpenScale.ipynb)
-> * **Notebook with output**: [with-output/ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/ConfigureOpenScale.ipynb)
+> * **Notebook with output**: [with-output/ConfigureOpenScaleOutput.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/ConfigureOpenScaleOutput.ipynb)
 
 <!-- TODO update -->
 ![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
@@ -36,16 +36,17 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 <!-- TODO after this line -->
 
+### Update credentials
+
+* In the notebook section 1.2 you will add your ICP platform credentials.
+* For the `url` field, change `https://w.x.y.z:31843` to use the IP address of your ICP cluster, i.e something like `https://169.26.13.7:31843`
+* For the `username`, use your login username.
+* For the `password`, user your login password.
+
 ### Run the notebook
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
-### Update credentials
+## 2.Utilize the dashboard for Openscale
 
-* Enter the `AIOS_GUID` and `CLOUD_API_KEY` in the next cell for the `AIOS_CREDENTIALS`.
-* Add the [Watson Machine Learning](https://cloud.ibm.com/catalog/services/machine-learning) credentials for the service that you created in the next cell as `WML_CREDENTIALS`.
-
-## 2. Setup OpenScale to utilize the dashboard
-
-Now that you have created a machine learning model, you can utilize the OpenScale dashboard to gather insights.
-[Follow the steps to configure the OpenScale dashboard](https://cloud.ibm.com/docs/services/ai-openscale?topic=ai-openscale-gs-obj#gs-confaios)
+Now that you have created a machine learning model and configured Openscale, you can utilize the OpenScale dashboard to gather insights.
