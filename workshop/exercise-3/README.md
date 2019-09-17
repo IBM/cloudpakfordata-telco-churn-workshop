@@ -72,6 +72,7 @@ Once you open the details page, you can see more information:
 ![OpenScale Fairness Detail](../.gitbook/assets/images/aios/OpenScaleFairnessDetail.png)
 
 Click on `View Transactions` to drill deeper:
+
 ![OpenScale View Transactions](../.gitbook/assets/images/aios/OpenScaleFairnessViewTransactions.png)
 
 ### Examine an individual transaction
