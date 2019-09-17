@@ -39,7 +39,10 @@ strings = {
     "StreamingMovies": ['No', 'Yes', 'No internet service'],
     "Contract": ['Month-to-month', 'One year', 'Two year'],
     "PaperlessBilling": ['Yes', 'No'],
-    "PaymentMethod": ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)'],
+    "PaymentMethod": ['Electronic check',
+                      'Mailed check',
+                      'Bank transfer (automatic)',
+                      'Credit card (automatic)'],
     "Churn": ['No', 'Yes'],
 }
 
@@ -51,43 +54,46 @@ floats = {
 
 # min, max, default value
 ints = {
-    "SeniorCitizen" : [0, 1, 0],
+    "SeniorCitizen": [0, 1, 0],
     "tenure": [0, 100, 2]
 }
+
 
 def generate_input_lines():
     result = ""
     for k in floats.keys():
         minn, maxx, vall = floats[k]
 
-        result +=f'<dt>{k}</dt>'
-        result +=f'<dd>'
-        result +=f'$<input type="number" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
-        result +=f'</dd>'
+        result += f'<dt>{k}</dt>'
+        result += f'<dd>'
+        result += f'$<input type="number" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
+        result += f'</dd>'
 
     for k in ints.keys():
         minn, maxx, vall = ints[k]
-        result +=f'<dt>{k}</dt>'
-        result +=f'<dd>'
-        result +=f'<input type="number" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
-        result +=f'</dd>'
+
+        result += f'<dt>{k}</dt>'
+        result += f'<dd>'
+        result += f'<input type="number" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required onchange="show_value_{k}(this.value)">'
+        result += f'</dd>'
 
     for k in strings.keys():
-        result +=f'<dt>{k}</dt>'
-        result +=f'<dd>'
+        result += f'<dt>{k}</dt>'
+        result += f'<dd>'
 
         if len("".join(strings[k])) < 10:
             for value in strings[k]:
-                result +=f'<label><input type="radio" name="{k}" value="{value}" checked> {value} </label>'
+                result += f'<label><input type="radio" name="{k}" value="{value}" checked> {value} </label>'
         else:
-            result +=f'<select name="{k}">'
+            result += f'<select name="{k}">'
             for value in strings[k]:
-                result +=f'<option value="{value}" selected>{value}</option>'
-            result +=f'</select>'
+                result += f'<option value="{value}" selected>{value}</option>'
+            result += f'</select>'
 
-        result +=f'</dd>'
+        result += f'</dd>'
 
     return result
+
 
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
 
@@ -101,11 +107,11 @@ class mortgagedefault():
             ID = 999
 
             session['ID'] = ID
-            data  = {}
+            data = {}
 
             for k, v in request.form.items():
-              data[k] = v
-              session[k] = v
+                data[k] = v
+                session[k] = v
 
             scoring_href = os.environ.get('URL')
             mltoken = os.environ.get('TOKEN')
@@ -130,8 +136,7 @@ class mortgagedefault():
             result_json = json.loads(result)
             churn_risk = result_json["result"]["predictions"][0].lower()
             churn_risk = result_json["result"]["predictions"][0].lower()
-            flash(
-              'The risk of this customer churning is %s ' % churn_risk)
+            flash('The risk of this customer churning is %s ' % churn_risk)
             return render_template(
                 'score.html',
                 result=result_json,
