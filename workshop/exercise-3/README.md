@@ -57,7 +57,7 @@ Now that you have created a machine learning model and configured Openscale, you
 
 ### Examine an individual transaction
 
-Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar. 
+Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar.
 
 ![Explain a transaction](../.gitbook/assets/images/aios/OpenScaleExplainTransaction.png)
 
@@ -75,4 +75,3 @@ The prediction will not change even if the feature values are set to these value
 You can see under `Most important factors influencing prediction` the Feature, Value, and Weight of the most important factors for this score.
 
 A full breakdown of the factors contributing to either "Risk" or "No Risk" are at the bottom.
-

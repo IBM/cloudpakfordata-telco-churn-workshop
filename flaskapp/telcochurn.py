@@ -39,8 +39,10 @@ strings = {
     "StreamingMovies": ['No', 'Yes', 'No internet service'],
     "Contract": ['Month-to-month', 'One year', 'Two year'],
     "PaperlessBilling": ['Yes', 'No'],
-    "PaymentMethod": ['Electronic check', 'Mailed check', 'Bank transfer (automatic)', 'Credit card (automatic)']
-
+    "PaymentMethod": ['Electronic check',
+                      'Mailed check',
+                      'Bank transfer (automatic)',
+                      'Credit card (automatic)']
 }
 
 # min, max, default value
@@ -63,42 +65,41 @@ def generate_input_lines():
     for k in floats.keys():
         minn, maxx, vall = floats[k]
         if (counter % 2 == 0):
-            result +=f'<tr>'
-        result +=f'<td>{k}'
-        result +=f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="0.01" name="{k}" id="{k}" value="{vall}" required (this.value)">'
-        result +=f'</td>'
+            result += f'<tr>'
+        result += f'<td>{k}'
+        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
+        result += f'</td>'
         if (counter % 2 == 1):
-            result +=f'</tr>'
+            result += f'</tr>'
         counter = counter + 1
 
     counter = 0
     for k in ints.keys():
         minn, maxx, vall = ints[k]
         if (counter % 2 == 0):
-            result +=f'<tr>'
-        result +=f'<td>{k}'
-        result +=f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
-        result +=f'</td>'
+            result += f'<tr>'
+        result += f'<td>{k}'
+        result += f'<input type="number" class="form-control" min="{minn}" max="{maxx}" step="1" name="{k}" id="{k}" value="{vall}" required (this.value)">'
+        result += f'</td>'
         if (counter % 2 == 1):
-            result +=f'</tr>'
+            result += f'</tr>'
         counter = counter + 1
 
     counter = 0
     for k in strings.keys():
         if (counter % 2 == 0):
-            result +=f'<tr>'
-        result +=f'<td>{k}'
-        result +=f'<select class="form-control" name="{k}">'
+            result += f'<tr>'
+        result += f'<td>{k}'
+        result += f'<select class="form-control" name="{k}">'
         for value in strings[k]:
-            result +=f'<option value="{value}" selected>{value}</option>'
-        result +=f'</select>'
-        result +=f'</td>'
+            result += f'<option value="{value}" selected>{value}</option>'
+        result += f'</select>'
+        result += f'</td>'
         if (counter % 2 == 1):
-            result +=f'</tr>'
+            result += f'</tr>'
         counter = counter + 1
 
-    result +=f'</table>'
-
+    result += f'</table>'
 
     return result
 
@@ -145,9 +146,8 @@ class churnForm():
             churn_risk = result_json["result"]["predictions"][0].lower()
             no_percent = result_json["result"]["probabilities"][0][0] * 100
             yes_percent = result_json["result"]["probabilities"][0][1] * 100
-            flash(
-              'Percentage of this customer leaving is %.0f%%' % yes_percent )
-
+            flash('Percentage of this customer leaving is: %.0f%%'
+                  % yes_percent)
             return render_template(
                 'score.html',
                 result=result_json,
