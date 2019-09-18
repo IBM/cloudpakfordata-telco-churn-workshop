@@ -14,9 +14,9 @@ To add a new data source, go to the (☰) menu and click on the *Connections* op
 
 ![(☰) Menu -> Collections](../.gitbook/assets/images/connections/cpd-conn-menu.png)
 
-At the empty overview, click *Add connection*.
+At the overview, click *Add connection*.
 
-![No connections, yet.](../.gitbook/assets/images/connections/conn-1-overview-empty.png)
+![Overview page](../.gitbook/assets/images/connections/conn-1-overview-empty.png)
 
 Start by giving your new *Connection* a name and select *Db2 Warehouse on Cloud* as your connection type. More fields should apper. Fill the new fields with the same credentials for your own Db2 Warehouse connection from the previous section (or ask your instructor for shared credentials). Click `Test Connection` and, after that succeeds, click `Add`.
 
