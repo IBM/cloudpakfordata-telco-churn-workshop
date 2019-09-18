@@ -90,7 +90,7 @@ You'll be directed to a Db2 web console dashboard where you can load data by cli
 
 ![The Db2 Warehouse console](../.gitbook/assets/images/db2/db2-2-console-overview.png)
 
-Select the [`billing.csv`](../../data/split/billing.csv) file in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data) folder.
+Select the [`billing.csv`](../../data/split/billing.csv) file in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data/split) folder.
 
 ![Find data to load](../.gitbook/assets/images/db2/db2-3-csv-find.png)
 
