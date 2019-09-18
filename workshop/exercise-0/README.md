@@ -142,6 +142,6 @@ Click on *New project*
 
 ![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-Create a new project, give it a unique name and click *OK.
+Create a new project, choose `Analytics project`, give it a unique name, and click *OK.
 
 ![Pick a name](../.gitbook/assets/images/manage/cpd-new-project-name.png)
