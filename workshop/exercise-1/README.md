@@ -26,11 +26,13 @@ The new connection will be listed in the overview.
 
 ![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
 
-> **IMPORTANT**: A note to the instructors of this workshop. At this point go to the *Virtualized Data* option and grant at least *Steward* access to all users participating in the workshop.
+> **IMPORTANT**: A note to the instructors of this workshop. At this point go to the *Virtualized Data* option and grant at least *Engineer access to all users participating in the workshop.
 
 ![Grant access to the data virtualization tool](../.gitbook/assets/images/dv/dv-0-grant-access.png)
 
 ## 2. Virtualize Db2 data with Data Virtualization
+
+### NOTE: This section requires `Admin` user access for the ICP Cluster. An Administrator will present this part for the workshop. Users will not perform these tasks.
 
 For this section we'll now use the Data Virtualization tool to import the data from Db2 Warehouse, which is now exposed as an Connection in Cloud Pak for Data.
 
