@@ -3,7 +3,7 @@
 This section is broken up into the following steps:
 
 1. [Add a new Data Source connection](#1-add-a-new-data-source-connection)
-1. [Assign virtualized data to your project](#2-assign-virtualized-data-to-your-project)
+1. [Assign virtualized data to your project](#2-assign-virtualized-data)
 1. [Use Data Refinery to visualize and clean data](#3-use-data-refinery-to-visualize-and-clean-data)
 
 ## 1. Add a new Data Source connection
@@ -26,9 +26,9 @@ The new connection will be listed in the overview.
 
 ![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
 
-> **IMPORTANT**: A note to the instructors of this workshop. At this point go to the [Admin Guide](../admin-guide/README.md#virtualize-db2-data-with-data-virtualization) and follow the `Virtualize Db2 data with Data Virtualization` section.
-
 ## 2. Assign virtualized data
+
+> **IMPORTANT**: A note to the instructors of this workshop. At this point go to the [Admin Guide](../admin-guide/README.md#virtualize-db2-data-with-data-virtualization) and follow the `Virtualize Db2 data with Data Virtualization` section.
 
 For this section we'll now use the Data Virtualization tool to import the data from Db2 Warehouse, which is now exposed as an Connection in Cloud Pak for Data.
 
