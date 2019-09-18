@@ -3,7 +3,7 @@
 This section is broken up into the following steps:
 
 1. [Add a new Data Source connection](#1-add-a-new-data-source-connection)
-1. [Virtualize Db2 data with Data Virtualization](#2-virtualize-db2-data-with-data-virtualization)
+1. [Assign virtualized data to your project](#2-assign-virtualized-data-to-your-project)
 1. [Use Data Refinery to visualize and clean data](#3-use-data-refinery-to-visualize-and-clean-data)
 
 ## 1. Add a new Data Source connection
@@ -26,75 +26,27 @@ The new connection will be listed in the overview.
 
 ![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
 
-> **IMPORTANT**: A note to the instructors of this workshop. At this point go to the *Virtualized Data* option and grant at least *Engineer* access to all users participating in the workshop.
+---
 
-![Grant access to the data virtualization tool](../.gitbook/assets/images/dv/dv-0-grant-access.png)
+> **IMPORTANT**: A note to the instructors of this workshop. At this point go to the [Admin Guide](../admin-guide/README.md#virtualize-db2-data-with-data-virtualization) and follow the `Virtualize Db2 data with Data Virtualization` section.
 
-## 2. Virtualize Db2 data with Data Virtualization
+--
 
-### NOTE: This section requires `Admin` user access for the ICP Cluster. An Administrator will present this part for the workshop. Users will not perform these tasks.
+## 2. Assign virtualized data
 
 For this section we'll now use the Data Virtualization tool to import the data from Db2 Warehouse, which is now exposed as an Connection in Cloud Pak for Data.
 
-### Add a Data Source to Data Virtualization
+### Assign the data to your project
 
-To launch the data virtualization tool, go the (☰) menu and click *Collect* and then *Virtualized data*.
+From the menu click on *Collections -> Virtualized Data*, you'll be brough to the *My data* section. Here you should see the data that the administrator has assigned to you. Choose the three data sets available and click *Assign* to start importing it to your project.
 
-![(☰) Menu -> Collect -> Virtualized data](../.gitbook/assets/images/dv/cpd-dv-menu.png)
+![Select the data you want to import](../.gitbook/assets/images/dv/dv-8-select-data.png)
 
-At the empty overview, click *Add* and choose *Add remote connector*.
+From here, choose the project you previously created.
 
-![No data sources, yet](../.gitbook/assets/images/dv/dv-data-sources-1-empty.png)
+![Assign the data to a project](../.gitbook/assets/images/dv/dv-9-assign.png)
 
-Select the data source we made in the previous step, and click *Next*.
-
-![Add the Db2 Warehouse connection](../.gitbook/assets/images/dv/dv-data-sources-2-add.png)
-
-The new connection will be listed as a data source for data virtualization.
-
-![Db2 Warehouse connection is now associated with Data Virtualization](../.gitbook/assets/images/dv/dv-data-sources-3-shown.png)
-
-### Start virtualizing data
-
-In this section, since we now have access to the Db2 Warehouse data, we can virtualize the data to our Cloud Pak for Data project. Click on the *Menu* button and choose *Virtualize*.
-
-![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-1-menu.png)
-
-Several tables will appear (many are created as sample data when a Db2 Warehouse instance is provisioned) in the table. Find the tables you created earlier, the instructions suggested naming them: `CUSTOMER`, `PRODUCT` and `BILLING`. Once selected click on *Add to cart* and then on *View Cart*.
-
-![Choose the tables to virtualize](../.gitbook/assets/images/dv/dv-virtualize-2-tables.png)
-
-The next panel prompts the user to choose which project to assign the data to, choose the project you created in the previous exercise. Click *Virtualize* to start the process.
-
-![Add virtualized data to your project](../.gitbook/assets/images/dv/dv-virtualize-3-assign.png)
-
-You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking *View my data*.
-
-![Ta da! We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-4-complete.png)
-
-### Join the virtualized data
-
-Now we're going to **join** the tables we created so we have a merged set of data. It will be easier to do it here rather than in a notebook where we'd have to write code to handle three different data sets. Click on any two tables (`PRODUCTS` and `BILLING` for instance) and click the *Join view* button.
-
-![Choose to join two tables](../.gitbook/assets/images/dv/dv-data-join-1-overview.png)
-
-To join the tables we need to pick a key that is common to both data sets. Here we choose to map `customerID` from the first table to `customerID` on the second table. Do this by clicking on one and dragging it to another. When the line is drawn click on *Join*.
-
-![Map the two customerID keys](../.gitbook/assets/images/dv/dv-data-join-2-columns.png)
-
-In the next panel we'll give our joined data a name, I chose `billing+products`, then review the joined table to ensure all columns are present and only one `customerID` column exists. Click *Next* to continue.
-
-![Review the proposed joined table](../.gitbook/assets/images/dv/dv-data-join-3-review.png)
-
-Next we choose which project to assign the joined view to, choose the project you created in the previous exercise. Click *Create view* to start the process.
-
-![Add joined data tables to your project](../.gitbook/assets/images/dv/dv-data-join-4-assign.png)
-
-You'll be notified that the join has succeeded! Click on *View my data*. to repeat this again so we have all three tables.
-
-![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-5-created.png)
-
-**IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`billing+products`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `billing+products+customers`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
+Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
