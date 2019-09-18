@@ -76,7 +76,7 @@ Continue to run the remaining cells in the section to save the model to Cloud Pa
 
 #### Deploy to Watson Machine Learning
 
-Section `5.0 Deploy the model to Watson Machine Learning` will deploy your model to the Watson Machine Learning service with the Watson Machine Learning client. Update the credentials in the cell seen below. Your instructor will provide the URL, the username and password are the same used to log into Cloud Pak for Data.
+Section `5.0 Deploy the model to Watson Machine Learning` will deploy your model to the Watson Machine Learning service with the Watson Machine Learning client. Update the credentials in the cell seen below. Your instructor will provide the URL, which will be the URL of the cluster. For today's workshop on 9/19/19, this will be `169.54.164.135`. So the URL will be: `"url": "https://169.54.164.135"`. The username and password are the same used to log into Cloud Pak for Data.
 
 ![Update credentials](../.gitbook/assets/images/wml/wml-7-update-credentials.png)
 
