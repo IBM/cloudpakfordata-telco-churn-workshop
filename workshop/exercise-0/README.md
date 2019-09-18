@@ -106,7 +106,7 @@ On the next panel click *Begin Load* to start loading the data.
 
 ![Begin loading the data](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
 
-Verify all the rows were loaded.
+Verify all the rows were loaded. Click `Load More Data` to continue.
 
 ![Data has been loaded!](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
 
