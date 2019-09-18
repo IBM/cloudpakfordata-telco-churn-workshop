@@ -78,8 +78,6 @@ Click on *Add user* and ensure all users have the *Steward* role.
 
 ![Manage users in Data Virtualization](../.gitbook/assets/images/dv/dv-7-steward-role.png)
 
----
-
 ## Adding users to the cluster
 
 From the hamburger menu, click manage users, then add user!

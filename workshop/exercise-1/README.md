@@ -26,11 +26,7 @@ The new connection will be listed in the overview.
 
 ![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
 
----
-
 > **IMPORTANT**: A note to the instructors of this workshop. At this point go to the [Admin Guide](../admin-guide/README.md#virtualize-db2-data-with-data-virtualization) and follow the `Virtualize Db2 data with Data Virtualization` section.
-
---
 
 ## 2. Assign virtualized data
 
