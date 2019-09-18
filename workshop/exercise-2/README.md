@@ -144,7 +144,7 @@ Once created the model details will appear, take note of the *Endpoint* and *Dep
 
 ### Deploy the project
 
-* You will be brough back to the project release page where you will see your model is *Disabled*. Click the *Launch* button to deploy your project.
+* You will be brought back to the project release page where you will see your model is *Disabled*. Click the *Launch* button to deploy your project.
 
 ![Deploy your project](../.gitbook/assets/images/wml/project-11-model-disabled.png)
 

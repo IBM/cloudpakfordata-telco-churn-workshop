@@ -34,7 +34,7 @@ For this section we'll now use the Data Virtualization tool to import the data f
 
 ### Assign the data to your project
 
-From the menu click on *Collections -> Virtualized Data*, you'll be brough to the *My data* section. Here you should see the data that the administrator has assigned to you. Choose the three data sets available and click *Assign* to start importing it to your project.
+From the menu click on *Collections -> Virtualized Data*, you'll be brought to the *My data* section. Here you should see the data that the administrator has assigned to you. Choose the three data sets available and click *Assign* to start importing it to your project.
 
 ![Select the data you want to import](../.gitbook/assets/images/dv/dv-8-select-data.png)
 
