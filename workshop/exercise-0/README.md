@@ -94,7 +94,7 @@ Select the [`billing.csv`](../../data/split/billing.csv) file in the [data](http
 
 ![Find data to load](../.gitbook/assets/images/db2/db2-3-csv-find.png)
 
-On the next panel we configure where the data will go in the database. We'll use the *DASH100239* schema, and opt to create a new table. Call it `BILLING`, and click *Next*.
+On the next panel we configure where the data will go in the database. We'll use the *DASH100239* schema, and opt to create a new table. Call it `BILLING`, and click *Next*. Note that your schema will look like *DASHXXXX* where *XXXX* is a randomly generated number.
 
 ![Select a table name](../.gitbook/assets/images/db2/db2-4-csv-config.png)
 
