@@ -116,7 +116,7 @@ Repeat the process for [`products.csv`](../../data/split/products.csv) and [`cus
 
 ### Jot down the credentials
 
-```
+```yaml
 {
   "hostname": "dashdb-entry-yp-dal09-08.services.dal.bluemix.net",
   "password": "c4Fn_Pl_B7jG",
