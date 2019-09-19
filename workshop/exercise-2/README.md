@@ -152,6 +152,17 @@ Once the deployment is complete click on the action action menu (vertical 3 dots
 
 ![Endpoint and token for the deployed model](../.gitbook/assets/images/wml/project-12-model-enabled.png)
 
+```from dsx_ml.ml import save```
+
+```
+save(name=MODEL_NAME,\n",	    "MODEL_NAME = \"my_name telco churn model\"\n",
+    "    model=model,\n",	    "DEPLOYMENT_NAME = \"my_name deployment\""
+    "    test_data = test_data,\n",	
+    "    algorithm_type='Classification',\n",	
+    "    description='This is a SparkML Model to Classify Telco Customer Churn Risk')
+    
+    ```
+    
 ## 3. Testing the model
 
 Cloud Pak for Data offers tools to quickly test out Watson Machine Learning models. We begin with the built-in tooling.
