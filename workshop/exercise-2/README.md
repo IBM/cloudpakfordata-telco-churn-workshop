@@ -155,11 +155,11 @@ Once the deployment is complete click on the action action menu (vertical 3 dots
 ```from dsx_ml.ml import save```
 
 ```
-save(name=MODEL_NAME,\n",	    "MODEL_NAME = \"my_name telco churn model\"\n",
-    "    model=model,\n",	    "DEPLOYMENT_NAME = \"my_name deployment\""
-    "    test_data = test_data,\n",	
-    "    algorithm_type='Classification',\n",	
-    "    description='This is a SparkML Model to Classify Telco Customer Churn Risk')
+save(name=MODEL_NAME,	   
+     model=model,	    
+     test_data = test_data,	
+     algorithm_type='Classification',	
+     description='This is a SparkML Model to Classify Telco Customer Churn Risk')
     
     ```
     
