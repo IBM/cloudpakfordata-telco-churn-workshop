@@ -116,6 +116,21 @@ Repeat the process for [`products.csv`](../../data/split/products.csv) and [`cus
 
 ### Jot down the credentials
 
+```{
+  "hostname": "dashdb-entry-yp-dal09-08.services.dal.bluemix.net",
+  "password": "c4Fn_Pl_B7jG",
+  "https_url": "https://dashdb-entry-yp-dal09-08.services.dal.bluemix.net:8443",
+  "port": 50000,
+  "ssldsn": "DATABASE=BLUDB;HOSTNAME=dashdb-entry-yp-dal09-08.services.dal.bluemix.net;PORT=50001;PROTOCOL=TCPIP;UID=dash100239;PWD=c4Fn_Pl_B7jG;Security=SSL;",
+  "host": "dashdb-entry-yp-dal09-08.services.dal.bluemix.net",
+  "jdbcurl": "jdbc:db2://dashdb-entry-yp-dal09-08.services.dal.bluemix.net:50000/BLUDB",
+  "uri": "db2://dash100239:c4Fn_Pl_B7jG@dashdb-entry-yp-dal09-08.services.dal.bluemix.net:50000/BLUDB",
+  "db": "BLUDB",
+  "dsn": "DATABASE=BLUDB;HOSTNAME=dashdb-entry-yp-dal09-08.services.dal.bluemix.net;PORT=50000;PROTOCOL=TCPIP;UID=dash100239;PWD=c4Fn_Pl_B7jG;",
+  "username": "dash100239",
+  "ssljdbcurl": "jdbc:db2://dashdb-entry-yp-dal09-08.services.dal.bluemix.net:50001/BLUDB:sslConnection=true;"
+}```
+
 Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Warehouse by going back to our service, clicking on the *Service credentials* button, and creating a new credential. Copy these down somewhere as we'll need them in the next section.
 
 ![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
