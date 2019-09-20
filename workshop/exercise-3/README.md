@@ -26,15 +26,11 @@ https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/maste
 > * **Notebook**: [ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/ConfigureOpenScale.ipynb)
 > * **Notebook with output**: [with-output/ConfigureOpenScaleOutput.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/ConfigureOpenScaleOutput.ipynb)
 
-<!-- TODO update -->
 ![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
 
 When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-<!-- TODO update -->
-![Notebook loaded](../.gitbook/assets/images/wml/wml-3-notebook-loaded.png)
-
-<!-- TODO after this line -->
+![Notebook loaded](../.gitbook/assets/images/aios/OpenScaleNotebook.png)
 
 ### Update credentials
 

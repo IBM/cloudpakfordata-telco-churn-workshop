@@ -74,6 +74,15 @@ MODEL_NAME = "user123 customer churn model"
 
 Continue to run the remaining cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
 
+The main snippet of Python that saves the model locally looks like:
+
+```python
+from dsx_ml.ml import save
+
+save(name=MODEL_NAME, model=model, test_data=test_data, algorithm_type='Classification',
+     description='This is a SparkML Model to Classify Telco Customer Churn Risk')
+```
+
 #### Deploy to Watson Machine Learning
 
 Section `5.0 Deploy the model to Watson Machine Learning` will deploy your model to the Watson Machine Learning service with the Watson Machine Learning client. Update the credentials in the cell seen below. Your instructor will provide the URL, which will be the URL of the cluster. For today's workshop on 9/19/19, this will be `169.54.164.135`. So the URL will be: `"url": "https://169.54.164.135"`. The username and password are the same used to log into Cloud Pak for Data.
@@ -152,17 +161,6 @@ Once the deployment is complete click on the action action menu (vertical 3 dots
 
 ![Endpoint and token for the deployed model](../.gitbook/assets/images/wml/project-12-model-enabled.png)
 
-```from dsx_ml.ml import save```
-
-```
-save(name=MODEL_NAME,	   
-     model=model,	    
-     test_data = test_data,	
-     algorithm_type='Classification',	
-     description='This is a SparkML Model to Classify Telco Customer Churn Risk')
-    
-    ```
-    
 ## 3. Testing the model
 
 Cloud Pak for Data offers tools to quickly test out Watson Machine Learning models. We begin with the built-in tooling.
