@@ -18,7 +18,7 @@ git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
 cd cloudpakfordata-telco-churn-workshop
 ```
 
-or go to the [github repo for this workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop) and download the `.zip` file, then extract it on your laptop:
+Alternatively, if `git` is not supported, go to the [GitHub repo for this workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop) and download the archived version of the workshop and extract it on your laptop.
 
 ![download workshop zip](../.gitbook/assets/images/generic/cp4d-telco-workshop-git-zip-download.png)
 
