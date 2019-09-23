@@ -9,12 +9,18 @@ This section is broken up into the following steps:
 
 ## 1. Clone the repo
 
-Various parts of this workshop will require the attendee to upload files or run scripts that we've stored in the repository. So let's get that done early on, you'll need to [`git`](https://git-scm.com) and access to [GitHub.com](https://github.com/).
+Various parts of this workshop will require the attendee to upload files or run scripts that we've stored in the repository. So let's get that done early on, you'll need [`git`](https://git-scm.com) on your laptop to clone the repository directly, or access to [GitHub.com](https://github.com/) to download the zip file.
+
+Either run the following command:
 
 ```bash
 git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
 cd cloudpakfordata-telco-churn-workshop
 ```
+
+or go to the [github repo for this workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop) and download the `.zip` file, then extract it on your laptop:
+
+![download workshop zip](../.gitbook/assets/images/generic/cp4d-telco-workshop-git-zip-download.png)
 
 ## 2. About the data set
 
