@@ -126,22 +126,7 @@ Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Wa
 
 ![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
 
-```yaml
-{
-  "hostname": "dashdb-entry-yp-dal09-08.services.dal.bluemix.net",
-  "password": "c4Fn_Pl_B7jG",
-  "https_url": "https://dashdb-entry-yp-dal09-08.services.dal.bluemix.net:8443",
-  "port": 50000,
-  "ssldsn": "DATABASE=BLUDB;HOSTNAME=dashdb-entry-yp-dal09-08.services.dal.bluemix.net;PORT=50001;PROTOCOL=TCPIP;UID=dash100239;PWD=c4Fn_Pl_B7jG;Security=SSL;",
-  "host": "dashdb-entry-yp-dal09-08.services.dal.bluemix.net",
-  "jdbcurl": "jdbc:db2://dashdb-entry-yp-dal09-08.services.dal.bluemix.net:50000/BLUDB",
-  "uri": "db2://dash100239:c4Fn_Pl_B7jG@dashdb-entry-yp-dal09-08.services.dal.bluemix.net:50000/BLUDB",
-  "db": "BLUDB",
-  "dsn": "DATABASE=BLUDB;HOSTNAME=dashdb-entry-yp-dal09-08.services.dal.bluemix.net;PORT=50000;PROTOCOL=TCPIP;UID=dash100239;PWD=c4Fn_Pl_B7jG;",
-  "username": "dash100239",
-  "ssljdbcurl": "jdbc:db2://dashdb-entry-yp-dal09-08.services.dal.bluemix.net:50001/BLUDB:sslConnection=true;"
-}
-```
+> NOTE to Instructor: If you'd like to have credentials for a pre-deployed and configured DB, place them here
 
 ## 4. Creating a new Cloud Pak for Data project
 
@@ -149,7 +134,7 @@ At this point of the workshop we will be using Cloud Pak for Data for the remain
 
 ### Log into Cloud Pak for Data
 
-Launch a browser and naviate to your Cloud Pak for Data deployment
+Launch a browser and navigate to your Cloud Pak for Data deployment
 
 > **NOTE** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
 
