@@ -4,7 +4,7 @@ This section is broken up into the following steps:
 
 1. [Build a model with Spark](#1-build-a-model-with-spark)
 1. [Create a project release](#2-create-a-project-release)
-1. [Testing the model](#3-testing-the-model-with-cloud-pak-for-data)
+1. [Testing the model](#3-testing-the-model)
 1. [(Optional) Create a Python Flask app that uses the model](#4-optional-create-a-python-flask-app-that-uses-the-model)
 
 ## 1. Build a model with Spark
