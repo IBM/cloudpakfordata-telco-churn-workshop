@@ -83,16 +83,6 @@ save(name=MODEL_NAME, model=model, test_data=test_data, algorithm_type='Classifi
      description='This is a SparkML Model to Classify Telco Customer Churn Risk')
 ```
 
-#### Deploy to Watson Machine Learning
-
-Section `5.0 Deploy the model to Watson Machine Learning` will deploy your model to the Watson Machine Learning service with the Watson Machine Learning client. Update the credentials in the cell seen below. Your instructor will provide the URL, which will be the URL of the cluster. For today's workshop on 9/19/19, this will be `169.54.164.135`. So the URL will be: `"url": "https://169.54.164.135"`. The username and password are the same used to log into Cloud Pak for Data.
-
-![Update credentials](../.gitbook/assets/images/wml/wml-7-update-credentials.png)
-
-Once deployed the model and deployment will be viewed.
-
-![Building the pipeline and model](../.gitbook/assets/images/wml/wml-8-deploy-to-wml.png)
-
 We've successfully built and deployed a machine learning model. Congratulations!
 
 ## 2. Create a project release
