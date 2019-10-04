@@ -64,7 +64,7 @@ This file has the following attributes:
 
 We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on IBM Cloud for a few reasons: it simulates a realistic enterprise database, a free tier is provided by IBM Cloud, and we can easily load our data set.
 
-> **NOTE** If you do not wish to perform this step, your instructor will provide you credentials for a Db2 Warehouse instance.
+> **NOTE** The Db2 Warehouse service incurs a small cost. If the attendees of the workshop do not have a paid account, the presenters will provide an instance to use, and the appropriate credentials.
 
 ### Log in and provision a Db2 Warehouse database
 
@@ -80,11 +80,9 @@ Find the [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) t
 
 ![Db2 Warehouse in the Catalog](../.gitbook/assets/images/db2/db2-0-catalog.png)
 
-Choose the `Entry` plan as it is compatible with a `Lite` account.
+Choose the `Flex One` plan as it is the least expensive, and sufficient for this workshop.
 
-> **NOTE**: There may be a message indicating the service will be charged, please disregard that message as there is no charge for staying under 1 GB of data.
-
-![Entry level plan](../.gitbook/assets/images/db2/db2-0-pricing.png)
+![Flex One plan](../.gitbook/assets/images/db2/db2-choose-flex-one.png)
 
 Once the Db2 Warehouse service is created click on *Open Console*.
 
@@ -122,7 +120,7 @@ Repeat the process for [`products.csv`](../../data/split/products.csv) and [`cus
 
 ### Jot down the credentials
 
-Before we go to Cloud Pak for Data, we need to create credentials for our Db2 Warehouse by going back to our service, clicking on the *Service credentials* button, and creating a new credential. Copy these down somewhere as we'll need them in the next section.
+If the attendee is creating their own DB2 Warehouse instance, we'll need to create credentials by going back to our service, clicking on the *Service credentials* button, and creating a new credential. Copy these down somewhere as we'll need them in the next section.
 
 ![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
 
