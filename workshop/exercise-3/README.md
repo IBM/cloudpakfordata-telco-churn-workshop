@@ -74,15 +74,6 @@ MODEL_NAME = "user123 customer churn model"
 
 Continue to run the remaining cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
 
-The main snippet of Python that saves the model locally looks like:
-
-```python
-from dsx_ml.ml import save
-
-save(name=MODEL_NAME, model=model, test_data=test_data, algorithm_type='Classification',
-     description='This is a SparkML Model to Classify Telco Customer Churn Risk')
-```
-
 We've successfully built and deployed a machine learning model. Congratulations!
 
 ## 2. Create a project release
