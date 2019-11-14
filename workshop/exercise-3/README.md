@@ -3,7 +3,7 @@
 This section is broken up into the following steps:
 
 1. [Build a model with Spark](#1-build-a-model-with-spark)
-1. [Create a project release](#2-create-a-project-release)
+1. [Deploying the model](#2-deploying-the-model)
 1. [Testing the model](#3-testing-the-model)
 1. [(Optional) Create a Python Flask app that uses the model](#4-optional-create-a-python-flask-app-that-uses-the-model)
 
@@ -13,7 +13,7 @@ For this part of the exercise we're going to build a model with a Jupyter notebo
 
 ### Import the notebook
 
-At the project overview click the *New Asset* button, and choose *Add notebook*.
+At the project overview, either click the `+Add to project` button, and choose `Notebook`, or to the right of *Notebooks* click `+ New notebook`:
 
 ![Add a new asset](../.gitbook/assets/images/wml/wml-1-add-asset.png)
 
@@ -76,71 +76,31 @@ Continue to run the remaining cells in the section to save the model to Cloud Pa
 
 We've successfully built and deployed a machine learning model. Congratulations!
 
-## 2. Create a project release
+## 2. Deploy the model
 
-Next, we'll create a project release and tag the model under version control. We'll use model management and deployment to make the released model available as a web service (REST API).
+Navigate to the left-hand hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
-### Commit the project changes
+![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
 
-On the project home click on the *Git* button on the top row and choose *Commit*
+Either choose an existing space or choose `+ New deployment space`:
 
-![Commit the project changes](../.gitbook/assets/images/wml/project-1-git-commit.png)
+![Choose new deployment space](../.gitbook/assets/images/wml/NewDeploymentSpace.png)
 
-A list of the assets will appear that were created in this project. Provide a commit message to identify the changes being pushed.
+For a new deployment space, give the space a name and click `Create`:
 
-![Provide a commit message](../.gitbook/assets/images/wml/project-2-git-commit-message.png)
+![Create deployment space](../.gitbook/assets/images/wml/CreateDeploymentSpace.png)
 
-Again, click the same *Git* button and this time choose *Push*.
+In your space, select the model name that you just built in the notebook and click the 3 dots underr `Actions`, and choose `Deploy`:
 
-![Push a new version](../.gitbook/assets/images/wml/project-3-git-push.png)
+![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
-Provide a version tag under *Create version tag for release*. Add a tag, i.e. `v1` or `v2` and click *Push*.
+On the next screen, choose `Online` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
 
-![Provide a commit message](../.gitbook/assets/images/wml/project-4-git-push-version.png)
+![Online Deployment Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
 
-### Release a new version
+Once the status shows as *Deployed* , you can click on the deployment to begin testing:
 
-Now that we have a committed and tagged version of the project, we can create a project release and deploy it as a web service.
-
-To start creating a new project release, go the (☰) menu and click on the *Manage deployments* option.
-
-![(☰) Menu -> Manage deployments](../.gitbook/assets/images/wml/project-5-manage-deployments.png)
-
-Click on `+ Add Project Release` to start creating a new project release.
-
-![There are currently no releases for this project](../.gitbook/assets/images/wml/project-6-new-project-release.png)
-
-On the next panel ensure the *From IBM Cloud Pak for Data* tab is selected, and give your project release a name and route. Select the project and version from the drop down menus, and click on *Create*.
-
-![Fill in the project release details](../.gitbook/assets/images/wml/project-7-new-project-release-details.png)
-
-### Configure project release
-
-It's now time to configure the project release. Here we will choose what assets will be deployed and how they will be deployed.
-
-We start by deploying the model we built as a web service. Click on the model on the list of *Assets* and choose to add a *Web Service*.
-
-![Deploy the model as a web service](../.gitbook/assets/images/wml/project-8-deployment-overview.png)
-
-Give the web service a *Name*, select a *Model version*, and *Web Service environment*. Click the *Create* button.
-
-![Deploy the model as a web service](../.gitbook/assets/images/wml/project-9-add-web-service.png)
-
-Once created the model details will appear, take note of the *Endpoint* and *Deployment token* that have been generated.
-
-![Endpoint and token for the deployed model](../.gitbook/assets/images/wml/project-10-model-endpoint.png)
-
-> **NOTE**: The deployment is not yet active. We need to launch and enable it before it can be used.
-
-### Deploy the project
-
-* You will be brought back to the project release page where you will see your model is *Disabled*. Click the *Launch* button to deploy your project.
-
-![Deploy your project](../.gitbook/assets/images/wml/project-11-model-disabled.png)
-
-Once the deployment is complete click on the action action menu (vertical 3 dots) of the model and select *Enable*.
-
-![Endpoint and token for the deployed model](../.gitbook/assets/images/wml/project-12-model-enabled.png)
+![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
 
 ## 3. Testing the model
 
@@ -148,21 +108,90 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 
 ### Test the saved model with built-in tooling
 
-Once the model is enabled we can test the API interface from Cloud Pak for Data. Click the enabled model deployment. From the *API* tab, default values are given and we can simply click the *Submit* button. The results are shown on the right.
+Click on the *Test* tab and paste the following into the *Enter input data* cell:
 
-![Testing the deployed model](../.gitbook/assets/images/wml/testing-1-api.png)
+```json
+{
+   "input_data":[
+      {
+         "fields":[
+            "gender",
+            "SeniorCitizen",
+            "Partner",
+            "Dependents",
+            "tenure",
+            "PhoneService",
+            "MultipleLines",
+            "InternetService",
+            "OnlineSecurity",
+            "OnlineBackup",
+            "DeviceProtection",
+            "TechSupport",
+            "StreamingTV",
+            "StreamingMovies",
+            "Contract",
+            "PaperlessBilling",
+            "PaymentMethod",
+            "MonthlyCharges",
+            "TotalCharges"
+         ],
+         "values":[
+            [
+               "Female",
+               0,
+               "No",
+               "No",
+               1,
+               "No",
+               "No phone service",
+               "DSL",
+               "No",
+               "No",
+               "No",
+               "No",
+               "No",
+               "No",
+               "Month-to-month",
+               "No",
+               "Bank transfer (automatic)",
+               25.25,
+               25.25
+            ]
+         ]
+      }
+   ]
+}
+```
+
+Click `Predict` and the model will be called with the input data. The results will display in the *Result* window. Scroll down to the bottom (Line #114) to see either a "Yes" or a "No" for Churn:
+
+![Testing the deployed model](../.gitbook/assets/images/wml/TestingDeployedModel.png)
 
 ### Test the deployed model with cURL
 
-Clicking the *Generate Code* button will pop open a window with some code for you to copy. The code will use the cURL command line utility to test the REST APIs. Here's an example of the generated code that can be run from a terminal window with the `curl` command.
+In a terminal window, run the following to get a token to access the API:
 
 ```bash
-curl -k -X POST \
-  https://9.10.111.122:31843/dmodel/v1/churn1/pyscript/churn/score \
-  -H 'Authorization: Bearer yeJhbGaaaiJSUzI1NiIsInR5cCI6IkpXVCJ9...jJDMbgsGqy9C_AsK5n28HysmH2NeXzEN9A' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '{"args":{"input_json":[{"ID":4,"GENDER":"F","STATUS":"M","CHILDREN":2,"ESTINCOME":52004,"HOMEOWNER":"N","AGE":25,"TOTALDOLLARVALUETRADED":5030,"TOTALUNITSTRADED":23,"LARGESTSINGLETRANSACTION":1257,"SMALLESTSINGLETRANSACTION":125,"PERCENTCHANGECALCULATION":3,"DAYSSINCELASTLOGIN":2,"DAYSSINCELASTTRADE":19,"NETREALIZEDGAINS_YTD":0,"NETREALIZEDLOSSES_YTD":251}]}}'
+curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u username:password
+```
+
+A json string will be returned with a value for "accessToken":
+
+```json
+{"username":"scottda","role":"Admin","permissions":["access_catalog","administrator","manage_catalog","can_provision"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331002","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA","_messageCode_":"success","message":"success"}
+```
+
+export this in the terminal window as `WML_AUTH_TOKEN`, and export the url of your CP4D cluster as `URL`:
+
+```bash
+export WML_AUTH_TOKEN=<value-of-access-token>
+export URL=https://blahblahblah.com
+```
+
+Now run this curl command from a terminal window:
+
+```bash
+curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
 ```
 
 ## 4. (Optional) Create a Python Flask app that uses the model
