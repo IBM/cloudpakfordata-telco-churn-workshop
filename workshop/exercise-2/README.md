@@ -24,9 +24,9 @@ For example, type *filter* on the Command line and observe that autocomplete wil
 
 ![Command line filter](../.gitbook/assets/images/dr/dr-cli-filter.png)
 
- Alternatively, hover over an operation or function name to see a description and detailed information for completing the command. When you're ready, click Apply to apply the operation to your data set.
+When you have completed a command, click Apply to apply the operation to your data set.
 
-Highlight the *TotalCharges* column and click the `+Operation` button:
+Click the `+Operation` button:
 
 ![Choose Operation button](../.gitbook/assets/images/dr/dr-choose-operation-button.png)
 
@@ -34,11 +34,11 @@ First, we notice that *TotalCharges* is a string, but since it represents a deci
 
 ![Choose Convert Column Type](../.gitbook/assets/images/dr/dr-convert-type-string-current.png)
 
-Then pick *Decimal* for the type, and click `Apply`:
+Click `+ Select column`, Then pick *Column* -> *TotalCharges* and *Type* -> *Decimal* , then dr-convert-string-to-decimal.pngclick `Apply`:
 
 ![Convert to Decimal](../.gitbook/assets/images/dr/dr-convert-string-to-decimal.png)
 
-Click on `filter` and choose the *TotalCharges* column from the drop down, then the Operator *Is empty*:
+We want to make sure that there are no empty values, and there happen to be some for the *TotalCharges* column, so let's fix that. Click on `filter` and choose the *TotalCharges* column from the drop down, then the Operator *Is empty*, then `Apply`:
 
 ![Filter is empty](../.gitbook/assets/images/dr/dr-filter-is-empty.png)
 
@@ -46,13 +46,13 @@ We can see that there are only 3 rows with an empty value for *TotalCharges*:
 
 ![Filter is empty results](../.gitbook/assets/images/dr/dr-is-empty-results.png)
 
-It should be save to just drop these rows from the data set, so let's do that.
+It should be safe to just drop these rows from the data set, so let's do that.
 
-Choose the Operation *Remove empty rows* for the *TotalCharges* column:
+Choose the Operation *Remove empty rows*, select the *TotalCharges* column, and click `Apply`:
 
 ![Remove empty rows](../.gitbook/assets/images/dr/dr-remove-empty-rows.png)
 
-Finally, we can remove the *CustomerID* column, since that won't be useful for training a machine learning model in the next exercise. Choose the *Remove* operator, and then click `Apply`:
+Finally, we can remove the *CustomerID* column, since that won't be useful for training a machine learning model in the next exercise. Choose the *Remove* operator, then choose `Change column selection`. Under `Select a column` pick *CustomerID* and then click `Next` and the `Apply`:
 
 ![Remove CustomerID column](../.gitbook/assets/images/dr/dr-remove-customerID-column.png)
 
@@ -88,7 +88,7 @@ You can get insight into the data from the histograms:
 
 ### Visualize with charts and graphs
 
-Choose the *Visualizations* tab to bring up an option to choose which columns to visualize. Click on the empty space for the *Columns to Visualize* where the image below says `Click  here`, choose *TotalCharges*, then Click on *Visualize data* when ready:
+Choose the *Visualizations* tab to bring up an option to choose which columns to visualize. Under *Columns to Visualize* choose *TotalCharges* and click `Visualize data`:
 
 ![Visualize TotalCharges column](../.gitbook/assets/images/dr/dr-vis-choose-column-TotalCharges.png)
 
