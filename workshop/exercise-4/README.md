@@ -35,7 +35,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 ### Update credentials
 
 * In the notebook section 1.2 you will add your ICP platform credentials.
-* For the `url` field, change `https://w.x.y.z:31843` to use the IP address of your ICP cluster, i.e for today's workshop on 9/19/19 it will be `"url": "169.54.164.135:31843"`. Make sure you have the port appended `31843`.
+* For the `url` field, change `https://w.x.y.z` to use the IP address of your ICP cluster, i.e for today's workshop on 9/19/19 it will be `"url": "169.54.164.135"`.
 * For the `username`, use your login username.
 * For the `password`, user your login password.
 
@@ -45,7 +45,7 @@ Spend an minute looking through the sections of the notebook to get an overview.
 
 ### Get transactions for Explainability
 
-Under `8.9 Identify transactions for Explainability` run the cell. It will produce a series of UIDs for indidvidual ML scoring transactions. Copy one of them to examine in the next section.
+Under `8.9 Identify transactions for Explainability` run the cell. It will produce a series of UIDs for indidvidual ML scoring transactions. Copy one or more of them to examine in the next section.
 
 ## 2. Utilize the dashboard for Openscale
 
