@@ -52,13 +52,15 @@ Before we build our model we're going to take a quick detour to the *Data Refine
 
 ### Load the *BILLING* data table into data refinery
 
-From the *Project* home, click on *Data sets*, *TABLE*, and choose the *USER123.BILLING* table.
+From the *Project* home, under the *Assets* tab, click on the *Data assets* arrow to toggle it and open up the list of data assets. Click the box next to *USERxxxx.BILLING* to check it, and click the 3 dots to the right, and then *Refine* :
 
 ![Launch the BILLING table](../.gitbook/assets/images/dr/dr-1-launch-billing.png)
 
 Data Refinery should launch and open the data like the image below:
 
 ![Data Refinery view of the BILLING table](../.gitbook/assets/images/dr/dr-2-view-billing.png)
+
+Click the `X` by the *Details* button to close it.
 
 The *Operation* button can perform many tasks related to data cleansing such as: substituting values, removing and renaming columns, converting column types, etc.
 
