@@ -2,12 +2,12 @@
 
 This section is broken up into the following steps:
 
-1. [Build a model with Spark](#1-build-a-model-with-spark)
+1. [Build a model](#1-build-a-model)
 1. [Deploying the model](#2-deploying-the-model)
 1. [Testing the model](#3-testing-the-model)
 1. [(Optional) Create a Python Flask app that uses the model](#4-optional-create-a-python-flask-app-that-uses-the-model)
 
-## 1. Build a model with Spark
+## 1. Build a model
 
 For this part of the exercise we're going to build a model with a Jupyter notebook, by importing our data, and creating a machine learning model by using a Random Forest Classifier.
 
