@@ -1,4 +1,4 @@
-# Exercise-2 Data Visualization with Data Refinery
+# Exercise 2: Data Visualization with Data Refinery
 
 Before we build our model we're going to take a quick detour to the *Data Refinery* tool. Data Refinery can quickly filter and mutate data, create quick visualizations, and do other data cleansing tasks from an easy to use user interface.
 
