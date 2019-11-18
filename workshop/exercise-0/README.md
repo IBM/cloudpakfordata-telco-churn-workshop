@@ -151,3 +151,15 @@ Click on *New project*
 Create a new project, choose `Analytics project`, give it a unique name, and click *OK. Click `Create` on the next screen.
 
 ![Pick a name](../.gitbook/assets/images/manage/cpd-new-project-name.png)
+
+## 5 Create a Space for Machine Learning Deployments
+
+Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
+
+![(☰) Menu -> Analytics deployments](../.gitbook/assets/images/manage/ChooseAnalyticsDeployments.png)
+
+Click on `+ New deployment space):
+
+![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
+
+Give your deployment space a name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
