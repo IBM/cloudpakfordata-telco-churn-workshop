@@ -78,19 +78,13 @@ We've successfully built and deployed a machine learning model. Congratulations!
 
 ## 2. Deploy the model
 
-Navigate to the left-hand hamburger menu and choose `Analyze` -> `Analytics deployments`:
+Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
 ![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
 
-Either choose an existing space or choose `+ New deployment space`:
+Choose the existing space you setup previously.
 
-![Choose new deployment space](../.gitbook/assets/images/wml/NewDeploymentSpace.png)
-
-For a new deployment space, give the space a name and click `Create`:
-
-![Create deployment space](../.gitbook/assets/images/wml/CreateDeploymentSpace.png)
-
-In your space, select the model name that you just built in the notebook and click the 3 dots underr `Actions`, and choose `Deploy`:
+In your space, select the model name that you just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
 
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
@@ -98,7 +92,7 @@ On the next screen, choose `Online` for the *Deployment Type*, give the Deployme
 
 ![Online Deployment Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
 
-Once the status shows as *Deployed* , you can click on the deployment to begin testing:
+Once the status shows as *Deployed* , you can click on the deployment name to begin testing:
 
 ![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
 
@@ -195,6 +189,7 @@ Now run this curl command from a terminal window:
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
 ```
+A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
 
 ## 4. (Optional) Create a Python Flask app that uses the model
 
