@@ -12,6 +12,11 @@ We'll be using the Cloud Pak for Data platform to perform the following tasks:
   * Add a new Data Source connection
   * Virtualize Db2 data with Data Virtualization
   * Visualize data with Cognos Dashboards
+* **Data Visualization with Data Refinery**
+  * Refine data with R code or menu operations
+  * Use Data Flow steps to keep track of your work
+  * Profile Data
+  * Visualize with charts and graphs
 * **Machine Learning**
   * Build a model with Spark
   * Deploying a model with Watson Machine Learning
@@ -30,8 +35,11 @@ Cloud Pak for Data represents an all-in-one platform for all your data needs. Cl
 
 Cloud Pak for Data:
 
-* ... can be installed on Red Hat OpenShift or stand-alone
-* ... can be extended to include over 20 [add-ons](https://docs-icpdata.mybluemix.net/extend/com.ibm.icpdata.doc/zen/admin/add-ons.html)
+* ... has a [new CP4D 2.5 version]http://rhea.svl.ibm.com:9081/support/knowledgecenter/SSQNUZ_2.5.0/cpd/overview/overview.html)
+* ... is installed on Red Hat OpenShift providing an enterprise quality container platform
+* ...you can choose the services that you want to run on Cloud Pak for Data. This means you are running only the services that are important for your line of business.
+* ...you can extend the functionality of IBM Cloud Pak for Data by installing services and by integrating Cloud Pak for Data with other applications.
+* ... added [Services](http://rhea.svl.ibm.com:9081/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/services.html) include:
   * Watson Assistant
   * Watson OpenScale
   * R Studio
