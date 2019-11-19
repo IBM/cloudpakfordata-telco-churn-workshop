@@ -35,7 +35,7 @@ Cloud Pak for Data represents an all-in-one platform for all your data needs. Cl
 
 Cloud Pak for Data:
 
-* ... has a [new CP4D 2.5 version]http://rhea.svl.ibm.com:9081/support/knowledgecenter/SSQNUZ_2.5.0/cpd/overview/overview.html)
+* ... has a [new CP4D 2.5 version](http://rhea.svl.ibm.com:9081/support/knowledgecenter/SSQNUZ_2.5.0/cpd/overview/overview.html)
 * ... is installed on Red Hat OpenShift providing an enterprise quality container platform
 * ...you can choose the services that you want to run on Cloud Pak for Data. This means you are running only the services that are important for your line of business.
 * ...you can extend the functionality of IBM Cloud Pak for Data by installing services and by integrating Cloud Pak for Data with other applications.
