@@ -64,47 +64,11 @@ This file has the following attributes:
 
 We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on our local Cloud Pak for Data cluster. Note that CP4D can work with any Database witha JDBC connector, so this is only one of many choices.
 
-### Load the Db2 Warehouse database
-
-![The Db2 Warehouse console](../.gitbook/assets/images/db2/db2-2-console-overview.png)
-
-Select the [`billing.csv`](../../data/split/billing.csv) file in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data/split) folder.
-
-![Find data to load](../.gitbook/assets/images/db2/db2-3-csv-find.png)
-
-On the next panel we configure where the data will go in the database. We'll use the schema that was created for our database, it'll look like *DASHXXXX* where *XXXX* is a randomly generated number. Select that and click `+ New Table` and give it the name `Billing` to create a new table.
-
-![Select a table name](../.gitbook/assets/images/db2/db2-4-csv-config.png)
-
-Accept the defaults on the next screen and click `Next`.
-
-![Keep all defaults](../.gitbook/assets/images/db2/db2-keep-defaults.png)
-
-On the next panel click *Begin Load* to start loading the data.
-
-![Begin loading the data](../.gitbook/assets/images/db2/db2-5-csv-preload.png)
-
-Verify all the rows were loaded. Click `Load More Data` to continue.
-
-![Data has been loaded!](../.gitbook/assets/images/db2/db2-6-csv-loaded.png)
-
-Repeat the process for [`products.csv`](../../data/split/products.csv) and [`customer-service.csv`](../../data/split/customer-service.csv), call these tables `PRODUCTS` and `CUSTOMERS`. Note that there will be an additional panel to configure data, the defaults are accetable.
-
-![Repeat the process for the other data sets](../.gitbook/assets/images/db2/db2-8-csv-config-products.png)
-
-### Jot down the credentials
-
-If the attendee is creating their own DB2 Warehouse instance, we'll need to create credentials by going back to our service, clicking on the *Service credentials* button, and creating a new credential. Copy these down somewhere as we'll need them in the next section.
-
-![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
-
-> NOTE to Instructor: If you'd like to have credentials for a pre-deployed and configured DB, place them here
-
 ## Load Data into Local DB2 Warehouse
 
 These instructions are for loading the data into the local CP4D version of DB2 Warehouse. They will be similar for the IBM Cloud version.
 
-Click the hamburger menu in the upper left corner and choose `Collect` -> `My data`:
+Click the (☰) hamburger menu in the upper left corner and choose `Collect` -> `My data`:
 
 ![Choose collect -> My data](../.gitbook/assets/images/dv/collectMyData.png)
 
@@ -133,6 +97,12 @@ Accept the defaults and click `Next`. Click `Begin Load`.
 ![DB2 load final](../.gitbook/assets/images/dv/DB2loadFinal.png)
 
 Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
+
+### Examine connection information
+
+You can see connection information by going to *Menu* -> *Connection Information*. Here you can see instructions for various platforms (Linux, Mac, PowerLinux, Windows, zLinux) and the information you need to connect, with the exception of the *password*. The *password* is only available to users with *Admin* privileges:
+
+![DB2 connection info](../.gitbook/assets/images/db2/DB2connectionInformation.png)
 
 ## 4. Creating a new Cloud Pak for Data project
 
