@@ -2,12 +2,12 @@
 
 This section is broken up into the following steps:
 
-1. [Clone the repo](#1-clone-the-repo)
+1. [Clone or download the repo](#1-clone-or-download-the-repo)
 1. [About the data set](#2-about-the-data-set)
 1. [(Optional) Seeding our Db2 Warehouse database](#3-optional-seeding-our-db2-warehouse-database)
 1. [Creating a new Cloud Pak for Data project](#4-creating-a-new-cloud-pak-for-data-project)
 
-## 1. Clone the repo
+## 1. Clone or download the repo
 
 Various parts of this workshop will require the attendee to upload files or run scripts that we've stored in the repository. So let's get that done early on, you'll need [`git`](https://git-scm.com) on your laptop to clone the repository directly, or access to [GitHub.com](https://github.com/) to download the zip file.
 
@@ -62,33 +62,7 @@ This file has the following attributes:
 
 ## 3. (Optional) Seeding our Db2 Warehouse database
 
-We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on IBM Cloud for a few reasons: it simulates a realistic enterprise database, a free tier is provided by IBM Cloud, and we can easily load our data set.
-
-> **NOTE** The Db2 Warehouse service incurs a small cost. If the attendees of the workshop do not have a paid account, the presenters will provide an instance to use, and the appropriate credentials.
-
-### Log in and provision a Db2 Warehouse database
-
-Log into (or sign up for) [IBM Cloud](https://cloud.ibm.com).
-
-![IBM Cloud login](../.gitbook/assets/images/generic/ibm-cloud-sign-up.png)
-
-From the dashboard click on the *Create resource* button to go to the *Catalog*.
-
-![IBM Cloud Dashboard](../.gitbook/assets/images/generic/ibm-cloud-dashboard.png)
-
-Find the [Db2 Warehouse](https://cloud.ibm.com/catalog/services/db2-warehouse) tile from the *Database* section.
-
-![Db2 Warehouse in the Catalog](../.gitbook/assets/images/db2/db2-0-catalog.png)
-
-Choose the `Flex One` plan as it is the least expensive, and sufficient for this workshop.
-
-![Flex One plan](../.gitbook/assets/images/db2/db2-choose-flex-one.png)
-
-Once the Db2 Warehouse service is created click on *Open Console*.
-
-![A Db2 Warehouse instance has been provisioned](../.gitbook/assets/images/db2/db2-1-cloud-launch.png)
-
-You'll be directed to a Db2 web console dashboard where you can load data by clicking the *Load* button.
+We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on our local Cloud Pak for Data cluster. Note that CP4D can work with any Database witha JDBC connector, so this is only one of many choices.
 
 ### Load the Db2 Warehouse database
 
@@ -125,6 +99,40 @@ If the attendee is creating their own DB2 Warehouse instance, we'll need to crea
 ![Db2 Warehouse credentials](../.gitbook/assets/images/db2/db2-cloud-credentials.png)
 
 > NOTE to Instructor: If you'd like to have credentials for a pre-deployed and configured DB, place them here
+
+## Load Data into Local DB2 Warehouse
+
+These instructions are for loading the data into the local CP4D version of DB2 Warehouse. They will be similar for the IBM Cloud version.
+
+Click the hamburger menu in the upper left corner and choose `Collect` -> `My data`:
+
+![Choose collect -> My data](../.gitbook/assets/images/dv/collectMyData.png)
+
+Go to the *Databases* tab, click on the 3 vertial lines on the *DB2 Warehouse* tile, and click `Open`:
+
+![Open Service DB2 Warehouse](../.gitbook/assets/images/dv/userOpenDB2Warehouse.png)
+
+Under `Menu` choose `Load` and `Load Data`:
+
+![Menu Load Data](../.gitbook/assets/images/dv/DB2LoadData.png)
+
+Choose `Browse files`:
+
+![DB2 browse files](../.gitbook/assets/images/dv/DB2browseFiles.png)
+
+Navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
+
+![DB2 navigate to billing.csv](../.gitbook/assets/images/dv/navigateToBilling.png)
+
+Choose Schema `NULLIDRA` and click `+ New table`. Under "New Table Name" type "BILLING" and click `Create`, then `Next`.
+
+![DB2 choose schema and create table](../.gitbook/assets/images/dv/DB2schemaAndTableCreate.png)
+
+Accept the defaults and click `Next`. Click `Begin Load`.
+
+![DB2 load final](../.gitbook/assets/images/dv/DB2loadFinal.png)
+
+Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
 
 ## 4. Creating a new Cloud Pak for Data project
 
