@@ -2,7 +2,15 @@
 
 Before we build our model we're going to take a quick detour to the *Data Refinery* tool. Data Refinery can quickly filter and mutate data, create quick visualizations, and do other data cleansing tasks from an easy to use user interface.
 
-## Load the *BILLING* data table into data refinery
+This section is broken up into the following steps:
+
+1. [Load the *BILLING* data table into data refinery](#1-load-the-billing-data-table-into-data-refinery)
+1. [Refine your data](#2-refine-your-data)
+1. [Use Data Flow steps to keep track of your work](#3-use-data-flow-steps-to-keep-track-of-your-work)
+1. [Profile the data](#4-profile-the-data)
+1. [Visualize with charts and graphs](#5-visualize-with-charts-and-graphs)
+
+## 1. Load the *BILLING* data table into data refinery
 
 From the *Project* home, under the *Assets* tab, click on the *Data assets* arrow to toggle it and open up the list of data assets. Click the box next to *USERxxxx.BILLING* to check it, and click the 3 dots to the right, and then *Refine* :
 
@@ -14,7 +22,7 @@ Data Refinery should launch and open the data like the image below:
 
 Click the `X` by the *Details* button to close it.
 
-## Refine your data
+## 2. Refine your data
 
 We'll start out in the *Data* tab.
 
@@ -56,7 +64,7 @@ Finally, we can remove the *CustomerID* column, since that won't be useful for t
 
 ![Remove CustomerID column](../.gitbook/assets/images/dr/dr-remove-customerID-column.png)
 
-### Use Data Flow steps to keep track of your work
+### 3. Use Data Flow steps to keep track of your work
 
 What if we do something we don't want? We can undo (or redo) an action using the circular arrows:
 
@@ -70,7 +78,7 @@ To see the steps in the data flow that you have performed, click the *Steps* but
 
 You can modify these steps in real time and save for future use.
 
-### Profile the data
+### 4. Profile the data
 
 Clicking on the *Profile* tab will bring up a quick view of several histograms about the data.
 
@@ -86,7 +94,7 @@ You can get insight into the data from the histograms:
 
 * From the Churn column, you can see that a significant number of customers will cancel their service.
 
-### Visualize with charts and graphs
+### 5. Visualize with charts and graphs
 
 Choose the *Visualizations* tab to bring up an option to choose which columns to visualize. Under *Columns to Visualize* choose *TotalCharges* and click `Visualize data`:
 
