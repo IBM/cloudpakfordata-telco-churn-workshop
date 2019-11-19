@@ -59,4 +59,4 @@ For this workshop we'll be using Cloud Pak for Data with the following add-ons:
 * Data Virtualization
 * Data Refinery
 
-The environment was deployed on an 8-node cluster with 3 master nodes (32 VCPU, 32 GB RAM), and 5 worker nodes (32 VCPU, 128 GB RAM).
+The environment was deployed on an 8-node cluster with 3 master nodes (16 VCPU, 131072 GB RAM), and 5 worker nodes (32 VCPU, 247808 GB RAM).
