@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # -*- coding: utf-8 -*-
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
@@ -54,9 +56,10 @@ floats = {
 # min, max, default value
 ints = {
     "SeniorCitizen": [0, 1, 0],
-    "tenure": [0, 100, 2]
+    "tenure": [0, 100, 2],
 }
 
+labels = ["No Churn", "Churn"]
 
 def generate_input_lines():
     result = f'<table>'
@@ -128,13 +131,25 @@ class churnForm():
             if not (scoring_href and mltoken):
                 raise EnvironmentError('Env vars URL and TOKEN are required.')
 
-            payload_scoring = {"args": {"input_json": [data]}}
+            for field in ints.keys():
+                data[field] = int(data[field])
+            for field in floats.keys():
+                data[field] = float(data[field])
+
+
+            input_data = list(data.keys())
+            input_values = list(data.values())
+
+
+            payload_scoring = {"input_data": [
+                {"fields" : input_data, "values": [input_values]}
+            ]}
             print("Payload is: ")
             print(payload_scoring)
             header_online = {
                 'Cache-Control': 'no-cache',
                 'Content-Type': 'application/json',
-                'Authorization': mltoken}
+                'Authorization': 'Bearer ' + mltoken}
             response_scoring = requests.post(
                 scoring_href,
                 verify=False,
@@ -143,18 +158,25 @@ class churnForm():
             result = response_scoring.text
             print("Result is ", result)
             result_json = json.loads(result)
-            churn_risk = result_json["result"]["predictions"][0].lower()
-            no_percent = result_json["result"]["probabilities"][0][0] * 100
-            yes_percent = result_json["result"]["probabilities"][0][1] * 100
+
+            result_keys = result_json['predictions'][0]['fields']
+            result_vals = result_json['predictions'][0]['values']
+
+            result_dict = dict(zip(result_keys, result_vals[0]))
+
+            churn_risk = result_dict["predictedLabel"].lower()
+            no_percent = result_dict["probability"][0] * 100
+            yes_percent = result_dict["probability"][1] * 100
             flash('Percentage of this customer leaving is: %.0f%%'
                   % yes_percent)
             return render_template(
                 'score.html',
-                result=result_json,
+                result=result_dict,
                 churn_risk=churn_risk,
                 yes_percent=yes_percent,
                 no_percent=no_percent,
-                response_scoring=response_scoring)
+                response_scoring=response_scoring,
+                labels=labels)
 
         else:
             return render_template('input.html')
