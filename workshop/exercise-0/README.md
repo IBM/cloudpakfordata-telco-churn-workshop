@@ -62,7 +62,7 @@ This file has the following attributes:
 
 ## 3. (Optional) Seeding our Db2 Warehouse database
 
-We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on our local Cloud Pak for Data cluster. Note that CP4D can work with any Database witha JDBC connector, so this is only one of many choices.
+We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on our local Cloud Pak for Data cluster. Note that CP4D can work with any Database with a JDBC connector, so this is only one of many choices.
 
 ## Load Data into Local DB2 Warehouse
 
