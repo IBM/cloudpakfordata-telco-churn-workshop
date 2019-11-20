@@ -49,14 +49,3 @@ Cloud Pak for Data:
 * ... provides a free 7-day trial -- [Cloud Pak Experience](https://www.ibm.com/cloud/garage/cloud-pak-experiences/)
 
 ![Cloud Pak for Data stack](.gitbook/assets/images/generic/cpd-stack.png)
-
-### Our Cloud Pak for Data environment
-
-For this workshop we'll be using Cloud Pak for Data with the following add-ons:
-
-* Watson Machine Learning
-* Watson OpenScale
-* Data Virtualization
-* Data Refinery
-
-The environment was deployed on an 8-node cluster with 3 master nodes (16 VCPU, 131072 GB RAM), and 5 worker nodes (32 VCPU, 247808 GB RAM).
