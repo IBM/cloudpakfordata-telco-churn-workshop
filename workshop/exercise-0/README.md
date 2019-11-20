@@ -6,6 +6,7 @@ This section is broken up into the following steps:
 1. [About the data set](#2-about-the-data-set)
 1. [(Optional) Seeding our Db2 Warehouse database](#3-optional-seeding-our-db2-warehouse-database)
 1. [Creating a new Cloud Pak for Data project](#4-creating-a-new-cloud-pak-for-data-project)
+1. [Create a Space for Machine Learning Deployments](#5-create-a-space-for-machine-learning-deployments)
 
 ## 1. Clone or download the repo
 
@@ -130,7 +131,7 @@ Create a new project, choose `Analytics project`, give it a unique name, and cli
 
 ![Pick a name](../.gitbook/assets/images/manage/cpd-new-project-name.png)
 
-## 5 Create a Space for Machine Learning Deployments
+## 5. Create a Space for Machine Learning Deployments
 
 Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
 
