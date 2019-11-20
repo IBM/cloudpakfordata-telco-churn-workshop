@@ -44,7 +44,14 @@ Section `1.0 Install required packages` will show the libraries that come pre-in
 
 #### Add the data set to the notebook
 
-Section `2.0 Load and Clean data` will load the virtualized data from the previous exercise. Highlight the cell labelled `# Place cursor ...` by clicking on it. Click on the *10/01* button to select a specific data set. Choose The *Remote* tab, and pick the virtualized data set that has all three joined tables (i.e. `User999.billing+products+customers`), and opt to insert the data as a *Pandas DataFrame*.
+Section `2.0 Load and Clean data` will load the virtualized data from the previous exercise.
+
+* Highlight the cell below by clicking it.
+* Click the 10/01 "Find data" icon in the upper right of the notebook.
+* If you are using [Virtualized data], begin by choosing the `Files` tab. Then choose your virtualized data (i.e. User999.billingProductCustomers), click Insert to code and choose Insert Pandas DataFrame.
+* If you are using this code pattern without virtualized data, add the locally uploaded file WA_Fn-UseC_-Telco-Customer-Churn.csv by choosing the 'Files` tab. Then choose theWA_Fn-UseC_-Telco-Customer-Churn.csv. ClickInsert to codeand chooseInsert Pandas DataFrame`.
+* The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
+* Run the cell
 
 ![Add the data as a Pandas DataFrame](../.gitbook/assets/images/wml/wml-4-add-dataframe.png)
 
@@ -52,7 +59,7 @@ By adding data a block of code will be added to the notebook. The code will auto
 
 ![Generated code to handle Pandas DataFrame](../.gitbook/assets/images/wml/wml-5-generated-code-dataframe.png)
 
-> **IMPORTANT**: Don't forget to update the next cell `df = df1` with the variable from the generated code.
+> **IMPORTANT**: Don't forget to update the next cell `df = df_data_1` or `df_data_X` depending on your number `X` for the variable from the generated code.
 
 Continue to run the remaining cells in the section to clean the data.
 
