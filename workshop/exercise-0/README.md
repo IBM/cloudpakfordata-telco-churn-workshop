@@ -65,7 +65,7 @@ This file has the following attributes:
 
 We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on our local Cloud Pak for Data cluster. Note that CP4D can work with any Database with a JDBC connector, so this is only one of many choices.
 
-## Load Data into Local DB2 Warehouse
+### Load Data into Local DB2 Warehouse
 
 These instructions are for loading the data into the local CP4D version of DB2 Warehouse. They will be similar for the IBM Cloud version.
 
@@ -141,4 +141,4 @@ Click on `+ New deployment space):
 
 ![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
 
-Give your deployment space a name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
+Give your deployment space a unique name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.

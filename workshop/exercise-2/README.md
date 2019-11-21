@@ -1,4 +1,4 @@
-# Data Visualization with Data Refinery
+# Data Visualization and Data Refinery
 
 Let's take a quick detour to the *Data Refinery* tool. Data Refinery can quickly filter and mutate data, create quick visualizations, and do other data cleansing tasks from an easy to use user interface.
 
@@ -12,7 +12,7 @@ This section is broken up into the following steps:
 
 ## 1. Load the *BILLING* data table into data refinery
 
-From the *Project* home, under the *Assets* tab, click on the *Data assets* arrow to toggle it and open up the list of data assets. Click the box next to *USERxxxx.BILLING* to check it, and click the 3 dots to the right, and then *Refine* :
+From the *Project* home, under the *Assets* tab, click on the *Data assets* arrow to toggle it and open up the list of data assets. Click the box next to *USERxxxx.BILLING* (where `USERxxxx` is your username or the username of the person who granted you data access) to check it, and click the 3 dots to the right, and then *Refine* :
 
 ![Launch the BILLING table](../.gitbook/assets/images/dr/dr-1-launch-billing.png)
 
@@ -66,7 +66,9 @@ Finally, we can remove the *CustomerID* column, since that won't be useful for t
 
 ### 3. Use Data Flow steps to keep track of your work
 
-What if we do something we don't want? We can undo (or redo) an action using the circular arrows:
+What if you need to show a non-technical person the steps you took? What if we do something we don't want? 
+
+Within Data Refinery, we keep track of the steps and we can even undo (or redo) an action using the circular arrows:
 
 ![Undo recent action](../.gitbook/assets/images/dr/dr-undo-recent-action.png)
 

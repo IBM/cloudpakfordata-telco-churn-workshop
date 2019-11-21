@@ -1,6 +1,11 @@
-# Add Data to project
+# Importing data in your projects
 
-## Assign virtualized data
+There are many ways to bring your data into your project, in this section we'll cover using from the following data sources:
+
+* Using virtualized data
+
+
+## Using Virtualized Data
 
 For this section we'll now use the Data Virtualization tool to import the data from Db2 Warehouse, which is now exposed as an Connection in Cloud Pak for Data.
 

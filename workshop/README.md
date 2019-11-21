@@ -8,10 +8,10 @@ We'll be using the Cloud Pak for Data platform to perform the following tasks:
   * Setting up a project
   * About the data set
   * (Optional) Seeding our Db2 database
-* **Data Analysis**
+* **Connecting to your data**
   * Add a new Data Source connection
   * Virtualize Db2 data with Data Virtualization
-  * Visualize data with Cognos Dashboards
+  * Import the data into your project
 * **Data Visualization with Data Refinery**
   * Refine data with R code or menu operations
   * Use Data Flow steps to keep track of your work
