@@ -2,7 +2,7 @@
 
 ### Getting Started
 
-* [Pre-work](pre-work/README.md)
+* [Pre-work](exercise-0/README.md)
 
 ### Day 1
 
@@ -28,7 +28,7 @@
 
 ### Workshop Resources
 
-* [Instructor Guide](instructor-guide/README.md)
+* [Instructor Guide](admin-guide/README.md)
 
 ### Resources
 
