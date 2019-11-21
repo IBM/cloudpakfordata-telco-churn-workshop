@@ -20,6 +20,6 @@
 
 * [IBM Developer](https://developer.ibm.com)
 * [Cloud Pak for Data 2.5](https://www.ibmbigdatahub.com/blog/announcing-cloud-pak-for-data-2-5)
-* [Add additional services to CP4D](http://rhea.svl.ibm.com:9081/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/services.html
+* [Add additional services to CP4D](http://rhea.svl.ibm.com:9081/support/knowledgecenter/SSQNUZ_2.5.0/cpd/svc/services.html)
 * [Cloud Pak Experiences - Free 7 day trial](https://www.ibm.com/cloud/garage/cloud-pak-experiences/)
 * [Cloud Pak for Applications](https://www.ibm.com/cloud/cloud-pak-for-applications)
