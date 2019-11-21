@@ -1,4 +1,4 @@
-# Exercise 4: Monitoring models
+# Monitoring models with OpenScale
 
 This section is broken up into the following steps:
 
