@@ -9,22 +9,12 @@
 * [About Day 1](about-day-1/README.md)
     * [Lecture 1: What is Cloud Native?](https://ibm.box.com/s/3pvl4jdi3xifs1olzcl9np904zvk5ueo)
     * [Lecture 2: Kabanero Overview](https://ibm.box.com/s/6jl4b7sj8xqgh7rvxtea5ykpsjyu1siz)
-    * [Exercise 1: Introduction to Appsody and Codewind](exercise-1/README.md)
-    * [Exercise 2: Using Appsody CLI to develop, test, and debug applications](exercise-2/README.md)
-    * [Exercise 3: Deploying to OpenShift with Appsody](exercise-3/README.md)
+    * [Exercise 1: Data Connection and Virtualization for Admins](exercise-1/README.md)
+    * [Exercise 2: Data Visualization with Data Refinery](exercise-2/README.md)
+    * [Exercise 3: Machine Learning with Jupyter](exercise-3/README.md)
     * [Lecture 3: Adding value with IBM Cloud Pak for Applications](https://ibm.box.com/s/y4wh104vdos1vw5kdjwwuhebf8jgq580)
-    * [Exercise 4: Use Tekton and Kabanero Pipelines to continuously deploy](exercise-4/README.md)
+    * [Exercise 4: Monitoring models with OpenScale](exercise-4/README.md)
 
-### Day 2 (In Progress)
-
-* [About Day 2](about-day-2/README.md)
-    * [Lecture 4: Customizing Appsody and Kabanero](https://ibm.box.com/s/kbuympaqftxswyi1aoswdlqussmqf1ba)
-    * [Exercise 5: Customizing an existing Appsody Stack](exercise-5/README.md)
-    * [Exercise 6: Building a custom Kabanero Collection repository](exercise-6/README.md)
-    * [Exercise 7: Configuring Kabanero to use an Alternate Collection Repository](exercise-7/README.md)
-    * [Lecture 5: Tekton Overview](https://ibm.box.com/s/tg0f6nhs91trlzkb5pfnh5e1rdzg4wm6)
-    * [Exercise 8: Create a custom Tekton Task and Pipleline](exercise-8/README.md)
-    * [Exercise 9: Deploy an application with a custom Stack, custom Collection, and custom Tekton Pipeline](exercise-9/README.md)
 
 ### Workshop Resources
 
