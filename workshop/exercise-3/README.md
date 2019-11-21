@@ -1,4 +1,4 @@
-# Exercise 3: Machine Learning
+# Machine Learning with Jupyter
 
 This section is broken up into the following steps:
 
