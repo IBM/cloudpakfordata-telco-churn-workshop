@@ -23,11 +23,45 @@ Choose `Browse file` and navigate to where you cloned this repository, then to `
 Choose Schema `NULLIDRA` and click `+ New table`. Under "New Table Name" type "BILLING" and click `Create`, then `Next`. Accept the defaults and click `Next`. Click `Begin Load`.
 Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
 
+### Add DB Connections & Virtualization prep
+
+For Cloud Pak for Data to read our Db2 Warehouse data we need to add a new *Data Source* to Cloud Pak for Data. This requires inputting the usual JDBC details.
+
+To add a new data source, go to the (☰) menu and click on the *Connections* option.
+
+![(☰) Menu -> Collections](../.gitbook/assets/images/connections/cpd-conn-menu.png)
+
+At the overview, click *Add connection*.
+
+![Overview page](../.gitbook/assets/images/connections/conn-1-overview-empty.png)
+
+Start by giving your new *Connection* a name and select *Db2 Warehouse on Cloud* as your connection type. More fields should apper. Fill the new fields with the same credentials for your own Db2 Warehouse connection from the previous section . Click `Test Connection` and, after that succeeds, click `Add`.
+
+![Add a Db2 Warehouse on Cloud connection](../.gitbook/assets/images/connections/conn-2-details.png)
+
+The new connection will be listed in the overview.
+
+![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
+
+## 2. Add a Data Source to Data Virtualization
+
+At the empty overview, click *Add* and choose *Add data source*.
+
+![No data sources, yet](../.gitbook/assets/images/dv/dv-data-sources-1-empty.png)
+
+Select the data source we made in the previous step, and click *Next*.
+
+![Add the Db2 Warehouse connection](../.gitbook/assets/images/dv/dv-data-sources-2-add.png)
+
+The new connection will be listed as a data source for data virtualization.
+
+![Db2 Warehouse connection is now associated with Data Virtualization](../.gitbook/assets/images/dv/dv-data-sources-3-shown.png)
+
 ### Add a Data Source to Data Virtualization
 
-To launch the data virtualization tool, go the (☰) menu and click *Collect* and then *Virtualized data*.
+To launch the data virtualization tool, go the (☰) menu and click `Collect` and then `Data Virtualization`.
 
-![(☰) Menu -> Collect -> Virtualized data](../.gitbook/assets/images/dv/cpd-dv-menu.png)
+![(☰) Menu -> Collect -> Data Virtualization](../.gitbook/assets/images/dv/cpd-dv-menu.png)
 
 At the empty overview, click *Add* and choose *Add data source*.
 
@@ -58,7 +92,7 @@ The next panel prompts the user to choose which project to assign the data to, c
 
 You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking *View my data*.
 
-![Ta da! We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-4-complete.png)
+![We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-4-complete.png)
 
 ### Join the virtualized data
 
@@ -70,7 +104,7 @@ To join the tables we need to pick a key that is common to both data sets. Here 
 
 ![Map the two customerID keys](../.gitbook/assets/images/dv/dv-data-join-2-columns.png)
 
-In the next panel we'll give our joined data a name, I chose `billing+products`, then review the joined table to ensure all columns are present and only one `customerID` column exists. Click *Next* to continue.
+In the next panel we'll give our joined data a name, I chose `BILLINGPRODUCTS`, then review the joined table to ensure all columns are present and only one `customerID` column exists. Click *Next* to continue.
 
 ![Review the proposed joined table](../.gitbook/assets/images/dv/dv-data-join-3-review.png)
 
@@ -82,7 +116,7 @@ You'll be notified that the join has succeeded! Click on *View my data*. to repe
 
 ![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-5-created.png)
 
-**IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`billing+products`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `billing+products+customers`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
+**IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`BILLINGPRODUCTS`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `BILLINGPRODUCTSCUSTOMERS`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
