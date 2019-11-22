@@ -56,7 +56,9 @@ We can see that there are only 3 rows with an empty value for *TotalCharges*:
 
 It should be safe to just drop these rows from the data set, so let's do that.
 
-Choose the Operation *Remove empty rows*, select the *TotalCharges* column, and click `Apply`:
+First, remove the filter that you just added. You can delete it from the "Steps" section of clicking the undo arrow on top of the page.
+
+Next, choose the Operation *Remove empty rows*, select the *TotalCharges* column, and click `Apply`:
 
 ![Remove empty rows](../.gitbook/assets/images/dr/dr-remove-empty-rows.png)
 
