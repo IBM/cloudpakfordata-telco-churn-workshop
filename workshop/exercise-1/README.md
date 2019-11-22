@@ -1,10 +1,10 @@
-# Data Connection and Virtualization for Admins
+# DB Connection and Virtualization [Admin User]
 
 This section is broken up into the following steps:
 
 1. [Add a new Data Source connection](#1-add-a-new-data-source-connection)
-1. [Assign virtualized data to your project](#2-assign-virtualized-data)
-1. [Use Data Refinery to visualize and clean data](#3-use-data-refinery-to-visualize-and-clean-data)
+1. [Add a Data Source to Data Virtualization](#2-add-a-data-source-to-data-virtualization)
+1. [Grant access to the virtualized data](#3-grant-access-to-the-virtualized-data)
 
 ## 1. Add a new Data Source connection
 
@@ -26,7 +26,7 @@ The new connection will be listed in the overview.
 
 ![Connection has been added!](../.gitbook/assets/images/connections/conn-3-overview-db2.png)
 
-### Add a Data Source to Data Virtualization
+## 2. Add a Data Source to Data Virtualization
 
 To launch the data virtualization tool, go the (☰) menu and click *Collect* and then *Virtualized data*.
 
@@ -46,7 +46,7 @@ The new connection will be listed as a data source for data virtualization.
 
 ### Start virtualizing data
 
-In this section, since we now have access to the Db2 Warehouse data, we can virtualize the data to our Cloud Pak for Data project. Click on the *Menu* button and choose *Virtualize*.
+In this section, since we now have access to the Db2 Warehouse data, we can virtualize the data to our Cloud Pak for Data project. Click on the *(☰) Menu* button and choose *Virtualize*.
 
 ![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-1-menu.png)
 
@@ -73,7 +73,7 @@ To join the tables we need to pick a key that is common to both data sets. Here 
 
 ![Map the two customerID keys](../.gitbook/assets/images/dv/dv-data-join-2-columns.png)
 
-In the next panel we'll give our joined data a name, I chose `billing+products`, then review the joined table to ensure all columns are present and only one `customerID` column exists. Click *Next* to continue.
+In the next panel we'll give our joined data a unique name (to be consistent with SQL standards, pick an all uppercase name), I chose `XXXBILLINGPRODUCTS` (where `XXX` is my user ID), then review the joined table to ensure all columns are present and only one `customerID` column exists. Click *Next* to continue.
 
 ![Review the proposed joined table](../.gitbook/assets/images/dv/dv-data-join-3-review.png)
 
@@ -85,22 +85,25 @@ You'll be notified that the join has succeeded! Click on *View my data*. to repe
 
 ![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-5-created.png)
 
-**IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`billing+products`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `billing+products+customers`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
+**IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`XXXBULLINGPRODUCTS`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `XXXBILLINGPRODUCTSCUSTOMERS`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
-### Assign the "Steward" role to the attendees
+## 3. Grant access to the virtualized data
 
-Go to *Data Virtualization* option from the menu. Click on *User management*
+In order for other users to have access to the data that you just virtualized, you need to grant them access. Follow these steps to make your Virtualized data visible to them.
+
+Go to *Data Virtualization* option from the (☰) menu. Click on *User management*
 
 ![Manage users in Data Virtualization](../.gitbook/assets/images/dv/dv-6-manage-users.png)
 
-Click on *Add user* and ensure all users have the *Steward* role.
+Click on *Add user* and ensure all users who you want to grant access to have the *Steward* role.
 
 ![Manage users in Data Virtualization](../.gitbook/assets/images/dv/dv-7-steward-role.png)
 
-## Adding users to the cluster
+## Conclusion
 
-From the hamburger menu, click manage users, then add user!
+In this section we learned how to make connection to databases that contain our data, how to virtualize them, and how to allow other to collaborate with us and use the virtualized data. 
 
-![Add a user](../.gitbook/assets/images/manage/manage-add-users.png)
+Remember that you can add data from different databases and servers if you need to. Moreover, you can virtualized these data from different sources together as well! The goal is to take care of bringing the data to the platform early on so all the data scientists can use it without reinventing the wheel while you keep full control of who has access to what data.
+
