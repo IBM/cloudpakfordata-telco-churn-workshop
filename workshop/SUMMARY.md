@@ -7,10 +7,11 @@
 
 ### Telco Workshop
 
-* [Exercise 1: Data Connection and Virtualization for Admins](exercise-1/README.md)
-* [Exercise 2: Data Visualization with Data Refinery](exercise-2/README.md)
-* [Exercise 3: Machine Learning with Jupyter](exercise-3/README.md)
-* [Exercise 4: Monitoring models with OpenScale](exercise-4/README.md)
+* [Data Connection and Virtualization for Admins](exercise-1/README.md)
+* [Import Data to Project](addData/README.md)
+* [Data Visualization with Data Refinery](exercise-2/README.md)
+* [Machine Learning with Jupyter](exercise-3/README.md)
+* [Monitoring models with OpenScale](exercise-4/README.md)
 
 
 ### Workshop Resources
