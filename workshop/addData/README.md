@@ -4,7 +4,6 @@ There are many ways to bring your data into your project, in this section we'll 
 
 * Using virtualized data
 
-
 ## Using Virtualized Data
 
 For this section we'll now use the Data Virtualization tool to import the data from Db2 Warehouse, which is now exposed as an Connection in Cloud Pak for Data.

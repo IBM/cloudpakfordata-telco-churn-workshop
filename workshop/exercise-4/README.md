@@ -41,7 +41,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 ### Run the notebook
 
-#### *Important*: Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources:
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
 
 ![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 

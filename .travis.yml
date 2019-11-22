@@ -4,7 +4,7 @@ matrix:
       node_js: 10
       script:
         - npm install markdownlint-cli
-        - markdownlint --config .markdownlint.json workshop
+        - markdownlint --config .markdownlint.json --ignore workshop/SUMMARY.md --ignore workshop/README.md workshop
 
     - language: python
       python: 3.7
