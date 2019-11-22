@@ -61,6 +61,7 @@ ints = {
 
 labels = ["No Churn", "Churn"]
 
+
 def generate_input_lines():
     result = f'<table>'
 
@@ -136,13 +137,11 @@ class churnForm():
             for field in floats.keys():
                 data[field] = float(data[field])
 
-
             input_data = list(data.keys())
             input_values = list(data.values())
 
-
             payload_scoring = {"input_data": [
-                {"fields" : input_data, "values": [input_values]}
+                {"fields": input_data, "values": [input_values]}
             ]}
             print("Payload is: ")
             print(payload_scoring)
