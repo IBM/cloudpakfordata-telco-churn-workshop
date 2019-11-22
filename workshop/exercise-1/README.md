@@ -51,7 +51,7 @@ In this section, since we now have access to the Db2 Warehouse data, we can virt
 ![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-1-menu.png)
 
 Several tables will appear (many are created as sample data when a Db2 Warehouse instance is provisioned) in the table. Find the tables you created earlier, the instructions suggested naming them: `CUSTOMER`, `PRODUCT` and `BILLING`. Once selected click on *Add to cart* and then on *View Cart*.
-You can search for the Schema `NULLIDRA` and they should show up:
+You can search for the Schema `MYDATA` and they should show up:
 
 ![Choose the tables to virtualize](../.gitbook/assets/images/dv/dv-virtualize-2-tables.png)
 
