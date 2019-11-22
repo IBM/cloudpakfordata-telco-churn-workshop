@@ -6,17 +6,17 @@ A Cloud Pak for Data project can be integrated with a git repository.
 
 To create a token for Gitlab, login to [GitLab](https://about.gitlab.com/), click on your user account in the top right and choose `Settings`:
 
-![GitLab user account]
+![GitLab user account](../.gitbook/assets/images/manage/GitLabUserAccount.png)
 
 From the left navigation bar select `Access tokens` and fill in the *name*, *expiration date*, and check the boxes for *read_repository* and *write_repository*. Finally, click `Create personal access token` button:
 
-![GitLab select Access Tokens]
+![GitLab select Access Tokens](../.gitbook/assets/images/manage/GitLabSelectAccessTokens.png)
 
 On the resulting page, you'll see your personal access token. Copy this.
 
 > NOTE: This token gives access to your git repository. Do not share with anyone.
 
-![GitLab copy Access Token]
+![GitLab copy Access Token](../.gitbook/assets/images/manage/GitLabCopyToken.png)
 
 Now go back to the Cloud Pak for Data *Create project* page and we'll add the token.
 

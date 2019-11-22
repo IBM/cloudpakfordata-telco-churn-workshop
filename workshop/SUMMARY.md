@@ -3,6 +3,7 @@
 ### Getting Started
 
 * [Pre-work](exercise-0/README.md)
+* [Git integration (using GitLab)](gitIntegration/README.md)
 
 ### Telco Workshop
 
