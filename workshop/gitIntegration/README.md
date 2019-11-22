@@ -2,7 +2,7 @@
 
 A Cloud Pak for Data project can be integrated with a git repository.
 
-### Generate a token in GitLab
+## Generate a token in GitLab
 
 To create a token for Gitlab, login to [GitLab](https://about.gitlab.com/), click on your user account in the top right and choose `Settings`:
 
@@ -20,7 +20,7 @@ On the resulting page, you'll see your personal access token. Copy this.
 
 Now go back to the Cloud Pak for Data *Create project* page and we'll add the token.
 
-### Create a project with git integration
+## Create a project with git integration
 
 Go the (☰) menu and click *Projects*
 
@@ -36,7 +36,7 @@ Click the box for `Integrate this project with git`. Add the token that you have
 
 ![Create Project with git](../.gitbook/assets/images/manage/projectAddGit.png)
 
-### Create assets and push to git
+## Create assets and push to git
 
 Now if we create an asset in the project, we can push to git.
 
@@ -63,4 +63,3 @@ The next screen will verify "Did you remove credentials from assets?". After con
 After syncing, the screen will show Success. You can click `Back to project`.
 
 You can integrate git into your workflow in your usual way, syncing with teammates via 'git pull' and using 'git push' to upload your changes to the git remote repository.
-

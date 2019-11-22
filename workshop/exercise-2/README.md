@@ -68,7 +68,7 @@ Finally, we can remove the *CustomerID* column, since that won't be useful for t
 
 ### 3. Use Data Flow steps to keep track of your work
 
-What if you need to show a non-technical person the steps you took? What if we do something we don't want? 
+What if you need to show a non-technical person the steps you took? What if we do something we don't want?
 
 Within Data Refinery, we keep track of the steps and we can even undo (or redo) an action using the circular arrows:
 

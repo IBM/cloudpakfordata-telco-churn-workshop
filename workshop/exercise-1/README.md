@@ -3,8 +3,10 @@
 This section is broken up into the following steps:
 
 1. [Start virtualizing data](#1-start-virtualizing-data)
+1. [Grant access to the virtualized data](#2-grant-access-to-the-virtualized-data)
 
-# 1. Start virtualizing data
+## 1. Start virtualizing data
+
 In this section, since we now have access to the Db2 Warehouse data, we can virtualize the data to our Cloud Pak for Data project.
 
 To launch the data virtualization tool, go the (☰) menu and click `Collect` and then `Data Virtualization`.
@@ -54,7 +56,7 @@ You'll be notified that the join has succeeded! Click on *View my virutalized da
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
-## 3. Grant access to the virtualized data
+## 2. Grant access to the virtualized data
 
 In order for other users to have access to the data that you just virtualized, you need to grant them access. Follow these steps to make your Virtualized data visible to them.
 
@@ -77,4 +79,3 @@ Select the users you wish to grant access to and click `Add`:
 In this section we learned how to make connection to databases that contain our data, how to virtualize them, and how to allow other to collaborate with us and use the virtualized data.
 
 Remember that you can add data from different databases and servers if you need to. Moreover, you can virtualized these data from different sources together as well! The goal is to take care of bringing the data to the platform early on so all the data scientists can use it without reinventing the wheel while you keep full control of who has access to what data.
-

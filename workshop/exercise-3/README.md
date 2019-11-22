@@ -36,7 +36,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 ### Run the notebook
 
-#### *Important*: Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources:
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
 
 ![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 
@@ -53,7 +53,7 @@ Section `2.0 Load and Clean data` will load the virtualized data from the previo
 * Highlight the cell below by clicking it.
 * Click the 10/01 "Find data" icon in the upper right of the notebook.
 * If you are using [Virtualized data], begin by choosing the `Files` tab. Then choose your virtualized data (i.e. User999.billingProductCustomers), click Insert to code and choose Insert Pandas DataFrame.
-* If you are using this code pattern without virtualized data, add the locally uploaded file WA_Fn-UseC_-Telco-Customer-Churn.csv by choosing the 'Files` tab. Then choose theWA_Fn-UseC_-Telco-Customer-Churn.csv. ClickInsert to codeand chooseInsert Pandas DataFrame`.
+* If you are using this code pattern without virtualized data, add the locally uploaded file WA_Fn-UseC_-Telco-Customer-Churn.csv by choosing the `Files` tab. Then choose the `WA_Fn-UseC_-Telco-Customer-Churn.csv` file. Click `Insert to code` and choose `Insert Pandas DataFrame`.
 * The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
 * Run the cell
 
@@ -200,6 +200,7 @@ Now run this curl command from a terminal window:
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
 ```
+
 A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
 
 ## 4. (Optional) Create a Python Flask app that uses the model
@@ -287,7 +288,7 @@ The churn percentage is returned:
 
 ![Get the churn percentage as a result](../.gitbook/assets/images/generic/score.png)
 
-## Conclusion 
+## Conclusion
 
 In this section we covered how the followings:
 
@@ -297,4 +298,4 @@ In this section we covered how the followings:
 * Testing your deployed model
 * Creating a basic app to use your model
 
-With this knowledge you should feel right at home within the Jupyter notebook. Moreover, you now know how to operationalize a model and use it in a real life scenario. 
+With this knowledge you should feel right at home within the Jupyter notebook. Moreover, you now know how to operationalize a model and use it in a real life scenario.
