@@ -18,7 +18,7 @@ To launch the data virtualization tool, go the (☰) menu and click `Collect` an
 ![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-1-menu.png)
 
 Several tables will appear (many are created as sample data when a Db2 Warehouse instance is provisioned) in the table. Find the tables you created earlier, the instructions suggested naming them: `CUSTOMER`, `PRODUCT` and `BILLING`. Once selected click on *Add to cart* and then on *View Cart*.
-You can search for the Schema `NULLIDRA` and they should show up:
+You can search for the Schema name for the data and they should show up:
 
 ![Choose the tables to virtualize](../.gitbook/assets/images/dv/dv-virtualize-2-tables.png)
 
@@ -48,7 +48,7 @@ Next we choose which project to assign the joined view to, choose the project yo
 
 ![Add joined data tables to your project](../.gitbook/assets/images/dv/dv-data-join-4-assign.png)
 
-You'll be notified that the join has succeeded! Click on *View my virutalized data*. to repeat this again so we have all three tables.
+ou'll be notified that the join has succeeded! Click on *View my virutalized data*. to repeat this again so we have all three tables.
 
 ![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-5-created.png)
 

@@ -27,6 +27,18 @@ Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `custome
 
 For Cloud Pak for Data to read our Db2 Warehouse data we need to add a new *Data Source* to Cloud Pak for Data. This requires inputting the usual JDBC details.
 
+To get the connection info for you local DB2 Warehouse, go to the (☰) menu and click on the *My Instances* option.
+
+![(☰) Menu -> My Instances](../.gitbook/assets/images/dv/menuMyInstances.png)
+
+In *My instances* go to the *Provisioned instances* tab. Highlight you local DB2 Warehouse and click the 3 vertical dots on the far right, and then click `View Details`:
+
+![Provisioned local DB2 details](../.gitbook/assets/images/dv/provisionedDBviewDetails)
+
+Either keep this window open in a separate tab, or copy the required Connection info: *Host*, *Port*, *Database name*, *Username*, and *Password*. You can get the port from the *JDBC Connection URL*, i.e for the URL `jdbc:db2://os-workshop-nov22worker-05.vz-cpd-nov22.com:30290/BLUDB` the port is the number after the colin in the URL `30290`:
+
+![DB2 Connection credentials](../.gitbook/assets/images/dv/localDB2details.png)
+
 To add a new data source, go to the (☰) menu and click on the *Connections* option.
 
 ![(☰) Menu -> Collections](../.gitbook/assets/images/connections/cpd-conn-menu.png)
