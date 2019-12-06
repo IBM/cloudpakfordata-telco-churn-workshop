@@ -36,7 +36,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 ### Run the notebook
 
-> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent conserve resources!*
 
 ![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 
@@ -52,8 +52,8 @@ Section `2.0 Load and Clean data` will load the virtualized data from the previo
 
 * Highlight the cell below by clicking it.
 * Click the 10/01 "Find data" icon in the upper right of the notebook.
-* If you are using [Virtualized data], begin by choosing the `Files` tab. Then choose your virtualized data (i.e. User999.billingProductCustomers), click Insert to code and choose Insert Pandas DataFrame.
-* If you are using this code pattern without virtualized data, add the locally uploaded file WA_Fn-UseC_-Telco-Customer-Churn.csv by choosing the `Files` tab. Then choose the `WA_Fn-UseC_-Telco-Customer-Churn.csv` file. Click `Insert to code` and choose `Insert Pandas DataFrame`.
+* If you are using [Virtualized data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/workshop/exercise-1/README.md), begin by choosing the `Files` tab. Then choose your virtualized data (i.e. User999.BILLINGPRODUCTCUSTOMERS), click Insert to code and choose Insert Pandas DataFrame.
+* If you are using this notebook without virtualized data, add the locally uploaded file Telco-Customer-Churn.csv by choosing the `Files` tab. Then choose the `Telco-Customer-Churn.csv` file. Click `Insert to code` and choose `Insert Pandas DataFrame`.
 * The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
 * Run the cell
 
@@ -63,7 +63,7 @@ By adding data a block of code will be added to the notebook. The code will auto
 
 ![Generated code to handle Pandas DataFrame](../.gitbook/assets/images/wml/wml-5-generated-code-dataframe.png)
 
-> **IMPORTANT**: Don't forget to update the next cell `df = df_data_1` or `df_data_X` depending on your number `X` for the variable from the generated code.
+> **IMPORTANT**: Don't forget to update the next cell to assign the `df` variable. In the case of Virtualized data, it will look like `df=data_df_1`, `data_df_2`, etc. For a locally uploaded file, it will look like `df=df_data_1` or `df_data_X` depending on your number `X` for the variable from the generated code.
 
 Continue to run the remaining cells in the section to clean the data.
 
@@ -87,7 +87,7 @@ Continue to run the remaining cells in the section to save the model to Cloud Pa
 
 We've successfully built and deployed a machine learning model. Congratulations!
 
-## 2. Deploy the model
+## 2. Deploying the model
 
 Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
@@ -173,6 +173,8 @@ Click `Predict` and the model will be called with the input data. The results wi
 ![Testing the deployed model](../.gitbook/assets/images/wml/TestingDeployedModel.png)
 
 ### Test the deployed model with cURL
+
+> NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps.
 
 In a terminal window, run the following to get a token to access the API. Use your CP4D cluster `username` and `password`:
 
@@ -261,8 +263,12 @@ Edit `.env` to reference the `URL` and `TOKEN`.
 URL=
 
 # Required: Provide your web service deployment access token.
-#           This TOKEN should start with "Bearer ".
-# E.g., TOKEN=Bearer abCdwFg.fgH1r2... (and so on, tokens are long).
+#           This TOKEN will be the part after `accessToken`. So, your
+#           json string will look like:
+#           {"username":"scottda","role":"Admin","permissions":["administrator","can_provision","manage_catalog","virtualize_transform","access_catalog"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331001","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2 <snip> neQ","_messageCode_":"success","message":"success"}
+# The value for `TOKEN=` below will be:
+#    TOKEN=eyJhbGciOi <snip> neQ
+
 TOKEN=
 ```
 
