@@ -127,7 +127,11 @@ Click on *New project*
 
 ![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-Create a new project, choose `Analytics project`, give it a unique name, and click *OK. Click `Create` on the next screen.
+Click on the top tile for `Create an empty project`:
+
+![Create an empty project](../.gitbook/assets/images/manage/cpd-create-empty-project.png)
+
+Give the project a unique name and click `Create`:
 
 ![Pick a name](../.gitbook/assets/images/manage/cpd-new-project-name.png)
 
@@ -137,7 +141,7 @@ Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
 
 ![(☰) Menu -> Analytics deployments](../.gitbook/assets/images/manage/ChooseAnalyticsDeployments.png)
 
-Click on `+ New deployment space):
+Click on `+ New deployment space`):
 
 ![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
 
