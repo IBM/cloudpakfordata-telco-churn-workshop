@@ -50,11 +50,11 @@ You can search for a user, click on the name to select them, and click `Add`:
 
 You can choose a role for the user - Admin, Editor, or Viewer:
 
-![choose role for collaborator](../.gitbook/assets/images/wkc/wkc-choose-user-and-add.png)
+![choose role for collaborator](../.gitbook/assets/images/wkc/wkc-user-roll-choice.png)
 
 To access data in the catalog, click on the name of the data:
 
-![click data name to open](../.gitbook/assets/images/wkc/wkc-choose-user-and-add.png)
+![click data name to open](../.gitbook/assets/images/wkc/wkc-click-data-name-to-open.png)
 
 A preview of the data will open, with metadata and the first few rows:
 
