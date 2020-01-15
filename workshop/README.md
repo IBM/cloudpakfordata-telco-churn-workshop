@@ -63,7 +63,6 @@ Cloud Pak for Data:
 
 This workshop was primarily written by [Scott D'Angelo](https://github.com/scottdangelo) and [Steve Martinelli](https://github.com/stevemar). Many other IBMers have contributed to help shape, test, and contribute to the workshop.
 
-* [Samaya Madhavan](https://github.com/)
 * [Mark Sturdevant](https://github.com/markstur)
 * [Omid Meh](https://github.com/omidmeh)
 * [Samaya Madhavan](https://github.com/samayamadhavan)
