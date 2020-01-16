@@ -1,6 +1,13 @@
 # Watson Knowledge Catalog
 
-## Set up Catalog and Data
+This exercise demonstrates how to solve the problems of enterprise data governance using Watson Knowledge Catalog on the Cloud Pak for Data platform. We'll explain how to use governance, data quality and active policy management in order to help your organization protect and govern sensitive data, trace data lineage and manage data lakes. This knowledge will help users quickly discover, curate, categorize and share data assets, data sets, analytical models and their relationships with other members of your organization. It serves as a single source of truth for data engineers, data stewards, data scientists and business analysts to gain self-service access to data they can trust.
+
+This section is comprised of the following steps:
+
+1. [Set up Catalog and Data](#1-set-up-catalog-and-data)
+1. [Add collaborators and control access](#2-add-collaborators-and-control-access)
+
+## 1. Set up Catalog and Data
 
 First we'll create a catalog and load some data
 
@@ -22,6 +29,8 @@ Give your catalog a name and optional description, and click `create`:
 
 ![name and create wkc catalog](../.gitbook/assets/images/wkc/wkc-name-describe-create.png)
 
+### Add data assets
+
 Under the *Browse Assets* tab, below "Now you can add assets!" click `here` to add your data:
 
 ![click here to add assets](../.gitbook/assets/images/wkc/wkc-add-data-asset.png)
@@ -39,6 +48,8 @@ Browse to the `/data/merged/Telco-Customer-Churn.csv` file and double-click or c
 The newly added *Telco-Customer-Churn.csv* file will show up under the *Browse Assets* tab of your catalog:
 
 ![newly added data in catalog](../.gitbook/assets/images/wkc/wkc-browse-assets.png)
+
+## 2. Add collaborators and control access
 
 Under the *Access Control* tab you can click `Add Collaborator` to give other users access to your catalog:
 
