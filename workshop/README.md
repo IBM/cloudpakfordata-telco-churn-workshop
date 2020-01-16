@@ -22,11 +22,11 @@ The introductory page of the workshop is broken down into the following sections
 
 |   |   |
 | - | - |
-| [Exercise 0: Pre-work](exercise-0/README.md) | Creating a project, downloading the data set, seeding a database |
-| [Exercise 1: Data Connection and Virtualization for Admins](exercise-1/README.md) | Creating a new connection, virtualizing the data, importing the data into the project |
-| [Exercise 2: Data Visualization with Data Refinery](exercise-2/README.md) | Refining the data, vizualizing and profiling the data |
-| [Exercise 3: Machine Learning with Jupyter](exercise-3/README.md) | Building a model with Spark, deploying the model with Watson Maching Learning, testing the model with a Python Flask app |
-| [Exercise 4: Monitoring models with OpenScale](exercise-4/README.md) | Monitor the model with Watson OpenScale |
+| [Exercise 0: Pre-work](pre-work/README.md) | Creating a project, downloading the data set, seeding a database |
+| [Exercise 1: Data Connection and Virtualization for Admins](db-connection-and-virtualization/README.md) | Creating a new connection, virtualizing the data, importing the data into the project |
+| [Exercise 2: Data Visualization with Data Refinery](data-visualization-and-refinery/README.md) | Refining the data, vizualizing and profiling the data |
+| [Exercise 3: Machine Learning with Jupyter](machine-learning-in-jupyter-notebook/README.md) | Building a model with Spark, deploying the model with Watson Maching Learning, testing the model with a Python Flask app |
+| [Exercise 4: Monitoring models with OpenScale](monitoring-models-with-openscale-gui/README.md) | Monitor the model with Watson OpenScale |
 
 ## Compatability
 
