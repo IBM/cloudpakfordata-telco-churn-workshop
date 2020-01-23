@@ -6,6 +6,7 @@ This section is comprised of the following steps:
 
 1. [Set up Catalog and Data](#1-set-up-catalog-and-data)
 1. [Add collaborators and control access](#2-add-collaborators-and-control-access)
+1. [Add Business terms](#3-add-business-terms)
 
 ## 1. Set up Catalog and Data
 
@@ -74,3 +75,48 @@ A preview of the data will open, with metadata and the first few rows:
 You can click the `Review` tab and rate the data, as well as comment on it, to provide feedback for your teammates:
 
 ![review data](../.gitbook/assets/images/wkc/wkc-review-data.png)
+
+## 3. Add Business terms
+
+You can use [Business terms](https://dataplatform.cloud.ibm.com/docs/content/wsj/governance/dmg16.html) to standardize definitions of business concepts so that your data is described in a uniform and easily understood way across your enterprise.
+
+From the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Business terms`:
+
+![organize Data Business terms](../.gitbook/assets/images/wkc/wkc-organize-data-business-terms.png)
+
+Click on the upper-right `+ Create Business term` button:
+
+![create business term](../.gitbook/assets/images/wkc/wkc-create-business-term)
+
+Give the new Business term a name such as *Billing* and optional description, and click `Save as draft`. NOTE that others on the platform will be creating a business term for this workshop, so perhaps pre-pend your term with something unique, i.e *scottda-Billing*:
+
+![name new business term](../.gitbook/assets/images/wkc/wkc-name-new-business-term.png)
+
+A window will come up once the term is created. You can see a rich set of options for creating related terms and adding other metadata. For now, click `Publish` to make this term available to users of the platform:
+
+![publish business term](../.gitbook/assets/images/wkc/wkc-publish-business-term.png)
+
+Add an optional comment and click `Publish` in the new window:
+
+![verify publish business term](../.gitbook/assets/images/wkc/wkc-click-publish.png)
+
+Now go back to your Telco catalog and open it up to the column view ((☰) hamburger menu `Organize` -> `All catalogs` and choose `Telco catalog`). Under the *Browse assets* tab, click on the data set *Telco-Customer-Churn.csv* to get the column/row preview. Scroll right to get to the *TotalCharges* column and click the *Column information* icon (looks like an "eye"):
+
+![choose TotalCharges column information](../.gitbook/assets/images/wkc/wkc-totalcharges-column-information.png)
+
+In the window that opens, click the *edit* icon (looks like a "pencil") next to *Business terms* :
+
+![edit business terms](../.gitbook/assets/images/wkc/wkc-assign-terms-to-column.png)
+
+Enter *Billing* (or your uniquely named term such as *scottda-Billing*) under *Business terms* and the term will be searched for. Click on the `Billing` term that is found, and click `Apply`:
+
+![edit business terms](../.gitbook/assets/images/wkc/wkc-search-billing-to-assign-term.png)
+
+Close that window once the term has been applied.
+Now, do the same thing to add the *Billing* Business term to the *MonthlyCharges* column.
+
+You will now be able to search for these terms from within the platform. For example, going back to your top level *Telco Catalog*, in the search bar with the comment "What assets are you searching for?" enter your unique *<unique_string>Billing* term:
+
+![search using business terms](../.gitbook/assets/images/wkc/wkc-search-business-terms.png)
+
+The *Telco-Customer-Churn.csv* data set will show up, since it contains columns tagged with the *Billing* business term.
