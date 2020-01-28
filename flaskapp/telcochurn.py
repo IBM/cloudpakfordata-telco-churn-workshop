@@ -18,6 +18,7 @@ import os
 import requests
 from dotenv import load_dotenv
 from flask import Flask, request, session, render_template, flash
+from requests.auth import HTTPBasicAuth
 
 app = Flask(__name__)
 
@@ -60,7 +61,6 @@ ints = {
 }
 
 labels = ["No Churn", "Churn"]
-
 
 def generate_input_lines():
     result = f'<table>'
@@ -111,6 +111,34 @@ def generate_input_lines():
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
 
 
+
+def get_token():
+    auth_token = os.environ.get('AUTH_TOKEN')
+    auth_username = os.environ.get('AUTH_USERNAME')
+    auth_password = os.environ.get('AUTH_PASSWORD')
+    auth_url = os.environ.get('AUTH_URL')
+
+    if (auth_token):
+        # All three are set. bad bad!
+        if (auth_username and auth_password): 
+            raise EnvironmentError('[ENV VARIABLES] please set either "AUTH_TOKEN" or ("AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL"). Not both.')
+        # Only TOKEN is set. good.
+        else:
+            return auth_token
+    else: 
+        # Nothing is set. bad!
+        if not (auth_username and auth_password): # nothing is set.
+            raise EnvironmentError('[ENV VARIABLES] please set "AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL" as "TOKEN" is not set.')
+        # Only USERNAME, PASSWORD are set. good.
+        else:
+            response_preauth = requests.get(auth_url, auth=HTTPBasicAuth(auth_username, auth_password), verify=False)
+            if response_preauth.status_code == 200:
+                return json.loads(response_preauth.text)['accessToken']
+            else:
+                raise Exception(f"Authentication returned {response_preauth}: {response_preauth.text}" )
+
+
+
 class churnForm():
 
     @app.route('/', methods=['GET', 'POST'])
@@ -126,29 +154,35 @@ class churnForm():
                 data[k] = v
                 session[k] = v
 
-            scoring_href = os.environ.get('URL')
-            mltoken = os.environ.get('TOKEN')
+            scoring_href = os.environ.get('MODEL_URL')
+            
 
-            if not (scoring_href and mltoken):
-                raise EnvironmentError('Env vars URL and TOKEN are required.')
+            if not (scoring_href):
+                raise EnvironmentError('[ENV VARIABLES] Please set "URL".')
+
+            
+
 
             for field in ints.keys():
                 data[field] = int(data[field])
             for field in floats.keys():
                 data[field] = float(data[field])
 
+
             input_data = list(data.keys())
             input_values = list(data.values())
 
+
             payload_scoring = {"input_data": [
-                {"fields": input_data, "values": [input_values]}
+                {"fields" : input_data, "values": [input_values]}
             ]}
             print("Payload is: ")
             print(payload_scoring)
             header_online = {
                 'Cache-Control': 'no-cache',
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + mltoken}
+                'Authorization': 'Bearer ' + get_token()
+                }
             response_scoring = requests.post(
                 scoring_href,
                 verify=False,
