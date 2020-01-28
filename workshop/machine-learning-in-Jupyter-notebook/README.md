@@ -252,24 +252,34 @@ Copy the `env.sample` file to `.env`.
 cp env.sample .env
 ```
 
-Edit `.env` to reference the `URL` and `TOKEN`.
+Edit `.env` to and fill in the `MODEL_URL` as well as the `AUTH_URL`, `AUTH_USERNAME`, and `AUTH_PASSWORD`.
 
-* `URL` is your web service URL for scoring.
-* `TOKEN` is your deployment access token.
+* `MODEL_URL` is your web service URL for scoring which you got from the section above
+* `AUTH_URL` is the preauth url of your CloudPak4Data and will look like this: `https://<cluster_url>/v1/preauth/validateAuth`
+* `AUTH_USERNAME` is your username with which you login to the CloudPak4Data environment
+* `AUTH_PASSWORD` is your password with which you login to the CloudPak4Data environment
+
+Note: Alternatively, you can fill in the `AUTH_TOKEN` instead of `AUTH_URL`, `AUTH_USERNAME`, and `AUTH_PASSWORD`. You will have generated this token in the section above. However, since tokens expire after a few hours and you would need to restart your app to update the token, this option is not suggested. Instead, if you use the username/password option, the app can generate a new token every time for you so it will always have a non-expired ones.
+
+
+here's an example of a completed lines of the .env file. 
 
 ```bash
 # Required: Provide your web service URL for scoring.
-# E.g., URL=https://9.10.222.3:31843/dmodel/v1/project/pyscript/tag/score
-URL=
+# E.g., MODEL_URL=https://<cluster_url>/v4/deployments/<deployment_space_guid>/predictions
+MODEL_URL=https://cp4d.cp4dworkshops.com/v4/deployments/5f939979-14c2-4538-a2af-a970aeb59abd/predictions
 
-# Required: Provide your web service deployment access token.
-#           This TOKEN will be the part after `accessToken`. So, your
-#           json string will look like:
-#           {"username":"scottda","role":"Admin","permissions":["administrator","can_provision","manage_catalog","virtualize_transform","access_catalog"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331001","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2 <snip> neQ","_messageCode_":"success","message":"success"}
-# The value for `TOKEN=` below will be:
-#    TOKEN=eyJhbGciOi <snip> neQ
+# Required: Please fill in EITHER section A OR B below:
 
-TOKEN=
+# #### A: Authentication using username and password
+#   Fill in the authntication url, your CloudPak4Data username, and CloudPak4Data password.
+#   Example:
+#     AUTH_URL=<cluster_url>/v1/preauth/validateAuth
+#     AUTH_USERNAME=my_username
+#     AUTH_PASSWORD=super_complex_password
+AUTH_URL=https://cp4d.cp4dworkshops.com/v1/preauth/validateAuth
+AUTH_USERNAME=username_001
+AUTH_PASSWORD=my_secure_password_!
 ```
 
 ### Start the application
