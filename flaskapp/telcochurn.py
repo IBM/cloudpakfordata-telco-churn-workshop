@@ -62,6 +62,7 @@ ints = {
 
 labels = ["No Churn", "Churn"]
 
+
 def generate_input_lines():
     result = f'<table>'
 
@@ -111,7 +112,6 @@ def generate_input_lines():
 app.jinja_env.globals.update(generate_input_lines=generate_input_lines)
 
 
-
 def get_token():
     auth_token = os.environ.get('AUTH_TOKEN')
     auth_username = os.environ.get('AUTH_USERNAME')
@@ -120,14 +120,14 @@ def get_token():
 
     if (auth_token):
         # All three are set. bad bad!
-        if (auth_username and auth_password): 
+        if (auth_username and auth_password):
             raise EnvironmentError('[ENV VARIABLES] please set either "AUTH_TOKEN" or ("AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL"). Not both.')
         # Only TOKEN is set. good.
         else:
             return auth_token
-    else: 
+    else:
         # Nothing is set. bad!
-        if not (auth_username and auth_password): # nothing is set.
+        if not (auth_username and auth_password):
             raise EnvironmentError('[ENV VARIABLES] please set "AUTH_USERNAME", "AUTH_PASSWORD", and "AUTH_URL" as "TOKEN" is not set.')
         # Only USERNAME, PASSWORD are set. good.
         else:
@@ -135,8 +135,7 @@ def get_token():
             if response_preauth.status_code == 200:
                 return json.loads(response_preauth.text)['accessToken']
             else:
-                raise Exception(f"Authentication returned {response_preauth}: {response_preauth.text}" )
-
+                raise Exception(f"Authentication returned {response_preauth}: {response_preauth.text}")
 
 
 class churnForm():
@@ -155,26 +154,20 @@ class churnForm():
                 session[k] = v
 
             scoring_href = os.environ.get('MODEL_URL')
-            
 
             if not (scoring_href):
                 raise EnvironmentError('[ENV VARIABLES] Please set "URL".')
-
-            
-
 
             for field in ints.keys():
                 data[field] = int(data[field])
             for field in floats.keys():
                 data[field] = float(data[field])
 
-
             input_data = list(data.keys())
             input_values = list(data.values())
 
-
             payload_scoring = {"input_data": [
-                {"fields" : input_data, "values": [input_values]}
+                {"fields": input_data, "values": [input_values]}
             ]}
             print("Payload is: ")
             print(payload_scoring)
@@ -182,7 +175,7 @@ class churnForm():
                 'Cache-Control': 'no-cache',
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + get_token()
-                }
+            }
             response_scoring = requests.post(
                 scoring_href,
                 verify=False,
