@@ -261,8 +261,7 @@ Edit `.env` to and fill in the `MODEL_URL` as well as the `AUTH_URL`, `AUTH_USER
 
 Note: Alternatively, you can fill in the `AUTH_TOKEN` instead of `AUTH_URL`, `AUTH_USERNAME`, and `AUTH_PASSWORD`. You will have generated this token in the section above. However, since tokens expire after a few hours and you would need to restart your app to update the token, this option is not suggested. Instead, if you use the username/password option, the app can generate a new token every time for you so it will always have a non-expired ones.
 
-
-here's an example of a completed lines of the .env file. 
+here's an example of a completed lines of the .env file.
 
 ```bash
 # Required: Provide your web service URL for scoring.
