@@ -94,7 +94,7 @@ Alternately, at the top level project under the *Assets* tab, click the name of 
 
 ![Deploying the model](../.gitbook/assets/images/autoai/autoai-deploy-model.png)
 
-*  To promote an asset, you must associate your project with a deployment space. Click `Associate Deployment Space`:
+* To promote an asset, you must associate your project with a deployment space. Click `Associate Deployment Space`:
 
 ![Associate Deployment Space](../.gitbook/assets/images/autoai/autoai-associate-deployment-space.png)
 
