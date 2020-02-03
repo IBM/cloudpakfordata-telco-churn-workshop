@@ -134,6 +134,8 @@ Alternately, at the top level project under the *Assets* tab, click the name of 
 
 ![Deployment API reference](../.gitbook/assets/images/autoai/autoai-api-reference-curl.png)
 
+### Testing the deployed model with the GUI tool
+
 Now you can test your model from the interface that is provided after the deployment.
 
 * Click on the *Input with JSON format* icon and paste the following data under *Body*, then click `Predict`:
@@ -148,3 +150,38 @@ Now you can test your model from the interface that is provided after the deploy
 * Alternately, you can click the *Provide input using form* icon and input the various fields, then click `Predict`:
 
 ![Input to the fields](../.gitbook/assets/images/autoai/autoai-input-fields.png)
+
+### Test the deployed model with cURL
+
+> NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps.
+
+In a terminal window, run the following to get a token to access the API. Use your CP4D cluster `username` and `password`:
+
+```bash
+curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u <username>:<password>
+```
+
+A json string will be returned with a value for "accessToken" that will look *similar* to this:
+
+```json
+{"username":"scottda","role":"Admin","permissions":["access_catalog","administrator","manage_catalog","can_provision"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331002","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA","_messageCode_":"success","message":"success"}
+```
+
+Export the "accessToken" part of this response in the terminal window as `WML_AUTH_TOKEN`. Get the `URL` from the *API reference* by copying the `Endpoint`, and export it as `URL`:
+
+![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
+
+```bash
+export WML_AUTH_TOKEN=<value-of-access-token>
+export URL=https://blahblahblah.com
+```
+
+Now run this curl command from a terminal window:
+
+```bash
+curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["customerID","gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["7590-VHVEG","Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
+```
+
+A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
+
+* To
