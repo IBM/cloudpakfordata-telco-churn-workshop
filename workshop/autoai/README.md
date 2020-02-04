@@ -126,11 +126,11 @@ Alternately, at the top level project under the *Assets* tab, click the name of 
 
 ![create deployment](../.gitbook/assets/images/autoai/autoai-name-and-create-deployment.png)
 
-* The Deployment will show as *in progress* and then switch to *Deployed* when done. Click on the deployment:
+* The Deployment will show as *In progress* and then switch to *Deployed* when done. Click on the deployment:
 
 ![click final deployment](../.gitbook/assets/images/autoai/autoai-deployed.png)
 
-* The Deployment *API reference* tab show how to use the model using *curl*, *Java*, *Javascript*, *Python*, and *Scala*:
+* The Deployment *API reference* tab show how to use the model using *cURL*, *Java*, *Javascript*, *Python*, and *Scala*:
 
 ![Deployment API reference](../.gitbook/assets/images/autoai/autoai-api-reference-curl.png)
 
@@ -183,5 +183,3 @@ curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: appl
 ```
 
 A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
-
-* To
