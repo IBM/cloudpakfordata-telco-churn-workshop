@@ -13,6 +13,7 @@
 * [Machine Learning with Jupyter](machine-learning-in-Jupyter-notebook/README.md)
 * [Machine Learning with AutoAI](autoai/README.md)
 * [Monitoring models with OpenScale](monitoring-models-with-openscale-gui/README.md)
+* [(Optional) Run OpenScale notebook code](openscale-notebook/README.md)
 
 
 ### Workshop Resources
