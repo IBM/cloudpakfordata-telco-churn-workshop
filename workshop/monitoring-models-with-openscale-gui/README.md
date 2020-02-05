@@ -8,11 +8,11 @@ Now that you have created a machine learning model and configured Openscale, you
 
 ### Use the insights dashboard
 
-Click on the left-hand menu icon for `Insights`, then choose the tile for your configured model (or the 3-dot menu on the tile and then `View Details`:
+Click on the left-hand menu icon for `Insights`, make sure that you are on the `Model monitors` tab, and then choose the tile for your configured model (or the 3-dot menu on the tile and then `View Details`:
 
 ![OpenScale Insight Dashboard Tile Open](../.gitbook/assets/images/aios/OpenScaleInsightDashTileOpen.png)
 
-You can see the top monitor highlighted, for the feature `Sex`.
+You will see the triangle with `!` under `Fairness` -> `Sex`.
 
 By moving your mouse pointer over the graph, you can see the values change, and which contains bias. Click one spot to veiw the details. Later, we'll click `Configure Monitors` to get a Fairness endpoint:
 
@@ -26,7 +26,11 @@ Click on `View Transactions` to drill deeper:
 
 ![OpenScale View Transactions](../.gitbook/assets/images/aios/OpenScaleFairnessViewTransactions.png)
 
-Now, go back to the top-level page when you click the Monitor Deployment tile and click `Configure Monitors`. Click the `Fairness` menu, then the `Debias Endpoint` tab:
+Now, go back to the *Insights Dashboard* page by clicking on the left-hand menu icon for `Insights`, make sure that you are on the `Model monitors` tab, and then choose the tile for your configured model (or the 3-dot menu on the tile and then `Configure monitors`:
+
+![OpenScale Configure Monitors](../.gitbook/assets/images/aios/OpenScaleConfigureMonitors.png)
+
+Click the `Fairness` menu, then the `Debias Endpoint` tab:
 
 ![OpenScale Monitors Fairness](../.gitbook/assets/images/aios/OpenScaleMonitorFairness.png)
 
