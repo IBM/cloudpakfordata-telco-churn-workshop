@@ -1,6 +1,8 @@
-# Watson Knowledge Catalog
+# Watson Knowledge Catalog for Admins
 
 This exercise demonstrates how to solve the problems of enterprise data governance using Watson Knowledge Catalog on the Cloud Pak for Data platform. We'll explain how to use governance, data quality and active policy management in order to help your organization protect and govern sensitive data, trace data lineage and manage data lakes. This knowledge will help users quickly discover, curate, categorize and share data assets, data sets, analytical models and their relationships with other members of your organization. It serves as a single source of truth for data engineers, data stewards, data scientists and business analysts to gain self-service access to data they can trust.
+
+You will need the *Admin* role to create a catalog.
 
 This section is comprised of the following steps:
 
@@ -18,7 +20,7 @@ Open Watson Knowledge Catalog by clicking the *Services* icon at the top right o
 
 ![click services icon](../.gitbook/assets/images/wkc/wkc-click-services-icon.png)
 
-Under the *Data Governance* section, click the 3 horizontal dots and click `Open`:
+Under the *Data Governance* section, click the 3 horizontal dots on the *Watson Knowledge Catalog* tile, and click `Open`:
 
 ![open wkc](../.gitbook/assets/images/wkc/wkc-open-service.png)
 
@@ -36,7 +38,7 @@ Under the *Browse Assets* tab, below "Now you can add assets!" click `here` to a
 
 ![click here to add assets](../.gitbook/assets/images/wkc/wkc-add-data-asset.png)
 
-*OR* you can click `+ Add to catalog` in the top right and choose `Local files`:
+*OR* you can click `+ Add to catalog` in the top right and, for example, choose `Local files`:
 
 ![add local files to catalog](../.gitbook/assets/images/wkc/wkc-add-to-catalog-local-files.png)
 
@@ -49,6 +51,22 @@ Browse to the `/data/merged/Telco-Customer-Churn.csv` file and double-click or c
 The newly added *Telco-Customer-Churn.csv* file will show up under the *Browse Assets* tab of your catalog:
 
 ![newly added data in catalog](../.gitbook/assets/images/wkc/wkc-browse-assets.png)
+
+You can add a connection to a remote DB, for example *DB2 Warehouse in IBM Cloud*, by choosing `+ Add to catalog` -> `Connection`:
+
+![add connection to catalog](../.gitbook/assets/images/wkc/wkc-add-connection.png)
+
+Choose your remote DB and click:
+
+![chose db2 warehouse connection ](../.gitbook/assets/images/wkc/wkc-choose-db2-warehouse-conn.png)
+
+Enter the connection details and click `Create`:
+
+![enter db2 warehouse connection details](../.gitbook/assets/images/wkc/wkc-enter-connection-details.png)
+
+The connection now shows up in the catalog:
+
+![db2 warehouse connection shows up](../.gitbook/assets/images/wkc/wkc-new-connection-shows-up.png)
 
 ## 2. Add collaborators and control access
 
