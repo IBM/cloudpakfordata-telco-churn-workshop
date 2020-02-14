@@ -8,7 +8,10 @@ This section is comprised of the following steps:
 
 1. [Set up Catalog and Data](#1-set-up-catalog-and-data)
 1. [Add collaborators and control access](#2-add-collaborators-and-control-access)
-1. [Add Business terms](#3-add-business-terms)
+1. [Add categories](#3-add-categories)
+1. [Add data classes](#4-add-data-classes)
+1. [Add Business terms](#5-add-business-terms)
+1. [Add rules for policies](#6-add-rules-for-policies)
 
 ## 1. Set up Catalog and Data
 
@@ -94,9 +97,51 @@ You can click the `Review` tab and rate the data, as well as comment on it, to p
 
 ![review data](../.gitbook/assets/images/wkc/wkc-review-data.png)
 
-## 3. Add Business terms
+## 3. Add categories
+
+There are many ways to label the features and columns of our data. One is with categories.
+
+Add a category for your assets by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Categories`, then click `Create category`:
+
+![organize data categories](../.gitbook/assets/images/wkc/wkc-menu-organize-categories.png)
+
+Give your category a name, such as *Billing*, and an optional description, and then click `Save`:
+
+![new category billing](../.gitbook/assets/images/wkc/wkc-new-category-billing.png)
+
+Now, if you hit `Create category` again on the *Billing* category screen, you can create a sub-category, such as *Total Charges*:
+
+![sub category total charges](../.gitbook/assets/images/wkc/wkc-new-sub-category-totalcharges.png)
+
+For the *Billing* category you can select a *Type*, such as `Business term`:
+
+![select business term type](../.gitbook/assets/images/wkc/wkc-category-select-type.png)
+
+We can also create classifications for assets, similar to *Confidential*, *Personally Identifiable Information*, or *Sensitive Personal Information* in a similar way, by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Classifications` and clicking `+Create classification`. These classifications can then be added to your category as a *Type*:
+
+![select classification type](../.gitbook/assets/images/wkc/wkc-add-classifications.png)
+
+## 4. Add data classes
+
+When you profile your assets, a data class will be inferred from the contents where possible. We'll see more on this later. You can also add your own data classes.
+
+Add a data class for your assets by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Data class`, then click `Create data class`:
+
+![organize data classes](../.gitbook/assets/images/wkc/wkc-menu-organize-data-classes.png)
+
+Give your new data class a name, i.e. *numerical*, and an optional Primary category and/or description, and click `Save as draft`:
+
+![new data class](../.gitbook/assets/images/wkc/wkc-create-data-class.png)
+
+Once the data class is created, we can add *Stewards* for this class, and also associate *classifications* and *business terms*. When you are ready, click `Publish`:
+
+![tools for data class](../.gitbook/assets/images/wkc/wkc-data-class-add-term-publish.png)
+
+## 5. Add Business terms
 
 You can use [Business terms](https://dataplatform.cloud.ibm.com/docs/content/wsj/governance/dmg16.html) to standardize definitions of business concepts so that your data is described in a uniform and easily understood way across your enterprise.
+
+You already saw how to create a category and make it a *business term*. You can also create the business term as it's own entity.
 
 From the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Business terms`:
 
@@ -104,7 +149,7 @@ From the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Gove
 
 Click on the upper-right `+ Create Business term` button:
 
-![create business term](../.gitbook/assets/images/wkc/wkc-create-business-term)
+![create business term](../.gitbook/assets/images/wkc/wkc-create-business-term.png)
 
 Give the new Business term a name such as *Billing* and optional description, and click `Save as draft`. NOTE that others on the platform will be creating a business term for this workshop, so perhaps pre-pend your term with something unique, i.e *scottda-Billing*:
 
@@ -138,3 +183,37 @@ You will now be able to search for these terms from within the platform. For exa
 ![search using business terms](../.gitbook/assets/images/wkc/wkc-search-business-terms.png)
 
 The *Telco-Customer-Churn.csv* data set will show up, since it contains columns tagged with the *Billing* business term.
+
+## 6. Add rules for policies
+
+We can now create rules to control how a user can access data.
+
+Create a business rule called *CustomerID* and assign it to your *CustomerID* column in the data set using the instructions above.
+
+From the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Rules`, then click `Create rule`.
+
+For the *New rule* -> *Select the type of rule to create* choose `Data protection rule`.
+
+Under *Details* give your rule a *Name*, *Type* = *Access*, and a *Business definition*.
+
+Now, under *Rule builder* *Condition1* fill out If *Business term* *Contains any* *CustomerID*  and Action then *mask data* *in columns containing* *Customer number*. Choose the tile for `Substitute`, which will make a non-identifiable hash. This obscures the actual CustomerID, but allows actions like database joins to still work.
+
+![define rule for masking customerID](../.gitbook/assets/images/wkc/wkc-rule-substitue-customer-id.png)
+
+Now if we go back to our *Telco-Customer-Churn.csv* asset in the catalog at the *CustomerID* column, we can see the "lock" icon and see that the customerID has now been substituted with a hash value:
+
+![customerID is now masked](../.gitbook/assets/images/wkc/wkc-masked-column-customer-id.png)
+
+Now go to the `Profile` tab and scroll to the *TotalCharges* column. You can see that the data has been inferred to be classified as a *Quantity*:
+
+![TotalCharges classified as Quantity](../.gitbook/assets/images/wkc/wkc-inferred-classifier-totalcharges.png)
+
+Here is where you could change the classification if the inferred one was not what you wanted.
+
+You can build a rule to *Obfuscate* this *TotalCharges* column:
+
+![TotalCharges obfuscate rule ](../.gitbook/assets/images/wkc/wkc-build-obfuscate-rule.png)
+
+And now that column will have data that is replaced with similarly formatted data:
+
+![TotalCharges column obfuscated](../.gitbook/assets/images/wkc/wkc-obfuscated-totalchurn-column.png)
