@@ -55,6 +55,8 @@ The newly added *Telco-Customer-Churn.csv* file will show up under the *Browse A
 
 ![newly added data in catalog](../.gitbook/assets/images/wkc/wkc-browse-assets.png)
 
+### Add Connection
+
 You can add a connection to a remote DB, for example *DB2 Warehouse in IBM Cloud*, by choosing `+ Add to catalog` -> `Connection`:
 
 ![add connection to catalog](../.gitbook/assets/images/wkc/wkc-add-connection.png)
@@ -70,6 +72,18 @@ Enter the connection details and click `Create`:
 The connection now shows up in the catalog:
 
 ![db2 warehouse connection shows up](../.gitbook/assets/images/wkc/wkc-new-connection-shows-up.png)
+
+### Add Virtualized Data
+
+Virtualized data can be added to the *Default* catalog by someone with Administrator or Editor access to that catalog.
+
+Go to the upper-left (☰) hamburger menu and choose `Organize` -> `All catalogs`. Click `+Add to Catalog` -> `Connected asset`:
+
+![add connected asset](../.gitbook/assets/images/wkc/wkc-add-connected-asset.png)
+
+Click *Source* -> `Select source`. Browse under `DV` to you Schema (i.e. UserXYZW) and choose the joined table. Click `Select`.
+
+A user can now add this to a project like any other asset from a catalog.
 
 ## 2. Add collaborators and control access
 
