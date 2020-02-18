@@ -15,6 +15,8 @@ This section is comprised of the following steps:
 
 ## 1. Set up Catalog and Data
 
+> NOTE: The default catalog is your enterprise catalog. It is created automatically after you install the Watson Knowledge Catalog service and is the only catalog to which advanced data curation tools apply. The default catalog is governed so that data protection rules are enforced. The information assets view shows additional properties of the assets in the default catalog to aid curation. Any subsequent catalogs that you create can be governed or ungoverned, do not have an information assets view, and supply basic data curation tools.
+
 First we'll create a catalog and load some data
 
 ### Create the catalog
