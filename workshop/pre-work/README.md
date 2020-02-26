@@ -141,7 +141,7 @@ Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
 
 ![(☰) Menu -> Analytics deployments](../.gitbook/assets/images/manage/ChooseAnalyticsDeployments.png)
 
-Click on `+ New deployment space`):
+Click on `+ New deployment space`:
 
 ![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
 
