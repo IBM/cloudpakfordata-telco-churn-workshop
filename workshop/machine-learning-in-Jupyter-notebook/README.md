@@ -20,7 +20,7 @@ At the project overview, either click the `+Add to project` button, and choose `
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
 ```bash
-https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/TelcoChurnICP4D.ipynb
+https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/workshop-nj-feb-2020/notebooks/TelcoChurnICP4D.ipynb
 ```
 
 > The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
