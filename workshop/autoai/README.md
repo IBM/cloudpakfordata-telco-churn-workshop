@@ -28,7 +28,7 @@ This section is broken up into the following steps:
 
 The data assets page opens and is where your project assets are stored and organized. By clicking the `Assets` bar, you can load your dataset from the interface on the right.
 
-* Upload the [Telco-Customer-Churn.csv](dataset/Telco-Customer-Churn.csv) dataset:
+* Upload the [Telco-Customer-Churn.csv](../../data/merged/Telco-Customer-Churn.csv) dataset:
 
 ![Upload dataset](../.gitbook/assets/images/autoai/autoai-upload-data-set.png)
 
