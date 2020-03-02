@@ -14,7 +14,8 @@ Go to the `Services` tab. Under `Data sources` choose the `Data Virtualization` 
 
 Follow the instructions to deploy Data Virtualization.
 
-> IMPORTANT: Do NOT check the box for automatic semaphore configuration
+> For deployment using Managed OpenShift you must do the following:
+  IMPORTANT: Do NOT check the box for automatic semaphore configuration
   IMPORTANT: Do NOT choose the defaults for storage. You must choose *ibmc-file-gold-gid* as the storage class
 
 ## Create an IBM Cloud instance of DB2 Warehouse
