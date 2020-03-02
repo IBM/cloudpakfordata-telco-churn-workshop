@@ -6,6 +6,17 @@
 
 For this section we'll now use the Data Virtualization tool to import the data from Db2 Warehouse, which is now exposed as an Connection in Cloud Pak for Data.
 
+## Provision Data Virtualization
+
+Go to the `Services` tab. Under `Data sources` choose the `Data Virtualization` tile. Click the 3 vertical dots and choose `Deploy`.
+
+![Deploy DV service](../.gitbook/assets/images/dv/dv-deploy-service.png)
+
+Follow the instructions to deploy Data Virtualization.
+
+> IMPORTANT: Do NOT check the box for automatic semaphore configuration
+  IMPORTANT: Do NOT choose the defaults for storage. You must choose *ibmc-file-gold-gid* as the storage class
+
 ## Create an IBM Cloud instance of DB2 Warehouse
 
 It is suggested to use [DB2 Warehouse on IBM Cloud](https://cloud.ibm.com/catalog/services/db2-warehouse) in order to conserve resources on the CPD cluster. IF you wish to use the local DB2 on the cluster, skip to the next section.
