@@ -2,11 +2,11 @@
 
 This exercise shows a few of the features of the OpenScale GUI tool. It is presumed that OpenScale and Watson Machine Learning have already been configured.
 
-## Utilize the dashboard for Openscale
+## Use the insights dashboard
 
-Now that you have created a machine learning model and configured Openscale, you can utilize the OpenScale dashboard to gather insights.
+Open the `Services` tab by clicking the icon in the upper right. Go to the `OpenScale` tile under the `AI` category and click `Open`:
 
-### Use the insights dashboard
+![Deploy OpenScale](../.gitbook/assets/images/aios/aios-deploy-service.png)
 
 Click on the left-hand menu icon for `Insights`, make sure that you are on the `Model monitors` tab, and then choose the tile for your configured model (or the 3-dot menu on the tile and then `View Details`:
 
