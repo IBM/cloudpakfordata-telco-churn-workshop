@@ -1,109 +1,112 @@
 # Machine Learning in Jupyter Notebook
 
-This section is broken up into the following steps:
+In this module, we will go through the process of exploring our data set and building a predictive model that can be used to determine the likelyhood of a customer churning. For this use case, the machine learning model we are building is a classification model that will return a prediction of Yes (the customer will churn) or No (the customer will not churn). The approach we will take in this lab is to some fairly popular libraries / frameworks to build the model in Python using a Jupyter notebook. Once we have built the model, we will make it available for deployment so that it can be used by others.
+
+This module is broken up into the following steps:
 
 1. [Build a model](#1-build-a-model)
 1. [Deploying the model](#2-deploying-the-model)
 1. [Testing the model](#3-testing-the-model)
-1. [(Optional) Create a Python Flask app that uses the model](#4-optional-create-a-python-flask-app-that-uses-the-model)
+
+>*Note: The lab instructions below assume you have a project and a deployment space already. If not, follow the instructions in the pre-work section to create a project and a space.*
 
 ## 1. Build a model
 
-For this part of the exercise we're going to build a model with a Jupyter notebook, by importing our data, and creating a machine learning model by using a Random Forest Classifier.
+For this part of the exercise we're going to use a Jupyter notebook to create the model. The Jupyter notebook is already included as an asset in the project you imported earlier.
 
-### Import the notebook
+>*Note: The Jupyter notebook included in the project has been cleared of output. If you would like to see the notebook that has already been completed with output: **Notebook with output**: [with-output/TelcoChurnICP4DOutput.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/TelcoChurnICP4DOutput.ipynb)*
 
-At the project overview, either click the `+Add to project` button, and choose `Notebook`, or to the right of *Notebooks* click `+ New notebook`:
+Open the notebook:
 
-![Add a new asset](../.gitbook/assets/images/wml/wml-1-add-asset.png)
+* From the project overview page, *click* on the `Assets` tab to open the assets page where your project assets are stored and organized.
 
-On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
+* Scroll down to the `Notebooks` section of the page and *Click* on the pencil icon at the right of the `machinelearning-churn-modeling` notebook.
 
-```bash
-https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/TelcoChurnICP4D.ipynb
-```
+![Notebook Open](../.gitbook/assets/images/wml/wml-open-notebook.png)
 
-> The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
->
-> * **Notebook**: [TelcoChurnICP4D.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/TelcoChurnICP4D.ipynb)
-> * **Notebook with output**: [with-output/TelcoChurnICP4DOutput.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/TelcoChurnICP4DOutput.ipynb)
-
-![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
-
-When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
+When the Jupyter notebook is loaded and the kernel is ready, we will be ready to start executing it in the next section.
 
 ![Notebook loaded](../.gitbook/assets/images/wml/wml-3-notebook-loaded.png)
 
 ### Run the notebook
 
-> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent conserve resources!*
+Spend an minute looking through the sections of the notebook to get an overview. A notebook is compsed on text (markdown or heading) cells and code cells. The markdown cells will comment what the code is designed to do.
 
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook or hitting the keyboard short cut to run the cell (Shift + Enter but can vary based on platform). While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
-Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
+**Please note that some of the comments in the notebook are directions for you to modify specific sections of the code. Perform any changes as indicated before running / executing the cell.**
 
-#### Install Python packages
+#### Notebook sections
 
-Section `1.0 Install required packages` will show the libraries that come pre-installed on Cloud Pak for Data. Note that we'll have to upgrade the installed version of Watson Machine Learning Python Client. This workshop uses [`pyspark`](https://spark.apache.org/docs/latest/api/python/index.html), and [`sklearn`](https://scikit-learn.org/stable/) to build our model.
+With the notebook open, you will notice:
 
-#### Add the data set to the notebook
+* Section `1.0 Install required packages` will install some of the libraries we are going to use in the notebook (many libraries come pre-installed on Cloud Pak for Data). Note that we upgrade the installed version of Watson Machine Learning Python Client. This workshop uses [`pyspark`](https://spark.apache.org/docs/latest/api/python/index.html), and [`sklearn`](https://scikit-learn.org/stable/) to build our model. Ensure the output of the first code cell is that the python packages were successfully installed.
 
-Section `2.0 Load and Clean data` will load the virtualized data from the previous exercise.
+* Section `2.0 Load and Clean data` will load the data set we will use to build out machine learning model. In order to import the data into the notebook, we are going to use the code generation capability of Watson Studio.
 
-* Highlight the cell below by clicking it.
-* Click the 10/01 "Find data" icon in the upper right of the notebook.
-* If you are using [Virtualized data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/workshop/exercise-1/README.md), begin by choosing the `Files` tab. Then choose your virtualized data (i.e. User999.BILLINGPRODUCTCUSTOMERS), click Insert to code and choose Insert Pandas DataFrame.
-* If you are using this notebook without virtualized data, add the locally uploaded file Telco-Customer-Churn.csv by choosing the `Files` tab. Then choose the `Telco-Customer-Churn.csv` file. Click `Insert to code` and choose `Insert Pandas DataFrame`.
-* The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
-* Run the cell
+  * Highlight the code cell below by clicking it. Ensure you place the cursor below the `import pandas as pd` line.
+  * Click the 10/01 "Find data" icon in the upper right of the notebook to find the data asset you need to import.
+  * If you are using virtualized data, then choose your virtualized merged view (i.e. User999.BILLINGPRODUCTCUSTOMERS). If you are using this notebook without virtualized data, you can use the `Customer-Churn.csv` CSV file version of the data set that has been included in the project.
+  * For your dataset, Click `Insert to code` and choose `Insert Pandas DataFrame`. The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
+  * Run the cell and you will see the first five rows of our dataset.
 
 ![Add the data as a Pandas DataFrame](../.gitbook/assets/images/wml/wml-4-add-dataframe.png)
 
-By adding data a block of code will be added to the notebook. The code will automatically load that data set and create a Pandas DataFrame.
-
 ![Generated code to handle Pandas DataFrame](../.gitbook/assets/images/wml/wml-5-generated-code-dataframe.png)
 
-> **IMPORTANT**: Don't forget to update the next cell to assign the `df` variable. In the case of Virtualized data, it will look like `df=data_df_1`, `data_df_2`, etc. For a locally uploaded file, it will look like `df=df_data_1` or `df_data_X` depending on your number `X` for the variable from the generated code.
+> **IMPORTANT**: Since we are using generated code to import the data, you will need to update the next cell to assign the `df` variable. Copy the variable that was generated in the previous cell ( it will look like `df=data_df_1`, `data_df_2`, etc) and assign it to the `df` variable (for example `df=df_data_1`).
 
-Continue to run the remaining cells in the section to clean the data.
+* Continue to run the remaining cells in section 2 to explore and clean the data.
 
-#### Create the model
+* Section `3.0 Create a model` cells will run through the steps to build a model pipeline.
 
-Section `3.0 Create a model` will split the data into training and test data, and create a model using the Random Forest Classifier algorithm.
+  * We will split our data into training and test data, encode the categorial string values, create a model using the Random Forest Classifier algorithm, and evaluate the model against the test set.
+  * Run all the cells in section 3 to build the model.
 
 ![Building the pipeline and model](../.gitbook/assets/images/wml/wml-6-buid-pipeline-and-model.png)
 
-Continue to run the remaining cells in the section to build the model.
-
 #### Save the model
 
-Section `4.0 Save the model` will save the model to your project. Update the `MODEL_NAME` variable to something unique and easisly identifiable.
+* Section `4.0 Save the model` will save the model to your project. In the first code cell in this section, you will update the `MODEL_NAME` variable to something unique and easisly identifiable.
 
 ```python
 MODEL_NAME = "user123 customer churn model"
 ```
 
-Continue to run the remaining cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
+* We will be saving and deploying the model to the Watson Machine Learning service within our Cloud Pak for Data platform. In the next code cell, be sure to update the `wml_credentials` variable.
+
+  * The url should be the hostname of the Cloud Pak for Data instance.
+  * The username and password should be the same credentials you used to log into Cloud Pak for Data.
+
+* Continue to run the cells. For the cell that sets the default space, copy the `GUID` from the output of the previous cell (this is the GUID of the deployment space you createdin the pre-work).
+
+```python
+client.set.default_space('<GUID>')
+```
+
+* Continue to run the cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
 
 We've successfully built and deployed a machine learning model. Congratulations!
 
 ## 2. Deploying the model
 
-Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
+Now that we have created a model and saved it to our respository. We will want to deploy the model so it can be used by others. For this section, we will be creating an online deployment. This type of deployment will make an instance of the model available to make predictions in real time via an API. Although will use the Cloud Pak for Data UI to deploy the model, the same can be done programmatically.
+
+* Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
 ![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
 
-Choose the existing space you setup previously.
+* Choose the deployment space you setup previously by clicking on the name of the space.
 
-In your space, select the model name that you just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
+* In your space overview, select the model name that you just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
 
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
-On the next screen, choose `Online` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
+* On the 'Configure and deploy' screen, choose `Online` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
 
 ![Online Deployment Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
 
-Once the status shows as *Deployed* , you can click on the deployment name to begin testing:
+* Once the status shows as *Deployed* , you will be able to click on the deployment name to begin testing:
 
 ![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
 
@@ -113,7 +116,7 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 
 ### Test the saved model with built-in tooling
 
-Click on the *Test* tab and paste the following into the *Enter input data* cell:
+* From the Model deployment page, click on the name of your deployment and then click on the `Test` tab and paste the following into the *Enter input data* cell:
 
 ```json
 {
@@ -168,140 +171,51 @@ Click on the *Test* tab and paste the following into the *Enter input data* cell
 }
 ```
 
-Click `Predict` and the model will be called with the input data. The results will display in the *Result* window. Scroll down to the bottom (Line #114) to see either a "Yes" or a "No" for Churn:
+* Click `Predict` and the model will be called with the input data. The results will display in the *Result* window. Scroll down to the bottom (Line #114) to see either a "Yes" or a "No" for Churn:
 
 ![Testing the deployed model](../.gitbook/assets/images/wml/TestingDeployedModel.png)
 
 ### Test the deployed model with cURL
 
-> NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps.
+Now that the model is deployed, we can also test it from external applications. One way to invoke the model API is using the cURL command.
 
-In a terminal window, run the following to get a token to access the API. Use your CP4D cluster `username` and `password`:
+> NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps. Also note that if you are not using gitbash, you may need to change *export* commands to *set* commands.
+
+* In a terminal window (or command prompt in Windows), run the following command to get a token to access the API. Use your CP4D cluster `username` and `password`:
 
 ```bash
 curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u <username>:<password>
 ```
 
-A json string will be returned with a value for "accessToken" that will look *similar* to this:
+* A json string will be returned with a value for "accessToken" that will look *similar* to this:
 
 ```json
 {"username":"scottda","role":"Admin","permissions":["access_catalog","administrator","manage_catalog","can_provision"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331002","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA","_messageCode_":"success","message":"success"}
 ```
 
-Export the "accessToken" part of this response in the terminal window as `WML_AUTH_TOKEN`. Get the `URL` from the *API reference* by copying the `Endpoint`, and export it as `URL`:
-
-![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
+* You will save this access token to a tepmorary environment variable. Use the export command to save the "accessToken" part of this response in the terminal window to a variable called `WML_AUTH_TOKEN`.
 
 ```bash
 export WML_AUTH_TOKEN=<value-of-access-token>
+```
+
+* Back on the model deployment page, gather the `URL` to invoke the model from the *API reference* by copying the `Endpoint`, and exporting it to a `:
+
+![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
+
+* Now save that endpoint to a variable named `URL` by exporting it.
+
+```bash
 export URL=https://blahblahblah.com
 ```
 
-Now run this curl command from a terminal window:
+* Now run this curl command from a terminal to invoke the model with the same payload we used previousy:
 
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
 ```
 
-A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
-
-## 4. (Optional) Create a Python Flask app that uses the model
-
-You can also access the web service directly through the REST API. This allows you to use your model for inference in any of your apps. For this workshop we'll be using a Python Flask application to collect information, score it against the model, and show the results.
-
-### Install dependencies
-
-The general recommendation for Python development is to use a virtual environment ([`venv`](https://docs.python.org/3/tutorial/venv.html)). To install and initialize a virtual environment, use the `venv` module on Python 3 (you install the virtualenv library for Python 2.7):
-
-In a terminal go to the cloned repo directory.
-
-```bash
-git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
-cd cloudpakfordata-telco-churn-workshop
-```
-
-Initialize a virtual environment with [`venv`](https://docs.python.org/3/tutorial/venv.html).
-
-```bash
-# Create the virtual environment using Python. Use one of the two commands depending on your Python version.
-# Note, it may be named python3 on your system.
-python -m venv venv       # Python 3.X
-virtualenv venv           # Python 2.X
-
-# Source the virtual environment. Use one of the two commands depending on your OS.
-source venv/bin/activate  # Mac or Linux
-./venv/Scripts/activate   # Windows PowerShell
-```
-
-> **TIP** To terminate the virtual environment use the `deactivate` command.
-
-Finally, install the Python requirements.
-
-```bash
-cd flaskapp
-pip install -r requirements.txt
-```
-
-### Update environment variables
-
-It's best practice to store configurable information as environment variables, instead of hard-coding any important information. To reference our model and supply an API key, we'll pass these values in via a file that is read, the key-value pairs in this files are stored as environment variables.
-
-Copy the `env.sample` file to `.env`.
-
-```bash
-cp env.sample .env
-```
-
-Edit `.env` to and fill in the `MODEL_URL` as well as the `AUTH_URL`, `AUTH_USERNAME`, and `AUTH_PASSWORD`.
-
-* `MODEL_URL` is your web service URL for scoring which you got from the section above
-* `AUTH_URL` is the preauth url of your CloudPak4Data and will look like this: `https://<cluster_url>/v1/preauth/validateAuth`
-* `AUTH_USERNAME` is your username with which you login to the CloudPak4Data environment
-* `AUTH_PASSWORD` is your password with which you login to the CloudPak4Data environment
-
-Note: Alternatively, you can fill in the `AUTH_TOKEN` instead of `AUTH_URL`, `AUTH_USERNAME`, and `AUTH_PASSWORD`. You will have generated this token in the section above. However, since tokens expire after a few hours and you would need to restart your app to update the token, this option is not suggested. Instead, if you use the username/password option, the app can generate a new token every time for you so it will always have a non-expired ones.
-
-here's an example of a completed lines of the .env file.
-
-```bash
-# Required: Provide your web service URL for scoring.
-# E.g., MODEL_URL=https://<cluster_url>/v4/deployments/<deployment_space_guid>/predictions
-MODEL_URL=https://cp4d.cp4dworkshops.com/v4/deployments/5f939979-14c2-4538-a2af-a970aeb59abd/predictions
-
-# Required: Please fill in EITHER section A OR B below:
-
-# #### A: Authentication using username and password
-#   Fill in the authntication url, your CloudPak4Data username, and CloudPak4Data password.
-#   Example:
-#     AUTH_URL=<cluster_url>/v1/preauth/validateAuth
-#     AUTH_USERNAME=my_username
-#     AUTH_PASSWORD=super_complex_password
-AUTH_URL=https://cp4d.cp4dworkshops.com/v1/preauth/validateAuth
-AUTH_USERNAME=username_001
-AUTH_PASSWORD=my_secure_password_!
-```
-
-### Start the application
-
-Start the flask server by running the following command:
-
-```bash
-python telcochurn.py
-```
-
-Use your browser to go to [http://0.0.0.0:5000](http://0.0.0.0:5000) and try it out.
-
-> **TIP**: Use `ctrl`+`c` to stop the Flask server when you are done.
-
-### Sample output
-
-The user inputs various values
-
-![Input a bunch of data...](../.gitbook/assets/images/generic/input.png)
-
-The churn percentage is returned:
-
-![Get the churn percentage as a result](../.gitbook/assets/images/generic/score.png)
+* A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
 
 ## Conclusion
 
@@ -311,6 +225,9 @@ In this section we covered how the followings:
 * Creating Models
 * Deploying Models
 * Testing your deployed model
-* Creating a basic app to use your model
 
-With this knowledge you should feel right at home within the Jupyter notebook. Moreover, you now know how to operationalize a model and use it in a real life scenario.
+With this knowledge you should feel right at home within the Jupyter notebook. Moreover, you now know how to build a model and use it in a real life scenario.
+
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources! You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. If you see a lock icon on the notebook, click it to unlock the notebook so you can stop the kernel.*
+
+![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
