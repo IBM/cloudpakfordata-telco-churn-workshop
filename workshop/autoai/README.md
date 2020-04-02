@@ -1,64 +1,53 @@
 # Automate model building with AutoAI
 
 For this part of the workshop, we'll learn how to use [AutoAI](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/wsj/analyze-data/autoai-overview.html).
-AutoAI is a service that automates machine learning tasks to ease the tasks of data scientists. It automatically prepares your data for modeling, chooses the best algorithm for your problem, and creates pipelines for the trained models.
+AutoAI is a capability that automates machine learning tasks to ease the tasks of data scientists. It automatically prepares your data for modeling, chooses the best algorithm for your problem, and creates pipelines for the trained models.
 
 This section is broken up into the following steps:
 
-1. [Create a Project and AutoAI instance](#1-create-a-project-and-autoai-instance)
-2. [Set up your AutoAI environment and generate pipelines](#2-set-up-your-autoai-environment-and-generate-pipelines)
-3. [AutoAI pipeline](#3-autoai-pipeline)
-4. [Deploy and test the model](#4-deploy-and-test-the-model)
+1. [Set up your AutoAI environment and generate pipelines](#1-set-up-your-autoai-environment-and-generate-pipelines)
+2. [Save AutoAI Model](#2-save-autoai-model)
+3. [Deploy and test the model](#3-deploy-and-test-the-model)
 
-## 1. Create a Project and AutoAI instance
+>*Note: The lab instructions below assume you have a project already with the assets necessary to build a model. If not, follow the instructions in the pre-work section to create a project.*
 
-### Create a Watson Studio project
+## 1. Set up your AutoAI environment and generate pipelines
 
-* Click the (☰) hamburger menu in the upper left corner and click `Projects`. From the Projects page, click `New Project`:
-
-![Create project](../.gitbook/assets/images/autoai/autoai-create-project.png)
-
-* Select `Create an empty project`:
-
-![Create empty project](../.gitbook/assets/images/autoai/autoai-create-empty-project.png)
-
-* Give your project, give a  name and optional description:
-
-![Name your project](../.gitbook/assets/images/autoai/autoai-name-project.png)
-
-The data assets page opens and is where your project assets are stored and organized. By clicking the `Assets` bar, you can load your dataset from the interface on the right.
-
-* Upload the [Telco-Customer-Churn.csv](dataset/Telco-Customer-Churn.csv) dataset:
-
-![Upload dataset](../.gitbook/assets/images/autoai/autoai-upload-data-set.png)
-
-## 2. Set up your AutoAI environment and generate pipelines
+* Go to your analytics project overview page.
 
 * To start the AutoAI experience, click `Add to Project` from the top and select `AutoAI`:
 
 ![Adding a project](../.gitbook/assets/images/autoai/autoai-add-project.png)
 
-* Name your service and choose one of the compute configuration options listed with a drop-down menu. Then, click `Create`:
+* Name your AutoAI experiment asset and choose one of the compute configuration options listed with a drop-down menu. Then, click `Create`:
 
 ![Naming your services](../.gitbook/assets/images/autoai/autoai-name-services.png)
 
-* Select your dataset.
+* To configure the experiment, we must give it the dataset to use. Click on the `Select from project` option.
 
-* Under *Select prediction column* click `Churn`. Then click `> Run experiment`:
+* In the dialog, select the 'Customer-Churn-Full.csv' file and click the `Select asset` button..
+
+![Select file](../.gitbook/assets/images/autoai/autoai-chooseprojectdataset.png)
+
+* Once the dataset is read in, we will need to indicate what we want the model to predict. Under *Select prediction column*, find and click on the `Churn` row.
+
+* AutoAI will set up defaults values for the experiment based on the dataset. This includes the type of model to build, the metrics to optimize against, the test/train split, etc. You could view/change these values under 'Experiment settings', however, for now we will accept the defaults and click the `> Run experiment` button:
 
 ![Choose Churn column and run](../.gitbook/assets/images/autoai/autoai-choose-churn-and-run.png)
 
-* The AutoAI experiment will run. The UI will show progress:
+* The AutoAI experiment will now run and the UI will show progress as it happens:
 
 ![autoai progress](../.gitbook/assets/images/autoai/autoai-model-progress.png)
 
-* The experiment will take approximately 14 minutes. Upon completion you will see a message that the pipelines have been created:
+* The UI will show progress as different algorithms/evaluators are selected and as different pipelines are created & evaluated. You can view the performance of the pipelines that have completed by expanding each pipeline section.
+
+* The experiment can take several minutes to run. Upon completion you will see a message that the pipelines have been created:
 
 ![autoai pipelines created](../.gitbook/assets/images/autoai/autoai-pilelines-complete.png)
 
-## 3. AutoAI pipeline
+## 2. Save AutoAI Model
 
-The experiment begins just after you complete the previous processes. The AutoAI process follows this sequence to build candidate pipelines:
+The AutoAI process follows this sequence to build candidate pipelines:
 
 * Data pre-processing
 * Automated model selection (Pipeline 1)
@@ -66,45 +55,51 @@ The experiment begins just after you complete the previous processes. The AutoAI
 * Automated feature engineering (Pipeline 3)
 * Hyperparameter optimization (Pipeline 4)
 
-* Scroll down to see the *Pipeline leaderboard*:
+You can review each pipeline and select to deploy the top performing pipeline from this experiment.
+
+* Scroll down to see the *Pipeline leaderboard*. The top performing pipeline is in the first rank.
+
+* The next step is to select the model that gives the best result by looking at the metrics. In this case, Pipeline 4 gave the best result with the metric "Area under the ROC Curve (ROC AUC)." You can view the detailed results by clicking the corresponding pipeline from the leaderboard:
 
 ![pipeline leaderboard](../.gitbook/assets/images/autoai/autoai-pipeline-leaderboard.png)
 
-The next step is to select the model that gives the best result by looking at the metrics. In this case, Pipeline 4 gave the best result with the metric "Area under the ROC Curve (ROC AUC)." You can view the detailed results by clicking the corresponding pipeline from the leaderboard.
-
-* Save your model by clicking `Save as model` and then `Save`.
+* The model evaluation page will show metrics for the experiment, feature transformations that were performed (if any), which features contribute to the model, and more details of the pipeline.
 
 ![Model evaluation](../.gitbook/assets/images/autoai/autoai-model-evaluation.png)
 
-A window opens that asks for the model name, description (optional), and so on. After completing this fields, click `Save`:
+* In order to deploy this model, we will Click on the `Save as model` button to save it.
+
+* A window opens that asks for the model name, description (optional), and so on. You can accept the defaults or give your model a meaningful name/description and then click `Save`:
 
 ![Save model name](../.gitbook/assets/images/autoai/autoai-save-model-name.png)
 
-You receive a notification to indicate that your model is saved to your project. Click `View in project`:
+* You receive a notification to indicate that your model is saved to your project. Go back to your project main page by clicking on the project name on the navigator on the top left:
 
 ![Model notification](../.gitbook/assets/images/autoai/autoai-model-notification.png)
 
-Alternately, at the top level project under the *Assets* tab, click the name of your saved model under *Models*:
+* You will see the new model under *Models* section of the *Assets* page:
 
 ![choose AI model](../.gitbook/assets/images/autoai/autoai-choose-asset-ai-model.png)
 
-## 4. Deploy and test the model
+## 3. Deploy and test the model
 
-* To prepare the model for deployment click `Promote to deployment space`:
+* Under the *Models* section of the *Assets* page, click the name of your saved model.
+
+* To make the model available to be deployed, we need to make it available in the deployment space we previously set up. Click on the `Promote to deployment space`:
 
 ![Deploying the model](../.gitbook/assets/images/autoai/autoai-deploy-model.png)
 
-* To promote an asset, you must associate your project with a deployment space. Click `Associate Deployment Space`:
+* To promote the asset, you must associate your project with a deployment space. Click `Associate Deployment Space`:
 
 ![Associate Deployment Space](../.gitbook/assets/images/autoai/autoai-associate-deployment-space.png)
 
-* You should have already created a deployment space in the *pre-work* section of the workshop. Click on `Existing` and choose that deployment.
-
-* If you do not have an existing deployment, go to `New` tab, and give a name for your deployment space, then click `Associate`.
+* You should have already created a deployment space in the *pre-work* section of the workshop. Click on `Existing` and choose that deployment then click the `Associate` button.
 
 ![Create Deployment Space](../.gitbook/assets/images/autoai/autoai-create-deployment-space.png)
 
-* After you promote the model to the deployment space succesfully, a notification will pop-up on the top as below. Click `deployment space` from this notification. Also you can reach this page by using the (☰) hamburger menu and click `Analyze` -> `Analytics deployments`:
+* From the model page, once again click on the `Promote to deployment space`.
+
+* This time you will see a notification that the model was promoted to the deployment space succesfully. Click `deployment space` from this notification. Also you can reach this page by using the (☰) hamburger menu and click `Analyze` -> `Analytics deployments`:
 
 ![deployment space](../.gitbook/assets/images/autoai/autoai-view-deployment.png)
 
@@ -114,11 +109,11 @@ Alternately, at the top level project under the *Assets* tab, click the name of 
 
 ![click deployment space](../.gitbook/assets/images/autoai/autoai-click-deployment-space.png)
 
-* Under the *Assets* tab, click on your model:
+* Under the *Assets* tab, click on the AutoAI model you just promoted:
 
 ![click model in deployment space](../.gitbook/assets/images/autoai/autoai-deployment-space-choose-model.png)
 
-* Under the *Deployments* tab, click `Deploy` to deploy this model:
+* Under the *Deployments* tab, click the `Deploy` button to deploy this model:
 
 ![click deploy button](../.gitbook/assets/images/autoai/autoai-click-deploy.png)
 
@@ -138,7 +133,9 @@ Alternately, at the top level project under the *Assets* tab, click the name of 
 
 Now you can test your model from the interface that is provided after the deployment.
 
-* Click on the *Input with JSON format* icon and paste the following data under *Body*, then click `Predict`:
+* Click on the `Test` tab.
+
+* Click on the *Provide input data as JSON* icon and paste the following data under *Body*, then click `Predict`:
 
 ```json
    { "input_data":[ { "fields":[ "customerID", "gender", "SeniorCitizen", "Partner", "Dependents", "tenure", "PhoneService", "MultipleLines", "InternetService", "OnlineSecurity", "OnlineBackup", "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies", "Contract", "PaperlessBilling", "PaymentMethod", "MonthlyCharges", "TotalCharges" ],
@@ -153,33 +150,46 @@ Now you can test your model from the interface that is provided after the deploy
 
 ### Test the deployed model with cURL
 
-> NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps.
+Now that the model is deployed, we can also test it from external applications. One way to invoke the model API is using the cURL command.
 
-In a terminal window, run the following to get a token to access the API. Use your CP4D cluster `username` and `password`:
+> NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps. Also note that if you are not using gitbash, you may need to change *export* commands to *set* commands.
+
+* In a terminal window (or command prompt in Windows), run the following command to get a token to access the API. Use your CP4D cluster `username` and `password`:
 
 ```bash
 curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u <username>:<password>
 ```
 
-A json string will be returned with a value for "accessToken" that will look *similar* to this:
+* A json string will be returned with a value for "accessToken" that will look *similar* to this:
 
 ```json
 {"username":"scottda","role":"Admin","permissions":["access_catalog","administrator","manage_catalog","can_provision"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331002","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA","_messageCode_":"success","message":"success"}
 ```
 
-Export the "accessToken" part of this response in the terminal window as `WML_AUTH_TOKEN`. Get the `URL` from the *API reference* by copying the `Endpoint`, and export it as `URL`:
-
-![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
+* You will save this access token to a tepmorary environment variable. Use the export command to save the "accessToken" part of this response in the terminal window to a variable called `WML_AUTH_TOKEN`.
 
 ```bash
 export WML_AUTH_TOKEN=<value-of-access-token>
+```
+
+* Back on the model deployment page, gather the `URL` to invoke the model from the *API reference* by copying the `Endpoint`, and exporting it to a `:
+
+![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
+
+* Now save that endpoint to a variable named `URL` by exporting it.
+
+```bash
 export URL=https://blahblahblah.com
 ```
 
-Now run this curl command from a terminal window:
+* Now run this curl command from a terminal to invoke the model with the same payload we used previousy:
 
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["customerID","gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["7590-VHVEG","Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
 ```
 
-A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
+* A json string will be returned with the response, including a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not.
+
+## Conclusion
+
+In this section we covered how to build and deploy a machine learning model to make a prediction. We could have gone through the steps in a typical data science workflow to wrange data, create/evaluate models, conducted feature engineering, experimented with different model parameters,  and more. However, we have seen how AutoAI automates and simplifies this process for us.
