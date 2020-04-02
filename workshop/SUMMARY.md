@@ -12,7 +12,7 @@
 * [Data Visualization with Data Refinery](data-visualization-and-refinery/README.md)
 * [Enterprise data governance using Watson Knowledge Catalog](watson-knowledge-catalog/README.md)
 * [Machine Learning with Jupyter](machine-learning-in-Jupyter-notebook/README.md)
-* [Machine Learning with AutoAI](autoai/README.md)
+* [Machine Learning with AutoAI](machine-learning-autoai/README.md)
 * [Monitoring models with OpenScale](monitoring-models-with-openscale-gui/README.md)
 * [(Optional) Run OpenScale notebook code](openscale-notebook/README.md)
 
