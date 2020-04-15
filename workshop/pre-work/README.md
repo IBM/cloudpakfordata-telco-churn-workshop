@@ -4,7 +4,7 @@ This section is broken up into the following steps:
 
 1. [Download or Clone the repo](#1-download-or-clone-the-repo)
 1. [About the data set](#2-about-the-data-set)
-1. [Creating a new Cloud Pak for Data project](#3-creating-a-new-cloud-pak-for-data-project)
+1. [Creating a new Cloud Pak for Data project](#3-create-a-project-and-space)
 1. [Create a Space for Machine Learning Deployments](#4-create-a-space-for-machine-learning-deployments)
 
 ## 1. Download or clone the repo
@@ -60,7 +60,7 @@ This file has the following attributes:
 * Streaming TV *(Yes, No, No internet service)*
 * Streaming Movies *(Yes, No, No internet service)*
 
-## 3. Creating a new Cloud Pak for Data project
+## 3. Create a Project and Space
 
 At this point of the workshop we will be using Cloud Pak for Data for the remaining steps.
 
@@ -82,28 +82,6 @@ Click on *New project*
 
 ![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-Either
-
-[Create project from file](#create-project-from-file-for-openscale-configuration)
-
-if you are doing the manual configuration of OpenScale for this workshop,or
-
-[Create a blank project](#create-empty-project-if-you-are-not-using-openscale-configuration)
-
-if you aren't using OpenScale, or using OpenScale with the Fast Path configuration.
-
-#### Create project from file for OpenScale configuration
-
-Select the _*Create a project from a sample or file*_option:
-
-![Create project from file](../.gitbook/assets/images/openscale-config/openscale-config-create-project-from-sample.png)
-
-Navigate to where you cloned this repository, then to `notebooks/` and choose `openscalelab.zip`. Give the project a name and click `Create`:
-
-![Browse for project files](../.gitbook/assets/images/openscale-config/openscale-config-browse-for-project-files.png)
-
-#### Create empty project if you are not using OpenScale configuration
-
 Click on the top tile for `Create an empty project`:
 
 ![Create an empty project](../.gitbook/assets/images/manage/cpd-create-empty-project.png)
@@ -112,7 +90,7 @@ Give the project a unique name and click `Create`:
 
 ![Pick a name](../.gitbook/assets/images/manage/cpd-new-project-name.png)
 
-## 5. Create a Space for Machine Learning Deployments
+### Create a Space for Machine Learning Deployments
 
 Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
 
@@ -123,3 +101,19 @@ Click on `+ New deployment space`:
 ![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
 
 Give your deployment space a unique name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
+
+Next, we will add a collaborator to the new deployment space, so that assets we deploy can be monitored in the model monitoring lab.
+
+Click on your new deployment space.
+
+![Select deployment space](../.gitbook/assets/images/manage/selectNewDeploymentSpace.png)
+
+Click on the `Access control` tab and then click on `Add collaborators` on the right.
+
+![Deployment space access control](../.gitbook/assets/images/manage/deploymentSpaceAccessControl.png)
+
+Enter "admin" as a Collaborator and select the user from the drop down list. Then click on the `Add to list` button.
+
+![Deployment space collaborators](../.gitbook/assets/images/manage/deploymentSpaceAddCollaborator.png)
+
+Click the `Add` button to finish adding the collaborator. You should be brought back to the deployment space page and see your user ID along with the `Admin` user as collaborators for this space.
