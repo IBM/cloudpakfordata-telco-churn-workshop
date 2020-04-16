@@ -55,7 +55,7 @@ Note that the Phone Number and Social Security Number are tagged as Sensitive in
 
 ![Filter Category Policy Rule](../.gitbook/assets/images/wkc-user/wkc-user-filter-category-policy-rule.png)
 
-Notice that there is a Mortgage Default Analysis category defined that contains all the business in-formation related to the project and a category named Sensitive Information that is a sub-category, along with a business policy related to the Protection of Sensitive Information and three rules outlin-ing the protection of Email Addresses, Phone Numbers and Social Security Numbers. This is a good indication that the mortgage data being used by the project contains sensitive information that needs to be protected. 
+Notice that there is a Mortgage Default Analysis category defined that contains all the business in-formation related to the project and a category named Sensitive Information that is a sub-category, along with a business policy related to the Protection of Sensitive Information and three rules outlin-ing the protection of Email Addresses, Phone Numbers and Social Security Numbers. This is a good indication that the mortgage data being used by the project contains sensitive information that needs to be protected.
 
 ## 2. Understand the Data
 
@@ -123,10 +123,8 @@ You are presented with a Quality score for each column analyzed. The quality loo
 
 * Scroll down to see the remaining columns.
 
-
-
 * Click on the IBM Cloud Pak for Data title, or the (☰) hamburger menu -> `Home`, to get ready for the next section.
- 
+
 ## 4. Understand the Data Content
 
 You have gained an understanding of the policies and rules and information related to sensitive data and validated and trust the data quality.
