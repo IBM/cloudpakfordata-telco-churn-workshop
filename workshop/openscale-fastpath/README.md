@@ -42,7 +42,9 @@ Similarly, you can choose the `Quality` menu and choose the `Feedback` tab to ge
 
 ### Examine an individual transaction
 
-Click on the left-hand menu icon for `Explain a transaction` and enter the transaction UID you copied previously into the search bar.
+Click on the left-hand menu icon for `Explain a transaction` and click one of the transactions that have been run. Alternatelyl, enter the transaction UID you copied previously into the search bar, if you've run the `Run the OpenScale notebook` code.
+
+> NOTE: Each time you create the Explainibility data, the perterbation algorithm is sending 1000's of requests to the deployed Machine Learning REST endpoint, so the first time this is done can take a few seconds.
 
 ![Explain a transaction](../.gitbook/assets/images/aios/OpenScaleExplainTransaction.png)
 
