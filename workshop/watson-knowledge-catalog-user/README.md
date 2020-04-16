@@ -39,7 +39,7 @@ However, before we proceed to the catalog we need to also find all the business 
 
 ![Search business terms](../.gitbook/assets/images/wkc-user/wkc-user-search-any-type-business-term.png)
 
-Notice that the governance team has been hard at work and has defined 25 business terms related to the mortgage data the project will be using. Also notice that they are tagged with the key word Mort-gage to easily find them
+Notice that the governance team has been hard at work and has defined 25 business terms related to the mortgage data the project will be using. Also notice that they are tagged with the key word Mortgage to easily find them
 
 * Click on the Sort Arrow to the right of the Name column to sort ascending by Name.
 Note that the Email Address has also been tagged as Sensitive information.
