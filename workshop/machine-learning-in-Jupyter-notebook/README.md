@@ -36,10 +36,6 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 ### Run the notebook
 
-> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent conserve resources!*
-
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
-
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
 #### Install Python packages
@@ -85,7 +81,11 @@ MODEL_NAME = "user123 customer churn model"
 
 Continue to run the remaining cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
 
-We've successfully built and deployed a machine learning model. Congratulations!
+**We've successfully built and deployed a machine learning model. Congratulations!**
+
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent conserve resources!*
+
+![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 
 ## 2. Deploying the model
 
