@@ -119,7 +119,7 @@ Since we know the MORTGAGE_APPLICANT table is a new addition to the project, tha
 
 ![Discovery expand MORTGAGE_APPLICANT table](../.gitbook/assets/images/wkc-user/wkc-user-mortgage-discovery-details.png)
 
-You are presented with a Quality score for each column analyzed. The quality looks satisfactory and meets the quality standard thresholds and the data classes and business terms are accurately as-signed and complete. This is important to ensure the data is autonomously protected and that the governance artifacts are related to data assets they apply to.
+You are presented with a Quality score for each column analyzed. The quality looks satisfactory and meets the quality standard thresholds and the data classes and business terms are accurately assigned and complete. This is important to ensure the data is autonomously protected and that the governance artifacts are related to data assets they apply to.
 
 * Scroll down to see the remaining columns.
 
@@ -129,7 +129,7 @@ You are presented with a Quality score for each column analyzed. The quality loo
 
 You have gained an understanding of the policies and rules and information related to sensitive data and validated and trust the data quality.
 
-In this section we will go to the Enterprise catalog, which is where we identified all the data we need resides, and use all of the features it provides to gain an even better understanding of the data con-tent and have even more confidence in the data based on what others are saying and by utilizing the AI assisted recommendations, automatic profiling and additional data content statistics provided.
+In this section we will go to the Enterprise catalog, which is where we identified all the data we need resides, and use all of the features it provides to gain an even better understanding of the data content and have even more confidence in the data based on what others are saying and by utilizing the AI assisted recommendations, automatic profiling and additional data content statistics provided.
 
 * Click the (☰) hamburger menu in the upper left corner and click `Organize` -> `All catalogs`
 
