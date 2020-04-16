@@ -124,7 +124,7 @@ You are presented with a Quality score for each column analyzed. The quality loo
 * Scroll down to see the remaining columns.
 
 * Click on the IBM Cloud Pak for Data title, or the (☰) hamburger menu -> `Home`, to get ready for the next section.
- 
+
 ## 4. Understand the Data Content
 
 You have gained an understanding of the policies and rules and information related to sensitive data and validated and trust the data quality.
