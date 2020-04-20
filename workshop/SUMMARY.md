@@ -15,6 +15,7 @@
 * [Machine Learning with Jupyter](machine-learning-in-Jupyter-notebook/README.md)
 * [Machine Learning with AutoAI](autoai/README.md)
 * [Monitoring models with OpenScale GUI](monitoring-models-with-openscale-gui/README.md)
+* [Fastpath Monitoring models with OpenScale GUI](openscale-fastpath/README.md)
 * [(Optional) Run OpenScale notebook code](openscale-notebook/README.md)
 
 
@@ -25,6 +26,7 @@
 ### Resources
 
 * [IBM Cloud Pak for Data Platform API](https://cloud.ibm.com/apidocs/cloud-pak-data)
+* [Cluster API explorer at https:cluster-url/icp4d-api/docs]()
 * [Watson Knowledge Catalog](https://www.ibm.com/cloud/watson-knowledge-catalog)
 * [Watson Knowledge Catalog Learning Center](https://developer.ibm.com/clouddataservices/docs/data-catalog/get-started/)
 * [IBM Developer](https://developer.ibm.com)
