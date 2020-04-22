@@ -114,6 +114,25 @@ You can click the `Review` tab and rate the data, as well as comment on it, to p
 ## 3. Add categories
 
 There are many ways to label the features and columns of our data. One is with categories.
+You can add categories as needed, or you can import them in .csv format.
+
+### Import categories
+
+Import a category for your assets by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Categories`, then click `Import`:
+
+![Import categories](../.gitbook/assets/images/wkc/wkc-import-categories.png)
+
+Click `Add file` and navigate to where you cloned the workshop repository, choosing `data/wkc/glossary-organize-categories.csv`.
+
+Under `Select merge option` choose `Replace all values` and click `Import`:
+
+![Import select merge option](../.gitbook/assets/images/wkc/wkc-import-select-merge-option.png)
+
+You will see "The import completed succesfully" when it is completed.
+
+In this way, you can import Categories, Business Terms, Classifications, Policies, etc. to populate your governance catalogs.
+
+### Add category manually
 
 Add a category for your assets by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Categories`, then click `Create category`:
 
