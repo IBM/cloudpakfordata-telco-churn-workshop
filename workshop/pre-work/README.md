@@ -74,21 +74,23 @@ Launch a browser and navigate to your Cloud Pak for Data deployment
 
 ### Create a new project
 
-Go the (☰) menu and click *Projects*
+In Cloud Pak for Data, we use the concept of a project to collect / organize the resources used to achieve a particular goal (resources to build a solution to a problem). Your project resources can include data, collaborators, and analytic assets like notebooks and models, etc.
+
+* Go the (☰) menu and click *Projects*
 
 ![(☰) Menu -> Projects](../.gitbook/assets/images/manage/cpd-projects-menu.png)
 
-Click on *New project*
+* Click on *New project*
 
 ![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-Click on the top tile for `Create an empty project`:
+* We are going to create a project from an existing file (which contains assets we will use throughout this workshop), as opposed to creating an empty project. Select the _*Create a project from a sample or file*_option:
 
-![Create an empty project](../.gitbook/assets/images/manage/cpd-create-empty-project.png)
+![Create project from file](../.gitbook/assets/images/openscale-config/openscale-config-create-project-from-sample.png)
 
-Give the project a unique name and click `Create`:
+* Navigate to where you cloned this repository, then to `notebooks/` and choose `Customer-Churn-Project.zip`. Give the project a name and click `Create`:
 
-![Pick a name](../.gitbook/assets/images/manage/cpd-new-project-name.png)
+![Browse for project files](../.gitbook/assets/images/manage/cpd-importproject.png)
 
 ### Create a Space for Machine Learning Deployments
 
