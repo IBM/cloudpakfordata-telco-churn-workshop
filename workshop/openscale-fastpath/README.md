@@ -26,6 +26,8 @@ Click on `View Transactions` to drill deeper:
 
 ![OpenScale View Transactions](../.gitbook/assets/images/aios/OpenScaleFairnessViewTransactions.png)
 
+More information on individual transactions are discussed in the section below. 
+
 Now, go back to the *Insights Dashboard* page by clicking on the left-hand menu icon for `Insights`, make sure that you are on the `Model monitors` tab, and then choose the tile for your configured model (or the 3-dot menu on the tile and then `Configure monitors`:
 
 ![OpenScale Configure Monitors](../.gitbook/assets/images/aios/OpenScaleConfigureMonitors.png)
@@ -44,7 +46,7 @@ Similarly, you can choose the `Quality` menu and choose the `Feedback` tab to ge
 
 Click on the left-hand menu icon for `Explain a transaction` and click one of the transactions that have been run. Alternatively, enter the transaction UID you copied previously into the search bar, if you've run the `Run the OpenScale notebook` code.
 
-> NOTE: Each time you create the Explainibility data, the perterbation algorithm is sending 1000's of requests to the deployed Machine Learning REST endpoint, so the first time this is done can take a few seconds.
+> NOTE: Each time you create the Explainibility data, the perturbation algorithm is sending 1000's of requests to the deployed Machine Learning REST endpoint, so the first time this is done can take a few seconds.
 
 ![Explain a transaction](../.gitbook/assets/images/aios/OpenScaleExplainTransaction.png)
 
