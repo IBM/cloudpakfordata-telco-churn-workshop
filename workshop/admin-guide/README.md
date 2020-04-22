@@ -207,3 +207,33 @@ Click on *Add user* and ensure all users have the *Steward* role.
 From the hamburger menu, click manage users, then add user!
 
 ![Add a user](../.gitbook/assets/images/manage/manage-add-users.png)
+
+## Watson Knowledge Catalog setup
+
+### Setup the Enterprise catalog
+
+* Unzip [CP4dExperienceOrganizeArtifacts.zip](../../data/wkc/CP4dExperienceOrganizeArtifacts.zip)
+
+* Perform the steps in `Organize-Experience-Runbook.docx` to setup the WKC Enterprise catalog.
+
+* Go to `Organize` -> `Data discovery` then click `Workspaces` and `Add workspace`. Name it *Enterprise*.
+
+* In your `Enterprise` Data discovery workspace, go to `Settings` -> `Users and groups` and add the CPD cluster users (your workshop attendees).
+
+### Setup Data Discovery
+
+* In `Data discovery` click on `New Discovery job` -> `Quick scan`.
+
+* Under `Select a connection` click your DB connection.
+
+* Under `Discovery root` drill down and check `CUSTOMER`, `INSURANCE`, and `MORTGAGE`.
+
+* Click all the options and choose `1000` for max number of records to scan.
+
+* Under `Select a workspace` choose `Enterprise`.
+
+* click the `Discover` button.
+
+### WKC for admins
+
+* To run the [WKC for admins](../watson-knowledge-catalog/README.md) module, the users will need CPD cluster admin role.

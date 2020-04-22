@@ -30,7 +30,7 @@ When the Jupyter notebook is loaded and the kernel is ready, we will be ready to
 
 ### Run the notebook
 
-Spend an minute looking through the sections of the notebook to get an overview. A notebook is compsed on text (markdown or heading) cells and code cells. The markdown cells will comment what the code is designed to do.
+Spend an minute looking through the sections of the notebook to get an overview. A notebook is composed of text (markdown or heading) cells and code cells. The markdown cells provide comments on what the code is designed to do.
 
 You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook or hitting the keyboard short cut to run the cell (Shift + Enter but can vary based on platform). While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
@@ -86,7 +86,11 @@ client.set.default_space('<GUID>')
 
 * Continue to run the cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
 
-We've successfully built and deployed a machine learning model. Congratulations!
+**We've successfully built and deployed a machine learning model. Congratulations!**
+
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent conserve resources!*
+
+![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 
 ## 2. Deploying the model
 

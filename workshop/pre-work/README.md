@@ -4,9 +4,8 @@ This section is broken up into the following steps:
 
 1. [Download or Clone the repo](#1-download-or-clone-the-repo)
 1. [About the data set](#2-about-the-data-set)
-1. [(Optional) Seeding our Db2 Warehouse database](#3-optional-seeding-our-db2-warehouse-database)
-1. [Creating a new Cloud Pak for Data project](#4-creating-a-new-cloud-pak-for-data-project)
-1. [Create a Space for Machine Learning Deployments](#5-create-a-space-for-machine-learning-deployments)
+1. [Creating a new Cloud Pak for Data project](#3-create-a-project-and-space)
+1. [Create a Space for Machine Learning Deployments](#4-create-a-space-for-machine-learning-deployments)
 
 ## 1. Download or clone the repo
 
@@ -61,51 +60,7 @@ This file has the following attributes:
 * Streaming TV *(Yes, No, No internet service)*
 * Streaming Movies *(Yes, No, No internet service)*
 
-## 3. (Optional) Seeding our Db2 Warehouse database
-
-We'll need a place to store our data. For this workshop we've opted to use Db2 Warehouse on our local Cloud Pak for Data cluster. Note that CP4D can work with any Database with a JDBC connector, so this is only one of many choices.
-
-### Load Data into Local DB2 Warehouse
-
-These instructions are for loading the data into the local CP4D version of DB2 Warehouse. They will be similar for the IBM Cloud version.
-
-Click the (☰) hamburger menu in the upper left corner and choose `Collect` -> `My data`:
-
-![Choose collect -> My data](../.gitbook/assets/images/dv/collectMyData.png)
-
-Go to the *Databases* tab, click on the 3 vertial lines on the *DB2 Warehouse* tile, and click `Open`:
-
-![Open Service DB2 Warehouse](../.gitbook/assets/images/dv/userOpenDB2Warehouse.png)
-
-Under `Menu` choose `Load` and `Load Data`:
-
-![Menu Load Data](../.gitbook/assets/images/dv/DB2LoadData.png)
-
-Choose `Browse files`:
-
-![DB2 browse files](../.gitbook/assets/images/dv/DB2browseFiles.png)
-
-Navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
-
-![DB2 navigate to billing.csv](../.gitbook/assets/images/dv/navigateToBilling.png)
-
-Choose Schema `NULLIDRA` and click `+ New table`. Under "New Table Name" type "BILLING" and click `Create`, then `Next`.
-
-![DB2 choose schema and create table](../.gitbook/assets/images/dv/DB2schemaAndTableCreate.png)
-
-Accept the defaults and click `Next`. Click `Begin Load`.
-
-![DB2 load final](../.gitbook/assets/images/dv/DB2loadFinal.png)
-
-Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
-
-### Examine connection information
-
-You can see connection information by going to *Menu* -> *Connection Information*. Here you can see instructions for various platforms (Linux, Mac, PowerLinux, Windows, zLinux) and the information you need to connect, with the exception of the *password*. The *password* is only available to users with *Admin* privileges:
-
-![DB2 connection info](../.gitbook/assets/images/db2/DB2connectionInformation.png)
-
-## 4. Creating a new Cloud Pak for Data project
+## 3. Create a Project and Space
 
 At this point of the workshop we will be using Cloud Pak for Data for the remaining steps.
 
@@ -137,7 +92,7 @@ In Cloud Pak for Data, we use the concept of a project to collect / organize the
 
 ![Browse for project files](../.gitbook/assets/images/manage/cpd-importproject.png)
 
-## 5. Create a Space for Machine Learning Deployments
+### Create a Space for Machine Learning Deployments
 
 Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
 
@@ -148,3 +103,19 @@ Click on `+ New deployment space`:
 ![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
 
 Give your deployment space a unique name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
+
+Next, we will add a collaborator to the new deployment space, so that assets we deploy can be monitored in the model monitoring lab.
+
+Click on your new deployment space.
+
+![Select deployment space](../.gitbook/assets/images/manage/selectNewDeploymentSpace.png)
+
+Click on the `Access control` tab and then click on `Add collaborators` on the right.
+
+![Deployment space access control](../.gitbook/assets/images/manage/deploymentSpaceAccessControl.png)
+
+Enter "admin" as a Collaborator and select the user from the drop down list. Then click on the `Add to list` button.
+
+![Deployment space collaborators](../.gitbook/assets/images/manage/deploymentSpaceAddCollaborator.png)
+
+Click the `Add` button to finish adding the collaborator. You should be brought back to the deployment space page and see your user ID along with the `Admin` user as collaborators for this space.
