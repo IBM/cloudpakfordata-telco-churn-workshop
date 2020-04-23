@@ -18,13 +18,51 @@ The introductory page of the workshop is broken down into the following sections
 * [About Cloud Pak for Data](#about-cloud-pak-for-data)
 * [Credits](#credits)
 
+### About the data set
+
+The data set used for this workshop is originally from Watson Analytics and was used on a [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn) project, it contains information about customer churn for a Telecommunications company. The data is split into three CSV files and are located in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data/split) directory of the GitHub repository you will download in the pre-work section.
+
+#### **[billing.csv](../../data/split/billing.csv)**
+
+This file has the following attributes:
+
+* Customer ID
+* Contract *(Month-to-month, one year, two year)*
+* Paperless Billing *(Yes, No)*
+* Payment Method *(Bank transfer, Credit card, Electronic check, Mailed check)*
+* Monthly Charges *($)*
+* Total Charges *($)*
+* Churn *(Yes, No)*
+
+#### **[customer-service.csv](../../data/split/customer-service.csv)**
+
+* Customer ID
+* Gender *(Male, Female)*
+* Senior Citizen *(1, 0)*
+* Partner *(Yes, No)*
+* Dependents *(Yes, No)*
+* Tenure *(1-100)*
+
+#### **[products.csv](../../data/split/products.csv)**
+
+* Customer ID
+* Phone Service *(Yes, No)*
+* Multiple Lines *(Yes, No, No phone service)*
+* Internet Service *(DSL, Fiber optic, No)*
+* Online Security *(Yes, No, No internet service)*
+* Online Backup *(Yes, No, No internet service)*
+* Device Protection *(Yes, No, No internet service)*
+* Tech Support *(Yes, No, No internet service)*
+* Streaming TV *(Yes, No, No internet service)*
+* Streaming Movies *(Yes, No, No internet service)*
+
 ## Agenda
 
 |   |   |
 | - | - |
 | [Pre-work](pre-work/README.md) | Creating a project, downloading the data set, seeding a database |
-| [Import Data to Project](addData/README.md) | Import the data into your project |
 | [Data Connection and Virtualization for Admins](db-connection-and-virtualization/README.md) | Creating a new connection, virtualizing the data, importing the data into the project |
+| [Import Data to Project](addData/README.md) | Import the data into your project |
 | [Data Visualization with Data Refinery](data-visualization-and-refinery/README.md) | Refining the data, vizualizing and profiling the data |
 |  [Enterprise data governance for Viewers using Watson Knowledge Catalog](watson-knowledge-catalog-user/README.md) | Use and Enterprise data catalog to search, manage, and protect data |
 |  [Enterprise data governance for Admins using Watson Knowledge Catalog](watson-knowledge-catalog/README.md) | Create new Categories, Business terms, Policies and Rules in Watson Knowledge Catalog |
