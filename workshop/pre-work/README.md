@@ -2,12 +2,10 @@
 
 This section is broken up into the following steps:
 
-1. [Download or Clone the repo](#1-download-or-clone-the-repo)
-1. [About the data set](#2-about-the-data-set)
-1. [Creating a new Cloud Pak for Data project](#3-create-a-project-and-space)
-1. [Create a Space for Machine Learning Deployments](#4-create-a-space-for-machine-learning-deployments)
+1. [Download or Clone the Repo](#1-download-or-clone-the-repo)
+1. [Create an Analytics Project and Deployment Space](#2-create-a-project-and-deployment-space)
 
-## 1. Download or clone the repo
+## 1. Download or Clone the Repository
 
 Various parts of this workshop will require the attendee to upload files or run scripts that we've stored in the repository. So let's get that done early on, you'll need [`git`](https://git-scm.com) on your laptop to clone the repository directly, or access to [GitHub.com](https://github.com/) to download the zip file.
 
@@ -22,45 +20,7 @@ git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
 cd cloudpakfordata-telco-churn-workshop
 ```
 
-## 2. About the data set
-
-The data set used for this workshop is originally from Watson Analytics and was used on a [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn) project, it contains information about customer churn for a Telecommunications company. The data is split into three CSV files and are located in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data/split) directory of this repository.
-
-### **[billing.csv](../../data/split/billing.csv)**
-
-This file has the following attributes:
-
-* Customer ID
-* Contract *(Month-to-month, one year, two year)*
-* Paperless Billing *(Yes, No)*
-* Payment Method *(Bank transfer, Credit card, Electronic check, Mailed check)*
-* Monthly Charges *($)*
-* Total Charges *($)*
-* Churn *(Yes, No)*
-
-### **[customer-service.csv](../../data/split/customer-service.csv)**
-
-* Customer ID
-* Gender *(Male, Female)*
-* Senior Citizen *(1, 0)*
-* Partner *(Yes, No)*
-* Dependents *(Yes, No)*
-* Tenure *(1-100)*
-
-### **[products.csv](../../data/split/products.csv)**
-
-* Customer ID
-* Phone Service *(Yes, No)*
-* Multiple Lines *(Yes, No, No phone service)*
-* Internet Service *(DSL, Fiber optic, No)*
-* Online Security *(Yes, No, No internet service)*
-* Online Backup *(Yes, No, No internet service)*
-* Device Protection *(Yes, No, No internet service)*
-* Tech Support *(Yes, No, No internet service)*
-* Streaming TV *(Yes, No, No internet service)*
-* Streaming Movies *(Yes, No, No internet service)*
-
-## 3. Create a Project and Space
+## 2. Create a Project and Deployment Space
 
 At this point of the workshop we will be using Cloud Pak for Data for the remaining steps.
 
@@ -68,11 +28,11 @@ At this point of the workshop we will be using Cloud Pak for Data for the remain
 
 Launch a browser and navigate to your Cloud Pak for Data deployment
 
-> **NOTE** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
+> **NOTE:** Your instructor will provide a URL and credentials to log into Cloud Pak for Data!
 
 ![Cloud Pak for Data login](../.gitbook/assets/images/manage/cpd-login.png)
 
-### Create a new project
+### Create a New project
 
 In Cloud Pak for Data, we use the concept of a project to collect / organize the resources used to achieve a particular goal (resources to build a solution to a problem). Your project resources can include data, collaborators, and analytic assets like notebooks and models, etc.
 
@@ -84,38 +44,42 @@ In Cloud Pak for Data, we use the concept of a project to collect / organize the
 
 ![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-* We are going to create a project from an existing file (which contains assets we will use throughout this workshop), as opposed to creating an empty project. Select the _*Create a project from a sample or file*_option:
+* We are going to create a project from an existing file (which contains assets we will use throughout this workshop), as opposed to creating an empty project. Select the _*Create a project from a sample or file*_ option:
 
 ![Create project from file](../.gitbook/assets/images/openscale-config/openscale-config-create-project-from-sample.png)
 
-* Navigate to where you cloned this repository, then to `notebooks/` and choose `Customer-Churn-Project.zip`. Give the project a name and click `Create`:
+* Navigate to where you cloned this repository, then to `projects/` and choose `Customer-Churn-Project.zip`. Give the project a name and click `Create`:
 
 ![Browse for project files](../.gitbook/assets/images/manage/cpd-importproject.png)
 
-### Create a Space for Machine Learning Deployments
+### Create a Deployment Space
 
-Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
+Cloud Pak for Data uses the concept of `Deployment Spaces` to configure and manage the deployment of a set of related deployable assets. These assets can be data files, machine learning models, etc.
+
+* Go the (☰) menu and click `Analyze` -> `Analytics deployments`:
 
 ![(☰) Menu -> Analytics deployments](../.gitbook/assets/images/manage/ChooseAnalyticsDeployments.png)
 
-Click on `+ New deployment space`:
+* Click on `+ New deployment space`:
 
 ![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
 
-Give your deployment space a unique name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
+* Give your deployment space a unique name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
 
-Next, we will add a collaborator to the new deployment space, so that assets we deploy can be monitored in the model monitoring lab.
+* Next, we will add a collaborator to the new deployment space, so that assets we deploy can be monitored in the model monitoring lab.
 
-Click on your new deployment space.
+* Click on your new deployment space.
 
 ![Select deployment space](../.gitbook/assets/images/manage/selectNewDeploymentSpace.png)
 
-Click on the `Access control` tab and then click on `Add collaborators` on the right.
+* Click on the `Access control` tab and then click on `Add collaborators` on the right.
 
 ![Deployment space access control](../.gitbook/assets/images/manage/deploymentSpaceAccessControl.png)
 
-Enter "admin" as a Collaborator and select the user from the drop down list. Then click on the `Add to list` button.
+* Enter "admin" as a Collaborator and select the user from the drop down list. Then click on the `Add to list` button.
+
+> **NOTE:** We are adding the user that configured the machine learning instance for monitoring. In this case, the user is the admin user.
 
 ![Deployment space collaborators](../.gitbook/assets/images/manage/deploymentSpaceAddCollaborator.png)
 
-Click the `Add` button to finish adding the collaborator. You should be brought back to the deployment space page and see your user ID along with the `Admin` user as collaborators for this space.
+* Click the `Add` button to finish adding the collaborator. You should be brought back to the deployment space page and see your user ID along with the `Admin` user as collaborators for this space.
