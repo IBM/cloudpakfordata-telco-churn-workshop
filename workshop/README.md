@@ -67,8 +67,9 @@ Cloud Pak for Data:
 
 ## Credits
 
-This workshop was primarily written by [Scott D'Angelo](https://github.com/scottdangelo) and [Steve Martinelli](https://github.com/stevemar). Many other IBMers have contributed to help shape, test, and contribute to the workshop.
+This workshop was primarily written by [Scott D'Angelo](https://github.com/scottdangelo) and [Steve Martinelli](https://github.com/stevemar). Many other IBMers have contributed to help shape, test, and contribute to the workshop. Special thanks to [Rick Buglio](rbuglio@us.ibm.com) and team for the great Watson Knowledge Catalog demo.
 
 * [Omid Meh](https://github.com/omidmeh)
 * [Javier Torres](https://github.com/jrtorres)
 * [Samaya Madhavan](https://github.com/samayamadhavan)
+* [Rick Buglio](rbuglio@us.ibm.com)
