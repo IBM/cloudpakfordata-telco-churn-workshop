@@ -67,14 +67,14 @@ With the notebook open, you will notice:
 
 #### Save the model
 
-* Section `4.0 Save the model` will save the model to your project. 
+* Section `4.0 Save the model` will save the model to your project.
 
 * We will be saving and deploying the model to the Watson Machine Learning service within our Cloud Pak for Data platform. In the next code cell, be sure to update the `wml_credentials` variable.
 
   * The url should be the hostname of the Cloud Pak for Data instance.
   * The username and password should be the same credentials you used to log into Cloud Pak for Data.
 
-* You will update the `MODEL_NAME` and `DEPLOYMENT_SPACE_NAME` variables. Use a unique and easisly identifiable model name. 
+* You will update the `MODEL_NAME` and `DEPLOYMENT_SPACE_NAME` variables. Use a unique and easily identifiable model name.
 
 ```python
 MODEL_NAME = "user123 customer churn model"
@@ -84,6 +84,10 @@ DEPLOYMENT_SPACE_NAME = "Name you used for deployment space"
 * Continue to run the cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
 
 **We've successfully built and deployed a machine learning model. Congratulations!**
+
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources! You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. If you see a lock icon on the notebook, click it to unlock the notebook so you can stop the kernel.*
+
+![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 
 ## 2. Deploying the model
 
@@ -224,7 +228,3 @@ In this section we covered how the followings:
 * Testing your deployed model
 
 With this knowledge you should feel right at home within the Jupyter notebook. Moreover, you now know how to build a model and use it in a real life scenario.
-
-> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources! You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. If you see a lock icon on the notebook, click it to unlock the notebook so you can stop the kernel.*
-
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
