@@ -1,6 +1,6 @@
-# DB Connection and Virtualization [Admin User]
+# DB Connection and Virtualization
 
-This section is broken up into the following steps:
+This section requires an Admin or Data Engineer role to be assigned to your user account. The section is broken up into the following steps:
 
 1. [Start virtualizing data](#1-start-virtualizing-data)
 1. [Grant access to the virtualized data](#2-grant-access-to-the-virtualized-data)
@@ -17,8 +17,7 @@ To launch the data virtualization tool, go the (☰) menu and click `Collect` an
 
 ![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-menu.png)
 
-Several tables will appear (many are created as sample data when a Db2 Warehouse instance is provisioned) in the table. Find the tables you created earlier, the instructions suggested naming them: `CUSTOMER`, `PRODUCT` and `BILLING`. Once selected click on *Add to cart* and then on *View Cart*.
-You can search for the Schema name for the data and they should show up:
+Several tables names will be displayed (many of these tables are created as sample data when a Db2 Warehouse instance is provisioned). Find the tables we will be using for this workshop: `CUSTOMER`, `PRODUCT` and `BILLING` (You can search using the Schema name for the tables and they should show up). Once selected click on *Add to cart* and then on *View Cart*. :
 
 ![Choose the tables to virtualize](../.gitbook/assets/images/dv/dv-virtualize-tables.png)
 
@@ -26,7 +25,7 @@ The next panel prompts the user to choose which project to assign the data to, c
 
 ![Add virtualized data to your project](../.gitbook/assets/images/dv/dv-virtualize-assign.png)
 
-You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking *View my data*.
+You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking *View my virtualized data*.
 
 ![We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-complete.png)
 
@@ -48,7 +47,7 @@ Next we choose which project to assign the joined view to, choose the project yo
 
 ![Add joined data tables to your project](../.gitbook/assets/images/dv/dv-data-join-assign.png)
 
-ou'll be notified that the join has succeeded! Click on *View my virutalized data*. to repeat this again so we have all three tables.
+You'll be notified that the join has succeeded! Click on *View my virutalized data*. to repeat this again so we have all three tables.
 
 ![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-created.png)
 
@@ -57,6 +56,8 @@ ou'll be notified that the join has succeeded! Click on *View my virutalized dat
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
 ## 2. Grant access to the virtualized data
+
+>*Note: This section only needs to be completed if there are non-Admin or non-Data Engineer users you are working in a group with. The instructors would have indicated that it needs to be completed to give those users access to the data you have virtualized above.*
 
 In order for other users to have access to the data that you just virtualized, you need to grant them access. Follow these steps to make your Virtualized data visible to them.
 
