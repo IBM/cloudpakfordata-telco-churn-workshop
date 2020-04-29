@@ -115,7 +115,7 @@ You can click the `Review` tab and rate the data, as well as comment on it, to p
 
 ## 3. Add categories
 
-There are many ways to label the features and columns of our data. One is with categories.
+The fundamental abstraction in Watson Knowledge Catalog is the Category. A category is analogous to a folder.
 You can add categories as needed, or you can import them in .csv format.
 
 ### Import categories

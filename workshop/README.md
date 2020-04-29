@@ -65,7 +65,7 @@ This file has the following attributes:
 | [Import Data to Project](addData/README.md) | Import the data into your project |
 | [Data Visualization with Data Refinery](data-visualization-and-refinery/README.md) | Refining the data, vizualizing and profiling the data |
 |  [Enterprise data governance for Viewers using Watson Knowledge Catalog](watson-knowledge-catalog-user/README.md) | Use and Enterprise data catalog to search, manage, and protect data |
-|  [Enterprise data governance for Admins using Watson Knowledge Catalog](watson-knowledge-catalog/README.md) | Create new Categories, Business terms, Policies and Rules in Watson Knowledge Catalog |
+|  [Enterprise data governance for Admins using Watson Knowledge Catalog](watson-knowledge-catalog-admin/README.md) | Create new Categories, Business terms, Policies and Rules in Watson Knowledge Catalog |
 | [Machine Learning with Jupyter](machine-learning-in-Jupyter-notebook/README.md) | Building a model with Spark, deploying the model with Watson Maching Learning, testing the model with a Python Flask app |
 |  [Machine Learning with AutoAI](autoai/README.md) | Use AutoAi to quickly generate a Machine Learning pipeline and model |
 | [Monitoring models with OpenScale GUI](monitoring-models-with-openscale-gui/README.md) | Use the OpenScale tool to monitor deployed machine learning models |
