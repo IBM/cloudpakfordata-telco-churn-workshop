@@ -96,7 +96,7 @@ It has been assigned the four business terms that relate to sensitive informatio
 * Click on the ellipses (…) in the top right corner and select the Explore relationships menu item:
 
 ![Click ellispses CUSTOMER info](../.gitbook/assets/images/wkc-user/wkc-user-customer-info-ellipses.png)
- 
+
 A new tab will open in your browser and display the relationship graph:
 
 ![CUSTOMER relationship graph](../.gitbook/assets/images/wkc-user/wkc-user-customer-relationship-graph.png)
