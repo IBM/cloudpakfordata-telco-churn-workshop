@@ -20,7 +20,7 @@ Open the notebook:
 
 * From the project overview page, *click* on the `Assets` tab to open the assets page where your project assets are stored and organized.
 
-* Scroll down to the `Notebooks` section of the page and *Click* on the pencil icon at the right of the `machinelearning-churn-modeling` notebook.
+* Scroll down to the `Notebooks` section of the page and *Click* on the pencil icon at the right of the `machinelearning-churn-sparkmlmodel` notebook.
 
 ![Notebook Open](../.gitbook/assets/images/wml/wml-open-notebook.png)
 
@@ -40,7 +40,7 @@ You will run cells individually by highlighting each cell, then either click the
 
 With the notebook open, you will notice:
 
-* Section `1.0 Install required packages` will install some of the libraries we are going to use in the notebook (many libraries come pre-installed on Cloud Pak for Data). Note that we upgrade the installed version of Watson Machine Learning Python Client. This workshop uses [`pyspark`](https://spark.apache.org/docs/latest/api/python/index.html), and [`sklearn`](https://scikit-learn.org/stable/) to build our model. Ensure the output of the first code cell is that the python packages were successfully installed.
+* Section `1.0 Install required packages` will install some of the libraries we are going to use in the notebook (many libraries come pre-installed on Cloud Pak for Data). Note that we upgrade the installed version of Watson Machine Learning Python Client. Ensure the output of the first code cell is that the python packages were successfully installed.
 
 * Section `2.0 Load and Clean data` will load the data set we will use to build out machine learning model. In order to import the data into the notebook, we are going to use the code generation capability of Watson Studio.
 
@@ -67,28 +67,25 @@ With the notebook open, you will notice:
 
 #### Save the model
 
-* Section `4.0 Save the model` will save the model to your project. In the first code cell in this section, you will update the `MODEL_NAME` variable to something unique and easisly identifiable.
-
-```python
-MODEL_NAME = "user123 customer churn model"
-```
+* Section `4.0 Save the model` will save the model to your project.
 
 * We will be saving and deploying the model to the Watson Machine Learning service within our Cloud Pak for Data platform. In the next code cell, be sure to update the `wml_credentials` variable.
 
   * The url should be the hostname of the Cloud Pak for Data instance.
   * The username and password should be the same credentials you used to log into Cloud Pak for Data.
 
-* Continue to run the cells. For the cell that sets the default space, copy the `GUID` from the output of the previous cell (this is the GUID of the deployment space you createdin the pre-work).
+* You will update the `MODEL_NAME` and `DEPLOYMENT_SPACE_NAME` variables. Use a unique and easily identifiable model name.
 
 ```python
-client.set.default_space('<GUID>')
+MODEL_NAME = "user123 customer churn model"
+DEPLOYMENT_SPACE_NAME = "Name you used for deployment space"
 ```
 
 * Continue to run the cells in the section to save the model to Cloud Pak for Data. We'll be able to test it out with the Cloud Pak for Data tools in just a few minutes!
 
 **We've successfully built and deployed a machine learning model. Congratulations!**
 
-> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent conserve resources!*
+> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources! You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. If you see a lock icon on the notebook, click it to unlock the notebook so you can stop the kernel.*
 
 ![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 
@@ -231,7 +228,3 @@ In this section we covered how the followings:
 * Testing your deployed model
 
 With this knowledge you should feel right at home within the Jupyter notebook. Moreover, you now know how to build a model and use it in a real life scenario.
-
-> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources! You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. If you see a lock icon on the notebook, click it to unlock the notebook so you can stop the kernel.*
-
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)

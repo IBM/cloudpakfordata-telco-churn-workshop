@@ -25,7 +25,7 @@ This section is broken up into the following steps:
 
 * To configure the experiment, we must give it the dataset to use. Click on the `Select from project` option.
 
-* In the dialog, select the 'Customer-Churn-Full.csv' file and click the `Select asset` button..
+* In the dialog, select the `Telco-Customer-Churn.csv` file and click the `Select asset` button..
 
 ![Select file](../.gitbook/assets/images/autoai/autoai-chooseprojectdataset.png)
 
