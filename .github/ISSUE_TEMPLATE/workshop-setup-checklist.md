@@ -11,6 +11,7 @@ Initial planning:
 - [ ] - [ ]Get Proposed dates from client
 - [ ] Workshop presenters are available on Scheduled date
 - [ ] Video streaming team is available on Scheduled date
+- [ ] Create Calendar event and invite presenters
 - [ ] Get module request  Account team
 - [ ] Existing content
 - [ ] Create new content if needed
