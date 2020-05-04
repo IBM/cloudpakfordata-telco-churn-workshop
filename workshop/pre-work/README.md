@@ -66,7 +66,7 @@ Cloud Pak for Data uses the concept of `Deployment Spaces` to configure and mana
 
 * Give your deployment space a unique name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
 
-* Next, we will add a collaborator to the new deployment space, so that assets we deploy can be monitored in the model monitoring lab.
+* Next, we will add a collaborator to the new deployment space, so that assets we deploy can be monitored in the OpenScale model monitoring lab.
 
 * Click on your new deployment space.
 
@@ -78,7 +78,7 @@ Cloud Pak for Data uses the concept of `Deployment Spaces` to configure and mana
 
 * Enter "admin" as a Collaborator and select the user from the drop down list. Then click on the `Add to list` button.
 
-> **NOTE:** We are adding the user that configured the machine learning instance for monitoring. In this case, the user is the admin user.
+> **NOTE:** We are adding the user that configured the machine learning instance for OpenScale monitoring. In this case, the user is the admin user.
 
 ![Deployment space collaborators](../.gitbook/assets/images/manage/deploymentSpaceAddCollaborator.png)
 
