@@ -27,63 +27,63 @@ If you haven't yet started Watson Knowledge Catalog, you'll need to provision it
 
 * Open Watson Knowledge Catalog by clicking the *Services* icon at the top right of the home page:
 
-![click services icon](../.gitbook/assets/images/wkc/wkc-click-services-icon.png)
+![click services icon](../.gitbook/assets/images/wkc-admin/wkc-click-services-icon.png)
 
 * Under the *Data Governance* section, click the 3 horizontal dots on the *Watson Knowledge Catalog* tile, and click `Open`:
 
-![open wkc](../.gitbook/assets/images/wkc/wkc-open-service.png)
+![open wkc](../.gitbook/assets/images/wkc-admin/wkc-open-service.png)
 
 #### Open Watson Knowledge Catalog
 
-* Go to the upper-left (☰) hamburger menu and choose `Organize` -> `All catalogs`: 
+* Go to the upper-left (☰) hamburger menu and choose `Organize` -> `All catalogs`:
 
-![open catalog menu](../.gitbook/assets/images/wkc/wkc-admin-open-catalog-menu.png)
+![open catalog menu](../.gitbook/assets/images/wkc-admin/wkc-admin-open-catalog-menu.png)
 
 * From the *Your catalogs* page, click either `Create catalog` or `New Catalog`:
 
-![create WKC catalog](../.gitbook/assets/images/wkc/wkc-create-catalog.png)
+![create WKC catalog](../.gitbook/assets/images/wkc-admin/wkc-create-catalog.png)
 
 * Give your catalog a name and optional description, and click `create`:
 
-![name and create wkc catalog](../.gitbook/assets/images/wkc/wkc-name-describe-create.png)
+![name and create wkc catalog](../.gitbook/assets/images/wkc-admin/wkc-name-describe-create.png)
 
 ### Add data assets
 
 * Under the *Browse Assets* tab, below "Now you can add assets!" click `here` to add your data:
 
-![click here to add assets](../.gitbook/assets/images/wkc/wkc-add-data-asset.png)
+![click here to add assets](../.gitbook/assets/images/wkc-admin/wkc-add-data-asset.png)
 
 *OR* you can click `+ Add to catalog` in the top right and, for example, choose `Local files`:
 
-![add local files to catalog](../.gitbook/assets/images/wkc/wkc-add-to-catalog-local-files.png)
+![add local files to catalog](../.gitbook/assets/images/wkc-admin/wkc-add-to-catalog-local-files.png)
 
 * Browse to the `/data/merged/Telco-Customer-Churn.csv` file and double-click or click `Open`. Add an optional description and click `Add`:
 
-![click add for local files to catalog](../.gitbook/assets/images/wkc/wkc-file-selected-now-add.png)
+![click add for local files to catalog](../.gitbook/assets/images/wkc-admin/wkc-file-selected-now-add.png)
 
 >NOTE: Stay in the catalog until loading is complete! If you leave the catalog, the incomplete asset will be deleted.
 
 * The newly added *Telco-Customer-Churn.csv* file will show up under the *Browse Assets* tab of your catalog:
 
-![newly added data in catalog](../.gitbook/assets/images/wkc/wkc-browse-assets.png)
+![newly added data in catalog](../.gitbook/assets/images/wkc-admin/wkc-browse-assets.png)
 
 ### Add Connection
 
 * You can add a connection to a remote DB, for example *DB2 Warehouse in IBM Cloud*, by choosing `+ Add to catalog` -> `Connection`:
 
-![add connection to catalog](../.gitbook/assets/images/wkc/wkc-add-connection.png)
+![add connection to catalog](../.gitbook/assets/images/wkc-admin/wkc-add-connection.png)
 
 * Choose your remote DB and click:
 
-![chose db2 warehouse connection ](../.gitbook/assets/images/wkc/wkc-choose-db2-warehouse-conn.png)
+![chose db2 warehouse connection ](../.gitbook/assets/images/wkc-admin/wkc-choose-db2-warehouse-conn.png)
 
 * Enter the connection details and click `Create`:
 
-![enter db2 warehouse connection details](../.gitbook/assets/images/wkc/wkc-enter-connection-details.png)
+![enter db2 warehouse connection details](../.gitbook/assets/images/wkc-admin/wkc-enter-connection-details.png)
 
 * The connection now shows up in the catalog:
 
-![db2 warehouse connection shows up](../.gitbook/assets/images/wkc/wkc-new-connection-shows-up.png)
+![db2 warehouse connection shows up](../.gitbook/assets/images/wkc-admin/wkc-new-connection-shows-up.png)
 
 ### Add Virtualized Data
 
@@ -91,7 +91,7 @@ Virtualized data can be added to the *Default* catalog by someone with Administr
 
 * Go to the upper-left (☰) hamburger menu and choose `Organize` -> `All catalogs`. Click `+Add to Catalog` -> `Connected asset`:
 
-![add connected asset](../.gitbook/assets/images/wkc/wkc-add-connected-asset.png)
+![add connected asset](../.gitbook/assets/images/wkc-admin/wkc-add-connected-asset.png)
 
 * Click *Source* -> `Select source`. Browse under `DV` to you Schema (i.e. UserXYZW) and choose the joined table. Click `Select`.
 
@@ -101,27 +101,27 @@ A user can now add this to a project like any other asset from a catalog.
 
 * Under the *Access Control* tab you can click `Add Collaborator` to give other users access to your catalog:
 
-![give users access to the catalog](../.gitbook/assets/images/wkc/wkc-access-control-add-collaborator.png)
+![give users access to the catalog](../.gitbook/assets/images/wkc-admin/wkc-access-control-add-collaborator.png)
 
 * You can search for a user, click on the name to select them, and click `Add`:
 
-![search for user and add as collaborator](../.gitbook/assets/images/wkc/wkc-choose-user-and-add.png)
+![search for user and add as collaborator](../.gitbook/assets/images/wkc-admin/wkc-choose-user-and-add.png)
 
 * You can choose a role for the user - Admin, Editor, or Viewer:
 
-![choose role for collaborator](../.gitbook/assets/images/wkc/wkc-user-roll-choice.png)
+![choose role for collaborator](../.gitbook/assets/images/wkc-admin/wkc-user-roll-choice.png)
 
 * To access data in the catalog, click on the name of the data:
 
-![click data name to open](../.gitbook/assets/images/wkc/wkc-click-data-name-to-open.png)
+![click data name to open](../.gitbook/assets/images/wkc-admin/wkc-click-data-name-to-open.png)
 
 * A preview of the data will open, with metadata and the first few rows:
 
-![preview of data](../.gitbook/assets/images/wkc/wkc-data-preview.png)
+![preview of data](../.gitbook/assets/images/wkc-admin/wkc-data-preview.png)
 
 * You can click the `Review` tab and rate the data, as well as comment on it, to provide feedback for your teammates:
 
-![review data](../.gitbook/assets/images/wkc/wkc-review-data.png)
+![review data](../.gitbook/assets/images/wkc-admin/wkc-review-data.png)
 
 ## 3. Add categories
 
@@ -132,13 +132,13 @@ You can add categories as needed, or you can import them in .csv format.
 
 * Import a category for your assets by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Categories`, then click `Import`:
 
-![Import categories](../.gitbook/assets/images/wkc/wkc-import-categories.png)
+![Import categories](../.gitbook/assets/images/wkc-admin/wkc-import-categories.png)
 
 * Click `Add file` and navigate to where you cloned the workshop repository, choosing `data/wkc/glossary-organize-categories.csv`.
 
 * Under `Select merge option` choose `Replace all values` and click `Import`:
 
-![Import select merge option](../.gitbook/assets/images/wkc/wkc-import-select-merge-option.png)
+![Import select merge option](../.gitbook/assets/images/wkc-admin/wkc-import-select-merge-option.png)
 
 You will see "The import completed succesfully" when it is completed.
 
@@ -148,23 +148,23 @@ In this way, you can import Categories, Business Terms, Classifications, Policie
 
 * Add a category for your assets by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Categories`, then click `Create category`:
 
-![organize data categories](../.gitbook/assets/images/wkc/wkc-menu-organize-categories.png)
+![organize data categories](../.gitbook/assets/images/wkc-admin/wkc-menu-organize-categories.png)
 
 * Give your category a name, such as *Billing*, and an optional description, and then click `Save`:
 
-![new category billing](../.gitbook/assets/images/wkc/wkc-new-category-billing.png)
+![new category billing](../.gitbook/assets/images/wkc-admin/wkc-new-category-billing.png)
 
 * Now, if you hit `Create category` again on the *Billing* category screen, you can create a sub-category, such as *Total Charges*:
 
-![sub category total charges](../.gitbook/assets/images/wkc/wkc-new-sub-category-totalcharges.png)
+![sub category total charges](../.gitbook/assets/images/wkc-admin/wkc-new-sub-category-totalcharges.png)
 
 * For the *Billing* category you can select a *Type*, such as `Business term`:
 
-![select business term type](../.gitbook/assets/images/wkc/wkc-category-select-type.png)
+![select business term type](../.gitbook/assets/images/wkc-admin/wkc-category-select-type.png)
 
 * We can also create classifications for assets, similar to *Confidential*, *Personally Identifiable Information*, or *Sensitive Personal Information* in a similar way, by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Classifications` and clicking `+Create classification`. These classifications can then be added to your category as a *Type*:
 
-![select classification type](../.gitbook/assets/images/wkc/wkc-add-classifications.png)
+![select classification type](../.gitbook/assets/images/wkc-admin/wkc-add-classifications.png)
 
 ## 4. Add data classes
 
@@ -172,25 +172,25 @@ When you profile your assets, a data class will be inferred from the contents wh
 
 * Add a data class for your assets by going to the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Data class`, then click `Create data class`:
 
-![organize data classes](../.gitbook/assets/images/wkc/wkc-menu-organize-data-classes.png)
+![organize data classes](../.gitbook/assets/images/wkc-admin/wkc-menu-organize-data-classes.png)
 
 * Give your new data class a name, i.e. *numerical*, and an optional Primary category and/or description, and click `Save as draft`:
 
-![new data class](../.gitbook/assets/images/wkc/wkc-create-data-class.png)
+![new data class](../.gitbook/assets/images/wkc-admin/wkc-create-data-class.png)
 
 * Once the data class is created, we can add *Stewards* for this class, and also associate *classifications* and *business terms*. When you are ready, click `Publish`:
 
-![tools for data class](../.gitbook/assets/images/wkc/wkc-data-class-add-term-publish.png)
+![tools for data class](../.gitbook/assets/images/wkc-admin/wkc-data-class-add-term-publish.png)
 
 Now let's add that data class to a column in our *Telco-Customer-Churn.csv* asset.
 
 * Go back to your Telco catalog and open it up to the column view ((☰) hamburger menu `Organize` -> `All catalogs` and choose `Telco catalog`). Under the *Browse assets* tab, click on the data set *Telco-Customer-Churn.csv* to get the column/row preview. Scroll right to get to the *CustomerID* column and click the down arrow next to "Customer Number" and then *View all*:
 
-![change data class](../.gitbook/assets/images/wkc/wkc-admin-existing-data-class.png)
+![change data class](../.gitbook/assets/images/wkc-admin/wkc-admin-existing-data-class.png)
 
 * In the window that opens, search for your newly created data class, *Numerical* and click it when it returns in the search. Then click *Select*:
  
-![Set colunn to numerical data class](../.gitbook/assets/images/wkc/wkc-admin-numeric-data-class.png)
+![Set colunn to numerical data class](../.gitbook/assets/images/wkc-admin/wkc-admin-numeric-data-class.png)
 
 ## 5. Add Business terms
 
@@ -200,42 +200,42 @@ You already saw how to create a category and make it a *business term*. You can 
 
 * From the upper-left (☰) hamburger menu, choose `Organize` -> `Data and AI Governance` -> `Business terms`:
 
-![organize Data Business terms](../.gitbook/assets/images/wkc/wkc-organize-data-business-terms.png)
+![organize Data Business terms](../.gitbook/assets/images/wkc-admin/wkc-organize-data-business-terms.png)
 
 * Click on the upper-right `+ Create Business term` button:
 
-![create business term](../.gitbook/assets/images/wkc/wkc-create-business-term.png)
+![create business term](../.gitbook/assets/images/wkc-admin/wkc-create-business-term.png)
 
 * Give the new Business term a name such as *Billing* and optional description, and click `Save as draft`. NOTE that others on the platform will be creating a business term for this workshop, so perhaps pre-pend your term with something unique, i.e *scottda-Billing*:
 
-![name new business term](../.gitbook/assets/images/wkc/wkc-name-new-business-term.png)
+![name new business term](../.gitbook/assets/images/wkc-admin/wkc-name-new-business-term.png)
 
 * A window will come up once the term is created. You can see a rich set of options for creating related terms and adding other metadata. For now, click `Publish` to make this term available to users of the platform:
 
-![publish business term](../.gitbook/assets/images/wkc/wkc-publish-business-term.png)
+![publish business term](../.gitbook/assets/images/wkc-admin/wkc-publish-business-term.png)
 
 * Add an optional comment and click `Publish` in the new window:
 
-![verify publish business term](../.gitbook/assets/images/wkc/wkc-click-publish.png)
+![verify publish business term](../.gitbook/assets/images/wkc-admin/wkc-click-publish.png)
 
 * Now go back to your Telco catalog and open it up to the column view ((☰) hamburger menu `Organize` -> `All catalogs` and choose `Telco catalog`). Under the *Browse assets* tab, click on the data set *Telco-Customer-Churn.csv* to get the column/row preview. Scroll right to get to the *TotalCharges* column and click the *Column information* icon (looks like an "eye"):
 
-![choose TotalCharges column information](../.gitbook/assets/images/wkc/wkc-totalcharges-column-information.png)
+![choose TotalCharges column information](../.gitbook/assets/images/wkc-admin/wkc-totalcharges-column-information.png)
 
 * In the window that opens, click the *edit* icon (looks like a "pencil") next to *Business terms* :
 
-![edit business terms](../.gitbook/assets/images/wkc/wkc-assign-terms-to-column.png)
+![edit business terms](../.gitbook/assets/images/wkc-admin/wkc-assign-terms-to-column.png)
 
 * Enter *Billing* (or your uniquely named term such as *scottda-Billing*) under *Business terms* and the term will be searched for. Click on the `Billing` term that is found, and click `Apply`:
 
-![edit business terms](../.gitbook/assets/images/wkc/wkc-search-billing-to-assign-term.png)
+![edit business terms](../.gitbook/assets/images/wkc-admin/wkc-search-billing-to-assign-term.png)
 
 Close that window once the term has been applied.
 Now, do the same thing to add the *Billing* Business term to the *MonthlyCharges* column.
 
 * You will now be able to search for these terms from within the platform. For example, going back to your top level *Telco Catalog*, in the search bar with the comment "What assets are you searching for?" enter your unique *<unique_string>Billing* term:
 
-![search using business terms](../.gitbook/assets/images/wkc/wkc-search-business-terms.png)
+![search using business terms](../.gitbook/assets/images/wkc-admin/wkc-search-business-terms.png)
 
 The *Telco-Customer-Churn.csv* data set will show up, since it contains columns tagged with the *Billing* business term.
 
@@ -269,24 +269,24 @@ We can now create rules to control how a user can access data.
 
 * Next, under *Rule builder* *Condition1* fill out If *Business term* *Contains any* *CustomerID*  and Action then *mask data* *in columns containing* *Numerical*. Choose the tile for `Substitute`, which will make a non-identifiable hash. This obscures the actual CustomerID, but allows actions like database joins to still work. Click `Create`:
 
-![define rule for masking customerID](../.gitbook/assets/images/wkc/wkc-rule-substitute-customer-id.png)
+![define rule for masking customerID](../.gitbook/assets/images/wkc-admin/wkc-rule-substitute-customer-id.png)
 
 * Now if we go back to our *Telco-Customer-Churn.csv* asset in the catalog at the *CustomerID* column, it will look the same as before. But a non-admin user will see the "lock" icon and see that the customerID has now been substituted with a hash value:
 
-![customerID is now masked](../.gitbook/assets/images/wkc/wkc-masked-column-customer-id.png)
+![customerID is now masked](../.gitbook/assets/images/wkc-admin/wkc-masked-column-customer-id.png)
 
 * To add a rule to *Obfuscate* data, go to the `Profile` tab and scroll to the *TotalCharges* column. You can see that the data has been inferred to be classified as a *Quantity*:
 
-![TotalCharges classified as Quantity](../.gitbook/assets/images/wkc/wkc-inferred-classifier-totalcharges.png)
+![TotalCharges classified as Quantity](../.gitbook/assets/images/wkc-admin/wkc-inferred-classifier-totalcharges.png)
 
 Here is where you could change the classification if the inferred one was not what you wanted.
 
 * You can build a rule to *Obfuscate* this *TotalCharges* column:
 
-![TotalCharges obfuscate rule ](../.gitbook/assets/images/wkc/wkc-build-obfuscate-rule.png)
+![TotalCharges obfuscate rule ](../.gitbook/assets/images/wkc-admin/wkc-build-obfuscate-rule.png)
 
 * And now that column will have data that is replaced with similarly formatted data:
 
-![TotalCharges column obfuscated](../.gitbook/assets/images/wkc/wkc-obfuscated-totalchurn-column.png)
+![TotalCharges column obfuscated](../.gitbook/assets/images/wkc-admin/wkc-obfuscated-totalchurn-column.png)
 
 This ends the Watson Knowledge Catalog for Admins lab.
