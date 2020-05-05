@@ -14,7 +14,7 @@ This lab is comprised of the following steps:
 
 If you [Created the Project](https://ibm-developer.gitbook.io/cloudpakfordata-telco-workshop/getting-started/pre-work#2-create-a-project-and-deployment-space) using the [Customer-Churn-Project.zip](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/projects/Customer-Churn-Project.zip) file, your notebook will be present in that project, under the `Assets` tab:
 
-![Project from zip assets tab](../.gitbook/assets/images/wml/aios-notebook-zip-file-asset.png)
+![Project from zip assets tab](../.gitbook/assets/images/aios/aios-notebook-zip-file-asset.png)
 
 You may now skip to the next step [Update credentials](#2-update-credentials)
 
