@@ -73,7 +73,7 @@ A full breakdown of the factors contributing to either "Risk" or "No Risk" are a
 
 ## Using the Analytics tools
 
-* Back at the dashboard click on `Analytics` -> ` Chart Builder`. Here you can create charts using various Measurements, Features, and Dimensions of your machine learning model. Change them and examine the charts that are created:
+* Back at the dashboard click on `Analytics` -> `Chart Builder`. Here you can create charts using various Measurements, Features, and Dimensions of your machine learning model. Change them and examine the charts that are created:
 
 ![Analytics Chart builder](../.gitbook/assets/images/aios/aios-dashboard-chart-builder.png)
 
