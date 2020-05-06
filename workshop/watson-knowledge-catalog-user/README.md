@@ -87,7 +87,7 @@ A Social Security Number term appears in the list with tags of Mortgage applican
 
 ![Related Content SSN](../.gitbook/assets/images/wkc-user/wkc-user-ssn-related-content.png)
 
-* Click on the MORTGAGE_APPLICANT table in the Additional information assets section.
+* Click on the CUSTOMER table in the Additional information assets section.
 
 ![Click Additonal Info CUSTOMER](../.gitbook/assets/images/wkc-user/wkc-user-bus-ssn-additional-info-customer.png)
 

@@ -64,8 +64,8 @@ This file has the following attributes:
 | [Data Connection and Virtualization for Admins](db-connection-and-virtualization/README.md) | Creating a new connection, virtualizing the data, importing the data into the project |
 | [Import Data to Project](addData/README.md) | Import the data into your project |
 | [Data Visualization with Data Refinery](data-visualization-and-refinery/README.md) | Refining the data, vizualizing and profiling the data |
-|  [Enterprise data governance for Viewers using Watson Knowledge Catalog](watson-knowledge-catalog-user/README.md) | Use and Enterprise data catalog to search, manage, and protect data |
-|  [Enterprise data governance for Admins using Watson Knowledge Catalog](watson-knowledge-catalog/README.md) | Create new Categories, Business terms, Policies and Rules in Watson Knowledge Catalog |
+| [Enterprise data governance for Viewers using Watson Knowledge Catalog](watson-knowledge-catalog-user/README.md) | Use and Enterprise data catalog to search, manage, and protect data |
+| [Enterprise data governance for Admins using Watson Knowledge Catalog](watson-knowledge-catalog-admin/README.md) | Create new Categories, Business terms, Policies and Rules in Watson Knowledge Catalog |
 | [Machine Learning with Jupyter](machine-learning-in-Jupyter-notebook/README.md) | Building a model with Spark, deploying the model with Watson Maching Learning, testing the model with a Python Flask app |
 |  [Machine Learning with AutoAI](autoai/README.md) | Use AutoAi to quickly generate a Machine Learning pipeline and model |
 | [Fastpath Monitoring models with OpenScale GUI](openscale-fastpath/README.md) | Quickly deploy an OpenScale demo with FastPath |

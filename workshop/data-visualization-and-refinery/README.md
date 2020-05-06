@@ -112,11 +112,11 @@ In the scatter plot, choose *TotalCharges* for the x-axis, *MonthlyCharges* for 
 
 ![set x- and y- axes and Color map](../.gitbook/assets/images/dr/dr-vis-x-y-Color-map.png)
 
-Scroll down and give the scatter plot a title and sub-title if you wish. Click on the "gear" under `Actions` to perform tasks such as *Start over*, *Download chart details*, *Download chart image*, or *Global visualization preferences*:
+Scroll down and give the scatter plot a title and sub-title if you wish. Under the `Actions` panel, notice that you can perform tasks such as *Start over*, *Download chart details*, *Download chart image*, or set *Global visualization preferences* (_Note: Hover over the icons to see the names_). Click on the "gear" icon in the `Actions` panel
 
 ![Visualize set titles and choose preferences](../.gitbook/assets/images/dr/dr-chart-monthly-v-total-w-churn.png)
 
-We see that we can do things in the *Global visualization preferences* for *Titles*, *Tools*, *Color schemes*, and *Notifications*. Let's set the *Color scheme* to *Vivid*:
+We see that we can do things in the *Global visualization preferences* for *Titles*, *Tools*, *Theme*, and *Notifications*. Click on the `Theme` tab and update the color scheme to *Vivid*. Then click the `Apply` button :
 
 ![Visualize set vivid](../.gitbook/assets/images/dr/dr-global-vis-vivid.png)
 
