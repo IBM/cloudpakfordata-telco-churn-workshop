@@ -189,7 +189,7 @@ Now let's add that data class to a column in our *Telco-Customer-Churn.csv* asse
 ![change data class](../.gitbook/assets/images/wkc-admin/wkc-admin-existing-data-class.png)
 
 * In the window that opens, search for your newly created data class, *Numerical* and click it when it returns in the search. Then click *Select*:
- 
+
 ![Set colunn to numerical data class](../.gitbook/assets/images/wkc-admin/wkc-admin-numeric-data-class.png)
 
 ## 5. Add Business terms
