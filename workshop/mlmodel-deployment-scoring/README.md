@@ -336,4 +336,3 @@ In this section we covered how the followings:
 * Creating and Testing Online Deployments for models.
 * Creating and Testing Batch Deployments for models.
 * Integrating the model deployment in an external application.
-
