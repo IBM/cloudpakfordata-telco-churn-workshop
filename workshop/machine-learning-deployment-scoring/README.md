@@ -331,8 +331,10 @@ Click the `Submit` button and the churn percentage is returned:
 
 ## Conclusion
 
-In this section we covered how the followings:
+In this section we covered the followings:
 
 * Creating and Testing Online Deployments for models.
 * Creating and Testing Batch Deployments for models.
 * Integrating the model deployment in an external application.
+
+Taking a predictive model and infusing AI into applications.
