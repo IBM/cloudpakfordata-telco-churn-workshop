@@ -15,11 +15,11 @@ This section is broken up into the following steps:
 
 * Go to your analytics project overview page.
 
-* To start the AutoAI experience, click `Add to Project` from the top and select `AutoAI`:
+* To start the AutoAI experience, click `Add to Project` from the top and select `AutoAI experiment`:
 
 ![Adding a project](../.gitbook/assets/images/autoai/autoai-add-project.png)
 
-* Name your AutoAI experiment asset and choose one of the compute configuration options listed with a drop-down menu. Then, click `Create`:
+* Name your AutoAI experiment asset and leave the default compute configuration option listed in the drop-down menu. Then, click `Create`:
 
 ![Naming your services](../.gitbook/assets/images/autoai/autoai-name-services.png)
 
