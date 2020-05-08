@@ -2,10 +2,10 @@
 
 In this module, we will go through the process of deploying a machine learning model so it can be used by others. Deploying a model allows us to put a model into production, so that data can be passed to it to return a prediction. The deployment will result in an endpoint that makes the model available for wider use in applications and to make business decisions. There are several types of deployments available ([depending on the model framework used](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/wsj/analyze-data/pm_service_supported_frameworks.html)), of which we will explore:
 
-* Online - Creates an endpoint to generate a score or prediction in real time.
-* Batch - Creates an endpoint to schedule the processing of bulk data to return predictions.
+* Online Deployments - Creates an endpoint to generate a score or prediction in real time.
+* Batch Deployments - Creates an endpoint to schedule the processing of bulk data to return predictions.
 
-This module is broken up into the following sections:
+In this module is broken up into several sections that explore the different model deployment options as well as the different ways to invoke or consume the model. The first section of this lab will build an online deployment and test the model endpoint using both the built in testing tool as well as external testing tools. The remaining sections are optional, they build and test the batch deployment, followed by using the model from a python application.
 
 1. [Online Deployment for a Model](#online-model-deployment)
    * Create Online Deployment
@@ -18,7 +18,7 @@ This module is broken up into the following sections:
 
 1. [(Optional) Integrate Model to an External Application](#optional-integrate-model-to-python-flask-application)
 
->*Note: The lab instructions below assume you have a project and a deployment space already. If not, follow the instructions in the pre-work section to create a project and a space. It also assumes that you have completed one of the machine learning module to promote a model to the deployment space. If not, follow the instructions in the machine learning modules to create and promote a machine learning model.*
+>*Note: The lab instructions below assume you have completed one of the machine learning modules to promote a model to the deployment space. If not, follow the instructions in one of the machine learning modules to create and promote a machine learning model.*
 
 ## Online Model Deployment
 
@@ -30,7 +30,9 @@ After a model has been created and saved / promoted to our deployment space, we 
 
 * Choose the deployment space you setup previously by clicking on the name of the space.
 
-* In your space overview, select the model name that you just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
+* In your space overview, select the model name that you want to create a deployment for just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
+
+> Note: There may be more than one model listed in them 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
 
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
@@ -38,7 +40,7 @@ After a model has been created and saved / promoted to our deployment space, we 
 
 ![Online Deployment Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
 
-* The Deployment will show as *In progress* and then switch to *Deployed* when done. Once the status shows as *Deployed* , you will be able to click on the deployment name to begin testing:
+* The Deployment will show as *In progress* and then switch to *Deployed* when done.
 
 ![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
 
@@ -46,62 +48,31 @@ After a model has been created and saved / promoted to our deployment space, we 
 
 Cloud Pak for Data offers tools to quickly test out Watson Machine Learning models. We begin with the built-in tooling.
 
-* From the Model deployment page, click on the name of your deployment. The  Deployment *API reference* tab shows how to use the model using *cURL*, *Java*, *Javascript*, *Python*, and *Scala*. To get to the built-in test tool, click on the `Test` tab.
+* From the Model deployment page, once the deployment status shows as *Deployed*, click on the name of your deployment. The deployment *API reference* tab shows how to use the model using *cURL*, *Java*, *Javascript*, *Python*, and *Scala*. To get to the built-in test tool, click on the `Test` tab.
 
 * Click on the *Provide input data as JSON* icon.
 
 ![Test deployment with JSON](../.gitbook/assets/images/autoai/autoai-test-json.png)
 
-* Copy and paste the following data into the *Body* panel.
+* Copy and paste one of the following data objects into the *Body* panel. If you are testing a model you built using the Jupyter notebooks, copy and paste the first object. If you are testing a model you built using AutoAI, copy and paste the second object.
 
 ```json
 {
    "input_data":[
       {
-         "fields":[
-            "gender",
-            "SeniorCitizen",
-            "Partner",
-            "Dependents",
-            "tenure",
-            "PhoneService",
-            "MultipleLines",
-            "InternetService",
-            "OnlineSecurity",
-            "OnlineBackup",
-            "DeviceProtection",
-            "TechSupport",
-            "StreamingTV",
-            "StreamingMovies",
-            "Contract",
-            "PaperlessBilling",
-            "PaymentMethod",
-            "MonthlyCharges",
-            "TotalCharges"
-         ],
-         "values":[
-            [
-               "Female",
-               0,
-               "No",
-               "No",
-               1,
-               "No",
-               "No phone service",
-               "DSL",
-               "No",
-               "No",
-               "No",
-               "No",
-               "No",
-               "No",
-               "Month-to-month",
-               "No",
-               "Bank transfer (automatic)",
-               25.25,
-               25.25
-            ]
-         ]
+         "fields":["gender", "SeniorCitizen", "Partner", "Dependents", "tenure", "PhoneService", "MultipleLines", "InternetService", "OnlineSecurity", "OnlineBackup", "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies", "Contract", "PaperlessBilling", "PaymentMethod", "MonthlyCharges", "TotalCharges"],
+         "values":[["Female", 0, "No", "No", 1, "No", "No phone service", "DSL", "No", "No", "No", "No", "No", "No", "Month-to-month", "No", "Bank transfer (automatic)", 25.25, 25.25]]
+      }
+   ]
+}
+```
+
+```json
+{
+   "input_data":[
+      {
+         "fields":[ "customerID", "gender", "SeniorCitizen", "Partner", "Dependents", "tenure", "PhoneService", "MultipleLines", "InternetService", "OnlineSecurity", "OnlineBackup", "DeviceProtection", "TechSupport", "StreamingTV", "StreamingMovies", "Contract", "PaperlessBilling", "PaymentMethod", "MonthlyCharges", "TotalCharges"],
+         "values":[[ "7567-VHVEG", "Female", 0, "No", "No", 1, "No", "No phone service", "DSL", "No", "No", "No", "No", "No", "No", "Month-to-month", "No", "Bank transfer (automatic)", 25.25, 25.25]]
       }
    ]
 }
@@ -111,7 +82,7 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 
 ![Testing the deployed model](../.gitbook/assets/images/wml/TestingDeployedModel.png)
 
-> *Note: For some deployed models (for example AutoAI based models), you can provide the request payload using a generated form by clicking on the `Provide input using form` icon and providing values for the input fields of the form*
+> *Note: For some deployed models (for example AutoAI based models), you can provide the request payload using a generated form by clicking on the `Provide input using form` icon and providing values for the input fields of the form. If the form is not available for the model you deployed, the icon will remain grayed out.*
 > ![Input to the fields](../.gitbook/assets/images/autoai/autoai-input-fields.png)
 
 ### (Optional) Test Online Model Deployment using cURL
@@ -132,7 +103,7 @@ curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u <username>:<pass
 {"username":"scottda","role":"Admin","permissions":["access_catalog","administrator","manage_catalog","can_provision"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331002","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA","_messageCode_":"success","message":"success"}
 ```
 
-* You will save this access token to a tepmorary environment variable. Use the export command to save the "accessToken" part of this response in the terminal window to a variable called `WML_AUTH_TOKEN`.
+* You will save this access token to a temporary environment variable. Copy the access token value (without the quotes) in the terminal and then use the following export command to save the "accessToken" to a variable called `WML_AUTH_TOKEN`.
 
 ```bash
 export WML_AUTH_TOKEN=<value-of-access-token>
@@ -145,7 +116,7 @@ export WML_AUTH_TOKEN=<value-of-access-token>
 * Now save that endpoint to a variable named `URL` by exporting it.
 
 ```bash
-export URL=https://blahblahblah.com
+export URL=<value-of-endpoint>
 ```
 
 * Now run this curl command from a terminal to invoke the model with the same payload we used previousy:
@@ -158,7 +129,9 @@ curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: appl
 
 ## (Optional) Batch Model Deployment
 
-After a model has been created and saved / promoted to our deployment space, we will want to deploy the model so it can be used by others. Another approach to this is to create a batch deployment. This type of deployment will make an instance of the model available to make predictions against data assets or groups of records. Although will use the Cloud Pak for Data UI to deploy the model, the same can be done programmatically.
+Another approach to expose the model to be consumed by other users/applications is to create a batch deployment. This type of deployment will make an instance of the model available to make predictions against data assets or groups of records. The model prediction requests are scheduled as jobs, which are exected asynchronously. For the lab, we will break this into two steps: first step is creating the deployment (which we will do using the UI), then second step is creating and scheduling a job with values.
+
+Lets start by creating the deployment:
 
 * Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
@@ -166,15 +139,17 @@ After a model has been created and saved / promoted to our deployment space, we 
 
 * Choose the deployment space you created previously by clicking on the name of the space.
 
-* In your space overview, select the model name that you built previously and click the 3 dots under `Actions`, and choose `Deploy`:
+* In your space overview, select the model name that you want to create a deployment for just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
+
+> Note: There may be more than one model listed in them 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
 
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
-* On the 'Configure and deploy' screen, choose `Batch` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
+* On the 'Configure and deploy' screen, choose `Batch` for the *Deployment Type*, give the Deployment a name and optional description. The default values for environment definitions, hardware definition and nodes can be left (in scenarios with large or frequent batch jobs, you may choose to scale these values up). Click `Create`:
 
 ![Batch Deployment Create](../.gitbook/assets/images/wml/create_batch_deployment.png)
 
-* Once the status shows as *Deployed* , you will be able to click on the deployment name to begin testing:
+* Once the status shows as *Deployed* , you will be able to start submitting jobs to the deployment.
 
 ![Status Deployed](../.gitbook/assets/images/wml/batch_dep_status.png)
 
