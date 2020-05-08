@@ -68,6 +68,7 @@ This file has the following attributes:
 | [Enterprise data governance for Admins using Watson Knowledge Catalog](watson-knowledge-catalog-admin/README.md) | Create new Categories, Business terms, Policies and Rules in Watson Knowledge Catalog |
 | [Machine Learning with Jupyter](machine-learning-in-Jupyter-notebook/README.md) | Building a model with Spark, deploying the model with Watson Maching Learning, testing the model with a Python Flask app |
 | [Machine Learning with AutoAI](machine-learning-autoai/README.md) | Use AutoAi to quickly generate a Machine Learning pipeline and model |
+| [Deploy and Test Machine Learning Models](machine-learning-deployment-scoring/README.md) | Deploy and machine learning models using several approaches |
 | [Monitoring models with OpenScale GUI](monitoring-models-with-openscale-gui/README.md) | Use the OpenScale tool to monitor deployed machine learning models |
 | [Fastpath Monitoring models with OpenScale GUI](openscale-fastpath/README.md) | Quickly deploy an OpenScale demo with FastPath |
 | [Run OpenScale notebook code](openscale-notebook/README.md) | See the OpenScale APIs in a Jupyter notebook and manually configure the monitors |
