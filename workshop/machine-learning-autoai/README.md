@@ -43,23 +43,23 @@ This section is broken up into the following steps:
 
 * The experiment can take several minutes to run. Upon completion you will see a message that the pipelines have been created:
 
-![autoai pipelines created](../.gitbook/assets/images/autoai/autoai-pilelines-complete.png)
+![autoai pipelines created](../.gitbook/assets/images/autoai/autoai-pipelines-complete.png)
 
 ## 2. Save AutoAI Model
 
-The AutoAI process follows this sequence to build candidate pipelines:
+The AutoAI process by default selects top two performing algorithm for a given dataset. After executing the appropriate **data pre-processing** steps, it  follows this sequence for each of the algorithm to build candidate pipelines:
 
-* Data pre-processing
-* Automated model selection (Pipeline 1)
-* Hyperparameter optimization (Pipeline 2)
-* Automated feature engineering (Pipeline 3)
-* Hyperparameter optimization (Pipeline 4)
+
+* Automated model selection 
+* Hyperparameter optimization 
+* Automated feature engineering 
+* Hyperparameter optimization 
 
 You can review each pipeline and select to deploy the top performing pipeline from this experiment.
 
 * Scroll down to see the *Pipeline leaderboard*. The top performing pipeline is in the first rank.
 
-* The next step is to select the model that gives the best result by looking at the metrics. In this case, Pipeline 4 gave the best result with the metric "Area under the ROC Curve (ROC AUC)." You can view the detailed results by clicking the corresponding pipeline from the leaderboard:
+* The next step is to select the model that gives the best result by looking at the metrics. In this case, Pipeline 4 gave the best result with the metric "Accuracy(Optimized)." You can view the detailed results by clicking the corresponding pipeline from the leaderboard:
 
 ![pipeline leaderboard](../.gitbook/assets/images/autoai/autoai-pipeline-leaderboard.png)
 
@@ -99,8 +99,11 @@ You can review each pipeline and select to deploy the top performing pipeline fr
 
 * From the model page, once again click on the `Promote to deployment space`.
 
+![Promote Deployment Space](../.gitbook/assets/images/autoai/autoai-promote-model.png)
+
 * This time you will see a notification that the model was promoted to the deployment space succesfully.
 
+![View Deployment](../.gitbook/assets/images/autoai/autoai-view-deployment.png)
 **We've successfully built and saved a machine learning model using AutoAI. Congratulations!**
 
 ## Conclusion
