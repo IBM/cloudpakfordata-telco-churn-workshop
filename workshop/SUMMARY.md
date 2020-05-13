@@ -14,9 +14,10 @@
 * [Enterprise data governance for Admins using Watson Knowledge Catalog](watson-knowledge-catalog-admin/README.md)
 * [Machine Learning with Jupyter](machine-learning-in-Jupyter-notebook/README.md)
 * [Machine Learning with AutoAI](machine-learning-autoai/README.md)
-* [Fastpath Monitoring models with OpenScale GUI](openscale-fastpath/README.md)
-* [(Optional) Run OpenScale notebook code](openscale-notebook/README.md)
-
+* [Deploy and Test Machine Learning Models](machine-learning-deployment-scoring/README.md)
+* [Monitoring models with OpenScale GUI (Fastpath Monitoring)](openscale-fastpath/README.md)
+* [Monitoring models with OpenScale GUI (Manual Config)](openscale-gui-manual-config/README.md)
+* [Monitoring models with OpenScale (Notebook)](openscale-notebook/README.md)
 
 ### Workshop Resources
 
