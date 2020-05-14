@@ -21,11 +21,11 @@ Several tables names will be displayed (many of these tables are created as samp
 
 ![Choose the tables to virtualize](../.gitbook/assets/images/dv/dv-virtualize-tables.png)
 
-The next panel prompts the user to choose which project to assign the data to, choose the project you created in the previous exercise. Click *Virtualize* to start the process.
+The next panel prompts the user to select where to assign the virtualized tables. Select the `My virtualized data` radio button. If there is a `Submit to catalog` checkbox on the top right, unselect it and finally click the *Virtualize* button to add the virtualized tables to your data.
 
 ![Add virtualized data to your project](../.gitbook/assets/images/dv/dv-virtualize-assign.png)
 
-You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking *View my virtualized data*.
+You'll be notified that the virtual tables have been created. Let's see the new virtualized tables from the Data Virtualization tool by clicking *View my virtualized data* button.
 
 ![We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-complete.png)
 
@@ -43,13 +43,15 @@ In the next panel we'll give our joined data a unique name (to be consistent wit
 
 ![Review the proposed joined table](../.gitbook/assets/images/dv/dv-data-join-review.png)
 
-Next we choose which project to assign the joined view to, choose the project you created in the previous exercise. Click *Create view* to start the process.
+In the next screen we choose where to assign the joined view we created, select the `My virtualized data` radio button. If there is a `Submit to catalog` checkbox on the top right, unselect it and finally click the *`Create view`* button to add the virtualized aggregate table to your data.
 
 ![Add joined data tables to your project](../.gitbook/assets/images/dv/dv-data-join-assign.png)
 
-You'll be notified that the join has succeeded! Click on *View my virutalized data*. to repeat this again so we have all three tables.
+You'll be notified that the join view creation has succeeded! Click on *View my virutalized data* button.
 
 ![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-created.png)
+
+You will need to repeat this again until we have joined all three tables.
 
 **IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`XXXBILLINGPRODUCTS`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `XXXBILLINGPRODUCTSCUSTOMERS`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
 
