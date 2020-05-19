@@ -8,15 +8,15 @@ For this section we'll now use the Data Virtualization tool to import the data f
 
 ## Provision Data Virtualization
 
-Go to the `Services` tab. Under `Data sources` choose the `Data Virtualization` tile. Click the 3 vertical dots and choose `Deploy`.
+Go to the `Services` tab. Use the `Category` pulldown and select `Data sources`. Click on the `Data Virtualization` tile.
 
 ![Deploy DV service](../.gitbook/assets/images/dv/dv-deploy-service.png)
 
-Follow the instructions to deploy Data Virtualization.
+Follow the instructions to provision Data Virtualization.
 
-> For deployment using Managed OpenShift you must do the following:
-  IMPORTANT: Do NOT check the box for automatic semaphore configuration
-  IMPORTANT: Do NOT choose the defaults for storage. You must choose *ibmc-file-gold-gid* as the storage class
+> For deployment using Managed OpenShift you must do the following:  
+> **IMPORTANT:** Do **NOT** check the box for automatic semaphore configuration  
+> **IMPORTANT:** Do **NOT** choose the defaults for storage. You must choose *ibmc-file-gold-gid* as the storage class
 
 ## Create an IBM Cloud instance of DB2 Warehouse
 
@@ -24,7 +24,7 @@ It is suggested to use [DB2 Warehouse on IBM Cloud](https://cloud.ibm.com/catalo
 
 Provision an instance of DB2 Warehouse on the IBM Cloud.
 
-Go to `Service Credentials` and click `New credential +`. Open `View credentials` and copy the credentials for use later:
+Go to `Service credentials` and click `New credential +`. Click the `Copy to clipboard` icon and save the credentials for use later:
 
 ![Get DB2 Warehouse credentials](../.gitbook/assets/images/dv/dv-get-cloud-db2-credentials.png)
 
@@ -32,20 +32,20 @@ Now go to `Manage` and click `Open Console`:
 
 ![DB2 Warehouse Cloud open console](../.gitbook/assets/images/dv/dv-manage-db2-warehouse-cloud.png)
 
-From the upper-left (☰) hamburger menu click `Load` -> `Load data`:
+From the upper-left (☰) hamburger menu click `LOAD` -> `Load Data`:
 
 ![DB2 Warehouse Cloud load data](../.gitbook/assets/images/dv/dv-cloud-load-data.png)
 
-Choose `Browse file` and navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
-Choose Schema `NULLIDRA` and click `+ New table`. Under "New Table Name" type "BILLING" and click `Create`, then `Next`. Accept the defaults and click `Next`. Click `Begin Load`.
-Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
+Choose `Browse files` and navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
+Choose Schema `NULLIDRA` and click `+ New Table`. Under `Create a new Table` type "BILLING" and click `Create`, then `Next`. Accept the defaults and click `Next`. Click `Begin Load`.
+Click `Load More Data` and repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
 
 ## Load Data into Local DB2 Warehouse
 
 These instructions are for loading the data into the local CP4D version of DB2 Warehouse. If you've used the IBM Cloud instance of DB2 Warehouse, you can skip to the next section.
 
 You will need to already have done the `Provision instance` for DB2 Warehouse.
-Got to `Services` and click on `DB2 Warehouse` and click `Open`:
+Go to `Services` and click on `DB2 Warehouse` and click `Open`:
 
 ![Open Service DB2 Warehouse](../.gitbook/assets/images/dv/dv-open-db2-warehouse.png)
 
@@ -54,14 +54,14 @@ Under `Menu` choose `Load` and `Load Data`:
 ![Menu Load Data](../.gitbook/assets/images/dv/dv-db2-load-data.png)
 
 Choose `Browse file` and navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
-Choose Schema `NULLIDRA` and click `+ New table`. Under "New Table Name" type "BILLING" and click `Create`, then `Next`. Accept the defaults and click `Next`. Click `Begin Load`.
+Choose Schema `NULLIDRA` and click `+ New Table`. Under "New Table Name" type "BILLING" and click `Create`, then `Next`. Accept the defaults and click `Next`. Click `Begin Load`.
 Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
 
 ### Get IBM Cloud DB2 SSL cert
 
 You will need an SSL cert for Cloud Pak for Data to use the IBM Cloud DB2 Warehouse instance.
 
-In the DB2 Warehouse console, rom the upper-left (☰) hamburger menu click `Connection Info` -> `Connection Information`. Then click `Download SSL Certificate`:
+In the DB2 Warehouse console, from the upper-left (☰) hamburger menu click `CONNECTION INFO` -> `Connection Information`. Then click `Download SSL Certificate`:
 
 ![DB2 get SSL certificate](../.gitbook/assets/images/dv/dv-db2-cloud-get-ssl-cert.png)
 
@@ -85,7 +85,7 @@ To get the connection info for you local DB2 Warehouse, go to the (☰) menu and
 
 ![(☰) Menu -> My Instances](../.gitbook/assets/images/dv/dv-menu-my-instances.png)
 
-In *My instances* go to the *Provisioned instances* tab. Highlight you local DB2 Warehouse and click the 3 vertical dots on the far right, and then click `View Details`:
+In *My instances* go to the *Provisioned instances* tab. Highlight your local DB2 Warehouse and click the 3 vertical dots on the far right, and then click `View Details`:
 
 ![Provisioned local DB2 details](../.gitbook/assets/images/dv/dv-provisioned-db-view-details.png)
 
@@ -99,15 +99,15 @@ To add a new data source, go to the (☰) menu and click on the *Connections* op
 
 ![(☰) Menu -> Collections](../.gitbook/assets/images/connections/conn-menu.png)
 
-At the overview, click *Add connection*.
+At the overview, click `New connection +`.
 
 ![Overview page](../.gitbook/assets/images/connections/conn-overview-empty.png)
 
-Start by giving your new *Connection* a name and select *Db2 Warehouse on Cloud* as your connection type. More fields should apper. Fill the new fields with the same credentials for your own Db2 Warehouse connection from the previous section .
+Start by giving your *New connection* a name and select *Db2 Warehouse on Cloud* as your connection type. More fields should apper. Fill the new fields with the same credentials for your own Db2 Warehouse connection from the previous section.
 
 Click the check box for `Use SSL`. Next click `Select file` and navigate to where you converted the SSL certificate for DB2 Warehouse form a `.crt` file to a `.pem` file (probably called DigiCertGlobalRootCA.pem).
 
-Click `Test Connection` and, after that succeeds, click `Add`.
+Click `Test connection` and, after that succeeds, click `Create`.
 
 ![Add a Db2 Warehouse on Cloud connection](../.gitbook/assets/images/connections/conn-details.png)
 
