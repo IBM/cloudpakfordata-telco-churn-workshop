@@ -15,12 +15,14 @@ Go to the `Services` tab. Use the `Category` pulldown and select `Data sources`.
 Follow the instructions to provision Data Virtualization.
 
 > For deployment using Managed OpenShift you must do the following:  
-> **IMPORTANT:** Do **NOT** check the box for automatic semaphore configuration  
+> **IMPORTANT:** Decide whether to check the *Updated the kernel semaphore parameter* checkbox.  
 > **IMPORTANT:** Do **NOT** choose the defaults for storage. You must choose *ibmc-file-gold-gid* as the storage class
 
 ## Create an IBM Cloud instance of DB2 Warehouse
 
-It is suggested to use [DB2 Warehouse on IBM Cloud](https://cloud.ibm.com/catalog/services/db2-warehouse) in order to conserve resources on the CPD cluster. IF you wish to use the local DB2 on the cluster, skip to the next section.
+It is suggested to use [DB2 Warehouse on IBM Cloud](https://cloud.ibm.com/catalog/services/db2-warehouse) in order to conserve resources on the CPD cluster.
+
+<!-- (Db2WH Local) IF you wish to use the local DB2 on the cluster, skip to the next section. -->
 
 Provision an instance of DB2 Warehouse on the IBM Cloud.
 
@@ -36,10 +38,11 @@ From the upper-left (☰) hamburger menu click `LOAD` -> `Load Data`:
 
 ![DB2 Warehouse Cloud load data](../.gitbook/assets/images/dv/dv-cloud-load-data.png)
 
-Choose `Browse files` and navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
+Click on `browse files` and navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
 Choose Schema `NULLIDRA` and click `+ New Table`. Under `Create a new Table` type "BILLING" and click `Create`, then `Next`. Accept the defaults and click `Next`. Click `Begin Load`.
 Click `Load More Data` and repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
 
+<!-- (Db2WH Local)
 ## Load Data into Local DB2 Warehouse
 
 These instructions are for loading the data into the local CP4D version of DB2 Warehouse. If you've used the IBM Cloud instance of DB2 Warehouse, you can skip to the next section.
@@ -56,6 +59,7 @@ Under `Menu` choose `Load` and `Load Data`:
 Choose `Browse file` and navigate to where you cloned this repository, then to `data/split/` and choose `billing.csv`, then click `Next`.
 Choose Schema `NULLIDRA` and click `+ New Table`. Under "New Table Name" type "BILLING" and click `Create`, then `Next`. Accept the defaults and click `Next`. Click `Begin Load`.
 Repeat for the `products.csv` file, naming the table `PRODUCTS` and the `customer-service.csv` file, naming the table `CUSTOMERS`.
+-->
 
 ### Get IBM Cloud DB2 SSL cert
 
@@ -79,6 +83,7 @@ For Cloud Pak for Data to read our Db2 Warehouse data we need to add a new *Data
 
 If you didn't already copy this when you provisioned the IBM Cloud DB2 instance above, go back and get the credentials as instructed.
 
+<!-- (Db2WH Local)
 #### Get local DB2 connection info
 
 To get the connection info for you local DB2 Warehouse, go to the (☰) menu and click on the *My Instances* option.
@@ -92,6 +97,7 @@ In *My instances* go to the *Provisioned instances* tab. Highlight your local DB
 Either keep this window open in a separate tab, or copy the required Connection info: *Host*, *Port*, *Database name*, *Username*, and *Password*. You can get the port from the *JDBC Connection URL*, i.e for the URL `jdbc:db2://os-workshop-nov22worker-05.vz-cpd-nov22.com:30290/BLUDB` the port is the number after the colin in the URL `30290`:
 
 ![DB2 Connection credentials](../.gitbook/assets/images/dv/dv-local-db2-details.png)
+-->
 
 #### Add DB2 as new data source
 
