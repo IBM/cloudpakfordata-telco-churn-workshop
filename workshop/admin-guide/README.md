@@ -121,27 +121,13 @@ The new connection will be listed in the overview.
 
 ![Connection has been added!](../.gitbook/assets/images/connections/conn-overview-db2.png)
 
-## 2. Add a Data Source to Data Virtualization
-
-At the empty overview, click *Add* and choose *Add data source*.
-
-![No data sources, yet](../.gitbook/assets/images/dv/dv-data-sources-empty.png)
-
-Select the data source we made in the previous step, and click *Next*.
-
-![Add the Db2 Warehouse connection](../.gitbook/assets/images/dv/dv-data-sources-add.png)
-
-The new connection will be listed as a data source for data virtualization.
-
-![Db2 Warehouse connection is now associated with Data Virtualization](../.gitbook/assets/images/dv/dv-data-sources-shown.png)
-
 ### Add a Data Source to Data Virtualization
 
 To launch the data virtualization tool, go the (☰) menu and click `Collect` and then `Data Virtualization`.
 
 ![(☰) Menu -> Collect -> Data Virtualization](../.gitbook/assets/images/dv/dv-menu.png)
 
-At the empty overview, click *Add* and choose *Add data source*.
+At the empty overview, click the pulldown next to `Add new data source` and select `From existing connections`.
 
 ![No data sources, yet](../.gitbook/assets/images/dv/dv-data-sources-empty.png)
 
@@ -155,20 +141,20 @@ The new connection will be listed as a data source for data virtualization.
 
 ### Start virtualizing data
 
-In this section, since we now have access to the Db2 Warehouse data, we can virtualize the data to our Cloud Pak for Data project. Click on the *Menu* button and choose *Virtualize*.
+In this section, since we now have access to the Db2 Warehouse data, we can virtualize the data to our Cloud Pak for Data project. Click on the *Data sources* pulldown and choose *Virtualize*.
 
 ![Menu -> Virtualize](../.gitbook/assets/images/dv/dv-virtualize-menu.png)
 
-Several tables will appear (many are created as sample data when a Db2 Warehouse instance is provisioned) in the table. Find the tables you created earlier, the instructions suggested naming them: `CUSTOMER`, `PRODUCT` and `BILLING`. Once selected click on *Add to cart* and then on *View Cart*.
+Several tables will appear (many are created as sample data when a Db2 Warehouse instance is provisioned) in the table. Find the tables you created earlier, the instructions suggested naming them: `CUSTOMER`, `PRODUCT` and `BILLING`. Once selected click on *Add to cart* and then on *View cart*.
 You can search for the Schema `NULLIDRA` and they should show up:
 
 ![Choose the tables to virtualize](../.gitbook/assets/images/dv/dv-virtualize-tables.png)
 
-The next panel prompts the user to choose which project to assign the data to, choose the project you created in the previous exercise. Click *Virtualize* to start the process.
+The next panel prompts the user to choose which project to assign the data to, choose `My virtualized data`, **uncheck** `Submit to catalog`, and click `Virtualize` to start the process.
 
 ![Add virtualized data to your project](../.gitbook/assets/images/dv/dv-virtualize-assign.png)
 
-You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking *View my data*.
+You'll be notified that the virtual tables have been created! Let's see the new virtualized data from the Data Virtualization tool by clicking `View my virtualized data`.
 
 ![We've got virtualized data](../.gitbook/assets/images/dv/dv-virtualize-complete.png)
 
