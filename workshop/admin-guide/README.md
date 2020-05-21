@@ -160,27 +160,29 @@ You'll be notified that the virtual tables have been created! Let's see the new 
 
 ### Join the virtualized data
 
-Now we're going to **join** the tables we created so we have a merged set of data. It will be easier to do it here rather than in a notebook where we'd have to write code to handle three different data sets. Click on any two tables (`PRODUCTS` and `BILLING` for instance) and click the *Join view* button.
+Now we're going to **join** the tables we created so we have a merged set of data. It will be easier to do it here rather than in a notebook where we'd have to write code to handle three different data sets. Click on any two tables (`PRODUCTS` and `BILLING` for instance) and click the `Join` button.
 
 ![Choose to join two tables](../.gitbook/assets/images/dv/dv-data-join-overview.png)
 
-To join the tables we need to pick a key that is common to both data sets. Here we choose to map `customerID` from the first table to `customerID` on the second table. Do this by clicking on one and dragging it to another. When the line is drawn click on *Join*.
+To join the tables we need to pick a key that is common to both data sets. Here we choose to map `customerID` from the first table to `customerID` on the second table. Do this by clicking on one and dragging it to another. When the line is drawn click on `Next`.
 
 ![Map the two customerID keys](../.gitbook/assets/images/dv/dv-data-join-columns.png)
 
-In the next panel we'll give our joined data a name, I chose `BILLINGPRODUCTS`, then review the joined table to ensure all columns are present and only one `customerID` column exists. Click *Next* to continue.
+Next, you have a chance to `Edit column names`. We'll keep them as-is. Click `Next`.
 
 ![Review the proposed joined table](../.gitbook/assets/images/dv/dv-data-join-review.png)
 
-Next we choose which project to assign the joined view to, choose the project you created in the previous exercise. Click *Create view* to start the process.
+In the next panel we'll give our joined data a name, I chose `BILLINGPRODUCTS`. Under *Assign to*, choose `My virtualized data`, then uncheck `Submit to catalog`, and click `Create view` to start the process.
 
 ![Add joined data tables to your project](../.gitbook/assets/images/dv/dv-data-join-assign.png)
 
-You'll be notified that the join has succeeded! Click on *View my data*. to repeat this again so we have all three tables.
+You'll be notified that the join has succeeded! Click on *View my virtualized data*.
 
 ![The data join succeeded!](../.gitbook/assets/images/dv/dv-data-join-created.png)
 
-**IMPORTANT** Repeat the same steps as above, but this time choose to join the new joined view (`BILLINGPRODUCTS`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `BILLINGPRODUCTSCUSTOMERS`. Switching to our project should show all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
+**IMPORTANT:** Now join the new joined view (`BILLINGPRODUCTS`) and the last virtualized table (`CUSTOMERS`), to create a new joined view that has all three tables, let's call it `BILLINGPRODUCTSCUSTOMERS`.
+
+You should now see all three virtualized tables, and two joined tables. Do not go to the next section until this step is performed.
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
