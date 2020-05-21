@@ -40,17 +40,25 @@ In Cloud Pak for Data, we use the concept of a project to collect / organize the
 
 ![(☰) Menu -> Projects](../.gitbook/assets/images/manage/cpd-projects-menu.png)
 
-* Click on *New project*
+* Click on *New project +*
 
 ![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-* We are going to create a project from an existing file (which contains assets we will use throughout this workshop), as opposed to creating an empty project. Select the _*Create a project from a sample or file*_ option:
+* Select *Analytics project* for the project type and click on *Next*
+
+![Select project type](../.gitbook/assets/images/manage/cpd-project-type.png)
+
+* We are going to create a project from an existing file (which contains assets we will use throughout this workshop), as opposed to creating an empty project. Select the _*Create a project from a file*_ option:
 
 ![Create project from file](../.gitbook/assets/images/openscale-config/openscale-config-create-project-from-sample.png)
 
 * Navigate to where you cloned this repository, then to `projects/` and choose `Customer-Churn-Project.zip`. Give the project a name and click `Create`:
 
 ![Browse for project files](../.gitbook/assets/images/manage/cpd-importproject.png)
+
+* After succesful creation, click on *View new project*
+
+![Import project success](../.gitbook/assets/images/manage/cpd-importprojectsuccess.png)
 
 ### Create a Deployment Space
 
@@ -64,19 +72,21 @@ Cloud Pak for Data uses the concept of `Deployment Spaces` to configure and mana
 
 ![Add New deployment space](../.gitbook/assets/images/manage/addNewDeploymentSpace.png)
 
+* Select the _*Create an empty space*_ option.
+
+![Create empty deployment space](../.gitbook/assets/images/manage/createEmptyDeploymentSpace.png)
+
 * Give your deployment space a unique name, optional description, then click `Create`. You will use this space later when you deploy a machine learning model.
+
+![Create deployment space](../.gitbook/assets/images/manage/createDeploymentSpace.png)
 
 * Next, we will add a collaborator to the new deployment space, so that assets we deploy can be monitored in the OpenScale model monitoring lab.
 
-* Click on your new deployment space.
-
-![Select deployment space](../.gitbook/assets/images/manage/selectNewDeploymentSpace.png)
-
-* Click on the `Access control` tab and then click on `Add collaborators` on the right.
+* Click on the `Access control` tab and then click on `Add collaborators +` on the right.
 
 ![Deployment space access control](../.gitbook/assets/images/manage/deploymentSpaceAccessControl.png)
 
-* Enter "admin" as a Collaborator and select the user from the drop down list. Then click on the `Add to list` button.
+* Enter "admin" as a Collaborator and select the user from the drop down list. Then click on the `Add to list +` button.
 
 > **NOTE:** We are adding the user that configured the machine learning instance for OpenScale monitoring. In this case, the user is the admin user.
 
