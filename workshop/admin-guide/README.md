@@ -198,7 +198,7 @@ Click on *Add users* and ensure all users have the *Steward* role.
 
 ## Adding users to the cluster
 
-From the hamburger menu, click Administer -> Manage users, then Add users!
+From the hamburger menu, click Administer -> Manage users, then add users!
 
 ![Add a user](../.gitbook/assets/images/manage/manage-add-users.png)
 
