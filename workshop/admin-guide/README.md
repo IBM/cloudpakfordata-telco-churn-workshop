@@ -186,15 +186,15 @@ You should now see all three virtualized tables, and two joined tables. Do not g
 
 ![Our data sets at the end of this section](../.gitbook/assets/images/dv/dv-project-data-all.png)
 
-### Assign the "Steward" role to the attendees
+### Assign the "Engineer" role to the attendees
 
 Use the *My virtualized data* pulldown and click on *User management*
 
 ![Manage users in Data Virtualization](../.gitbook/assets/images/dv/dv-manage-users.png)
 
-Click on *Add users* and ensure all users have the *Steward* role.
+Click on *Add users* and ensure all users have the *Engineer* role.
 
-![Manage users in Data Virtualization](../.gitbook/assets/images/dv/dv-steward-role.png)
+![Manage users in Data Virtualization](../.gitbook/assets/images/dv/dv-engineer-role.png)
 
 ## Adding users to the cluster
 
