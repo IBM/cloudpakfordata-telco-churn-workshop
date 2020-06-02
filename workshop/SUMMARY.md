@@ -26,7 +26,7 @@
 ### Resources
 
 * [IBM Cloud Pak for Data Platform API](https://cloud.ibm.com/apidocs/cloud-pak-data)
-* [Cluster API explorer at https:cluster-url/icp4d-api/docs]()
+* [IBM Cloud Pak for Data APIs](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/dev/avail-apis.html)
 * [Watson Knowledge Catalog](https://www.ibm.com/cloud/watson-knowledge-catalog)
 * [Watson Knowledge Catalog Learning Center](https://developer.ibm.com/clouddataservices/docs/data-catalog/get-started/)
 * [IBM Developer](https://developer.ibm.com)
