@@ -2,13 +2,17 @@
 
 A Cloud Pak for Data project can be integrated with a git repository.
 
+## Create an empty repository
+
+Use the GitLab menu to create a project and an empty repository.
+
 ## Generate a token in GitLab
 
-To create a token for Gitlab, login to [GitLab](https://about.gitlab.com/), click on your user account in the top right and choose `Settings`:
+To create a token for GitLab, login to [GitLab](https://about.gitlab.com/), click on your user account in the top right and choose `Settings`:
 
 ![GitLab user account](../.gitbook/assets/images/manage/GitLabUserAccount.png)
 
-From the left navigation bar select `Access tokens` and fill in the *name*, *expiration date*, and check the boxes for *read_repository* and *write_repository*. Finally, click `Create personal access token` button:
+From the left navigation bar select `Access tokens` and fill in the *name*, *expiration date*, and check the boxes for *read_api*, *read_repository* and *write_repository*. Finally, click `Create personal access token` button:
 
 ![GitLab select Access Tokens](../.gitbook/assets/images/manage/GitLabSelectAccessTokens.png)
 
@@ -26,23 +30,39 @@ Go the (☰) menu and click *Projects*
 
 ![(☰) Menu -> Projects](../.gitbook/assets/images/manage/cpd-projects-menu.png)
 
-Click on *New project*
+Click on *New project +*
 
 ![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
 
-Create a new project, choose `Analytics project`. Give the project a name.
+Create a new project
 
-Click the box for `Integrate this project with git`. Add the token that you have created, and then select it. Put in the repository URL, Select a branch, and click `Create`.
+* Choose `Analytics project` and click *Next*.
+* Click on `Create an empty project`.
+* Give the project a name.
+* Click the box for `Integrate this project with Git`.
+
+Click on `New Token +`
+
+* Select `Gitlab` in the `Platform` pulldown.
+* Paste the token that you have created under `Access token`.
+* Enter your GitLab username and give your token a name.
+* Click *Continue*.
+
+Use the `Token` pulldown and select the token you created.
+
+Put in the repository URL, select a branch, and click `Create`.
 
 ![Create Project with git](../.gitbook/assets/images/manage/projectAddGit.png)
+
+When project creation completes, click on `View new project`.
 
 ## Create assets and push to git
 
 Now if we create an asset in the project, we can push to git.
 
-At the project overview, either click the `+Add to project` button, and choose `Notebook`, or to the right of *Notebooks* click `+ New notebook`:
+At the project overview, click the `Add to project +` button, and choose `Notebook`:
 
-![Add a new asset](../.gitbook/assets/images/wml/wml-1-add-asset.png)
+![Add a new asset](../.gitbook/assets/images/manage/addToGitProject.png)
 
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
@@ -50,7 +70,9 @@ On the next panel select the *From URL* tab, give your notebook a name, provide 
 https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/TelcoChurnICP4D.ipynb
 ```
 
-Now, go back to the top-level project page, click the "rectangular arrow" sync-icon, and choose `Pull and Push`:
+Click *Create notebook*.
+
+Now, go back to the top-level project page, click the "circular arrow" sync-icon, and choose `Pull and push`:
 
 ![git pull and push](../.gitbook/assets/images/manage/gitPullAndPush.png)
 
