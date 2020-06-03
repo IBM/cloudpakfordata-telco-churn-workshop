@@ -5,7 +5,7 @@ In this module, we will go through the process of deploying a machine learning m
 * Online Deployments - Creates an endpoint to generate a score or prediction in real time.
 * Batch Deployments - Creates an endpoint to schedule the processing of bulk data to return predictions.
 
-In this module is broken up into several sections that explore the different model deployment options as well as the different ways to invoke or consume the model. The first section of this lab will build an online deployment and test the model endpoint using both the built in testing tool as well as external testing tools. The remaining sections are optional, they build and test the batch deployment, followed by using the model from a python application.
+This module is broken up into several sections that explore different model deployment options as well as the different ways to invoke or consume the model. The first section of this lab will build an online deployment and test the model endpoint using both the built in testing tool as well as external testing tools. The remaining sections are optional, they build and test the batch deployment, followed by using the model from a python application.
 
 1. [Online Deployment for a Model](#online-model-deployment)
    * Create Online Deployment
@@ -25,33 +25,38 @@ In this module is broken up into several sections that explore the different mod
 After a model has been created and saved / promoted to our deployment space, we will want to deploy the model so it can be used by others. For this section, we will be creating an online deployment. This type of deployment will make an instance of the model available to make predictions in real time via an API. Although will use the Cloud Pak for Data UI to deploy the model, the same can be done programmatically.
 
 * Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
-
 ![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
 
+
 * Choose the deployment space you setup previously by clicking on the name of the space.
+![Deployment space](../.gitbook/assets/images/wml/deployment-space.png)
 
-* In your space overview, select the model name that you want to create a deployment for just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
 
-> Note: There may be more than one model listed in them 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
+* In your space overview, click on the model name that you want to create a deployment for.
+![select model](../.gitbook/assets/images/wml/deployment-select-model.png)
 
+> Note: There may be more than one model listed in the 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
+
+
+* Click `Create deployment` on the top-right corner.
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
-* On the 'Configure and deploy' screen, choose `Online` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
 
-![Online Deployment Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
+* On the 'Create a deployment' screen, choose `Online` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
+![Online  Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
+
 
 * The Deployment will show as *In progress* and then switch to *Deployed* when done.
-
 ![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
+
 
 ### Test Online Model Deployment
 
 Cloud Pak for Data offers tools to quickly test out Watson Machine Learning models. We begin with the built-in tooling.
 
-* From the Model deployment page, once the deployment status shows as *Deployed*, click on the name of your deployment. The deployment *API reference* tab shows how to use the model using *cURL*, *Java*, *Javascript*, *Python*, and *Scala*. To get to the built-in test tool, click on the `Test` tab.
+* From the Model deployment page, once the deployment status shows as *Deployed*, click on the name of your deployment. The deployment *API reference* tab shows how to use the model using *cURL*, *Java*, *Javascript*, *Python*, and *Scala*. 
 
-* Click on the *Provide input data as JSON* icon.
-
+* To get to the built-in test tool, click on the `Test` tab. Click on the *Provide input data as JSON* icon.
 ![Test deployment with JSON](../.gitbook/assets/images/autoai/autoai-test-json.png)
 
 * Copy and paste one of the following data objects into the *Body* panel. If you are testing a model you built using the Jupyter notebooks, copy and paste the first object. If you are testing a model you built using AutoAI, copy and paste the second object.
@@ -79,11 +84,12 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 ```
 
 * Click the `Predict` button, the model will be called with the input data. The results will display in the *Result* window. Scroll down to the bottom of the result to see the prediction (i.e "Yes" or a "No" for Churn):
-
 ![Testing the deployed model](../.gitbook/assets/images/wml/TestingDeployedModel.png)
+
 
 > *Note: For some deployed models (for example AutoAI based models), you can provide the request payload using a generated form by clicking on the `Provide input using form` icon and providing values for the input fields of the form. If the form is not available for the model you deployed, the icon will remain grayed out.*
 > ![Input to the fields](../.gitbook/assets/images/autoai/autoai-input-fields.png)
+
 
 ### (Optional) Test Online Model Deployment using cURL
 
@@ -92,41 +98,40 @@ Now that the model is deployed, we can also test it from external applications. 
 > NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps. Also note that if you are not using gitbash, you may need to change *export* commands to *set* commands.
 
 * In a terminal window (or command prompt in Windows), run the following command to get a token to access the API. Use your CP4D cluster `username` and `password`:
-
 ```bash
 curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u <username>:<password>
 ```
 
 * A json string will be returned with a value for "accessToken" that will look *similar* to this:
-
 ```json
-{"username":"scottda","role":"Admin","permissions":["access_catalog","administrator","manage_catalog","can_provision"],"sub":"scottda","iss":"KNOXSSO","aud":"DSX","uid":"1000331002","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA","_messageCode_":"success","message":"success"}
+{"username":"samaya","role":"Admin","permissions":["administrator","can_provision","manage_catalog","manage_quality","manage_information_assets","manage_discovery","manage_metadata_import","manage_governance_workflow","manage_categories","author_governance_artifacts","virtualize_transform","access_catalog","access_information_assets","view_quality","sign_in_only"],"sub":"samaya","iss":"KNOXSSO","aud":"DSX","uid":"1000331015","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbWF5YSIsInJvbGUiOiJBZG1pbiIsInBlcm1pc3Npb25zIjpbImFkbWluaXN0cmF0b3IiLCJjYW5fcHJvdmlzaW9uIiwibWFuYWdlX2NhdGFsb2ciLCJtYW5hZ2VfcXVhbGl0eSIsIm1hbmFnZV9pbmZvcm1hdGlvbl9hc3NldHMiLCJtYW5hZ2VfZGlzY292ZXJ5IiwibWFuYWdlX21ldGFkYXRhX2ltcG9ydCIsIm1hbmFnZV9nb3Zlcm5hbmNlX3dvcmtmbG93IiwibWFuYWdlX2NhdGVnb3JpZXMiLCJhdXRob3JfZ292ZXJuYW5jZV9hcnRpZmFjdHMiLCJ2aXJ0dWFsaXplX3RyYW5zZm9ybSIsImFjY2Vzc19jYXRhbG9nIiwiYWNjZXNzX2luZm9ybWF0aW9uX2Fzc2V0cyIsInZpZXdfcXVhbGl0eSIsInNpZ25faW5fb25seSJdLCJzdWIiOiJzYW1heWEiLCJpc3MiOiJLTk9YU1NPIiwiYXVkIjoiRFNYIiwidWlkIjoiMTAwMDMzMTAxNSIsImF1dGhlbnRpY2F0b3IiOiJkZWZhdWx0IiwiaWF0IjoxNTkxMDQ2OTIxLCJleHAiOjE1OTEwOTAwODV9","_messageCode_":"success","message":"success"}
 ```
 
 * You will save this access token to a temporary environment variable. Copy the access token value (without the quotes) in the terminal and then use the following export command to save the "accessToken" to a variable called `WML_AUTH_TOKEN`.
-
 ```bash
 export WML_AUTH_TOKEN=<value-of-access-token>
 ```
 
 * Back on the model deployment page, gather the `URL` to invoke the model from the *API reference* by copying the `Endpoint`, and exporting it to a variable:
-
 ![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
 
-* Now save that endpoint to a variable named `URL` by exporting it.
 
+* Now save that endpoint to a variable named `URL` by exporting it.
 ```bash
 export URL=<value-of-endpoint>
 ```
 
-* Now run this curl command from a terminal to invoke the model with the same payload we used previousy:
 
+* Now run this curl command from a terminal to invoke the model with the same payload we used previousy:
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
 ```
 
-* A json string will be returned with the response, including a  prediction from the model (i.e a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not).
 
+* A json string will be returned with the response, including a  prediction from the model (i.e a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not).
+```json
+{"predictions":[{"fields":["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges","gender_IX","Partner_IX","Dependents_IX","PhoneService_IX","MultipleLines_IX","InternetService_IX","OnlineSecurity_IX","OnlineBackup_IX","DeviceProtection_IX","TechSupport_IX","StreamingTV_IX","StreamingMovies_IX","Contract_IX","PaperlessBilling_IX","PaymentMethod_IX","label","features","rawPrediction","probability","prediction","predictedLabel"],"values":[["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25,1.0,0.0,0.0,1.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0,[18,[0,4,5,6,14,15,16,17],[1.0,1.0,2.0,1.0,1.0,2.0,25.25,25.25]],[10.461610182871798,9.538389817128202],[0.52308050914359,0.4769194908564101],0.0,"No"]]}]}
+```
 ## (Optional) Batch Model Deployment
 
 Another approach to expose the model to be consumed by other users/applications is to create a batch deployment. This type of deployment will make an instance of the model available to make predictions against data assets or groups of records. The model prediction requests are scheduled as jobs, which are exected asynchronously. For the lab, we will break this into two steps: first step is creating the deployment (which we will do using the UI), then second step is creating and scheduling a job with values.
@@ -134,23 +139,29 @@ Another approach to expose the model to be consumed by other users/applications 
 Lets start by creating the deployment:
 
 * Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
-
 ![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
 
-* Choose the deployment space you created previously by clicking on the name of the space.
 
-* In your space overview, select the model name that you want to create a deployment for just built in the notebook and click the 3 dots under `Actions`, and choose `Deploy`:
+* Choose the deployment space you setup previously by clicking on the name of the space.
+![Deployment space](../.gitbook/assets/images/wml/deployment-space.png)
 
-> Note: There may be more than one model listed in them 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
 
+* In your space overview, click on the model name that you want to create a deployment for.
+![select model](../.gitbook/assets/images/wml/deployment-select-model.png)
+
+
+> Note: There may be more than one model listed in the 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
+
+
+* Click `Create deployment` on the top-right corner.
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
-* On the 'Configure and deploy' screen, choose `Batch` for the *Deployment Type*, give the Deployment a name and optional description. The default values for environment definitions, hardware definition and nodes can be left (in scenarios with large or frequent batch jobs, you may choose to scale these values up). Click `Create`:
 
+* On the `Create a deployment` screen, choose `Batch` for the *Deployment Type*, give the Deployment a name and optional description. The default values for environment definitions, hardware definition and nodes can be left (in scenarios with large or frequent batch jobs, you may choose to scale these values up). Click `Create`:
 ![Batch Deployment Create](../.gitbook/assets/images/wml/create_batch_deployment.png)
 
-* Once the status shows as *Deployed* , you will be able to start submitting jobs to the deployment.
 
+* Once the status shows as *Deployed* , you will be able to start submitting jobs to the deployment.
 ![Status Deployed](../.gitbook/assets/images/wml/batch_dep_status.png)
 
 ### Create and Schedule a Job
@@ -166,12 +177,11 @@ The Jupyter notebook is already included as an asset in the project you imported
 * From the project overview page, *click* on the `Assets` tab to open the assets page where your project assets are stored and organized.
 
 * Scroll down to the `Notebooks` section of the page and *Click* on the pencil icon at the right of the `machinelearning-churn-batchscoring` notebook.
-
 ![Notebook Open](../.gitbook/assets/images/wml/batch_open_nb.png)
 
 When the Jupyter notebook is loaded and the kernel is ready, we will be ready to start executing it in the next section.
 
-Spend an minute looking through the sections of the notebook to get an overview. A notebook is composed of text (markdown or heading) cells and code cells. The markdown cells provide comments on what the code is designed to do.
+Spend a minute looking through the sections of the notebook to get an overview. A notebook is composed of text (markdown or heading) cells and code cells. The markdown cells provide comments on what the code is designed to do.
 
 You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook or hitting the keyboard short cut to run the cell (Shift + Enter but can vary based on platform). While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
