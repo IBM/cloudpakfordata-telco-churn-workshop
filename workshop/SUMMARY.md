@@ -16,7 +16,6 @@
 * [Machine Learning with AutoAI](machine-learning-autoai/README.md)
 * [Deploy and Test Machine Learning Models](machine-learning-deployment-scoring/README.md)
 * [Monitoring models with OpenScale GUI (Fastpath Monitoring)](openscale-fastpath/README.md)
-* [Monitoring models with OpenScale GUI (Manual Config)](openscale-gui-manual-config/README.md)
 * [Monitoring models with OpenScale (Notebook)](openscale-notebook/README.md)
 
 ### Workshop Resources
