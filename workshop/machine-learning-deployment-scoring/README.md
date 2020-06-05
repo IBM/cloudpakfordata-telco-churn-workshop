@@ -25,30 +25,30 @@ This module is broken up into several sections that explore different model depl
 After a model has been created and saved / promoted to our deployment space, we will want to deploy the model so it can be used by others. For this section, we will be creating an online deployment. This type of deployment will make an instance of the model available to make predictions in real time via an API. Although will use the Cloud Pak for Data UI to deploy the model, the same can be done programmatically.
 
 * Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
+
 ![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
 
-
 * Choose the deployment space you setup previously by clicking on the name of the space.
+
 ![Deployment space](../.gitbook/assets/images/wml/deployment-space.png)
 
-
 * In your space overview, click on the model name that you want to create a deployment for.
+
 ![select model](../.gitbook/assets/images/wml/deployment-select-model.png)
 
 > Note: There may be more than one model listed in the 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
 
-
 * Click `Create deployment` on the top-right corner.
+
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
-
 * On the 'Create a deployment' screen, choose `Online` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
+
 ![Online  Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
 
-
 * The Deployment will show as *In progress* and then switch to *Deployed* when done.
-![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
 
+![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
 
 ### Test Online Model Deployment
 
@@ -57,6 +57,7 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 * From the Model deployment page, once the deployment status shows as *Deployed*, click on the name of your deployment. The deployment *API reference* tab shows how to use the model using *cURL*, *Java*, *Javascript*, *Python*, and *Scala*. 
 
 * To get to the built-in test tool, click on the `Test` tab. Click on the *Provide input data as JSON* icon.
+
 ![Test deployment with JSON](../.gitbook/assets/images/autoai/autoai-test-json.png)
 
 * Copy and paste one of the following data objects into the *Body* panel. If you are testing a model you built using the Jupyter notebooks, copy and paste the first object. If you are testing a model you built using AutoAI, copy and paste the second object.
@@ -84,12 +85,12 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 ```
 
 * Click the `Predict` button, the model will be called with the input data. The results will display in the *Result* window. Scroll down to the bottom of the result to see the prediction (i.e "Yes" or a "No" for Churn):
+
 ![Testing the deployed model](../.gitbook/assets/images/wml/TestingDeployedModel.png)
 
-
 > *Note: For some deployed models (for example AutoAI based models), you can provide the request payload using a generated form by clicking on the `Provide input using form` icon and providing values for the input fields of the form. If the form is not available for the model you deployed, the icon will remain grayed out.*
-> ![Input to the fields](../.gitbook/assets/images/autoai/autoai-input-fields.png)
 
+![Input to the fields](../.gitbook/assets/images/autoai/autoai-input-fields.png)
 
 ### (Optional) Test Online Model Deployment using cURL
 
@@ -98,40 +99,45 @@ Now that the model is deployed, we can also test it from external applications. 
 > NOTE: Windows users will need the *cURL* command. It's recommended to [download gitbash](https://gitforwindows.org/) for this, as you'll also have other tools and you'll be able to easily use the shell environment variables in the following steps. Also note that if you are not using gitbash, you may need to change *export* commands to *set* commands.
 
 * In a terminal window (or command prompt in Windows), run the following command to get a token to access the API. Use your CP4D cluster `username` and `password`:
+
 ```bash
 curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u <username>:<password>
 ```
 
 * A json string will be returned with a value for "accessToken" that will look *similar* to this:
+
 ```json
 {"username":"samaya","role":"Admin","permissions":["administrator","can_provision","manage_catalog","manage_quality","manage_information_assets","manage_discovery","manage_metadata_import","manage_governance_workflow","manage_categories","author_governance_artifacts","virtualize_transform","access_catalog","access_information_assets","view_quality","sign_in_only"],"sub":"samaya","iss":"KNOXSSO","aud":"DSX","uid":"1000331015","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhbWF5YSIsInJvbGUiOiJBZG1pbiIsInBlcm1pc3Npb25zIjpbImFkbWluaXN0cmF0b3IiLCJjYW5fcHJvdmlzaW9uIiwibWFuYWdlX2NhdGFsb2ciLCJtYW5hZ2VfcXVhbGl0eSIsIm1hbmFnZV9pbmZvcm1hdGlvbl9hc3NldHMiLCJtYW5hZ2VfZGlzY292ZXJ5IiwibWFuYWdlX21ldGFkYXRhX2ltcG9ydCIsIm1hbmFnZV9nb3Zlcm5hbmNlX3dvcmtmbG93IiwibWFuYWdlX2NhdGVnb3JpZXMiLCJhdXRob3JfZ292ZXJuYW5jZV9hcnRpZmFjdHMiLCJ2aXJ0dWFsaXplX3RyYW5zZm9ybSIsImFjY2Vzc19jYXRhbG9nIiwiYWNjZXNzX2luZm9ybWF0aW9uX2Fzc2V0cyIsInZpZXdfcXVhbGl0eSIsInNpZ25faW5fb25seSJdLCJzdWIiOiJzYW1heWEiLCJpc3MiOiJLTk9YU1NPIiwiYXVkIjoiRFNYIiwidWlkIjoiMTAwMDMzMTAxNSIsImF1dGhlbnRpY2F0b3IiOiJkZWZhdWx0IiwiaWF0IjoxNTkxMDQ2OTIxLCJleHAiOjE1OTEwOTAwODV9","_messageCode_":"success","message":"success"}
 ```
 
 * You will save this access token to a temporary environment variable. Copy the access token value (without the quotes) in the terminal and then use the following export command to save the "accessToken" to a variable called `WML_AUTH_TOKEN`.
+
 ```bash
 export WML_AUTH_TOKEN=<value-of-access-token>
 ```
 
 * Back on the model deployment page, gather the `URL` to invoke the model from the *API reference* by copying the `Endpoint`, and exporting it to a variable:
+
 ![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
 
-
 * Now save that endpoint to a variable named `URL` by exporting it.
+
 ```bash
 export URL=<value-of-endpoint>
 ```
 
-
 * Now run this curl command from a terminal to invoke the model with the same payload we used previousy:
+
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges"],"values": [["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25]]}]}' $URL
 ```
 
-
 * A json string will be returned with the response, including a  prediction from the model (i.e a "Yes" of "No" at the end indicating the prediction of if the customer will churn or not).
+
 ```json
 {"predictions":[{"fields":["gender","SeniorCitizen","Partner","Dependents","tenure","PhoneService","MultipleLines","InternetService","OnlineSecurity","OnlineBackup","DeviceProtection","TechSupport","StreamingTV","StreamingMovies","Contract","PaperlessBilling","PaymentMethod","MonthlyCharges","TotalCharges","gender_IX","Partner_IX","Dependents_IX","PhoneService_IX","MultipleLines_IX","InternetService_IX","OnlineSecurity_IX","OnlineBackup_IX","DeviceProtection_IX","TechSupport_IX","StreamingTV_IX","StreamingMovies_IX","Contract_IX","PaperlessBilling_IX","PaymentMethod_IX","label","features","rawPrediction","probability","prediction","predictedLabel"],"values":[["Female",0,"No","No",1,"No","No phone service","DSL","No","No","No","No","No","No","Month-to-month","No","Bank transfer (automatic)",25.25,25.25,1.0,0.0,0.0,1.0,2.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,2.0,0.0,[18,[0,4,5,6,14,15,16,17],[1.0,1.0,2.0,1.0,1.0,2.0,25.25,25.25]],[10.461610182871798,9.538389817128202],[0.52308050914359,0.4769194908564101],0.0,"No"]]}]}
 ```
+
 ## (Optional) Batch Model Deployment
 
 Another approach to expose the model to be consumed by other users/applications is to create a batch deployment. This type of deployment will make an instance of the model available to make predictions against data assets or groups of records. The model prediction requests are scheduled as jobs, which are exected asynchronously. For the lab, we will break this into two steps: first step is creating the deployment (which we will do using the UI), then second step is creating and scheduling a job with values.
@@ -139,29 +145,29 @@ Another approach to expose the model to be consumed by other users/applications 
 Lets start by creating the deployment:
 
 * Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
+
 ![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
 
-
 * Choose the deployment space you setup previously by clicking on the name of the space.
+
 ![Deployment space](../.gitbook/assets/images/wml/deployment-space.png)
 
-
 * In your space overview, click on the model name that you want to create a deployment for.
-![select model](../.gitbook/assets/images/wml/deployment-select-model.png)
 
+![select model](../.gitbook/assets/images/wml/deployment-select-model.png)
 
 > Note: There may be more than one model listed in the 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
 
-
 * Click `Create deployment` on the top-right corner.
+
 ![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
 
-
 * On the `Create a deployment` screen, choose `Batch` for the *Deployment Type*, give the Deployment a name and optional description. The default values for environment definitions, hardware definition and nodes can be left (in scenarios with large or frequent batch jobs, you may choose to scale these values up). Click `Create`:
+
 ![Batch Deployment Create](../.gitbook/assets/images/wml/create_batch_deployment.png)
 
-
 * Once the status shows as *Deployed* , you will be able to start submitting jobs to the deployment.
+
 ![Status Deployed](../.gitbook/assets/images/wml/batch_dep_status.png)
 
 ### Create and Schedule a Job
@@ -177,6 +183,7 @@ The Jupyter notebook is already included as an asset in the project you imported
 * From the project overview page, *click* on the `Assets` tab to open the assets page where your project assets are stored and organized.
 
 * Scroll down to the `Notebooks` section of the page and *Click* on the pencil icon at the right of the `machinelearning-churn-batchscoring` notebook.
+
 ![Notebook Open](../.gitbook/assets/images/wml/batch_open_nb.png)
 
 When the Jupyter notebook is loaded and the kernel is ready, we will be ready to start executing it in the next section.
@@ -222,13 +229,13 @@ You can also access the online model deployment directly through the REST API. T
 
 ### Install Dependencies
 
-The general recommendation for Python development is to use a virtual environment ([`venv`](https://docs.python.org/3/tutorial/venv.html)). To install and initialize a virtual environment, use the `venv` module on Python 3 (you install the virtualenv library for Python 2.7):
+> **Note** that this application only runs on python 3.6 and above, so the instructions here are for python 3.6+ only.
 
-In a terminal go to the cloned repo directory.
+In a terminal go to the cloned repo directory. Then, in a terminal (`command prompt` or `powershell` in Windows) navigate to the unzipped folder.
 
 ```bash
 git clone https://github.com/IBM/cloudpakfordata-telco-churn-workshop
-cd cloudpakfordata-telco-churn-workshop
+cd cloudpakfordata-telco-churn-workshop/flaskapp
 ```
 
 Initialize a virtual environment with [`venv`](https://docs.python.org/3/tutorial/venv.html).
@@ -237,11 +244,10 @@ Initialize a virtual environment with [`venv`](https://docs.python.org/3/tutoria
 # Create the virtual environment using Python. Use one of the two commands depending on your Python version.
 # Note, it may be named python3 on your system.
 python -m venv venv       # Python 3.X
-virtualenv venv           # Python 2.X
 
 # Source the virtual environment. Use one of the two commands depending on your OS.
 source venv/bin/activate  # Mac or Linux
-./venv/Scripts/activate   # Windows PowerShell
+./venv/Scripts/activate   # Windows CMD or PowerShell
 ```
 
 > **TIP** To terminate the virtual environment use the `deactivate` command.
@@ -249,7 +255,6 @@ source venv/bin/activate  # Mac or Linux
 Finally, install the Python requirements.
 
 ```bash
-cd flaskapp
 pip install -r requirements.txt
 ```
 
