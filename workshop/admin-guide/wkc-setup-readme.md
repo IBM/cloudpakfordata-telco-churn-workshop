@@ -5,11 +5,6 @@ These instructions will allow an Admin to setup Watson Knowledge Catalog with an
 > NOTE: Do not run discovery through Data Curation > Data Discovery on the entire database. We only need to discover three schemas; MORTGAGE, INSURANCE and CUSTOMER. We wil do this as the very last steps in the run book.
 If we discover everything it will flood the Default synch catalog with unwanted and unnecessary tables with OpenScale and all System objects. We will then have to go in and delete everything through the Metadata import facility (known as IMAM) and that could mess up IGC if we don’t do it carefully.
 
-## User Permissions
-
-* Add the experience user to the Enterprise catalog as a Viewer
-* Add the experience user to the mortgage-analysis-xxx project as an Editor. They will not be able to view the Data Flow as a Viewer.
-
 ## Create the Organize Data
 
 This will all be done in a Db2 Warehouse on IBM Cloud. Other versions of DB2 could be used, i.e. DB2 Server Edition on the CPD cluster.
@@ -312,7 +307,7 @@ Now that all the data is published to the Enterprise catalog we need to modify s
 •	Click on the Submit button.
 9.	Click on the Enterprise catalog bread crumb at the top of the page to go back to the catalog.
 
-#### CUSOMER Table
+#### CUSTOMER Table
 
 1.	Click on the CUSTOMER table.
 2.	At the table level, click the pencil icon next to the Business terms area in the Overview section.
@@ -338,7 +333,7 @@ Click on the icon that looks like an eye for each columns below and:
 If all columns have been assigned a data class, proceed to do the following:
 
 1.	Scroll to the Right.
-2.	Assign the Credit Card Expiration Date data class* to the CREDITCARD_EXP column.
+2.	Assign the Credit Card Expiration Date data class to the CREDITCARD_EXP column.
 3.	Assign the Credit Card Validation Number data class to the CREDITCARD_CVV column.
 
 #### MORTGAGE_CUSTOMER Table
@@ -367,6 +362,11 @@ Click on the icon that looks like an eye for each column below and:
 •	Click on the Submit button.
 7.	Go to the Profile tab and do the following:
 •	Make sure the profile has been run. If it has not, click on the button to force a run of the profile and make sure it completes and that all columns have been assigned a data class.
+
+## User Permissions
+
+* Add the experience user to the Enterprise catalog as a Viewer
+* Add the experience user to the Enterprise Catalog Data project as an Editor. They will not be able to view the Data Flow as a Viewer.
 
 #### This completes the Organize run book. You are done! and can now take the Organize experience flow to validate everything works. Log out as admin and login as the experience user.
 
