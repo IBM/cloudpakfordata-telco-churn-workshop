@@ -10,7 +10,7 @@ In this module, we will go through the process of exploring our data set and bui
 
 For this part of the exercise we're going to use a Jupyter notebook to create the model. The Jupyter notebook is already included as an asset in the project you imported earlier.
 
->*Note: The Jupyter notebook included in the project has been cleared of output. If you would like to see the notebook that has already been completed with output: **Notebook with output**: [with-output/TelcoChurnICP4DOutput.ipynb](../../notebooks/with-output/TelcoChurnICP4DOutput.ipynb)*
+>*Note: The Jupyter notebook included in the project has been cleared of output. If you would like to see the notebook that has already been completed with output: **Notebook with output**: [with-output/machinelearning-churn-sparkmlmodel-output.ipynb](../../notebooks/with-output/machinelearning-churn-sparkmlmodel-output.ipynb)*
 
 Open the notebook:
 
