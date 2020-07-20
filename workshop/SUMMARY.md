@@ -16,7 +16,6 @@
 * [Machine Learning with AutoAI](machine-learning-autoai/README.md)
 * [Deploy and Test Machine Learning Models](machine-learning-deployment-scoring/README.md)
 * [Monitoring models with OpenScale GUI (Fastpath Monitoring)](openscale-fastpath/README.md)
-* [Monitoring models with OpenScale GUI (Manual Config)](openscale-gui-manual-config/README.md)
 * [Monitoring models with OpenScale (Notebook)](openscale-notebook/README.md)
 
 ### Workshop Resources
@@ -26,7 +25,7 @@
 ### Resources
 
 * [IBM Cloud Pak for Data Platform API](https://cloud.ibm.com/apidocs/cloud-pak-data)
-* [Cluster API explorer at https:cluster-url/icp4d-api/docs]()
+* [IBM Cloud Pak for Data APIs](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/dev/avail-apis.html)
 * [Watson Knowledge Catalog](https://www.ibm.com/cloud/watson-knowledge-catalog)
 * [Watson Knowledge Catalog Learning Center](https://developer.ibm.com/clouddataservices/docs/data-catalog/get-started/)
 * [IBM Developer](https://developer.ibm.com)

@@ -20,9 +20,9 @@ The introductory page of the workshop is broken down into the following sections
 
 ### About the data set
 
-The data set used for this workshop is originally from Watson Analytics and was used on a [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn) project, it contains information about customer churn for a Telecommunications company. The data is split into three CSV files and are located in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data/split) directory of the GitHub repository you will download in the pre-work section.
+The data set used for this workshop is originally from Watson Analytics and was used on a [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn) project, it contains information about customer churn for a Telecommunications company. The data is split into three CSV files and are located in the [data](../data/split) directory of the GitHub repository you will download in the pre-work section.
 
-#### **[billing.csv](../../data/split/billing.csv)**
+#### **[billing.csv](../data/split/billing.csv)**
 
 This file has the following attributes:
 
@@ -34,7 +34,7 @@ This file has the following attributes:
 * Total Charges *($)*
 * Churn *(Yes, No)*
 
-#### **[customer-service.csv](../../data/split/customer-service.csv)**
+#### **[customer-service.csv](../data/split/customer-service.csv)**
 
 * Customer ID
 * Gender *(Male, Female)*
@@ -43,7 +43,7 @@ This file has the following attributes:
 * Dependents *(Yes, No)*
 * Tenure *(1-100)*
 
-#### **[products.csv](../../data/split/products.csv)**
+#### **[products.csv](../data/split/products.csv)**
 
 * Customer ID
 * Phone Service *(Yes, No)*
@@ -70,7 +70,6 @@ This file has the following attributes:
 | [Machine Learning with AutoAI](machine-learning-autoai/README.md) | Use AutoAi to quickly generate a Machine Learning pipeline and model |
 | [Deploy and Test Machine Learning Models](machine-learning-deployment-scoring/README.md) | Deploy and machine learning models using several approaches |
 | [Monitoring models with OpenScale GUI (Fastpath Monitoring)](openscale-fastpath/README.md) | Quickly deploy an OpenScale demo with FastPath |
-| [Monitoring models with OpenScale GUI (Manual Config)](openscale-gui-manual-config/README.md) | Use the OpenScale tool to monitor deployed machine learning models |
 | [Monitoring models with OpenScale (Notebook)](openscale-notebook/README.md) | See the OpenScale APIs in a Jupyter notebook and manually configure the monitors |
 
 ## Compatability

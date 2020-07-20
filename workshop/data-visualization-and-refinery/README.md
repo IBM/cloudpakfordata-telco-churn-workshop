@@ -34,23 +34,15 @@ For example, type *filter* on the Command line and observe that autocomplete wil
 
 When you have completed a command, click Apply to apply the operation to your data set.
 
-Click the `+Operation` button:
+Click the `Operation +` button:
 
 ![Choose Operation button](../.gitbook/assets/images/dr/dr-choose-operation-button.png)
 
-First, we notice that *TotalCharges* is a string, but since it represents a decimal number, let's convert the values to decimal. Choose the Operator `Convert Column Type`:
-
-![Choose Convert Column Type](../.gitbook/assets/images/dr/dr-convert-type-string-current.png)
-
-Click `+ Select column`, Then pick *Column* -> *TotalCharges* and *Type* -> *Decimal* , then dr-convert-string-to-decimal.pngclick `Apply`:
-
-![Convert to Decimal](../.gitbook/assets/images/dr/dr-convert-string-to-decimal.png)
-
-We want to make sure that there are no empty values, and there happen to be some for the *TotalCharges* column, so let's fix that. Click on `filter` and choose the *TotalCharges* column from the drop down, then the Operator *Is empty*, then `Apply`:
+We want to make sure that there are no empty values, and there may be some for the *TotalCharges* column, so let's fix that. Click on `Filter` and choose the *TotalCharges* column from the drop down, then the Operator *Is empty*, then `Apply`:
 
 ![Filter is empty](../.gitbook/assets/images/dr/dr-filter-is-empty.png)
 
-We can see that there are only 3 rows with an empty value for *TotalCharges*:
+We can see that there is only 1 row with an empty value for *TotalCharges*:
 
 ![Filter is empty results](../.gitbook/assets/images/dr/dr-is-empty-results.png)
 
@@ -58,11 +50,11 @@ It should be safe to just drop these rows from the data set, so let's do that.
 
 First, remove the filter that you just added. You can delete it from the "Steps" section of clicking the undo arrow on top of the page.
 
-Next, choose the Operation *Remove empty rows*, select the *TotalCharges* column, and click `Apply`:
+Next, choose the Operation *Remove empty rows*, select the *TotalCharges* column, click `Next` and then click `Apply`:
 
 ![Remove empty rows](../.gitbook/assets/images/dr/dr-remove-empty-rows.png)
 
-Finally, we can remove the *CustomerID* column, since that won't be useful for training a machine learning model in the next exercise. Choose the *Remove* operator, then choose `Change column selection`. Under `Select a column` pick *CustomerID* and then click `Next` and the `Apply`:
+Finally, we can remove the *CustomerID* column, since that won't be useful for training a machine learning model in the next exercise. Choose the *Remove* operator, then choose `Change column selection`. Under `Select column` pick *customerID*, click `Next` and then click `Apply`:
 
 ![Remove CustomerID column](../.gitbook/assets/images/dr/dr-remove-customerID-column.png)
 
@@ -108,7 +100,7 @@ We first see the data in a histogram by default. You can choose other chart type
 
 ![Visualize TotalCharges histogram](../.gitbook/assets/images/dr/dr-vis-default-histogram-next-scatter.png)
 
-In the scatter plot, choose *TotalCharges* for the x-axis, *MonthlyCharges* for the y-axis, and *Churn* for the *Color map*:
+In the scatter plot, choose *TotalCharges* for the x-axis, *MonthlyCharges* for the y-axis, and *Churn* for the *Color map*. Drag the bottom *TotalCharges* filter to show all the data:
 
 ![set x- and y- axes and Color map](../.gitbook/assets/images/dr/dr-vis-x-y-Color-map.png)
 
@@ -116,7 +108,7 @@ Scroll down and give the scatter plot a title and sub-title if you wish. Under t
 
 ![Visualize set titles and choose preferences](../.gitbook/assets/images/dr/dr-chart-monthly-v-total-w-churn.png)
 
-We see that we can do things in the *Global visualization preferences* for *Titles*, *Tools*, *Theme*, and *Notifications*. Click on the `Theme` tab and update the color scheme to *Vivid*. Then click the `Apply` button :
+We see that we can do things in the *Global visualization preferences* for *Titles*, *Tools*, *Theme*, and *Notification*. Click on the `Theme` tab and update the color scheme to *Vivid*. Then click the `Apply` button :
 
 ![Visualize set vivid](../.gitbook/assets/images/dr/dr-global-vis-vivid.png)
 
@@ -126,4 +118,4 @@ Now the colors for all of our charts will reflect this:
 
 ### Conclusion
 
-We've seen a small sampling of the power of Data Refinery on IBM Cloud Pak for Data. We saw how we can transform data using R code, at the command line, or using various Operations on the columns such as changing the data type, removing empty rows, or deleting the column altogether. We next saw that all the steps in our Data Flow are recorded, so we can remove steps, repeat them, or edit an individual step. We were able to quickly profiile the data, so see histograms and statistics for each column. And finally we created more in-depth Visualizations, creating a scatter plot mapping TotalCharges vs. MonthlyCharges, with the Churn results highlighted in color.
+We've seen a small sampling of the power of Data Refinery on IBM Cloud Pak for Data. We saw how we can transform data using R code, at the command line, or using various Operations on the columns such as filtering the data, removing empty rows, or deleting a column altogether. We next saw that all the steps in our Data Flow are recorded, so we can remove steps, repeat them, or edit an individual step. We were able to quickly profile the data, to see histograms and statistics for each column. And finally we created more in-depth visualizations, creating a scatter plot mapping TotalCharges vs. MonthlyCharges, with the Churn results highlighted in color.
