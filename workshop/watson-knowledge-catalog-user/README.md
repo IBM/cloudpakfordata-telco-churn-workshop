@@ -39,7 +39,7 @@ However, before we proceed to the catalog we need to also find all the business 
 
 ![Search business terms](../.gitbook/assets/images/wkc-user/wkc-user-search-any-type-business-term.png)
 
-Notice that the governance team has been hard at work and has defined 25 business terms related to the mortgage data the project will be using. Also notice that they are tagged with the key word Mortgage to easily find them
+Notice that the governance team has been hard at work and has defined 29 business terms related to the mortgage data the project will be using. Also notice that they are tagged with the key word Mortgage to easily find them
 
 * Click on the Sort Arrow to the right of the Name column to sort ascending by Name.
 Note that the Email Address has also been tagged as Sensitive information.
@@ -183,7 +183,7 @@ The data that is masked is indicated with a lock icon next to their column names
 
 * Scroll to the right to view all the masked columns.
 
-* Hover over the lock icon on the EMAIL_ADDRESS column to view the data protection message. Do the same for the PHONE_NUMBER and SOCIAL_SECURITY_NUMBER columns.
+* Click on the lock icon on the EMAIL_ADDRESS column to view the data protection message. Do the same for the PHONE_NUMBER and SOCIAL_SECURITY_NUMBER columns.
 
 ![Hover over masked email column](../.gitbook/assets/images/wkc-user/wkc-user-mortgage-column-masked.png)
 
@@ -193,7 +193,7 @@ The table has a 5-star rating with a very positive review. Reviews can be writte
 
 * Click on the Profile tab to view the data profile.
 
-As data assets are discovered and added to the catalog they are automatically profiled and classified to give end users a more in-depth understanding of the data content, quality and usability. Data classi-fications are used to identify what type of data it is and to autonomously enforce data protect rules to mask sensitive data, like you just saw.
+As data assets are discovered and added to the catalog they are automatically profiled and classified to give end users a more in-depth understanding of the data content, quality and usability. Data classifications are used to identify what type of data it is and to autonomously enforce data protect rules to mask sensitive data, like you just saw.
 
 * Scroll to the right to view the other columns.
 
