@@ -12,9 +12,9 @@ For this section we'll explore the data that is available from the virtualized v
 
 ### Assign the data to your project
 
-From the upper-left (☰) hamburger menu, click on *Collect* -> *Data Virtualization*, you'll be brought to the *My data* section. Here you should see the data you can access (or that the administrator has assigned to you). Slect the checkbox next to the data sets you want to use in your project and click the *`Assign`* button to start importing it to your project.
+From the upper-left (☰) hamburger menu, click on *Collect* -> *Data virtualization*, you'll be brought to the *My virtualized data* section. Here you should see the data you can access (or that the administrator has assigned to you). Select the checkbox next to the tables you want to use in your project and click the *`Assign`* button to start importing them into your project.
 
-> _Note: The name of the data assets to select may vary based on names chosen during data virtualization. The default names to select are: BILLING, PRODUCTS, CUSTOMERS, BILLINGPRODUCTS AND BILLINGPRODUCTSCUSTOMER_
+> _Note: The names of the tables to select may vary based on names chosen during data virtualization. The default names to select are: BILLING, PRODUCTS, CUSTOMERS, BILLINGPRODUCTS AND BILLINGPRODUCTSCUSTOMER_
 
 ![Select the data you want to import](../.gitbook/assets/images/dv/dv-8-select-data.png)
 
