@@ -20,9 +20,9 @@ The introductory page of the workshop is broken down into the following sections
 
 ### About the data set
 
-The data set used for this workshop is originally from Watson Analytics and was used on a [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn) project, it contains information about customer churn for a Telecommunications company. The data is split into three CSV files and are located in the [data](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/tree/master/data/split) directory of the GitHub repository you will download in the pre-work section.
+The data set used for this workshop is originally from Watson Analytics and was used on a [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn) project, it contains information about customer churn for a Telecommunications company. The data is split into three CSV files and are located in the [data](../data/split) directory of the GitHub repository you will download in the pre-work section.
 
-#### **[billing.csv](../../data/split/billing.csv)**
+#### **[billing.csv](../data/split/billing.csv)**
 
 This file has the following attributes:
 
@@ -34,7 +34,7 @@ This file has the following attributes:
 * Total Charges *($)*
 * Churn *(Yes, No)*
 
-#### **[customer-service.csv](../../data/split/customer-service.csv)**
+#### **[customer-service.csv](../data/split/customer-service.csv)**
 
 * Customer ID
 * Gender *(Male, Female)*
@@ -43,7 +43,7 @@ This file has the following attributes:
 * Dependents *(Yes, No)*
 * Tenure *(1-100)*
 
-#### **[products.csv](../../data/split/products.csv)**
+#### **[products.csv](../data/split/products.csv)**
 
 * Customer ID
 * Phone Service *(Yes, No)*
