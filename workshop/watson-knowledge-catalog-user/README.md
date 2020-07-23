@@ -121,33 +121,15 @@ The data quality analyst has informed the project team that the mortgage data qu
 
 To review the data quality results:
 
-* Click the (☰) hamburger menu in the upper left corner and click `Organize` -> `Curation` -> `Data discovery`:
+* Click the (☰) hamburger menu in the upper left corner and click `Projects`  and then `EnterpriseDataScan`.
 
-![Click Organize Curation Data dicovery](../.gitbook/assets/images/wkc-user/wkc-user-click-data-discovery.png)
+You will see a variety of graphs in the Dashboard.
 
-* Click on the `View automated discovery results` link in the top right corner:
+* Click on the `Data assets` tab and view quality scores for each table.
 
-![Click automated discovery results](../.gitbook/assets/images/wkc-user/wkc-user-click-discovery-results.png)
+* Click on the `Mortgage Applicant` table to see more details.
 
-* Click on the Discovery results ID for view the Mortgage Default Analysis quality results:
-
-![Disovery results for Mortgage Default Analysis](../.gitbook/assets/images/wkc-user/wkc-user-disco-results-mortgage.png)
-
-* Click on the Review discovery results button under Actions in the bottom right corner that is highlighted.
-
-![Click review Discovery results](../.gitbook/assets/images/wkc-user/wkc-user-review-disco-results.png)
-
-You immediately see the Quality score for each table analyzed with the lowest score being 98% and the highest being 100%. Also notice that business terms have been assigned at the table level.
-
-Since we know the MORTGAGE_APPLICANT table is a new addition to the project, that was just requested, and it contains sensitive information, we will drill down into the details of the analysis
-
-* Click on the Arrow next to the MORTGAGE_APPLICANT table to expand it and review the column analysis.
-
-![Discovery expand MORTGAGE_APPLICANT table](../.gitbook/assets/images/wkc-user/wkc-user-mortgage-discovery-details.png)
-
-You are presented with a Quality score for each column analyzed. The quality looks satisfactory and meets the quality standard thresholds and the data classes and business terms are accurately assigned and complete. This is important to ensure the data is autonomously protected and that the governance artifacts are related to data assets they apply to.
-
-* Scroll down to see the remaining columns.
+* On the `Mortgage Applicant` table you can click on the `Data quality` tab for details on quality at the column level.
 
 * Click on the IBM Cloud Pak for Data title, or the (☰) hamburger menu -> `Home`, to get ready for the next section.
 
