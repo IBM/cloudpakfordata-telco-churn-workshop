@@ -41,10 +41,12 @@ However, before we proceed to the catalog we need to also find all the business 
 
 Notice that the governance team has been hard at work and has defined 29 business terms related to the mortgage data the project will be using. Also notice that they are tagged with the key word Mortgage to easily find them
 
-* Click on the Sort Arrow to the right of the Name column to sort ascending by Name.
-Note that the Email Address has also been tagged as Sensitive information.
 * Scroll down the list of business terms to view them all.
+
+Note that the Email Address has also been tagged as Sensitive information.
+
 Note that the Phone Number and Social Security Number are tagged as Sensitive information.
+
 * Click on the Clear all button to get ready for the next search task.
 
 ![Sort scroll and clear business terms](../.gitbook/assets/images/wkc-user/wkc-user-sort-scroll-business-terms.png)
@@ -55,7 +57,7 @@ Note that the Phone Number and Social Security Number are tagged as Sensitive in
 
 ![Filter Category Policy Rule](../.gitbook/assets/images/wkc-user/wkc-user-filter-category-policy-rule.png)
 
-Notice that there is a Mortgage Default Analysis category defined that contains all the business in-formation related to the project and a category named Sensitive Information that is a sub-category, along with a business policy related to the Protection of Sensitive Information and three rules outlin-ing the protection of Email Addresses, Phone Numbers and Social Security Numbers. This is a good indication that the mortgage data being used by the project contains sensitive information that needs to be protected.
+Notice that there is a Mortgage Default Analysis category defined that contains all the business in-formation related to the project and a category named Sensitive Information that is a sub-category, along with a business policy related to the Protection of Sensitive Information and three rules outlining the protection of Email Addresses, Phone Numbers and Social Security Numbers. This is a good indication that the mortgage data being used by the project contains sensitive information that needs to be protected.
 
 ## 2. Understand the Data
 
