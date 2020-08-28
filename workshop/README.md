@@ -1,7 +1,7 @@
 
-## Analyzing Telco Customer Churn with Cloud Pak for Data on OpenShift
+## Analyzing Telco Customer Churn with Cloud Pak for Data as a Service on OpenShift
 
-Welcome to our workshop! In this workshop we'll be using the Cloud Pak for Data platform to Collect Data, Organize Data, Analyze Data, and Infuse AI into our applications. The goals of this workshop are:
+Welcome to our workshop! In this workshop we'll be using the Cloud Pak for Data as a Service that is available on the IBM Cloud platform to Collect Data, Organize Data, Analyze Data, and Infuse AI into our applications. The goals of this workshop are:
 
 * Collect and virtualize data
 * Visualize data with Data Refinery
@@ -15,7 +15,7 @@ The introductory page of the workshop is broken down into the following sections
 
 * [Agenda](#agenda)
 * [Compatability](#compatability)
-* [About Cloud Pak for Data](#about-cloud-pak-for-data)
+* [About Cloud Pak for Data as a Service](#about-cloud-pak-for-data)
 * [Credits](#credits)
 
 ### About the data set
