@@ -30,7 +30,9 @@ Users need to have the *Data Engineer* role in order to see the `Transform data`
 
 ### Load the data into DB2 Warehouse
 
-The input data for the DataStage lab is to be retained within the DB2 warehouse instance and the output from the data transformation job will also be stored back into DB2WH. 
+> ***Note***: DataStage on CP4D works with a number of databases such as DB2, Netezza Performance Server, Greenplum, Hive, Salesforce, Teradata, Oracle, etc. The instuctions given here only apply to Db2 Warehouse on IBM Cloud and may differ for the other databases. 
+
+The input data for the DataStage lab is to be retained within the DB2 warehouse instance and the output from the data transformation job will also be stored back into DB2WH. You will need to [create an IBM Cloud instance of DB2 Warehouse](./virtualizing-db2-data-with-dv-setup-readme.md#create-an-ibm-cloud-instance-of-db2-warehouse) before proceeding with the instructions given below.
 
 The input consists of two tables - the `DEPT` table containing departmental information and the `EMP` table containing the employee information.
 
