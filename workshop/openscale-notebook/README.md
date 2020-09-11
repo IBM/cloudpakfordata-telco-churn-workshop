@@ -31,13 +31,13 @@ At the project overview click the *Add to project* button, and choose *Notebook*
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
 ```bash
-https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/ConfigureOpenScale.ipynb
+https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/openscale-full-configuration.ipynb
 ```
 
 > The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
 >
-> * **Notebook**: [ConfigureOpenScale.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/ConfigureOpenScale.ipynb)
-> * **Notebook with output**: [with-output/ConfigureOpenScaleOutput.ipynb](https://github.com/IBM/cloudpakfordata-telco-churn-workshop/blob/master/notebooks/with-output/ConfigureOpenScaleOutput.ipynb)
+> * **Notebook**: [openscale-full-configuration.ipynb](https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/openscale-full-configuration.ipynb)
+> * **Notebook with output**: [openscale-full-configuration-output.ipynb](https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/with-output/openscale-full-configuration-output.ipynb)
 
 ![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
 
