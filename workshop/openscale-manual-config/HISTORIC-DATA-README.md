@@ -6,10 +6,10 @@ For a deployed machine learning model, OpenScale will record all of the requests
 
 The submodule contains the following steps:
 
-1. Open the notebook
-1. Update credentials
-1. Run the notebook
-1. Explore the Watson OpenScale UI
+1. [Open the notebook](#1-open-the-notebook)
+1. [Update credentials](#2-update-credentials)
+1. [Run the notebook](#3-run-the-notebook)
+1. [Explore the Watson OpenScale UI](#4-explore-the-watson-openscale-ui)
 
 ## 1. Open the notebook
 

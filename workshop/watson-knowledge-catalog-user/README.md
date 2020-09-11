@@ -4,10 +4,10 @@ This exercise demonstrates how to solve the problems of enterprise data governan
 
 This section is comprised of the following steps:
 
-1. Find the Right Data
-1. Understand the Data
-1. Trust the Data Quality
-1. Understand the Data Content
+1. [Find the Right Data](#1-find-the-right-data)
+1. [Understand the Data](#2-understand-the-data)
+1. [Trust the Data Quality](#3-trust-the-data-quality)
+1. [Understand the Data Content](#4-understand-the-data-content)
 
 ## 1. Find the Right Data
 

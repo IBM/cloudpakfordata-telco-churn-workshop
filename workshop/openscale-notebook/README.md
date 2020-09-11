@@ -5,10 +5,10 @@ For this exercise we're going to configure our OpenScale service by running a Ju
 
 This lab is comprised of the following steps:
 
-1. Open the notebook
-2. Update credentials
-3. Run the notebook
-4. Get transactions for Explainability
+1. [Open the notebook](#1-open-the-notebook)
+2. [Update credentials](#2-update-credentials)
+3. [Run the notebook](#3-run-the-notebook)
+4. [Get transactions for Explainability](#4-get-transactions-for-explainability)
 
 ## 1. Open the notebook
 
