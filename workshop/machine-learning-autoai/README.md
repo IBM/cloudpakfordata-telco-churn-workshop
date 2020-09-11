@@ -5,9 +5,9 @@ AutoAI is a capability that automates machine learning tasks to ease the tasks o
 
 This section is broken up into the following steps:
 
-1. [Set up your AutoAI environment and generate pipelines](#1-set-up-your-autoai-environment-and-generate-pipelines)
-2. [Save AutoAI Model](#2-save-autoai-model)
-3. [Promote the model](#3-promote-the-model)
+1. Set up your AutoAI environment and generate pipelines
+2. Save AutoAI Model
+3. Promote the model
 
 >*Note: The lab instructions below assume you have a project already with the assets necessary to build a model. If not, follow the instructions in the pre-work section to create a project.*
 

@@ -4,18 +4,18 @@ This lab will demonstrate how to monitor your deployed machine learning model us
 
 We'll use several jupyter notebook and instructions:
 
-* [These instructions for basic OpenScale setup](./README.md)
-* [Fairness and Explainiblity monitors](./FAIRNESS-EXPLAINABILITY-README.md)
+* These instructions for basic OpenScale setup
+* Fairness and Explainiblity monitors
 
 ## Steps for basic OpenScale setup
 
 The submodule contains the following steps:
 
-1. [Introduction](#1-introduction)
-1. [Open the notebook](#2-open-the-notebook)
-1. [Update credentials](#3-update-credentials)
-1. [Run the notebook](#4-run-the-notebook)
-1. [Begin to Explore the Watson OpenScale UI](#5-begin-to-explore-the-watson-openscale-ui)
+1. Introduction
+1. Open the notebook
+1. Update credentials
+1. Run the notebook
+1. Begin to Explore the Watson OpenScale UI
 
 ## 1. Introduction
 

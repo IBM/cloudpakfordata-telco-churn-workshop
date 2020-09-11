@@ -2,8 +2,8 @@
 
 This section is broken up into the following steps:
 
-1. [Download or Clone the Repository](#1-download-or-clone-the-repository)
-1. [Create an Analytics Project and Deployment Space](#2-create-a-project-and-deployment-space)
+1. Download or Clone the Repository
+1. Create an Analytics Project and Deployment Space
 
 ## 1. Download or Clone the Repository
 
