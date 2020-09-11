@@ -17,9 +17,9 @@ In this lab, you will learn:
 
 This lab is comprised of the following steps:
 
-1. Create the job
-1. Compile and run the job
-1. View output
+1. [Create the job](#1-create-the-job)
+1. [Compile and run the job](#2-compile-and-run-the-job)
+1. [View output](#3-view-output)
 
 ## 1. Create the job
 

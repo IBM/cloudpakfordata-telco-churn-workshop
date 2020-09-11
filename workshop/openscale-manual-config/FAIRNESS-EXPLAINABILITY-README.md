@@ -8,10 +8,10 @@ We'll then enable the Explainability monitor, which allows us to then use the AP
 
 The submodule contains the following steps:
 
-1. Open the notebook
-1. Update credentials
-1. Run the notebook
-1. Begin to Explore the Watson OpenScale UI
+1. [Open the notebook](#1-open-the-notebook)
+1. [Update credentials](#2-update-credentials)
+1. [Run the notebook](#3-run-the-notebook)
+1. [Begin to Explore the Watson OpenScale UI](#4-begin-to-explore-the-watson-openscale-ui)
 
 ## 1. Open the notebook
 

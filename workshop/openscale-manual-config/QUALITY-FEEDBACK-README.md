@@ -6,10 +6,10 @@ Watson OpenScale utilizes several monitors to gather data about machine learning
 
 The submodule contains the following steps:
 
-1. Open the notebook
-1. Update credentials
-1. Run the notebook
-1. Begin to Explore the Watson OpenScale UI
+1. [Open the notebook](#1-open-the-notebook)
+1. [Update credentials](#3-update-credentials)
+1. [Run the notebook](#4-run-the-notebook)
+1. [Begin to Explore the Watson OpenScale UI](#5-begin-to-explore-the-watson-openscale-ui)
 
 ## 2. Open the notebook
 

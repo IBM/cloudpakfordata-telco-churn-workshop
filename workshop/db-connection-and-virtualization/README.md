@@ -2,8 +2,8 @@
 
 This section requires a Data Engineer role to be assigned to your user account. The section is broken up into the following steps:
 
-1. Start virtualizing data
-1. Grant access to the virtualized data
+1. [Start virtualizing data](#1-start-virtualizing-data)
+1. [Grant access to the virtualized data](#2-grant-access-to-the-virtualized-data)
 
 ## 1. Start virtualizing data
 
