@@ -6,12 +6,12 @@ You will need the *Admin* role to create a catalog.
 
 This section is comprised of the following steps:
 
-1. [Set up Catalog and Data](#1-set-up-catalog-and-data)
-1. [Add collaborators and control access](#2-add-collaborators-and-control-access)
-1. [Add categories](#3-add-categories)
-1. [Add data classes](#4-add-data-classes)
-1. [Add Business terms](#5-add-business-terms)
-1. [Add rules for policies](#6-add-rules-for-policies)
+1. Set up Catalog and Data
+1. Add collaborators and control access
+1. Add categories
+1. Add data classes
+1. Add Business terms
+1. Add rules for policies
 
 ## 1. Set up Catalog and Data
 

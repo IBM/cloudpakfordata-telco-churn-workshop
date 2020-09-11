@@ -7,16 +7,16 @@ In this module, we will go through the process of deploying a machine learning m
 
 This module is broken up into several sections that explore different model deployment options as well as the different ways to invoke or consume the model. The first section of this lab will build an online deployment and test the model endpoint using both the built in testing tool as well as external testing tools. The remaining sections are optional, they build and test the batch deployment, followed by using the model from a python application.
 
-1. [Online Deployment for a Model](#online-model-deployment)
+1. Online Deployment for a Model
    * Create Online Deployment
    * Test model using Cloud Pak for Data tooling
    * (Optional) Test model using cURL
 
-1. [(Optional) Batch Deployment for a Model](#optional-batch-model-deployment)
+1. (Optional) Batch Deployment for a Model
    * Create Batch Deployment
    * Create and Schedule a Job
 
-1. [(Optional) Integrate Model to an External Application](#optional-integrate-model-to-python-flask-application)
+1. (Optional) Integrate Model to an External Application
 
 >*Note: The lab instructions below assume you have completed one of the machine learning modules to promote a model to the deployment space. If not, follow the instructions in one of the machine learning modules to create and promote a machine learning model.*
 

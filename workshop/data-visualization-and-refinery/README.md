@@ -4,11 +4,11 @@ Let's take a quick detour to the *Data Refinery* tool. Data Refinery can quickly
 
 This section is broken up into the following steps:
 
-1. [Load the *BILLING* data table into data refinery](#1-load-the-billing-data-table-into-data-refinery)
-1. [Refine your data](#2-refine-your-data)
-1. [Use Data Flow steps to keep track of your work](#3-use-data-flow-steps-to-keep-track-of-your-work)
-1. [Profile the data](#4-profile-the-data)
-1. [Visualize with charts and graphs](#5-visualize-with-charts-and-graphs)
+1. Load the *BILLING* data table into data refinery
+1. Refine your data
+1. Use Data Flow steps to keep track of your work
+1. Profile the data
+1. Visualize with charts and graphs
 
 ## 1. Load the *BILLING* data table into data refinery
 
