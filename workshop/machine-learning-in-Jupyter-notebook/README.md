@@ -2,33 +2,29 @@
 
 In this module, we will go through the process of exploring our data set and building a predictive model that can be used to determine the likelyhood of a customer churning. For this use case, the machine learning model we are building is a classification model that will return a prediction of Yes (the customer will churn) or No (the customer will not churn). The approach we will take in this lab is to use some fairly popular libraries / frameworks to build the model in Python using a Jupyter notebook. Once we have built the model, we will make it available for deployment so that it can be used by others.
 
-
-
 >*Note: The lab instructions below assume you have a project and a deployment space already. If not, follow the instructions in the pre-work section to create a project and a space.*
 
 ## Build and Save a model
 
 For this part of the exercise we're going to use a Jupyter notebook to create the model. The Jupyter notebook is already included as an asset in the project you imported earlier.
 
->*Note: The Jupyter notebook included in the project has been cleared of output. If you would like to see the notebook that has already been completed with output: **Notebook with output**: [with-output/machinelearning-churn-sparkmlmodel-output.ipynb](../../notebooks/with-output/machinelearning-churn-sparkmlmodel-output.ipynb)*
+### Open the Jupyter Notebook
 
-Open the notebook:
+* Go the (☰) navigation menu and click on the *Projects* link and then click on your analytics project.
 
 * From the project overview page, *click* on the `Assets` tab to open the assets page where your project assets are stored and organized.
 
 * Scroll down to the `Notebooks` section of the page and *Click* on the pencil icon at the right of the `machinelearning-churn-sparkmlmodel` notebook.
 
-![Notebook Open](../.gitbook/assets/images/wml/wml-open-notebook.png)
+  ![Notebook Open](../.gitbook/assets/images/wml/wml-open-notebook.png)
 
-When the Jupyter notebook is loaded and the kernel is ready, we will be ready to start executing it in the next section.
+* When the Jupyter notebook is loaded and the kernel is ready, we will be ready to start executing it in the next section.
 
-![Notebook loaded](../.gitbook/assets/images/wml/wml-3-notebook-loaded.png)
+  ![Notebook loaded](../.gitbook/assets/images/wml/wml-3-notebook-loaded.png)
 
-### Run the Jupyter notebook
+### Run the Jupyter Notebook
 
-Spend some time looking through the sections of the notebook to get an overview. A notebook is composed of text (markdown or heading) cells and code cells. The markdown cells provide comments on what the code is designed to do.
-
-You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook or hitting the keyboard short cut to run the cell (Shift + Enter but can vary based on platform). While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
+Spend some time looking through the sections of the notebook to get an overview. A notebook is composed of text (markdown or heading) cells and code cells. The markdown cells provide comments on what the code is designed to do. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook or hitting the keyboard short cut to run the cell (Shift + Enter but can vary based on platform). While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
 **Please note that some of the comments in the notebook are directions for you to modify specific sections of the code. Perform any changes as indicated before running / executing the cell.**
 
@@ -36,7 +32,7 @@ You will run cells individually by highlighting each cell, then either click the
 
 * Section `1.0 Install required packages` will install some of the libraries we are going to use in the notebook (many libraries come pre-installed on Cloud Pak for Data). Note that we upgrade the installed version of Watson Machine Learning Python Client. Ensure the output of the first code cell is that the python packages were successfully installed.
 
-![Install required packages](../.gitbook/assets/images/wml/wml-3.2-install-packages.png)
+  ![Install required packages](../.gitbook/assets/images/wml/wml-3.2-install-packages.png)
 
 * Section `2.0 Load and Clean data` will load the data set we will use to build out machine learning model. In order to import the data into the notebook, we are going to use the code generation capability of Watson Studio.
 
@@ -46,12 +42,11 @@ You will run cells individually by highlighting each cell, then either click the
   * For your dataset, Click `Insert to code` and choose `pandas DataFrame`. The code to bring the data into the notebook environment and create a Pandas DataFrame will be added to the cell below.
   * Run the cell and you will see the first five rows of our dataset.
 
-![Add the data as a Pandas DataFrame](../.gitbook/assets/images/wml/wml-4-add-dataframe.png)
+  ![Add the data as a Pandas DataFrame](../.gitbook/assets/images/wml/wml-4-add-dataframe.png)
 
 > **IMPORTANT**: Since we are using generated code to import the data, you will need to update the next cell to assign the `df` variable. Copy the variable that was generated in the previous cell ( it will look like `df_data_1`, `df_data_2`, etc) and assign it to the `df` variable (for example `df=df_data_1`).
- 
-![Generated code to handle Pandas DataFrame](../.gitbook/assets/images/wml/wml-5-generated-code-dataframe.png)
 
+  ![Generated code to handle Pandas DataFrame](../.gitbook/assets/images/wml/wml-5-generated-code-dataframe.png)
 
 * Continue to run the remaining cells in section 2 to explore and clean the data.
 
@@ -62,7 +57,7 @@ You will run cells individually by highlighting each cell, then either click the
   * We will split our data into training and test data, encode the categorial string values, create a model using the Random Forest Classifier algorithm, and evaluate the model against the test set.
   * Run all the cells in section 3 to build the model.
 
-![Building the pipeline and model](../.gitbook/assets/images/wml/wml-6-build-pipeline-and-model.png)
+  ![Building the pipeline and model](../.gitbook/assets/images/wml/wml-6-build-pipeline-and-model.png)
 
 #### Save the model
 
@@ -75,17 +70,22 @@ You will run cells individually by highlighting each cell, then either click the
 
 * You will update the `MODEL_NAME` and `DEPLOYMENT_SPACE_NAME` variables. Use a unique and easily identifiable model name.
 
-```python
-MODEL_NAME = "user123 customer churn model"
-DEPLOYMENT_SPACE_NAME = "Name you used for deployment space"
-```
+  ```python
+  MODEL_NAME = "user123 customer churn model"
+  DEPLOYMENT_SPACE_NAME = "Name you used for deployment space"
+  ```
 
 * Continue to run the cells in the section to save the model to Cloud Pak for Data.
 
-**We've successfully built and saved a machine learning model programmatically. Congratulations!**
+* **We've successfully built and saved a machine learning model programmatically. Congratulations!**
 
-> **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources! You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. If you see a lock icon on the notebook, click it to unlock the notebook so you can stop the kernel.*
-> ![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+## Cleanup
+
+* Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources.
+
+* You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. (*Note: If you see a lock icon on the notebook, you have to click it to unlock the notebook before you are able to stop the kernel*).
+
+  ![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
 
 ## Conclusion
 
