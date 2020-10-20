@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/maste
 > The notebook is hosted in the same repo as [the workshop](https://github.com/IBM/cloudpakfordata-telco-churn-workshop).
 >
 > * **Notebook**: [openscale-full-configuration.ipynb](https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/openscale-full-configuration.ipynb)
-> * **Notebook with output**: [openscale-full-configuration-output.ipynb](https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/with-output/openscale-full-configuration-output.ipynb)
+> * **Notebook with output**: [openscale-full-configuration-with-output.ipynb](https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/with-output/openscale-full-configuration-with-output.ipynb)
 
 ![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
 
