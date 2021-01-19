@@ -15,7 +15,7 @@ The submodule contains the following steps:
 
 If you [Created the Project](https://ibm-developer.gitbook.io/cloudpakfordata-telco-churn-workshop/getting-started/pre-work#create-a-new-project) using the [Customer-Churn-Project.zip](https://github.ibm.com/IBMDeveloper/cp4d-workshop-telco-churn/blob/master/projects/Customer-Churn-Project.zip) file, your notebook will be present in that project, under the `Assets` tab:
 
-![Project from zip assets tab](../.gitbook/assets/images/openscale-config/openscale-config-historic-notebook.png)
+![Project from zip assets tab](../images/openscale-config/openscale-config-historic-notebook.png)
 
 You may now skip to the next step [Update credentials](#2-update-credentials)
 
@@ -27,7 +27,7 @@ If, for some reason, you are not using the [Created the Project](https://ibm-dev
 
 At the project overview click the *New Asset* button, and choose *Add notebook*.
 
-![Add a new asset](../.gitbook/assets/images/wml/wml-add-asset.png)
+![Add a new asset](../images/wml/wml-add-asset.png)
 
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
@@ -40,11 +40,11 @@ https://raw.githubusercontent.com/IBM/telco-churn-workshop-cpd/master/notebooks/
 > * **Notebook**: [openscale-historic-data.ipynb](../../notebooks/openscale-historic-data.ipynb)
 > * **Notebook with output**: [openscale-historic-data-with-output.ipynb](../../notebooks/with-output/openscale-historic-data-with-output.ipynb)
 
-![Add notebook name and URL](../.gitbook/assets/images/openscale-config/openscale-config-url-historic.png)
+![Add notebook name and URL](../images/openscale-config/openscale-config-url-historic.png)
 
 When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-![Notebook loaded](../.gitbook/assets/images/aios/OpenScaleNotebook.png)
+![Notebook loaded](../images/aios/OpenScaleNotebook.png)
 
 ### 2. Update credentials
 
@@ -60,7 +60,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 > **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
 
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+![Stop kernel](../images/wml/JupyterStopKernel.png)
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
