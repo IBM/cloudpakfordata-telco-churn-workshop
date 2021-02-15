@@ -2,4 +2,4 @@
 
 > The workshop is hosted at: [https://ibm-developer.gitbook.io/cloudpakfordata-telco-workshop/](https://ibm-developer.gitbook.io/cloudpakfordata-telco-workshop/)
 
-!["cp4data"](workshop/.gitbook/assets/images/generic/cp4data.png)
+!["cp4data"](workshop/images/generic/cp4data.png)
