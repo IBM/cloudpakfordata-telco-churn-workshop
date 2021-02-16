@@ -82,7 +82,7 @@ This workshop has been tested on the following platforms:
 
 Cloud Pak for Data represents an all-in-one platform for all your data needs. Cloud Pak for data tries to eliminate silos between Architect, Data Scientist, Developer, and Data Stewards. Cloud Pak for Data helps to streamline work by creating a pipeline for collecting, organizing, analyzing, and consuming data.
 
-![Cloud Pak for Data pipeline](.gitbook/assets/images/generic/cp4data.png)
+![Cloud Pak for Data pipeline](images/generic/cp4data.png)
 
 ### A few other noteworthy mentions
 
@@ -101,7 +101,7 @@ Cloud Pak for Data:
 * ... can be deployed on any major cloud provider (IBM, AWS, Azure, GCP)
 * ... provides a free 7-day trial -- [Cloud Pak Experience](https://www.ibm.com/cloud/garage/cloud-pak-experiences/)
 
-![Cloud Pak for Data stack](.gitbook/assets/images/generic/cpd-stack.png)
+![Cloud Pak for Data stack](images/generic/cpd-stack.png)
 
 ## Credits
 

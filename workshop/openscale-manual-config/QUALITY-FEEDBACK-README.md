@@ -16,7 +16,7 @@ The submodule contains the following steps:
 If you [Created the Project](https://ibm-developer.gitbook.io/cloudpakfordata-telco-churn-workshop/getting-started/pre-work#create-a-new-project) using the [Customer-Churn-Project.zip](https://github.ibm.com/IBMDeveloper/cp4d-workshop-telco-churn/blob/master/projects/Customer-Churn-Project.zip) file, your notebook will be present in that project, under the `Assets` tab:
 
 TODO: Replace with new image
-![Project from zip assets tab](../.gitbook/assets/images/aios/aios-notebook-zip-file-asset.png)
+![Project from zip assets tab](../images/aios/aios-notebook-zip-file-asset.png)
 
 You may now skip to the next step [Update credentials](#2-update-credentials)
 
@@ -28,7 +28,7 @@ If, for some reason, you are not using the [Created the Project](https://ibm-dev
 
 At the project overview click the *New Asset* button, and choose *Add notebook*.
 
-![Add a new asset](../.gitbook/assets/images/wml/wml-add-asset.png)
+![Add a new asset](../images/wml/wml-add-asset.png)
 
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
@@ -42,11 +42,11 @@ https://raw.githubusercontent.com/IBM/telco-churn-workshop-cpd/master/notebooks/
 > * **Notebook with output**: [openscale-fairness-explainability-with-output.ipynb](../../notebooks/with-output/openscale-quality-feedback-with-output.ipynb)
 
 TODO: new image
-![Add notebook name and URL](../.gitbook/assets/images/openscale/openscale-add-notebook-url.png)
+![Add notebook name and URL](../images/openscale/openscale-add-notebook-url.png)
 
 When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-![Notebook loaded](../.gitbook/assets/images/aios/OpenScaleNotebook.png)
+![Notebook loaded](../images/aios/OpenScaleNotebook.png)
 
 ### 3. Update credentials
 
@@ -62,7 +62,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 > **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
 
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+![Stop kernel](../images/wml/JupyterStopKernel.png)
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
@@ -72,11 +72,11 @@ We've enabled the monitor for Quality and Feedback logging, now let's explore th
 
 * In the same browser \(but a separate tab\), open the `Services` tab by clicking the icon in the upper right. Go to the `OpenScale` tile under the `AI` category and click `Open`:
 
-![Deploy OpenScale](../.gitbook/assets/images/aios/aios-deploy-service.png)
+![Deploy OpenScale](../images/aios/aios-deploy-service.png)
 
 * When the dashboard loads, _**Click**_ on the _**'Model Monitors'**_  tab and you will see the deployment you configured in the jupyter notebook when you ran it in the previous section:
 
-![Explore OpenScale Model monitors](../.gitbook/assets/images/openscale-config/openscale-config-explore-model-monitors.png)
+![Explore OpenScale Model monitors](../images/openscale-config/openscale-config-explore-model-monitors.png)
 
 Do not worry if the name you see does not match exactly with the screenshot. The deployment name you see will correspond to the variable used in the Jupyter notebook
 
@@ -86,17 +86,17 @@ In our dashboard we can see that we have a choice for a variety of graphs under 
 
 * Click on a time slot to dig deeper into the graph:
 
-![Quality area under ROC](../.gitbook/assets/images/openscale-config/openscale-config-quality-area-under-roc.png)
+![Quality area under ROC](../images/openscale-config/openscale-config-quality-area-under-roc.png)
 
 We can see statistics for this time slot including *Area under ROC*, *TPR*, *FPR*, *Recall*, *Precision*, and more:
 
-![Quality statitstics](../.gitbook/assets/images/openscale-config/openscale-config-quality-statistics.png)
+![Quality statitstics](../images/openscale-config/openscale-config-quality-statistics.png)
 
 Other time slots can be examined to gather the relevant quality statistics.
 
 *Payload logging* is enabled and will take place automatically when used with Watson Machine Learning. All Scoring request payloads and the returned data will be logged in the datamart.
 
-![Payload logging](../.gitbook/assets/images/openscale-config/openscale-config-payload-logging.png)
+![Payload logging](../images/openscale-config/openscale-config-payload-logging.png)
 
 ### Recap
 

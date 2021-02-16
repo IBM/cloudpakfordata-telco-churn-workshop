@@ -71,3 +71,24 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+# stuff for mkdocs merge
+aida-cpd3-local-db2.txt
+flaskapp/.Python
+flaskapp/bin/
+flaskapp/include/
+flaskapp/lib/
+flaskapp/venv/
+gg-6-8
+gitlog-6-8
+notebooks/orig.ipynb
+orig.md
+workshop/admin-guide/DigiCertGlobalRootCA.crt
+workshop/admin-guide/DigiCertGlobalRootCA.pem
+workshop/admin-guide/Organize-Experience-Run-Book.docx
+workshop/admin-guide/cmd.txt
+workshop/admin-guide/gitblameReadme.txt
+workshop/images/
+workshop/machine-learning-deployment-scoring/orig_README.md
+workshop/orig_SUMMARY.md
+

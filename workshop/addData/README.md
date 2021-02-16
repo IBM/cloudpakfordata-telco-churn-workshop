@@ -16,15 +16,15 @@ From the upper-left (☰) hamburger menu, click on *Collect* -> *Data virtualiza
 
 > _Note: The names of the tables to select may vary based on names chosen during data virtualization. The default names to select are: BILLING, PRODUCTS, CUSTOMERS, BILLINGPRODUCTS AND BILLINGPRODUCTSCUSTOMER_
 
-![Select the data you want to import](../.gitbook/assets/images/dv/dv-8-select-data.png)
+![Select the data you want to import](../images/dv/dv-8-select-data.png)
 
 In the 'Assign virtual objects' screen, choose the project where you want to assign the data. If there is a `Submit to catalog` checkbox on the top right, unselect it and finally click the *Assign* button to add the data to your project.
 
-![Assign the data to a project](../.gitbook/assets/images/dv/dv-9-assign.png)
+![Assign the data to a project](../images/dv/dv-9-assign.png)
 
 In the pop up panel, you will receive a confirmation that the objects have been assigned to your project. Click the *`Go to project`* button.
 
-![Data assigned to a project](../.gitbook/assets/images/dv/dv-objects-assigned-confirmation.png)
+![Data assigned to a project](../images/dv/dv-objects-assigned-confirmation.png)
 
 In the project page, clicking on the `Assets` tab will show the virtualized tables and joined tables that are now in your project.
 

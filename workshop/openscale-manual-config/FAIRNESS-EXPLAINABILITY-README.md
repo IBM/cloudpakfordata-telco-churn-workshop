@@ -17,7 +17,7 @@ The submodule contains the following steps:
 
 If you [Created the Project](https://ibm-developer.gitbook.io/cloudpakfordata-telco-churn-workshop/getting-started/pre-work#create-a-new-project) using the [Customer-Churn-Project.zip](https://github.ibm.com/IBMDeveloper/cp4d-workshop-telco-churn/blob/master/projects/Customer-Churn-Project.zip) file, the `openscale-fairness-explainability` notebook will be present in that project, under the `Assets` tab:
 
-![Project from zip assets tab](../.gitbook/assets/images/openscale-config/openscale-config-explainability-notebook.png)
+![Project from zip assets tab](../images/openscale-config/openscale-config-explainability-notebook.png)
 
 You may now skip to the next step [Update credentials](#2-update-credentials)
 
@@ -29,7 +29,7 @@ If, for some reason, you are not using the [Created the Project](https://ibm-dev
 
 At the project overview click the *New Asset* button, and choose *Add notebook*.
 
-![Add a new asset](../.gitbook/assets/images/wml/wml-add-asset.png)
+![Add a new asset](../images/wml/wml-add-asset.png)
 
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
@@ -42,11 +42,11 @@ https://raw.githubusercontent.com/IBM/telco-churn-workshop-cpd/master/notebooks/
 > * **Notebook**: [openscale-fairness-explainability.ipynb](../../notebooks/openscale-fairness-explainability.ipynb)
 > * **Notebook with output**: [openscale-fairness-explainability-with-output.ipynb](../../notebooks/with-output/openscale-fairness-explainability-with-output.ipynb)
 
-![Add notebook name and URL](../.gitbook/assets/images/openscale-config/openscale-config-url-explainability.png)
+![Add notebook name and URL](../images/openscale-config/openscale-config-url-explainability.png)
 
 When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-![Notebook loaded](../.gitbook/assets/images/aios/OpenScaleNotebook.png)
+![Notebook loaded](../images/aios/OpenScaleNotebook.png)
 
 ### 2. Update credentials
 
@@ -62,7 +62,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 > **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
 
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+![Stop kernel](../images/wml/JupyterStopKernel.png)
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
@@ -78,11 +78,11 @@ We've enabled the monitors for Fairness and Explainability, now let's explore th
 
 * In the same browser \(but a separate tab\), open the `Services` tab by clicking the icon in the upper right. Go to the `OpenScale` tile under the `AI` category and click `Open`:
 
-![Deploy OpenScale](../.gitbook/assets/images/aios/aios-deploy-service.png)
+![Deploy OpenScale](../images/aios/aios-deploy-service.png)
 
 * When the dashboard loads, _**Click**_ on the _**'Model Monitors'**_  tab and you will see the deployment you configured in the jupyter notebook when you ran it in the previous section. Click on the `Fairness` section of the tile to bring up the *Fairness monitor*:
 
-![Explore OpenScale Model monitors](../.gitbook/assets/images/openscale-config/openscale-config-explore-model-monitors.png)
+![Explore OpenScale Model monitors](../images/openscale-config/openscale-config-explore-model-monitors.png)
 
 Do not worry if the name you see does not match exactly with the screenshot. The deployment name you see will correspond to the variable used in the Jupyter notebook
 
@@ -92,7 +92,7 @@ You will see that the *Fairness* monitor is enabled and shows a graph of recent 
 
 * Look for a time slot that shows bias. The monitor only runs once per hour, so there may only be one "dot" representing a single run when you first visit the graph. Click on it for more details:
 
-![Fairness monitor click for details](../.gitbook/assets/images/openscale-config/openscale-config-fairness-graph.png)
+![Fairness monitor click for details](../images/openscale-config/openscale-config-fairness-graph.png)
 
 For a given time slot, we will see a comparison between the 2 groups, in this case, female and male. A bar chart presents information for percent of favorable vs. unfavorable outcomes.
 
@@ -100,35 +100,35 @@ We can choose our *Data set* from a series of radio buttons, whether *Payload + 
 
 * Click on the various radio buttons, toggle the monitored features, and change the time to see how the tool works:
 
-![Fairness transactions](../.gitbook/assets/images/openscale-config/openscale-config-bias-female.png)
+![Fairness transactions](../images/openscale-config/openscale-config-bias-female.png)
 
 * Now back to our biased time slot, click on *Debiased* Data Set and *Sex* and view how the use of the Debiased endpoint has made our scoring more fair:
 
-![Debiased Data Set](../.gitbook/assets/images/openscale-config/openscale-config-debiased-female-endpoint.png)
+![Debiased Data Set](../images/openscale-config/openscale-config-debiased-female-endpoint.png)
 
 * Click on the `View Transactions` button. We can see the various transactions that took place during this time slot, as well as some aggregate information around "Risk" and "No Risk" for both the Current model and the Debiased model. We can click on `Explain` for one of the transactions for more detailed information (HINT: A "Risk" transaction might be more interesting):
 
-![Explain transaction](../.gitbook/assets/images/openscale-config/openscale-config-view-biased.png)
+![Explain transaction](../images/openscale-config/openscale-config-view-biased.png)
 
 > Note that the explanation of a transaction requires that 1000's of scoring transactions take place using slightly perturbed data for each of the features. This can take several seconds, or even minutes. Future use of this individual transaction will be cached, so the network latency and overhead from performing the scoring will not be a factor.
 
 There is a lot of information available for a single transaction:
 
-![Explain a transaction](../.gitbook/assets/images/openscale-config/openscale-config-explain-transaction.png)
+![Explain a transaction](../images/openscale-config/openscale-config-explain-transaction.png)
 
 * Higlight the "i" information icon next to *Minimum changes for another outcome* and *Maximum changes allowed for the same outcome* to help understand the use of the *Pertinent Negative* and *Pertinent Positive*:
 
 * You can see information about the *Perntinent Negative*, for example, that shows what the minimum changes would need to be to cause a different outcome, i.e from Risk to No Risk, or changing No Risk to Risk. In my example shown, you can see that this is not always calculated:
 
-![Pertinent Negative explanation](../.gitbook/assets/images/openscale-config/openscale-config-pertinent-negative.png)
+![Pertinent Negative explanation](../images/openscale-config/openscale-config-pertinent-negative.png)
 
 * Scroll down and you can see that the *Most important factors influencing prediction* are highlighted, and below is a complet breakdown of all features, with the percent of influence for the score of either *Risk* or *No Risk*:
 
-![Explainability important factors](../.gitbook/assets/images/openscale-config/openscale-config-explainability-breakdown.png)
+![Explainability important factors](../images/openscale-config/openscale-config-explainability-breakdown.png)
 
 * Click on the `View Debiased Endpoint` button. Here you can see some *Debiased Endpoint Code Snippet* examples, showing *cURL*, *Java*, and *Python* code that can utilize the endpoint for debiased transactions, enabling a developer to get a machine learning model score that prevents the biased outcome. (You may need to scroll down to see this):
 
-![Debiased Endpoint code examples](../.gitbook/assets/images/openscale-config/openscale-config-debiased-endpoint-python.png)
+![Debiased Endpoint code examples](../images/openscale-config/openscale-config-debiased-endpoint-python.png)
 
 ### Get Explainability information
 
@@ -136,7 +136,7 @@ There is a lot of information available for a single transaction:
 
 * If you saved the transaction_id that you copied after running cell *5.7* in the notebook, you can past it into the search bar and press enter:
 
-![Explain transaction](../.gitbook/assets/images/openscale-config/openscale-config-explain-transaction.png)
+![Explain transaction](../images/openscale-config/openscale-config-explain-transaction.png)
 
 * Any previous Explainability transactions will be cached and presented as a tab that you can click on to revisit.
 
