@@ -11,7 +11,7 @@ The submodule contains the following steps:
 
 If you [Created the Project](https://ibm-developer.gitbook.io/cloudpakfordata-telco-churn-workshop/getting-started/pre-work#create-a-new-project) using the [Customer-Churn-Project.zip](https://github.ibm.com/IBMDeveloper/cp4d-workshop-telco-churn/blob/master/projects/Customer-Churn-Project.zip) file, the `openscale-drift-config` notebook will be present in that project, under the `Assets` tab:
 
-![Project from zip assets tab](../.gitbook/assets/images/openscale-config/openscale-config-drift-notebook.png)
+![Project from zip assets tab](../images/openscale-config/openscale-config-drift-notebook.png)
 
 You may now skip to the next step [Update credentials](#2-update-credentials)
 
@@ -23,7 +23,7 @@ If, for some reason, you are not using the [Created the Project](https://ibm-dev
 
 At the project overview click the *New Asset* button, and choose *Add notebook*.
 
-![Add a new asset](../.gitbook/assets/images/wml/wml-add-asset.png)
+![Add a new asset](../images/wml/wml-add-asset.png)
 
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
@@ -36,11 +36,11 @@ https://raw.githubusercontent.com/IBM/telco-churn-workshop-cpd/master/notebooks/
 > * **Notebook**: [openscale-drift-config.ipynb](../../notebooks/openscale-drift-config.ipynb)
 > * **Notebook with output**: [openscale-drift-config-with-output.ipynb](../../notebooks/with-output/openscale-drift-config-with-output.ipynb)
 
-![Add notebook name and URL](../.gitbook/assets/images/openscale-config/openscale-config-url-drift.png)
+![Add notebook name and URL](../images/openscale-config/openscale-config-url-drift.png)
 
 When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-![Notebook loaded](../.gitbook/assets/images/aios/OpenScaleNotebook.png)
+![Notebook loaded](../images/aios/OpenScaleNotebook.png)
 
 ### 2. Update credentials
 
@@ -56,7 +56,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 > **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
 
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+![Stop kernel](../images/wml/JupyterStopKernel.png)
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
@@ -65,34 +65,34 @@ Spend an minute looking through the sections of the notebook to get an overview.
 
 * In the same browser \(but a separate tab\), open the `Services` tab by clicking the icon in the upper right. Click on the `OpenScale` tile under the `AI` category, and in the next window, click `Open`:
 
-![Deploy OpenScale](../.gitbook/assets/images/aios/aios-deploy-service.png)
+![Deploy OpenScale](../images/aios/aios-deploy-service.png)
 
 * When the dashboard loads, _**Click**_ on the _**'Model Monitors'**_  tab and you will see the deployment you configured in the jupyter notebook when you ran it in a previous section:
 
-![Explore OpenScale Model monitors](../.gitbook/assets/images/openscale-config/openscale-config-explore-model-monitors.png)
+![Explore OpenScale Model monitors](../images/openscale-config/openscale-config-explore-model-monitors.png)
 
 Do not worry if the name you see does not match exactly with the screenshot. The deployment name you see will correspond to the variable used in the Jupyter notebook
 
 * Either click on the `Drift` area of the card and then `Drop in accuracy` on the subsequent page, *or* 
   click on the top of the card and then on the percentage shown for drift and then `Drop in accuracy`:
 
-![Drift Drop in accuracy](../.gitbook/assets/images/openscale-config/openscale-config-drift-drop.png)
+![Drift Drop in accuracy](../images/openscale-config/openscale-config-drift-drop.png)
 
 * Click on a time slice in the graph and a window will show the number of transactions responsible "for drop in accuracy" and "for drop in data consistency":
 
-![Drift transactions](../.gitbook/assets/images/openscale-config/openscale-config-drift-drops-consistency.png)
+![Drift transactions](../images/openscale-config/openscale-config-drift-drops-consistency.png)
 
 * You can choose either or both to get details about "Transactions responsible for drop in accuracy and data consistency":
 
-![Transactions responsible for drop in accuracy and data consistency](../.gitbook/assets/images/openscale-config/openscale-config-drift-details.png)
+![Transactions responsible for drop in accuracy and data consistency](../images/openscale-config/openscale-config-drift-details.png)
 
 * Drilling deeper will bring up the individual transactions:
 
-![Drift list of transactions](../.gitbook/assets/images/openscale-config/openscale-config-drift-transactions-responsible.png)
+![Drift list of transactions](../images/openscale-config/openscale-config-drift-transactions-responsible.png)
 
 * And as we've seen before, we can choose a transaction to get the details:
 
-![Drift detailed explaination](../.gitbook/assets/images/openscale-config/openscale-config-drift-explain.png)
+![Drift detailed explaination](../images/openscale-config/openscale-config-drift-explain.png)
 
 ### Recap
 

@@ -14,7 +14,7 @@ This lab is comprised of the following steps:
 
 If you [Created the Project](https://ibm-developer.gitbook.io/cloudpakfordata-telco-workshop/getting-started/pre-work#2-create-a-project-and-deployment-space) using the [Customer-Churn-Project.zip](https://github.ibm.com/IBMDeveloper/cp4d-workshop-telco-churn/tree/master/projects/Customer-Churn-Project.zip) file, your notebook will be present in that project, under the `Assets` tab:
 
-![Project from zip assets tab](../.gitbook/assets/images/aios/aios-notebook-zip-file-asset.png)
+![Project from zip assets tab](../images/aios/aios-notebook-zip-file-asset.png)
 
 You may now skip to the next step [Update credentials](#2-update-credentials)
 
@@ -26,7 +26,7 @@ If, for some reason, you have not followed the [Create a Project and Deployment 
 
 At the project overview click the *Add to project* button, and choose *Notebook* or click *New notebook* option next to the Notebooks section.
 
-![Add a new asset](../.gitbook/assets/images/wml/wml-1-add-asset.png)
+![Add a new asset](../images/wml/wml-1-add-asset.png)
 
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
@@ -39,11 +39,11 @@ https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/maste
 > * **Notebook**: [openscale-full-configuration.ipynb](https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/openscale-full-configuration.ipynb)
 > * **Notebook with output**: [openscale-full-configuration-with-output.ipynb](https://raw.githubusercontent.com/IBM/cloudpakfordata-telco-churn-workshop/master/notebooks/with-output/openscale-full-configuration-with-output.ipynb)
 
-![Add notebook name and URL](../.gitbook/assets/images/wml/wml-2-add-name-and-url.png)
+![Add notebook name and URL](../images/wml/wml-2-add-name-and-url.png)
 
 When the Jupyter notebook is loaded and the kernel is ready then we can start executing cells.
 
-![Notebook loaded](../.gitbook/assets/images/aios/OpenScaleNotebook.png)
+![Notebook loaded](../images/aios/OpenScaleNotebook.png)
 
 ### 2. Update credentials
 
@@ -56,7 +56,7 @@ When the Jupyter notebook is loaded and the kernel is ready then we can start ex
 
 > **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to prevent leaking of memory resources!*
 
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+![Stop kernel](../images/wml/JupyterStopKernel.png)
 
 Spend an minute looking through the sections of the notebook to get an overview. You will run cells individually by highlighting each cell, then either click the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
 
