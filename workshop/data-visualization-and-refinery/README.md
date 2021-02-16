@@ -14,11 +14,11 @@ This section is broken up into the following steps:
 
 From the *Project* home, under the *Assets* tab, click on the *Data assets* arrow to toggle it and open up the list of data assets. Click the box next to *USERxxxx.BILLING* (where `USERxxxx` is your username or the username of the person who granted you data access) to check it, and click the 3 dots to the right, and then *Refine* :
 
-![Launch the BILLING table](../.gitbook/assets/images/dr/dr-1-launch-billing.png)
+![Launch the BILLING table](../images/dr/dr-1-launch-billing.png)
 
 Data Refinery should launch and open the data like the image below:
 
-![Data Refinery view of the BILLING table](../.gitbook/assets/images/dr/dr-2-view-billing.png)
+![Data Refinery view of the BILLING table](../images/dr/dr-2-view-billing.png)
 
 Click the `X` by the *Details* button to close it.
 
@@ -30,21 +30,21 @@ We'll start out in the *Data* tab.
 
 For example, type *filter* on the Command line and observe that autocomplete will give hints on the syntax and how to use the command:
 
-![Command line filter](../.gitbook/assets/images/dr/dr-cli-filter.png)
+![Command line filter](../images/dr/dr-cli-filter.png)
 
 When you have completed a command, click Apply to apply the operation to your data set.
 
 Click the `Operation +` button:
 
-![Choose Operation button](../.gitbook/assets/images/dr/dr-choose-operation-button.png)
+![Choose Operation button](../images/dr/dr-choose-operation-button.png)
 
 We want to make sure that there are no empty values, and there may be some for the *TotalCharges* column, so let's fix that. Click on `Filter` and choose the *TotalCharges* column from the drop down, then the Operator *Is empty*, then `Apply`:
 
-![Filter is empty](../.gitbook/assets/images/dr/dr-filter-is-empty.png)
+![Filter is empty](../images/dr/dr-filter-is-empty.png)
 
 We can see that there is only 1 row with an empty value for *TotalCharges*:
 
-![Filter is empty results](../.gitbook/assets/images/dr/dr-is-empty-results.png)
+![Filter is empty results](../images/dr/dr-is-empty-results.png)
 
 It should be safe to just drop these rows from the data set, so let's do that.
 
@@ -52,11 +52,11 @@ First, remove the filter that you just added. You can delete it from the "Steps"
 
 Next, choose the Operation *Remove empty rows*, select the *TotalCharges* column, click `Next` and then click `Apply`:
 
-![Remove empty rows](../.gitbook/assets/images/dr/dr-remove-empty-rows.png)
+![Remove empty rows](../images/dr/dr-remove-empty-rows.png)
 
 Finally, we can remove the *CustomerID* column, since that won't be useful for training a machine learning model in the next exercise. Choose the *Remove* operator, then choose `Change column selection`. Under `Select column` pick *customerID*, click `Next` and then click `Apply`:
 
-![Remove CustomerID column](../.gitbook/assets/images/dr/dr-remove-customerID-column.png)
+![Remove CustomerID column](../images/dr/dr-remove-customerID-column.png)
 
 ### 3. Use Data Flow steps to keep track of your work
 
@@ -64,13 +64,13 @@ What if you need to show a non-technical person the steps you took? What if we d
 
 Within Data Refinery, we keep track of the steps and we can even undo (or redo) an action using the circular arrows:
 
-![Undo recent action](../.gitbook/assets/images/dr/dr-undo-recent-action.png)
+![Undo recent action](../images/dr/dr-undo-recent-action.png)
 
 As you refine your data, IBM Data Refinery keeps track of the steps in your data flow. You can modify them and even select a step to return to a particular moment in your data’s transformation.
 
 To see the steps in the data flow that you have performed, click the *Steps* button. The operations that you have performed on the data will be shown:
 
-![Data Flow steps](../.gitbook/assets/images/dr/dr-data-flow-steps.png)
+![Data Flow steps](../images/dr/dr-data-flow-steps.png)
 
 You can modify these steps in real time and save for future use.
 
@@ -78,7 +78,7 @@ You can modify these steps in real time and save for future use.
 
 Clicking on the *Profile* tab will bring up a quick view of several histograms about the data.
 
-![Data Refinery Profile tab](../.gitbook/assets/images/dr/dr-4-profile.png)
+![Data Refinery Profile tab](../images/dr/dr-4-profile.png)
 
 You can get insight into the data from the histograms:
 
@@ -94,27 +94,27 @@ You can get insight into the data from the histograms:
 
 Choose the *Visualizations* tab to bring up an option to choose which columns to visualize. Under *Columns to Visualize* choose *TotalCharges* and click `Visualize data`:
 
-![Visualize TotalCharges column](../.gitbook/assets/images/dr/dr-vis-choose-column-TotalCharges.png)
+![Visualize TotalCharges column](../images/dr/dr-vis-choose-column-TotalCharges.png)
 
 We first see the data in a histogram by default. You can choose other chart types. We'll pick `Scatter plot` next by clicking on it:
 
-![Visualize TotalCharges histogram](../.gitbook/assets/images/dr/dr-vis-default-histogram-next-scatter.png)
+![Visualize TotalCharges histogram](../images/dr/dr-vis-default-histogram-next-scatter.png)
 
 In the scatter plot, choose *TotalCharges* for the x-axis, *MonthlyCharges* for the y-axis, and *Churn* for the *Color map*. Drag the bottom *TotalCharges* filter to show all the data:
 
-![set x- and y- axes and Color map](../.gitbook/assets/images/dr/dr-vis-x-y-Color-map.png)
+![set x- and y- axes and Color map](../images/dr/dr-vis-x-y-Color-map.png)
 
 Scroll down and give the scatter plot a title and sub-title if you wish. Under the `Actions` panel, notice that you can perform tasks such as *Start over*, *Download chart details*, *Download chart image*, or set *Global visualization preferences* (_Note: Hover over the icons to see the names_). Click on the "gear" icon in the `Actions` panel
 
-![Visualize set titles and choose preferences](../.gitbook/assets/images/dr/dr-chart-monthly-v-total-w-churn.png)
+![Visualize set titles and choose preferences](../images/dr/dr-chart-monthly-v-total-w-churn.png)
 
 We see that we can do things in the *Global visualization preferences* for *Titles*, *Tools*, *Theme*, and *Notification*. Click on the `Theme` tab and update the color scheme to *Vivid*. Then click the `Apply` button :
 
-![Visualize set vivid](../.gitbook/assets/images/dr/dr-global-vis-vivid.png)
+![Visualize set vivid](../images/dr/dr-global-vis-vivid.png)
 
 Now the colors for all of our charts will reflect this:
 
-![Visualize show vivid](../.gitbook/assets/images/dr/dr-show-vivid.png)
+![Visualize show vivid](../images/dr/dr-show-vivid.png)
 
 ### Conclusion
 

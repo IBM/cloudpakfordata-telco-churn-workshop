@@ -26,29 +26,29 @@ After a model has been created and saved / promoted to our deployment space, we 
 
 * Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
-![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
+![Analytics Analyze deployments](../images/wml/AnalyzeAnalyticsDeployments.png)
 
 * Choose the deployment space you setup previously by clicking on the name of the space.
 
-![Deployment space](../.gitbook/assets/images/wml/deployment-space.png)
+![Deployment space](../images/wml/deployment-space.png)
 
 * In your space overview, click on the model name that you want to create a deployment for.
 
-![select model](../.gitbook/assets/images/wml/deployment-select-model.png)
+![select model](../images/wml/deployment-select-model.png)
 
 > Note: There may be more than one model listed in the 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
 
 * Click `Create deployment` on the top-right corner.
 
-![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
+![Actions Deploy model](../images/wml/ActionsDeployModel.png)
 
 * On the 'Create a deployment' screen, choose `Online` for the *Deployment Type*, give the Deployment a name and optional description and click `Create`:
 
-![Online  Create](../.gitbook/assets/images/wml/OnlineDeploymentCreate.png)
+![Online  Create](../images/wml/OnlineDeploymentCreate.png)
 
 * The Deployment will show as *In progress* and then switch to *Deployed* when done.
 
-![Status Deployed](../.gitbook/assets/images/wml/StatusDeployed.png)
+![Status Deployed](../images/wml/StatusDeployed.png)
 
 ### Test Online Model Deployment
 
@@ -58,7 +58,7 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 
 * To get to the built-in test tool, click on the `Test` tab. Click on the *Provide input data as JSON* icon.
 
-![Test deployment with JSON](../.gitbook/assets/images/autoai/autoai-test-json.png)
+![Test deployment with JSON](../images/autoai/autoai-test-json.png)
 
 * Copy and paste one of the following data objects into the *Body* panel. If you are testing a model you built using the Jupyter notebooks, copy and paste the first object. If you are testing a model you built using AutoAI, copy and paste the second object.
 
@@ -86,11 +86,11 @@ Cloud Pak for Data offers tools to quickly test out Watson Machine Learning mode
 
 * Click the `Predict` button, the model will be called with the input data. The results will display in the *Result* window. Scroll down to the bottom of the result to see the prediction (i.e "Yes" or a "No" for Churn):
 
-![Testing the deployed model](../.gitbook/assets/images/wml/TestingDeployedModel.png)
+![Testing the deployed model](../images/wml/TestingDeployedModel.png)
 
 > *Note: For some deployed models (for example AutoAI based models), you can provide the request payload using a generated form by clicking on the `Provide input using form` icon and providing values for the input fields of the form. If the form is not available for the model you deployed, the icon will remain grayed out.*
 
-![Input to the fields](../.gitbook/assets/images/autoai/autoai-input-fields.png)
+![Input to the fields](../images/autoai/autoai-input-fields.png)
 
 ### (Optional) Test Online Model Deployment using cURL
 
@@ -118,7 +118,7 @@ export WML_AUTH_TOKEN=<value-of-access-token>
 
 * Back on the model deployment page, gather the `URL` to invoke the model from the *API reference* by copying the `Endpoint`, and exporting it to a variable:
 
-![Model Deployment Endpoint](../.gitbook/assets/images/wml/ModelDeploymentEndpoint.png)
+![Model Deployment Endpoint](../images/wml/ModelDeploymentEndpoint.png)
 
 * Now save that endpoint to a variable named `URL` by exporting it.
 
@@ -146,29 +146,29 @@ Lets start by creating the deployment:
 
 * Navigate to the left-hand (☰) hamburger menu and choose `Analyze` -> `Analytics deployments`:
 
-![Analytics Analyze deployments](../.gitbook/assets/images/wml/AnalyzeAnalyticsDeployments.png)
+![Analytics Analyze deployments](../images/wml/AnalyzeAnalyticsDeployments.png)
 
 * Choose the deployment space you setup previously by clicking on the name of the space.
 
-![Deployment space](../.gitbook/assets/images/wml/deployment-space.png)
+![Deployment space](../images/wml/deployment-space.png)
 
 * In your space overview, click on the model name that you want to create a deployment for.
 
-![select model](../.gitbook/assets/images/wml/deployment-select-model.png)
+![select model](../images/wml/deployment-select-model.png)
 
 > Note: There may be more than one model listed in the 'Models' section. This can happen if you have run the Jupyter notebook more than once or if you have run through both the Jupyter notebook and AutoAI modules to create models. Although you could select any of the models you see listed in the page, the recommendation is to start with whicever model is available that is using a `spark-mllib_2.3` runtime.
 
 * Click `Create deployment` on the top-right corner.
 
-![Actions Deploy model](../.gitbook/assets/images/wml/ActionsDeployModel.png)
+![Actions Deploy model](../images/wml/ActionsDeployModel.png)
 
 * On the `Create a deployment` screen, choose `Batch` for the *Deployment Type*, give the Deployment a name and optional description. The default values for environment definitions, hardware definition and nodes can be left (in scenarios with large or frequent batch jobs, you may choose to scale these values up). Click `Create`:
 
-![Batch Deployment Create](../.gitbook/assets/images/wml/create_batch_deployment.png)
+![Batch Deployment Create](../images/wml/create_batch_deployment.png)
 
 * Once the status shows as *Deployed* , you will be able to start submitting jobs to the deployment.
 
-![Status Deployed](../.gitbook/assets/images/wml/batch_dep_status.png)
+![Status Deployed](../images/wml/batch_dep_status.png)
 
 ### Create and Schedule a Job
 
@@ -184,7 +184,7 @@ The Jupyter notebook is already included as an asset in the project you imported
 
 * Scroll down to the `Notebooks` section of the page and *Click* on the pencil icon at the right of the `machinelearning-churn-batchscoring` notebook.
 
-![Notebook Open](../.gitbook/assets/images/wml/batch_open_nb.png)
+![Notebook Open](../images/wml/batch_open_nb.png)
 
 When the Jupyter notebook is loaded and the kernel is ready, we will be ready to start executing it in the next section.
 
@@ -215,13 +215,13 @@ With the notebook open, you will notice:
 
 * Section `3.0 Monitor Batch Job Status` will start polling the job status until it completes or fails. The code cell will output the status every 5 seconds as the job goes from queued to running to completed or failed.
 
-![Batch Job Status](../.gitbook/assets/images/wml/batch_results_poll.png)
+![Batch Job Status](../images/wml/batch_results_poll.png)
 
 * Once the job completes, continue to run the cells until the end of the notebook.
 
 > **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve resources! You can do this by going to the Asset page of the project, selecting the notebook you have been running and selecting to `Stop Kernel` from the Actions menu. If you see a lock icon on the notebook, click it to unlock the notebook so you can stop the kernel.*
 
-![Stop kernel](../.gitbook/assets/images/wml/JupyterStopKernel.png)
+![Stop kernel](../images/wml/JupyterStopKernel.png)
 
 ## (Optional) Integrate Model to Python Flask Application
 
@@ -313,11 +313,11 @@ Use your browser to go to [http://0.0.0.0:5000](http://0.0.0.0:5000) and try it 
 
 Enter some sample values into the form (see screenshot below).
 
-![Input a bunch of data...](../.gitbook/assets/images/generic/input.png)
+![Input a bunch of data...](../images/generic/input.png)
 
 Click the `Submit` button and the churn percentage is returned:
 
-![Get the churn percentage as a result](../.gitbook/assets/images/generic/score.png)
+![Get the churn percentage as a result](../images/generic/score.png)
 
 ## Conclusion
 

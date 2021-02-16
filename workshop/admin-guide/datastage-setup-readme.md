@@ -4,11 +4,11 @@
 
 * Go to the `Services` tab. Use the `Category` pulldown and select `Data governance`. Click on the `DataStage Edition` tile.
 
-![Deploy DataStage Edition service](../.gitbook/assets/images/ds/ds-deploy-service.png)
+![Deploy DataStage Edition service](../images/ds/ds-deploy-service.png)
 
 * Follow the instructions to provision DataStage. After the service has been provisioned, you should be able to see `Transform data` under `(☰) Hamburger menu` > `Organize` on CP4D.
 
-![Transform data under hamburger menu](../.gitbook/assets/images/ds/ds-transform-data.png)
+![Transform data under hamburger menu](../images/ds/ds-transform-data.png)
 
 ### Assign the Data Engineer role to the attendees
 
@@ -18,15 +18,15 @@ Users need to have the *Data Engineer* role in order to see the `Transform data`
 
 * Go to `(☰) Hamburger menu` > `Administer` > `Manage users`.
 
-![Manage users](../.gitbook/assets/images/ds/ds-manage-users.png)
+![Manage users](../images/ds/ds-manage-users.png)
 
 * Look for the user that you wish to assign the *Data Engineer* role to and on the right side of that record, click the `Edit` icon.
 
-![Edit user](../.gitbook/assets/images/ds/ds-edit-user.png)
+![Edit user](../images/ds/ds-edit-user.png)
 
 * Check the checkbox for `Data Engineer` and click `Save`.
 
-![Add data engineer role](../.gitbook/assets/images/ds/ds-add-data-engineer-role.png)
+![Add data engineer role](../images/ds/ds-add-data-engineer-role.png)
 
 ### Load the data into DB2 Warehouse
 
@@ -72,21 +72,21 @@ You can load the input data into the DB2 warehouse instance either by loading CS
 
 * From the upper-left (☰) hamburger menu click `LOAD` -> `Load Data`. Click on `browse files` and navigate to where you cloned this repository, then to `data/ds/` and choose [dept.csv](/data/ds/dept.csv), then click `Next`.
 
-![Load CSV - browse file](../.gitbook/assets/images/ds/ds-load-csv-browse-file.png)
+![Load CSV - browse file](../images/ds/ds-load-csv-browse-file.png)
 
 * Choose Schema `NULLIDRA` and click `+ New Table`. Under `Create a new Table`, type "DEPT", click `Create` and then click `Next`. 
 
-![Load CSV - create table](../.gitbook/assets/images/ds/ds-load-csv-create-table.png)
+![Load CSV - create table](../images/ds/ds-load-csv-create-table.png)
 
 * Verify that the data types identified for all the columns match the column description given [earlier](#-load-the-data-into-db2-warehouse). If it doesn't match, disable the `Detect data types` button and then click on the pencil icon next to the data type of the column that you want to update. Specify the correct data type in the modal and click `OK`. Once all columns have been verified, click `Next`.
 
-![Load CSV - data types](../.gitbook/assets/images/ds/ds-load-csv-data-types.png)
+![Load CSV - data types](../images/ds/ds-load-csv-data-types.png)
 
 * Click `Begin Load`.
 
 * Once loading is successful, click on `Load More Data` and repeat for the [/data/ds/emp.csv](/data/ds/emp.csv) file, naming the table `EMP`.
 
-![Load CSV - load more data](../.gitbook/assets/images/ds/ds-load-csv-load-more-data.png)
+![Load CSV - load more data](../images/ds/ds-load-csv-load-more-data.png)
 
 </details>
 
@@ -95,15 +95,15 @@ You can load the input data into the DB2 warehouse instance either by loading CS
 
 * From the upper-left (☰) hamburger menu, click `Run SQL`:
 
-![Run SQL](../.gitbook/assets/images/ds/ds-run-sql.png)
+![Run SQL](../images/ds/ds-run-sql.png)
 
 * Click on `From file` and then browse and select the [/workshop/admin-guide/scripts/LoadDataStageInput.sql](/workshop/admin-guide/scripts/LoadDataStageInput.sql) SQL file:
 
-![Run SQL - from file](../.gitbook/assets/images/ds/ds-run-sql-from-file.png)
+![Run SQL - from file](../images/ds/ds-run-sql-from-file.png)
 
 * Click `Run all` to run all the statements within the SQL script. Since the DEPT and EMP tables do not exist before running this script, the script will fail on the two DROP statements. You can ignore these failures:
 
-![Run SQL - run all](../.gitbook/assets/images/ds/ds-run-sql-run-all.png)
+![Run SQL - run all](../images/ds/ds-run-sql-run-all.png)
 
 </details>
 
@@ -111,15 +111,15 @@ You can load the input data into the DB2 warehouse instance either by loading CS
 
 * Back on Cloud Pak for Data, go to `(☰) Hamburger menu` > `Organize` > `Transform data`.
 
-![Open DataStage](../.gitbook/assets/images/ds/ds-open-datastage.png)
+![Open DataStage](../images/ds/ds-open-datastage.png)
 
 * Click `+ Create`. In the modal that opens up, type in a name for the project and click `Create`.
 
-![Create project](../.gitbook/assets/images/ds/ds-create-transform-project.png)
+![Create project](../images/ds/ds-create-transform-project.png)
 
 The project takes a few minutes to be created and once ready, it will be visible on the page. Click on the name of the project to open it.
 
-![Project created](../.gitbook/assets/images/ds/ds-created-project.png)
+![Project created](../images/ds/ds-created-project.png)
 
 ### Create DB2WH connection in DataStage
 
@@ -127,15 +127,15 @@ The input tables - `EMP` (containing employee data) and `DEPT` (containing depar
 
 * Click on the `Connections` tab and then click `+ Create` to add a new connection. Provide the name of the connection as `DB2WH`.
 
-![Create connection](../.gitbook/assets/images/ds/ds-create-connection.png)
+![Create connection](../images/ds/ds-create-connection.png)
 
 * Switch to the `Connection` tab. Provide the JDBC connection details using the credentials copied in the [Create an IBM Cloud instance of DB2 Warehouse](./virtualizing-db2-data-with-dv-setup-readme.md#create-an-ibm-cloud-instance-of-db2-warehouse) section above. Provide the `Connector type` as `JDBC`, the `URL` as the *ssljdbcurl* value from the copied credentials, the `User name` as the *username* from the copied credentials, and the `Password` as the *password* from the copied credentials. Click `OK` to save the connection. Click `Save` on the new modal that pops up.
 
-![Create connection - 2](../.gitbook/assets/images/ds/ds-create-connection-2.png)
+![Create connection - 2](../images/ds/ds-create-connection-2.png)
 
 A tile for the new connection will now be displayed in the `Connections` tab.
 
-![Created connection](../.gitbook/assets/images/ds/ds-created-connection.png)
+![Created connection](../images/ds/ds-created-connection.png)
 
 ### Troubleshooting for DataStage
 
@@ -143,7 +143,7 @@ A tile for the new connection will now be displayed in the `Connections` tab.
 
 * The first time a user uses the newly deployed DataStage service, they may run into the following error:
 
-![Invalid Universe Credentials Error](../.gitbook/assets/images/ds/ds-invalid-universe-credentials-error.png)
+![Invalid Universe Credentials Error](../images/ds/ds-invalid-universe-credentials-error.png)
 
 * To get past this, you will need to use the bash commands given below to perform the following steps:
 

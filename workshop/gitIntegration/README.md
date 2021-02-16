@@ -10,17 +10,17 @@ Use the GitLab menu to create a project and an empty repository.
 
 To create a token for GitLab, login to [GitLab](https://about.gitlab.com/), click on your user account in the top right and choose `Settings`:
 
-![GitLab user account](../.gitbook/assets/images/manage/GitLabUserAccount.png)
+![GitLab user account](../images/manage/GitLabUserAccount.png)
 
 From the left navigation bar select `Access tokens` and fill in the *name*, *expiration date*, and check the boxes for *read_api*, *read_repository* and *write_repository*. Finally, click `Create personal access token` button:
 
-![GitLab select Access Tokens](../.gitbook/assets/images/manage/GitLabSelectAccessTokens.png)
+![GitLab select Access Tokens](../images/manage/GitLabSelectAccessTokens.png)
 
 On the resulting page, you'll see your personal access token. Copy this.
 
 > NOTE: This token gives access to your git repository. Do not share with anyone.
 
-![GitLab copy Access Token](../.gitbook/assets/images/manage/GitLabCopyToken.png)
+![GitLab copy Access Token](../images/manage/GitLabCopyToken.png)
 
 Now go back to the Cloud Pak for Data *Create project* page and we'll add the token.
 
@@ -28,11 +28,11 @@ Now go back to the Cloud Pak for Data *Create project* page and we'll add the to
 
 Go the (☰) menu and click *Projects*
 
-![(☰) Menu -> Projects](../.gitbook/assets/images/manage/cpd-projects-menu.png)
+![(☰) Menu -> Projects](../images/manage/cpd-projects-menu.png)
 
 Click on *New project +*
 
-![Start a new project](../.gitbook/assets/images/manage/cpd-new-project.png)
+![Start a new project](../images/manage/cpd-new-project.png)
 
 Create a new project
 
@@ -52,7 +52,7 @@ Use the `Token` pulldown and select the token you created.
 
 Put in the repository URL, select a branch, and click `Create`.
 
-![Create Project with git](../.gitbook/assets/images/manage/projectAddGit.png)
+![Create Project with git](../images/manage/projectAddGit.png)
 
 When project creation completes, click on `View new project`.
 
@@ -62,7 +62,7 @@ Now if we create an asset in the project, we can push to git.
 
 At the project overview, click the `Add to project +` button, and choose `Notebook`:
 
-![Add a new asset](../.gitbook/assets/images/manage/addToGitProject.png)
+![Add a new asset](../images/manage/addToGitProject.png)
 
 On the next panel select the *From URL* tab, give your notebook a name, provide the following URL, and choose the Python 3.6 environment:
 
@@ -74,11 +74,11 @@ Click *Create notebook*.
 
 Now, go back to the top-level project page, click the "circular arrow" sync-icon, and choose `Pull and push`:
 
-![git pull and push](../.gitbook/assets/images/manage/gitPullAndPush.png)
+![git pull and push](../images/manage/gitPullAndPush.png)
 
 On the *Confirm Sync* page, select your token, check the box for your notebook, and click `Sync`:
 
-![git confirm sync](../.gitbook/assets/images/manage/gitConfirmSync.png)
+![git confirm sync](../images/manage/gitConfirmSync.png)
 
 The next screen will verify "Did you remove credentials from assets?". After confirming this, click `Continue export`.
 
