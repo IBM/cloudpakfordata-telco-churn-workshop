@@ -1,0 +1,37 @@
+# Modules:
+- labs:
+  - Module 2 - Project Setup:
+    - from: workshop/pre-work/README.md
+      to: deploy/skillsnetwork_repo/labs/module_2_setup/pre-work.md
+  - Module 3 - Collect:
+    - from: workshop/db-connection-and-virtualization/README.md
+      to: deploy/skillsnetwork_repo/labs/module_3_collect/db-connection-and-virtualization.md
+    - from: workshop/addData/README.md
+      to: deploy/skillsnetwork_repo/labs/module_3_collect/addData.md
+    - from: workshop/data-visualization-and-refinery/README.md
+      to: deploy/skillsnetwork_repo/labs/module_3_collect/data-visualization-and-refinery.md
+  - Module 4 - Organize:
+    - from: workshop/watson-knowledge-catalog-user/README.md
+      to: deploy/skillsnetwork_repo/labs/module_4_organize/watson-knowledge-catalog-user.md
+      # Maybe add datastage later
+  - Module 5 - Analyze:
+    - from: workshop/machine-learning-in-Jupyter-notebook/README.md
+      to: deploy/skillsnetwork_repo/labs/module_5_analyze/machine-learning-in-Jupyter-notebook.md
+    - from: workshop/machine-learning-autoai/README.md
+      to: deploy/skillsnetwork_repo/labs/module_5_analyze/machine-learning-autoai.md
+  - Module 6 - Infuse:
+    - from: workshop/machine-learning-deployment-scoring/README.md
+      to: deploy/skillsnetwork_repo/labs/module_6_infuse/machine-learning-deployment-scoring.md
+    - from: workshop/openscale-fastpath/README.md
+      to: deploy/skillsnetwork_repo/labs/module_6_infuse/openscale-fastpath.md
+    - from: workshop/openscale-notebook/README.md
+      to: deploy/skillsnetwork_repo/labs/module_6_infuse/openscale-notebook.md
+  - Extra Content for Admins:
+    - from: workshop/watson-knowledge-catalog-admin/README.md
+      to: deploy/skillsnetwork_repo/labs/module_admin_guide/watson-knowledge-catalog-admin.md
+    # - from: workshop/gitIntegration/README.md
+    #   to: deploy/skillsnetwork_repo/labs/module_2_setup/gitIntegration.md
+    # - from: workshop/admin-guide/datastage-setup-readme.md
+    #   to: deploy/skillsnetwork_repo/labs/module-admin-guide/datastage-setup.md
+    # - from: workshop/admin-guide/virtualizing-db2-data-with-dv-setup-readme.md
+    #   to: deploy/skillsnetwork_repo/labs/module-admin-guide/db-connection-and-dv.md
