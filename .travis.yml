@@ -7,7 +7,8 @@ addons:
     packages:
     - sshpass
 before_install:
-- openssl aes-256-cbc -K $encrypted_ea20ea420691_key -iv $encrypted_ea20ea420691_iv -in sknet_deploy_key.enc -out ~/.ssh/id_rsa -d
+- openssl aes-256-cbc -K $encrypted_ea20ea420691_key -iv $encrypted_ea20ea420691_iv
+  -in sknet_deploy_key.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval `ssh-agent -s`
 - sshpass -p $TRAVIS-AUTO-SYNC-PASSPHRASE ssh-add ~/.ssh/id_rsa
