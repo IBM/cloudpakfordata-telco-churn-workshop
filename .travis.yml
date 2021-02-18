@@ -11,7 +11,7 @@ before_install:
   -in sknet_deploy_key.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval `ssh-agent -s`
-- sshpass -p $TRAVIS-AUTO-SYNC-PASSPHRASE ssh-add ~/.ssh/id_rsa
+- sshpass -p $DEPLOY_KEYPHRASE ssh-add ~/.ssh/id_rsa
 - git clone git@gitlab.com:ibm/skills-network/courses/IBMDeveloperSkillsNetwork-DS0201EN-SkillsNetwork.git
   testclone
 script:
