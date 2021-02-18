@@ -3,18 +3,20 @@ python: 3.7
 addons:
   ssh_known_hosts:
   - gitlab.com
+  apt:
+    packages:
+    - sshpass
 before_install:
-  # - set +x
-  - echo -e $TRAVIS-AUTO-SYNC > ~/.ssh/id_rsa
-  - chmod 600 ~/.ssh/id_rsa
-  - eval `ssh-agent -s`
-  - sshpass -p $TRAVIS-AUTO-SYNC-PASSPHRASE ssh-add ~/.ssh/id_rsa
-  # - set -x
-  - git clone git@gitlab.com:ibm/skills-network/courses/IBMDeveloperSkillsNetwork-DS0201EN-SkillsNetwork.git testclone
+- openssl aes-256-cbc -K $encrypted_ea20ea420691_key -iv $encrypted_ea20ea420691_iv -in sknet_deploy_key.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- eval `ssh-agent -s`
+- sshpass -p $TRAVIS-AUTO-SYNC-PASSPHRASE ssh-add ~/.ssh/id_rsa
+- git clone git@gitlab.com:ibm/skills-network/courses/IBMDeveloperSkillsNetwork-DS0201EN-SkillsNetwork.git
+  testclone
 script:
-  - pip install flake8
-  - pip install -r flaskapp/requirements.txt
-  - flake8 flaskapp/telcochurn.py --ignore=E501 --ignore=F541
+- pip install flake8
+- pip install -r flaskapp/requirements.txt
+- flake8 flaskapp/telcochurn.py --ignore=E501 --ignore=F541
 cache:
   directories:
-    - $HOME/.cache/pip
+  - "$HOME/.cache/pip"
