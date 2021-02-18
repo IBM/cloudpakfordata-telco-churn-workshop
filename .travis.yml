@@ -1,9 +1,9 @@
+language: python
+python: 3.7
+script:
+  - pip install flake8
+  - pip install -r flaskapp/requirements.txt
+  - flake8 flaskapp/telcochurn.py --ignore=E501 --ignore=F541
 cache:
   directories:
     - $HOME/.cache/pip
-language: python
-  python: 3.7
-  script:
-    - pip install flake8
-    - pip install -r flaskapp/requirements.txt
-    - flake8 flaskapp/telcochurn.py --ignore=E501 --ignore=F541
