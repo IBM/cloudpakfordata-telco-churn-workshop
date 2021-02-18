@@ -1,5 +1,8 @@
 language: python
 python: 3.7
+addons:
+  ssh_known_hosts:
+  - gitlab.com
 before_install:
   # - set +x
   - echo -e $TRAVIS-AUTO-SYNC > ~/.ssh/id_rsa
