@@ -1,1 +1,2 @@
 python-resize-image>=1.1.19
+pyyaml>=5.1
