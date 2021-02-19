@@ -10,4 +10,5 @@ python ./deploy/pull-from-gitbook.py
 cd ./deploy/skillsnetwork_repo
 git add .
 git status
-git diff 
+git commit -m "sync from commit [$TRAVIS_COMMIT]: $TRAVIS_COMMIT_MESSAGE"
+git push
