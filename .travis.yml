@@ -20,7 +20,7 @@ deploy:
   on:
     branch: 
       - skillsnetwork-course-master
-      - 
+      - adding-travis-to-sknet
   provider: script
   script: deploy/deploy.sh
 cache:
