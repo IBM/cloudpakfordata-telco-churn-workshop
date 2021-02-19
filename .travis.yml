@@ -22,7 +22,7 @@ deploy:
       - skillsnetwork-course-master
       - adding-travis-to-sknet
   provider: script
-  script: deploy/deploy.sh
+  script: ./deploy/deploy.sh
 cache:
   directories:
   - "$HOME/.cache/pip"
