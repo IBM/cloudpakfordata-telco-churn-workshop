@@ -18,16 +18,11 @@ script:
 # - flake8 flaskapp/telcochurn.py --ignore=E501 --ignore=F541
 deploy:
   on:
-    all_branches: true
+    branch: 
+      - skillsnetwork-course-master
+      - 
   provider: script
-  script:
-    - pip install -r ./deploy/requirements.txt
-    - git clone git@gitlab.com:ibm/skills-network/courses/IBMDeveloperSkillsNetwork-DS0201EN-SkillsNetwork.git ./deploy/skillsnetwork_repo
-    - python ./deploy/pull-from-gitbook.py 
-    - cd ./deploy/skillsnetwork_repo
-    - git diff -r 
-    - git add .
-    - git status
+  script: deploy/deploy.sh
 cache:
   directories:
   - "$HOME/.cache/pip"
